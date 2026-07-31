@@ -1,6 +1,6 @@
 # How to Make Your Laptop Wake Up for Your AI's Scheduled Tasks
 
-**Version 1.2 · Last updated July 31, 2026**
+**Version 1.3 · Last updated July 31, 2026**
 
 *By George Kao. Written with Claude, from about six months of running overnight AI tasks on a laptop that sleeps.*
 
@@ -20,7 +20,7 @@ If your AI assistant can run terminal commands on your computer (Claude Code, Cl
 
 > **"Read this and set it up on my machine. Ask me before anything that needs my password."**
 
-If your AI can't run commands, the commands are all here — run them yourself, and let your AI walk you through the parts you're unsure about.
+If you're reading this on the web, the easiest move is to paste this page's address into your AI along with that request — no copying the text needed. And if your AI can't run commands, the commands are all here: run them yourself, and let your AI walk you through the parts you're unsure about.
 
 ---
 
