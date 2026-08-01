@@ -25,7 +25,7 @@ These files are meant to be handed to an AI. Reading them yourself is optional. 
 
 **[Own Your AI Context](own-your-ai-context.md)**
 
-You've spent months teaching your AI how you think and what you're working on. Then a better model arrives, and switching means leaving all of it behind. This is the way out: keep your context in plain files in a folder you own, so changing AI tools costs you nothing — and so does coming back. Non-technical throughout, and written to be handed to your AI, which does most of the setup while you answer a few questions. About 15 minutes to read, or one minute to hand over.
+You've spent months teaching your AI how you think and what you're working on. Then a better model arrives, and switching means leaving all of it behind. The way out is to keep your context in plain files in a folder you own, so changing AI tools costs you nothing — and so does coming back. Non-technical throughout, and written to be handed to your AI, which does most of the setup while you answer a few questions. About 15 minutes to read, or one minute to hand over.
 
 **[How I Work with Claude](how-i-work-with-claude.md)**
 
