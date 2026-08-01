@@ -23,6 +23,10 @@ These files are meant to be handed to an AI. Reading them yourself is optional. 
 
 ## What's here
 
+**[Own Your AI Context](own-your-ai-context.md)**
+
+You've spent months teaching your AI how you think and what you're working on. Then a better model arrives, and switching means leaving all of it behind. This is the way out: keep your context in plain files in a folder you own, so changing AI tools costs you nothing — and so does coming back. Non-technical throughout, and written to be handed to your AI, which does most of the setup while you answer a few questions. About 15 minutes to read, or one minute to hand over.
+
 **[How I Work with Claude](how-i-work-with-claude.md)**
 
 A field guide to running a whole solo business — and a good chunk of a life — through Claude, written from a non-coder's studio. The leverage turned out to sit in the system around the conversation: folders as the operating system, rules that carry their own *why*, self-improvement loops with a human gate, and the money math that makes heavy daily use affordable. About 22 minutes to read — or one minute to hand to your AI.
