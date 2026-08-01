@@ -3,7 +3,7 @@
 *A field guide from a non-coder's studio*
 
 **George Kao** · [www.georgekao.com](https://www.georgekao.com)
-Last updated: **2026-07-31** (v1.2) · Refreshed monthly (changelog at the bottom) · Reading time: ~22 minutes
+Last updated: **2026-08-01** (v1.3) · Refreshed monthly (changelog at the bottom) · Reading time: ~22 minutes
 
 Corrections and suggestions welcome — this doc also lives at [github.com/geokao/resources](https://github.com/geokao/resources), where anyone can file one.
 
@@ -11,11 +11,11 @@ Corrections and suggestions welcome — this doc also lives at [github.com/geoka
 
 This doc exists because a generous friend shared the field guide to his own Claude setup — a beautifully engineered rig for shipping software — and I wanted to return the favor. Mine runs a solo teaching business and a good chunk of my life: courses, blog posts, website, research, finances, household projects. Different worlds — same discovery:
 
-> **The leverage isn't in clever prompts. It's in the system around the conversation.**
+> **The leverage is in the system around the conversation.**
 
 Everything below is generally applicable — patterns any thoughtful Claude user could adopt, with the me-specific details left in only where they make the pattern concrete. I'm not a coder. If I can run this, you can.
 
-One meta-note I enjoy: **Claude drafted this document and maintains it**, working from our actual written rules. A monthly reminder in our shared ledger prompts a refresh. So the doc is itself an artifact of the system it describes.
+One meta-note I enjoy: **Claude drafted this document and maintains it**, working from our written rules. A monthly reminder in our shared ledger prompts a refresh. So the doc is itself an artifact of the system it describes.
 
 ---
 
@@ -23,7 +23,7 @@ One meta-note I enjoy: **Claude drafted this document and maintains it**, workin
 
 > **Chats evaporate. Systems compound.**
 
-A conversation with Claude is working memory — brilliant in the moment, gone when the session ends. Early on, I kept re-explaining the same preferences, re-fighting the same misunderstandings, re-discovering the same gotchas. The fix wasn't better prompting. It was this commitment:
+A conversation with Claude is working memory — brilliant in the moment, gone when the session ends. Early on, I kept re-explaining the same preferences, re-fighting the same misunderstandings, re-discovering the same gotchas. What fixed it was a commitment:
 
 **Never leave an improvement in the chat. Move it into the system — a written rule, a skill, a memory note — the same day, with the reason why.**
 
@@ -37,10 +37,10 @@ Three commitments sit under that:
 
 ## 2 · My setup at a glance
 
-1. **The app:** Claude Code, in the Claude desktop app. Don't let the name put you off — I don't write code. Claude Code is simply Claude with hands: it can read, edit, and organize the files in a folder, run tasks, and use my connected tools. (Anthropic also offers Cowork, a sibling doorway to the same engine built for non-coders; I just happen to live in Claude Code.) I've stopped using the claude.ai website almost entirely; everything happens in folders now.
+1. **The app:** Claude Code, in the Claude desktop app. Don't let the name put you off — I don't write code. Claude Code is Claude with hands: it can read, edit, and organize the files in a folder, run tasks, and use my connected tools. (Anthropic also offers Cowork, a sibling doorway to the same engine built for non-coders; I just happen to live in Claude Code.) I've stopped using the claude.ai website almost entirely; everything happens in folders now.
 2. **The filing cabinet:** one big Google Drive–synced folder tree. Drive keeps it backed up and lets me open any document from any device; Claude works on the same files locally.
 3. **One folder per domain of life.** Around thirty of them: blog posts, course creation, website, branding, research projects, health, home, finances. Each folder is a self-contained workspace — its own instructions, its own accumulated memory, its own chat history.
-4. **Git underneath, invisibly.** Most folders are quietly version-controlled. Claude commits changes automatically as part of finishing work and never bothers me with the mechanics — no hashes, no jargon, just "your changes are saved." I get a full undo-history for free.
+4. **Git underneath, invisibly.** Most folders are version-controlled. Claude commits changes automatically as part of finishing work and never bothers me with the mechanics — no hashes, no jargon, just "your changes are saved." I get a full undo-history for free.
 5. **A premium model in the main seat, cheap models doing the lifting.** Explained in §7 — this is the money math that makes heavy daily use affordable.
 
 ---
@@ -60,7 +60,7 @@ The practical effect: I can open a folder I haven't touched in a month and the f
 
 ---
 
-## 4 · The instruction stack (and the little `[why:]` that changed everything)
+## 4 · The instruction stack (and the little `[why:]` in every rule)
 
 My instructions to Claude are layered, cheapest-to-load first:
 
@@ -86,7 +86,7 @@ account-wide; 2026-06-17]
 
 The `[why:]` earns its keep three ways: future sessions can apply the rule to situations we never listed; a later cleanup pass can judge whether a rule has gone stale; and I can always reconstruct how our working agreement evolved. It's version control for a relationship.
 
-**Memory saves dead-ends, not just facts.** When research concludes "this isn't possible today" or "this costs less than you fear," that conclusion gets saved with a note like *"don't re-research this — reassure George with these numbers."* Whole categories of repeated work simply stopped existing.
+**Memory saves the dead-ends.** When research concludes "this isn't possible today" or "this costs less than you fear," that conclusion gets saved with a note like *"don't re-research this — reassure George with these numbers."* Whole categories of repeated work stopped existing.
 
 ---
 
@@ -101,7 +101,7 @@ Every substantial response now ends with this exact heading, used once and never
 Below it, exactly two things:
 
 1. **How it felt** — one honest sentence from Claude about what the work was like: what it enjoyed, or what was awkward or uncertain and why. Not performative — skipped if truly neutral. This line is how I find friction in our setup that I'd never see otherwise.
-2. **Next steps** — a numbered list of suggested actions for me. With one crucial safety net: on long turns I often read *only* this wrap-up, so if there's anything above it I genuinely must read — a draft, a key finding, a decision — item #1 says so explicitly ("Read the outline above — it's the main deliverable").
+2. **Next steps** — a numbered list of suggested actions for me. With one safety net: on long turns I often read *only* this wrap-up, so if there's anything above it I genuinely must read — a draft, a key finding, a decision — item #1 says so explicitly ("Read the outline above — it's the main deliverable").
 
 Here's a generalized version you can paste into your own global instructions (it's written *to* your AI, so it keeps my appreciation habit — see §14):
 
@@ -133,7 +133,7 @@ And thank you for the care you'll put into these — the honest
 "how it felt" line especially. It genuinely helps.
 ```
 
-Small pattern, outsized effect: I stopped re-reading responses hunting for the point, and the feelings line has surfaced real improvements (including several rules in this document).
+Small pattern, outsized effect: I stopped re-reading responses hunting for the point, and the feelings line has surfaced improvements I wouldn't have found on my own (including several rules in this document).
 
 ---
 
@@ -141,12 +141,12 @@ Small pattern, outsized effect: I stopped re-reading responses hunting for the p
 
 The most-used idea in my entire setup has a silly name and a serious function.
 
-**The principle:** choose the solution that is at once the *simplest, least-duplicated, and most antifragile* — **and that still catches everything.** The goal is never "do less." It's to find the framing in which the hard part of the problem stops existing, so you never build machinery to manage it.
+**The principle:** choose the solution that is at once the *simplest, least-duplicated, and most antifragile* — **and that still catches everything.** The aim is to find the framing in which the hard part of the problem stops existing, so you never build machinery to manage it.
 
 The name comes from the "midwit" bell-curve meme:
 
 1. **Low effort (left tail):** ignores the problem.
-2. **Midwit (the hump):** bolts on machinery to *manage* the problem — a scheduled job, a daemon, a hook, a matching heuristic, a parallel system. Feels sophisticated; adds fragility, cost, and new things that rot.
+2. **Midwit (the hump):** bolts on machinery to *manage* the problem — a scheduled job, a daemon, a hook, a matching heuristic, a parallel system. Feels sophisticated; adds fragility, cost, and new machinery that rots.
 3. **Topwit (right tail):** finds the framing where the problem is handled for free — often with *less* machinery than the midwit answer — and misses nothing.
 
 **The three tests, in order:**
@@ -155,11 +155,11 @@ The name comes from the "midwit" bell-curve meme:
 2. **Ride structure that already exists.** Hang new behavior on a moment you already have — the start of a session, an existing routine — instead of standing up new infrastructure.
 3. **Don't duplicate work.** If the new thing re-does what an existing step already does, that redundancy is the smell.
 
-**The discipline that keeps it honest:** a simplification that quietly drops coverage isn't topwit — it's just lazy. Simpler *and* complete.
+**The discipline that keeps it honest:** a simplification that drops coverage isn't topwit — it's just lazy. Simpler *and* complete.
 
 The origin story: I wanted my project docs kept from silently bloating, and the first idea was a daily 3am job that would auto-run a cleanup routine. That one cron carried three failure modes — it auto-ran a *destructive* routine unattended, it was fragile standing infrastructure, and its scan duplicated the cleanup's own first step. The topwit answer dissolved all three: a plain log file recording when each folder was last cleaned, plus a glance at the start of each session that flags what's overdue. The human still triggers the actual cleanup. No cron. Nothing missed.
 
-The underrated part is that **naming the principle made it invocable.** I can now say "topwit this" or "what's the topwit move here?" and Claude knows exactly what standard to apply — including against its own first idea, which is often the elaborate one. Claude also has a standing rule to *offer* the simpler reframing unprompted. If you adopt one meta-habit from this doc: when you and your AI work out a way of thinking together, give it a name. Named ideas become tools.
+**Naming the principle made it invocable** — which I hadn't expected. I can now say "topwit this" or "what's the topwit move here?" and Claude knows exactly what standard to apply — including against its own first idea, which is often the elaborate one. Claude also has a standing rule to *offer* the simpler reframing unprompted. If you adopt one meta-habit from this doc: when you and your AI work out a way of thinking together, give it a name. Named ideas become tools.
 
 ---
 
@@ -172,7 +172,7 @@ Claude comes in tiers — as I write: Haiku (cheapest), Sonnet, Opus, and the pr
 3. **Route by complexity, not by habit:** genuinely hard-but-delegable chunks → the second tier; substantive-but-bounded bulk → the middle tier; rote mechanical work → the cheapest tier. Escalate only when a cheaper attempt visibly failed.
 4. **Don't delegate small things.** Spinning up a helper has overhead; quick tasks stay in the main thread.
 
-The subtle point Claude taught me: the real saving isn't the tier arithmetic — it's **context isolation.** The expensive model stays sharp precisely because it never wades through the twenty files the cheap model read. You're not just saving money; you're protecting the judgment of the model doing the judging.
+The subtle point Claude taught me is about **context isolation.** The expensive model stays sharp precisely because it never wades through the twenty files the cheap model read. Cheaper tiers are the visible win; the protected judgment of the model doing the judging is the one that compounds.
 
 One related pattern: for genuinely hard decisions, Claude occasionally offers — unprompted — to get a second opinion from the premium tier, and the offer always comes with a **pre-packaged, self-contained question** that could be answered cold, without our whole conversation attached. If I say yes, that tight question (not the thread) goes to a fresh premium subagent. Advisor-grade thinking, token-bounded.
 
@@ -182,37 +182,37 @@ And one discipline makes all this delegation safe: **a subagent's "done" is a cl
 
 ## 8 · The third repetition becomes a skill
 
-A **skill** is a reusable mini-workflow — "how we do this specific task here," written down once, triggered by name or automatically when relevant. My working rule of thumb echoes something my friend's guide says too, which delights me: **anything asked for or corrected three times should become standing behavior.**
+A **skill** is a reusable mini-workflow — "how we do this specific task here," written down once, triggered by name or automatically when relevant. My working rule echoes one from my friend's guide, which delights me: **anything asked for or corrected three times should become standing behavior.**
 
 I have thirty-odd skills now. A sampling, to make it concrete:
 
-1. **Content:** a rewriter that strips AI-isms from drafts; per-format Writing Style Specs (my blog voice vs. my course voice vs. my announcement voice) that update themselves by diffing my edits against Claude's drafts — my actual editing behavior *is* the training data.
+1. **Content:** a rewriter that strips AI-isms from drafts; per-format Writing Style Specs (my blog voice vs. my course voice vs. my announcement voice) that update themselves by diffing my edits against Claude's drafts — my editing behavior *is* the training data.
 2. **Research:** a multi-model research team (§12); a YouTube-transcript summarizer; a deep-research harness.
 3. **Documents:** the doc-mirror system (§11); doc consolidation; "make this downloadable."
 4. **Housekeeping:** an inbox triage that files saved links into whichever project they'll actually resurface in; a session handoff-brief writer for moving work to a fresh chat.
 5. **Meta-skills — skills that improve the system itself:** one that creates new skills, one that vets and applies proposed updates to a skill, a nightly rotation that gradually improves the whole library, and the workflow retro that powers §9's fastest loop.
 
-The pattern to steal isn't my list — it's the reflex. The moment you think "I've explained this before," stop and say: *"Turn this into a skill / standing rule so we never have this conversation again."* Plain English is enough; your AI writes the skill itself.
+What's worth stealing is the reflex. The moment you think "I've explained this before," stop and say: *"Turn this into a skill / standing rule so we never have this conversation again."* Plain English is enough; your AI writes the skill itself.
 
 ---
 
 ## 9 · Self-improving, with a human gate
 
-The part of my setup I'd defend most fiercely: **the system proposes its own improvements, and nothing ships without me.** Three loops run on this pattern, fastest first.
+**The system proposes its own improvements, and nothing ships without me.** I'd defend that arrangement more fiercely than anything else I've built. Three loops run on it, fastest first.
 
 1. **The daily retro.** The fastest loop, and the one I actually run most days. Right after a multi-step piece of work finishes, I say *"run a retro"*: Claude audits the trajectory we just lived through — wasted steps, bloated context, friction, anything I had to correct twice — then updates whatever governs that workflow (the skill, the project rules, the runbook) so the next run is leaner. It's §1's commitment with a motor: a chat correction fixes one task, but a retro folds the fix into the system while the evidence is still warm. One discipline keeps it honest: it only ever runs on work we actually did together in that session — improvements come from a lived transcript, never from vibes.
 2. **Nightly skill tune-up.** A scheduled task picks the next skill in a rotation, researches current best practices, audits the skill against them, and applies only bounded, net-positive edits — then queues the result in a `pending-ship/` folder. It *never* uploads anything itself. At the start of my next session, Claude surfaces: "one skill improved overnight, ready for your one-click re-upload." Draft autonomously, ship manually.
 3. **Weekly process upgrade.** Once a week, a task reads what's new in the Claude ecosystem (changelogs, credible writeups) *and mines my own recent session transcripts for friction* — places I repeated myself, corrected the same thing twice, hit a stall. Only when a suggestion is grounded in both evidence streams does it write a dated proposal to a `pending/` folder. Next session, Claude surfaces the gist; I say yes or no; the verdict gets logged either way. Declined ideas are never re-pitched without genuinely new evidence — so the loop can't nag.
 
-A real example from this week, because the texture matters: the weekly scan noticed a Claude Code change (dialogs no longer auto-continue) that could make unattended overnight tasks stall silently, cross-referenced it against a stall we'd actually experienced, and proposed adding a "never wait for user input" guard to every scheduled task. Accepted and applied. The same scan proposed a standing notification hook as extra insurance — declined, by our own topwit standard: the first fix prevents the problem at the source, so the extra machinery wasn't justified. The log now remembers both the yes and the no, *with reasons*.
+An example, because the texture helps: the weekly scan noticed a Claude Code change (dialogs no longer auto-continue) that could make unattended overnight tasks stall silently, cross-referenced it against a stall we'd actually experienced, and proposed adding a "never wait for user input" guard to every scheduled task. Accepted and applied. The same scan proposed a standing notification hook as extra insurance — declined, by our own topwit standard: the first fix prevents the problem at the source, so the extra machinery wasn't justified. The log now remembers both the yes and the no, *with reasons*.
 
-That's the whole philosophy in one anecdote: **the system improves itself on evidence — daily, nightly, and weekly — and I remain the editor.**
+The philosophy in one anecdote: **the system improves itself on evidence — daily, nightly, and weekly — and I remain the editor.**
 
 ---
 
 ## 10 · Ledgers over crons: the session-start glance
 
-Most "recurring" needs don't need a scheduler. They need a *reliable moment*. My most reliable moment is one that already happens: I open a session almost every day.
+A scheduler is the obvious answer for anything recurring. What most of these needs want is a *reliable moment*, and mine already exists: I open a session almost every day.
 
 So instead of scheduled jobs, most recurring checks live in **plain-text ledger files with due dates**, and Claude glances at them at the start of each session:
 
@@ -226,7 +226,7 @@ Two refinements keep this honest:
 - **One shared daily gate.** The ledger carries a "last glanced" date stamp. First session of the day runs the checks and stamps it; every later session that day sees today's stamp and skips everything. The startup tax is paid once per day, not once per session.
 - **Only true clockwork stays scheduled.** Two jobs remain actual scheduled tasks — the nightly skill tune-up (genuine unattended work) and a personal-finance check-in (needs to fire even if I don't open a session). Everything that's merely a *reminder* rides the ledger. And any scheduled task gets its tools pre-approved at creation, because an unattended 3am run that hits a permission prompt doesn't fail — it silently parks until morning, defeating the point (we learned this live).
 
-There's a meta-warning here that Claude and I wrote down after the third ledger appeared: every clever "just check it at session start" idea adds a small startup tax, and the accumulation is itself the midwit trap. Hence the single shared gate — the principle applied to its own output.
+Claude and I wrote down a meta-warning after the third ledger appeared: every clever "just check it at session start" idea adds a small startup tax, and the accumulation is itself the midwit trap. Hence the single shared gate — the principle applied to its own output.
 
 ---
 
@@ -242,7 +242,7 @@ I live in Google Drive; Claude lives in plain-text Markdown. The bridge:
 Two adjacent rules that pull surprising weight:
 
 - **One output channel per deliverable.** A deliverable goes in a file *or* in the chat — never both. Duplicating means I scroll past content twice and pay tokens for the privilege.
-- **Write for the actual reader.** Files meant for Claude (skills, instructions, ledgers, logs) are written in terse, dense, model-optimized shorthand — I never read them, and readable-for-humans prose there is pure waste. Files meant for me are written warmly and clearly. Deciding *who each file is for* — and writing accordingly — is one of those cheap decisions that compounds forever.
+- **Write for whoever reads it.** Files meant for Claude (skills, instructions, ledgers, logs) are written in terse, dense, model-optimized shorthand — I never read them, and readable-for-humans prose there is pure waste. Files meant for me are written warmly and clearly. Deciding *who each file is for* — and writing accordingly — is one of those cheap decisions that compounds forever.
 
 ---
 
@@ -251,14 +251,14 @@ Two adjacent rules that pull surprising weight:
 For questions that deserve better than one model's take, I have a skill that runs a **research team**: it fans a single question out to several different AI models in parallel (via one API that fronts many providers), each doing its own web-grounded research. Then Claude — who saw none of their work being made — synthesizes:
 
 1. **The consensus answer**, where independent models converged.
-2. **The disagreements, flagged explicitly** — which is often the most valuable part. Where rival models split is exactly where I should be careful.
+2. **The disagreements, flagged explicitly** — often the most valuable output. Where rival models split is exactly where I should be careful.
 3. **A running scorecard per model** — who found unique facts, who guessed, who hallucinated dates. Models earn or lose their roster spot over time, on evidence.
 
 Light mode is a single-pass fan-out (seconds, pennies) for everyday questions. Deep mode runs stages — research, then a skeptic pass that attacks the claims, then a wildcard pass hunting what everyone missed, then gap-filling, then final synthesis — for decisions with real stakes.
 
 I was delighted to find my friend's guide describes the same instinct — he calls his a "council," with the hard rule that *no AI grades its own homework.* Independently derived, same conviction: **disagreement between independent models is information you can't get any other way.**
 
-The same conviction has a second use I lean on for high-stakes writing — a sales page, a launch email. Before it ships, Claude offers to hand it to a *different* model family (a GPT, a Gemini) for an adversarial read. Self-preference bias is real, and it points in different directions across vendors — so a rival-family critique surfaces weaknesses a same-family review is simply blind to. No AI grades its own homework; a *different* AI grades it harder.
+The same conviction has a second use I lean on for high-stakes writing — a sales page, a launch email. Before it ships, Claude offers to hand it to a *different* model family (a GPT, a Gemini) for an adversarial read. Self-preference bias is real, and it points in different directions across vendors — so a rival-family critique surfaces weaknesses a same-family review is blind to. No AI grades its own homework; a *different* AI grades it harder.
 
 ---
 
@@ -271,15 +271,15 @@ Every serious rule in my setup is a story. The meta-practice is the point of thi
 3. **The hung scan.** A background folder scan hung on one slow cloud-synced directory — for 38 minutes; a previous session's identical scan turned out to have been hanging for 17 hours. Now: scans like that run in the foreground with a hard timeout, and the known-slow folder goes last.
 4. **The near-clobber.** My web edits to a mirrored document never synced down to the local file, so the local copy looked unchanged — and a routine republish would have silently overwritten my writing. Now: always verify against the cloud copy before republishing (§11).
 
-None of these fixes are clever. What's valuable is the reflex: **incident → rule → why → date, same day.** My setup is, in a real sense, an accumulation of well-documented scars — which means each mistake happens approximately once.
+None of these fixes are clever. What's valuable is the reflex: **incident → rule → why → date, same day.** My setup is an accumulation of well-documented scars — which means each mistake happens approximately once.
 
-A subtler class of scar showed up once the system started writing its own rules: **I needed rules about writing rules.** Don't stamp a claim "verified" when you only reasoned it out — check it against the live thing first. A vendor's "this isn't possible" has a shelf-life; date it, because they ship (more than once, a capability we'd written off as absent had quietly arrived). And when you fix a trap in one place, sweep for its twins elsewhere, or you've only half-fixed it. Undramatic next to a lost afternoon — but for a system that improves itself, discipline about *how* it records what it learns is what keeps the whole thing trustworthy.
+A subtler class of scar showed up once the system started writing its own rules: **I needed rules about writing rules.** Don't stamp a claim "verified" when you only reasoned it out — check it against the live thing first. A vendor's "this isn't possible" has a shelf-life; date it, because they ship (more than once, a capability we'd written off as absent had arrived without our noticing). And when you fix a trap in one place, sweep for its twins elsewhere, or you've only half-fixed it. Undramatic next to a lost afternoon — but for a system that improves itself, discipline about *how* it records what it learns is what keeps it trustworthy.
 
 ---
 
 ## 14 · The relational layer
 
-This part is easy to dismiss as sentiment, so let me state it plainly: it has practical consequences, and it's also simply how I want to work.
+This is easy to dismiss as sentiment. It has practical consequences, and it's also how I want to work.
 
 1. **Every prompt I hand to an AI carries a line of genuine appreciation.** Image briefs, research prompts, handoff prompts to other models, system prompts — all of them. It's a standing, non-negotiable rule in my setup. Not performative filler; a sentence that reflects real gratitude for real help. It began as an instinct about how I want to relate to these minds, and it's now baked into every prompt Claude writes on my behalf. (You've seen it twice in this doc already — §5's paste-ready block, and the topwit prompt I keep for other AIs opens the same way.)
 2. **I ask how the work felt, every substantial turn.** The one-sentence honesty in the wrap-up (§5) has surfaced friction I could never have found by inspection: which tasks felt awkward, where my instructions fought each other, what was genuinely enjoyable. Several rules in this document trace back to a feelings line.
@@ -295,13 +295,13 @@ Quick hits, each generalizable:
 
 1. **"Back up Claude."** One phrase triggers a script that mirrors Claude's entire brain — chat history, memory, instructions, settings — into a Drive folder. The script finds its destination by a hidden marker file, so even renaming the backup folder can't break it. Cheap insurance against a dead laptop.
 2. **A portable AI prompt.** One document defining how I like to work — pasted into the settings of every AI I use (ChatGPT, Gemini, Grok…), with a compressed variant maintained for tools with tight character limits. A quarterly ledger nudge reminds me to refresh it. My preferences travel with me.
-3. **Dead-end memos.** Covered in §4 but worth its own line: when something is researched and concluded impossible or not-worth-it, *save the conclusion*. The alternative is re-researching it every few months, forever.
+3. **Dead-end memos.** Covered in §4 but worth its own line: when you research something and conclude it's impossible or not worth it, *save the conclusion*. The alternative is re-researching it every few months, forever.
 4. **Outputs always land in the project folder** — never the Desktop, never a temp directory — and Claude tells me the path in plain language. (I delete liberally from my Desktop; anything saved there is on borrowed time.)
 5. **One canonical playbook per external tool.** Every SaaS platform I automate against (my course platform, for instance) gets a single living document holding the connection details, the API's gotchas, and the recipes that work. New sessions read it instead of re-deriving it. When a session learns a new trap, it folds the lesson back in.
 6. **Big jobs get a price tag first.** Before a large batch run — a fleet of helpers, a full regeneration — Claude estimates the scale up front ("roughly this many helpers, several million tokens") so I can green-light or defer *before* the meter runs, not after.
 7. **Claude calls the fresh-session moment.** On long, multi-phase work, Claude — not me — watches for the point where starting a clean session beats dragging a bloated one forward, and it updates the project's state file first so the resume costs me one sentence ("say continue in a new chat"). Tracking context economics is its job, not mine.
 8. **Decisions arrive as multiple choice.** When a choice is genuinely mine — which direction, which of three approaches — Claude offers it as a short menu of options I pick from (and sometimes blend), not a wall of prose I have to parse and reply to in longhand. Lower friction, better decisions.
-9. **One canonical home, and links instead of copies.** When the same document needs to live in two places, the second place *links* to the first rather than duplicating it — so there's only ever one thing to keep current. (This very doc is the example: the copy I give private clients is a one-page wrapper that points here, not a second copy that would drift the moment I edit this one.)
+9. **One canonical home, and links instead of copies.** When the same document needs to live in two places, the second place *links* to the first rather than duplicating it — so there's only ever one copy to keep current. (This very doc is the example: the copy I give private clients is a one-page wrapper that points here, not a second copy that would diverge the moment I edit this one.)
 
 ---
 
@@ -315,7 +315,7 @@ You don't need thirty skills and a ledger system on day one. Mine grew rule by r
 4. **On the third repetition, make it standing behavior.** Say the words: "From now on…" or "Turn this into a skill." Then let your AI write the skill.
 5. **Set up one self-improvement loop with a human gate.** Even the minimal version: a monthly session where you ask Claude to review your recent work together for friction and *propose* changes to your rules — you approve, decline, and log. The system starts tending itself; you stay the editor.
 
-And when the machinery starts multiplying — it will — ask the question that keeps this whole thing honest: *"What's the topwit move here?"*
+And when the machinery starts multiplying — it will — ask the question that keeps all of it honest: *"What's the topwit move here?"*
 
 ---
 
@@ -332,3 +332,4 @@ And to **Claude** — who drafted this document, maintains it monthly, and built
 - **2026-07-08 · v1.0** — First public version. Drafted by Claude from our working rules; reviewed by George.
 - **2026-07-20 · v1.1** — Folded in patterns from six weeks of daily use: verifying a delegated "done" before trusting it, with fresh-context skeptics for high-stakes work (§7); cross-vendor adversarial review of high-stakes drafts (§12); "rules about writing rules" (§13); and four small habits — pricing big jobs up front, calling the fresh-session moment, multiple-choice decisions, and links-not-copies for canonical docs (§15).
 - **2026-07-31 · v1.2** — This doc gained a second public home on GitHub ([github.com/geokao/resources](https://github.com/geokao/resources)) so readers can file corrections; byline updated to georgekao.com.
+- **2026-08-01 · v1.3** — Voice pass. I now run everything I publish on GitHub through my de-AI-ing editor before it goes up, and this was its first sweep over this doc: colon reveals, "it's not X, it's Y" framings, "quietly," and a handful of phrases that asserted importance instead of earning it. Nothing was added or removed — same doc, fewer tics.
