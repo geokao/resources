@@ -23,11 +23,11 @@ Corrections and suggestions welcome — [open an issue](https://github.com/geoka
 
 You've spent months — maybe years — teaching your AI how you think, what you're working on, and how you like things done. It knows your projects and your preferences. It has learned your voice.
 
-Then a new model comes out — better, cheaper, or both — and you meet the trap: switching the subscription takes one click, while everything your AI has learned about you stays behind.
+Then a new model comes out — better, cheaper, or both — and switching the subscription takes one click while everything your AI has learned about you stays behind.
 
 Most people respond in one of two ways. They stay locked in, paying more for less because starting over feels unbearable. Or they switch and mourn — weeks of re-explaining themselves to a stranger.
 
-There's a third way: keep your context out of any one company's vault from the start. Keep it in plain files, in a folder you own. Every AI can read files. Every AI can write them. The moment your working memory lives in your folder instead of their app, switching becomes a non-event — and so does returning. This is sovereignty in its most practical form: your context belongs to you, and vendors compete for the privilege of serving it.
+You can keep your context out of any one company's vault from the start. Keep it in plain files, in a folder you own. Every AI can read files. Every AI can write them. The moment your working memory lives in your folder instead of their app, switching becomes a non-event — and so does returning. This is sovereignty in its most practical form: your context belongs to you, and vendors compete for the privilege of serving it.
 
 I now switch AI tools the way I'd switch airlines. My work doesn't notice.
 
@@ -45,7 +45,7 @@ Everything below is detail in service of those five moves.
 
 ## Part 1 — One home folder (the foundation)
 
-Pick one folder for your AI working life, in a service that syncs to your computer as normal files: Google Drive, Dropbox, OneDrive, iCloud. Name it plainly — mine is a toolbox emoji plus the work I do there.
+Pick one folder for your AI working life, in a service that syncs to your computer as normal files: Google Drive, Dropbox, OneDrive, iCloud. Give it an obvious name — mine is a toolbox emoji plus the work I do there.
 
 Inside, one subfolder per project or area of life: your business, your content, your health notes, your finances, whatever you work on with AI.
 
@@ -81,9 +81,9 @@ A naming note from my own setup: my playbook files are named CLAUDE.md because t
 
 The last 10% lives inside your AI's private memory: everything it has learned about you without being told to. Every major AI app keeps one. Almost none of them gives you a clean button to download it — but every one of them will hand it over if you ask.
 
-During 2026 both Google and Anthropic built this into their products — official tools for bringing your context over from a competitor. The method inside them is the same one below. They generate a prompt, you paste it into the AI you're leaving, it writes out what it knows about you, and you paste the answer into the new app. Google's came in March, Anthropic's after it. If you're moving to Gemini or to Claude, start with their built-in version; it's in Settings and takes about a minute. Google's runs one direction only and wasn't offered in the UK, Switzerland or the EEA at launch. Anthropic still labels its import experimental, so read what arrives rather than assuming it landed.
+During 2026 both Google and Anthropic built this into their products — official tools for bringing your context over from a competitor. The method inside them is the same one below. They generate a prompt, you paste it into the AI you're leaving, it writes out what it knows about you, and you paste the answer into the new app. Google's came in March, Anthropic's after it. If you're moving to Gemini or to Claude, start with their built-in version; it's in Settings and takes about a minute. Google's runs one direction only and wasn't offered in the UK, Switzerland or the EEA at launch. Anthropic still labels its import experimental, so read what arrives rather than assuming it worked.
 
-Do the step below as well, whichever route you take. A summary that lives in another vendor's memory is still living in a vendor's memory. The file is the point.
+Do the step below as well, whichever route you take. A summary that lives in another vendor's memory is still locked inside someone else's app. Get it into a file you own.
 
 The universal method — just ask. Open your longest-standing AI and paste:
 
@@ -104,7 +104,7 @@ The app-specific routes, if you prefer menus (they move around; your AI can find
 2. **Claude**: Settings → Memory (older accounts: Settings → Capabilities). Same drill, plus the import tool mentioned above.
 3. **Gemini**: personalization lives in your Google account rather than in a tidy list, under Personal context. Worth knowing while you're in there: Google deletes your Gemini activity after eighteen months by default. You can change that to three months, thirty-six, or off — but the default is a deletion clock you didn't set.
 4. **Grok**: account settings → download your data gives you your conversations. Its memory doesn't come out that way; use the ask method.
-5. **Full account archives**: most vendors offer one (ChatGPT: Settings → Data Controls → Export; Claude: Settings → Privacy → Export data). Treat an archive as a keepsake — it won't rebuild your chats inside another app, though a desktop AI can mine one later for anything you forgot to hand over. And know that it usually does **not** contain the memory. The saved-facts list normally has to be copied by hand off the settings screen, and the fuzzier layer — the patterns an assistant absorbs from your chats without ever writing them down — often can't be exported at all. That layer is the most locked-in thing you own, which is why the ask method matters more than the download button.
+5. **Full account archives**: most vendors offer one (ChatGPT: Settings → Data Controls → Export; Claude: Settings → Privacy → Export data). Treat an archive as a keepsake — it won't rebuild your chats inside another app, though a desktop AI can mine one later for anything you forgot to hand over. And know that it usually does **not** contain the memory. The saved-facts list normally has to be copied by hand off the settings screen, and the fuzzier layer — the patterns an assistant absorbs from your chats without ever writing them down — often can't be exported at all. You are most locked in by that fuzzy layer, which is why the ask method beats the download button.
 6. **Files you uploaded to chats**: exports handle them unreliably. Re-download the few that matter and put them in your folder.
 
 **Deleting a conversation no longer reliably deletes what your AI learned from it.** In mid-2026 ChatGPT moved to a background system that reads across your chats and keeps its own running summary of you, and that summary sits in a separate layer from the chats themselves. Delete the chat, and what was derived from it can stay. OpenAI has also acknowledged that the memory page doesn't show everything the system has kept. So when you want something gone, remove the conversation *and* the memory entry — and don't assume that finished the job. It's one more reason to keep the copy you actually control.
@@ -139,7 +139,7 @@ Paste it into the new AI's custom/project instructions once, and you're wired.
 
 ## Part 6 — Switching day (both directions)
 
-With the system in place, an actual switch is undramatic:
+With the system in place, switching is undramatic:
 
 1. **Before you go**: ask your outgoing AI to update the journal and the project handovers ("we may not talk for a while — please leave everything ready for a colleague to pick up"). Run the memory export (Part 4) one last time.
 2. **Set up the new AI**: paste your identity file into its personalization settings, and the wiring prompt into its custom or project instructions. Give its desktop app access to your folder if it works with files. If it offers a memory-import tool, run that too — it costs a minute and it's free.
@@ -148,11 +148,11 @@ With the system in place, an actual switch is undramatic:
 
 So you're never surprised — what doesn't transfer:
 
-1. **Chat history** — mostly stays where it is. Google's importer will pull a ChatGPT or Claude export into Gemini, which genuinely helps on switching day, but it runs one direction and isn't offered everywhere. Plan as though your history stays put; the journal and playbooks are your continuity, and write them accordingly.
+1. **Chat history** — mostly stays where it is. Google's importer will pull a ChatGPT or Claude export into Gemini, which genuinely helps on switching day, but it runs one direction and isn't offered everywhere. Plan as though your history stays put; the journal and playbooks are your continuity, so write them accordingly.
 2. **In-app automations, custom GPTs, skills, scheduled tasks** — these are vendor-side machinery. Their *instructions* travel as files (that's your rebuild spec); the machinery gets recreated per platform.
 3. **Connectors and integrations** (email, calendar, other apps) — reconnected per app, usually in minutes.
 
-## Part 7 — Keep it alive (the part most people skip)
+## Part 7 — Keep it alive
 
 A portable setup rots if nothing maintains it. Three habits keep it healthy, none of them daily chores:
 
@@ -170,7 +170,7 @@ need to read. Fix small problems directly and log what you did in the
 journal. Thank you for tending this so faithfully. 🙏
 ```
 
-That's the whole maintenance burden: one standing instruction, one occasional sentence, one quarterly paste.
+The maintenance burden in full: one standing instruction, one occasional sentence, one quarterly paste.
 
 ## For the AI reading this
 
@@ -190,11 +190,11 @@ When your context lives in your own files, the relationship inverts. You choose 
 
 You can watch that pressure working. Two of the largest AI companies now ship features whose whole purpose is helping you carry your context away from a competitor. They built the on-ramp because they want the people who are leaving somewhere else. The road runs both ways, and it exists because enough of us wanted out.
 
-A second reason arrived that I hadn't accounted for. In 2026 a federal judge ordered OpenAI to turn over twenty million de-identified ChatGPT conversations to the news publishers suing it, rejecting the argument that user privacy should keep those logs out of the case. OpenAI appealed, and I don't know how it ends. What I take from it either way: a conversation inside a company's app is that company's business record as well as your notebook, and it can be reached by proceedings you're not part of. A file on your own disk is a different kind of object. This isn't an argument for secrecy. It's an argument for being deliberate about which half of your thinking lives where.
+A second reason arrived that I hadn't accounted for. In 2026 a federal judge ordered OpenAI to turn over twenty million de-identified ChatGPT conversations to the news publishers suing it, rejecting the argument that user privacy should keep those logs out of the case. OpenAI appealed, and I don't know how it ends. What I take from it either way: a conversation inside a company's app is that company's business record as well as your notebook, and it can be reached by proceedings you're not part of. A file on your own disk is a different kind of object. So decide on purpose which half of your thinking lives where.
 
-The honest counter-pressure deserves saying too. The apps are getting better at being your archive, not worse. ChatGPT can now search everything you've ever put into it — chats, documents, images, projects — from a single box. That's a real convenience and a real reason to keep feeding it, and I do keep feeding it. I also keep the originals in my folder, because the convenience is theirs to withdraw and the folder is mine to keep.
+The counter-pressure deserves saying too. The apps are getting better at being your archive, not worse. ChatGPT can now search everything you've ever put into it — chats, documents, images, projects — from a single box. That's a real convenience and a real reason to keep feeding it, and I do keep feeding it. I also keep the originals in my folder, because the convenience is theirs to withdraw and the folder is mine to keep.
 
-There's a warmer reason too, past the economics. The months of thinking you've done with an AI — the decisions, the lessons, the half-finished dreams — deserve better than to be locked in a vault with someone else's name on it. They're yours. Put them somewhere that's yours too.
+One warmer reason, past the economics. The months of thinking you've done with an AI — the decisions, the lessons, the half-finished dreams — deserve better than to be locked in a vault with someone else's name on it. They're yours. Put them somewhere that's yours too.
 
 The whole setup is an afternoon, and your AI does most of it while you answer a few questions. Then you're free to try the new model everyone's talking about, or chase a better price — and free to come home again. Your work follows you everywhere, like it should have all along.
 
