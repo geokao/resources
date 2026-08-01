@@ -31,6 +31,10 @@ You've spent months teaching your AI how you think and what you're working on. T
 
 A field guide to running a whole solo business — and a good chunk of a life — through Claude, written from a non-coder's studio. The leverage turned out to sit in the system around the conversation: folders as the operating system, rules that carry their own *why*, self-improvement loops with a human gate, and the money math that makes heavy daily use affordable. About 22 minutes to read — or one minute to hand to your AI.
 
+**[Remove AI-isms](remove-ai-isms.md)**
+
+Readers have learned to recognize AI writing, and they scroll right past it. This is the editing workflow I run on every AI-assisted draft before it ships: three passes over a catalog of specific tells — overused words, the "It's not X, it's Y" cadence, endings that sound profound and say nothing — collected one caught pattern at a time from editing my own drafts. Paste it into whatever AI writes with you, and it edits alongside you while keeping your facts and your voice. About 12 minutes to read, or one minute to hand over.
+
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
 If you've told your AI assistant to do something every night at 3am and nothing ever happens, this explains why and how to fix it. Most AI desktop apps can't wake a sleeping laptop — that turns out to be a job you have to hand the operating system yourself. Includes the setup, the commands, and about a dozen failure modes I only found by hitting them — the ones that look like success. macOS in detail, with pointers for Windows and Linux.
