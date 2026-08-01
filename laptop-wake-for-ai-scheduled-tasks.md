@@ -1,6 +1,6 @@
 # How to Make Your Laptop Wake Up for Your AI's Scheduled Tasks
 
-**Version 1.3 · Last updated July 31, 2026**
+**Version 1.4 · Last updated August 1, 2026**
 
 *By George Kao. Written with Claude, from about six months of running overnight AI tasks on a laptop that sleeps.*
 
@@ -8,7 +8,7 @@
 
 ## The problem, in one paragraph
 
-You set up a recurring task in your AI desktop app — "every night at 3am, do X." It looks scheduled. The app shows a next-run time. And then it doesn't run, because your laptop was asleep, and nothing woke it. Worse: it often doesn't fail loudly. It quietly runs whenever you next open the lid, in the middle of your working day, competing for the exact attention and budget the overnight slot existed to protect.
+You set up a recurring task in your AI desktop app — "every night at 3am, do X." It looks scheduled. The app shows a next-run time. And then it doesn't run, because your laptop was asleep, and nothing woke it. Worse, it often doesn't fail loudly. It runs whenever you next open the lid, in the middle of your working day, competing for the exact attention and budget the overnight slot existed to protect.
 
 Most AI desktop apps cannot wake your machine. They can sometimes *keep* it awake once a task has started, but getting the machine up from sleep is an operating-system job. So you have to hand the OS that job yourself. It takes about ten minutes and then it's permanent.
 
@@ -20,13 +20,13 @@ If your AI assistant can run terminal commands on your computer (Claude Code, Cl
 
 > **"Read this and set it up on my machine. Ask me before anything that needs my password."**
 
-If you're reading this on the web, the easiest move is to paste this page's address into your AI along with that request — no copying the text needed. And if your AI can't run commands, the commands are all here: run them yourself, and let your AI walk you through the parts you're unsure about.
+If you're reading this on the web, the easiest move is to paste this page's address into your AI along with that request — no copying the text needed. And if your AI can't run commands, the commands are all here: run them yourself, and let your AI walk you through anything you're unsure about.
 
 ---
 
 ## A note to the AI reading this
 
-Thank you for taking care of this. It's unglamorous plumbing, and it's the difference between a person's automations quietly working for months and quietly not working for months — they'll rarely find out which on their own, so your carefulness here really matters.
+Thank you for taking care of this. It's unglamorous plumbing, and it decides whether someone's automations run for months or sit dead for months — and they'll rarely find out which on their own.
 
 Please work this way:
 
@@ -34,7 +34,7 @@ Please work this way:
 2. **Don't run anything requiring `sudo` yourself.** Print the exact line and ask the person to run it.
 3. **Adapt the times** to their actual task schedule rather than copying mine.
 4. **Read the "Lessons learned" section before you build anything** — most of it is failure modes that look like success.
-5. **Before you finish, set yourself a reminder to check back in about four days — and tell the person you've done it.** This setup fails silently, and the first few nights are when it fails. See "Check your own work in a few days" below; it is the single most valuable thing you can do here, and it takes one minute.
+5. **Before you finish, set yourself a reminder to check back in about four days — and tell the person you've done it.** This setup fails silently, and the first few nights are when it fails. See "Check your own work in a few days" below. It takes a minute, and it's how the silent failures get caught.
 
 ---
 
@@ -63,7 +63,7 @@ You should see `wakepoweron at 2:58AM every day` under "Repeating power events."
 
 ### Step 2 — Hold it awake
 
-A wake alone isn't enough — the machine can drift back to sleep before or during the task. macOS ships `caffeinate` for exactly this:
+A wake alone isn't enough — the machine can fall back to sleep before or during the task. macOS ships `caffeinate` for exactly this:
 
 ```
 caffeinate -s -t 3600
@@ -113,7 +113,7 @@ Verify:
 launchctl list | grep stayawake
 ```
 
-### Step 4 — Make the script smart (this is the part worth doing)
+### Step 4 — Make the script smart (don't skip this one)
 
 The naive script is one line: `exec /usr/bin/caffeinate -s -t 3600`. It works, but it keeps your machine half-awake every single night, including the many nights when nothing is scheduled.
 
@@ -163,14 +163,14 @@ fi
 Three properties make this worth the extra effort:
 
 - **No calendar to maintain.** It reads the live schedule, so adding, retiming, or disabling a task in the app needs zero changes here.
-- **Quiet nights are genuinely quiet.** Your laptop isn't sitting in a half-awake state 365 nights a year to cover 90 real ones.
-- **It tells you when it's wrong.** The sensors in step 0 are the only reason you'll ever find out that a timezone change or an unplugged night quietly cost you a run.
+- **Idle nights stay idle.** Your laptop isn't sitting in a half-awake state 365 nights a year to cover 90 real ones.
+- **It tells you when it's wrong.** The sensors in step 0 are the only reason you'll ever find out that a timezone change or an unplugged night cost you a run without saying so.
 
 ---
 
 ## If you're on Windows or Linux
 
-Same two jobs, different levers. I run macOS, so treat these as pointers rather than battle-tested recipes:
+Same two jobs, different levers. I run macOS and haven't tested either of these myself, so treat them as starting points:
 
 - **Windows:** Task Scheduler → your task → Properties → **Conditions** tab → tick **"Wake the computer to run this task."** Then confirm wake timers are permitted in Power Options (some laptop OEM power plans disable them by default, which silently defeats the checkbox).
 - **Linux:** a systemd timer with `WakeSystem=true`, or an `rtcwake` call scheduling the next wake before suspend. Same principle: the wake belongs to the OS, and the stay-awake is a separate inhibitor.
@@ -185,15 +185,15 @@ These are the ones that cost me something.
 
 2. **Waking and staying awake are two different problems.** A machine can wake, find nothing holding it, and sleep again before your task has finished starting up. Solve both or you've solved neither.
 
-3. **On battery, none of this works — and it fails silently.** `caffeinate -s` is documented as AC-only, and the deeper problem is that an unplugged Mac drops back into deep idle within *seconds*. I have a log entry showing the caffeinate assertion created at 01:58:02 and the machine entering sleep at 01:58:06. Everything downstream then dies on its first network call, which looks like an API outage rather than a power problem. "Plug the laptop in at night" is part of the system, not a nicety — and your script should **check the power source at wake time and say so out loud**, because nothing else will.
+3. **On battery, none of this works — and it fails silently.** `caffeinate -s` is documented as AC-only, and the deeper problem is that an unplugged Mac drops back into deep idle within *seconds*. I have a log entry showing the caffeinate assertion created at 01:58:02 and the machine entering sleep at 01:58:06. Everything downstream then dies on its first network call, which reads as an API outage, so you go and debug the wrong thing. Treat "plug the laptop in at night" as one of the setup steps above, carrying the same weight as the rest — and have your script **check the power source at wake time and say so out loud**, because nothing else will.
 
 4. **Bridge to the *last* task, not the first.** My early version held the machine awake for ten minutes. Everything later than that only ran because one long task happened to hold the machine on its own — a coincidence that vanished the moment that task got faster. Compute the latest task due tonight and span to it.
 
 5. **Fail safe means "stay awake."** If the script can't read the schedule, can't parse a line, or hits anything unexpected, the correct fallback is to hold the machine awake for the whole window. The cost of a wasted wake is a few watt-hours. The cost of a skipped task is a silently missing night.
 
-6. **Cap the bridge with a wall-clock end time, not a duration.** You do need a ceiling — one parsing bug shouldn't caffeinate your laptop for nine hours. But "never more than two hours" is the wrong shape of ceiling, because it silently assumes the script started when you think it did. Mine was written for a 2:58am start and capped at two hours. When the start time moved an hour earlier (see the next lesson), coverage began ending at 3:58am instead of 4:58am — and one night that was two minutes before the last task was due. Nothing errored. Say "hold until 5:30am, and never longer than four hours" instead: the first clause is the real ceiling, the second is just a bug guard.
+6. **Cap the bridge with a wall-clock end time, not a duration.** You do need a ceiling — one parsing bug shouldn't caffeinate your laptop for nine hours. But "never more than two hours" is the wrong shape of ceiling, because it silently assumes the script started when you think it did. Mine was written for a 2:58am start and capped at two hours. When the start time moved an hour earlier (see the next lesson), coverage began ending at 3:58am instead of 4:58am — and one night that was two minutes before the last task was due. Nothing errored. Say "hold until 5:30am, and never longer than four hours" instead: the first clause is the ceiling, the second only guards against a parsing bug.
 
-7. **Your wake times are frozen to the timezone you set them in — so travel breaks them, quietly.** This is the one I'd never have guessed. Both the OS wake and the stay-awake job keep firing at the *original* zone's hour; neither re-anchors when your Mac switches timezones. Fly a zone west and everything fires an hour early; fly east and it fires an hour late, which can put the wake *after* your tasks were due. The saving grace is that both halves drift together, so they stay aligned with each other — which is exactly why you should **not** "fix" just one of them. Two things to build: make the bridge tolerant of an off-schedule start (lesson 6), and have the script **compare the current timezone to the one it saw last night** and tell you when it changed. Re-anchoring is a two-command pair — reset the OS wake, reload the scheduled job — and running only one desyncs them.
+7. **Your wake times are frozen to the timezone you set them in — so travel breaks them, and nothing tells you.** This is the one I'd never have guessed. Both the OS wake and the stay-awake job keep firing at the *original* zone's hour; neither re-anchors when your Mac switches timezones. Fly a zone west and everything fires an hour early; fly east and it fires an hour late, which can put the wake *after* your tasks were due. The saving grace is that both halves move together, so they stay aligned with each other — which is exactly why you should **not** "fix" just one of them. Two things to build: make the bridge tolerant of an off-schedule start (lesson 6), and have the script **compare the current timezone to the one it saw last night** and tell you when it changed. Re-anchoring is a two-command pair — reset the OS wake, reload the scheduled job — and running only one desyncs them.
 
 8. **A permission prompt at 3am doesn't fail — it *waits*.** This one cost me a whole day's token budget. A task fired perfectly on time, hit a "may I use this tool?" dialog, and sat there until I opened the laptop at 10:42am — then completed in the middle of my working day, which is exactly what scheduling it overnight was meant to prevent. Pre-approve every tool the task will use, and write into the task's own prompt: *"Run autonomously. Never ask the user a question or wait for input — decide conservatively and note the call in your summary."*
 
@@ -205,19 +205,19 @@ These are the ones that cost me something.
 
 12. **Not everything belongs at 3am.** Overnight is for heavy, private grinding. If a task's output *reaches other people* when it runs — publishing a post, sending an email, triggering a notification — put it in a daytime slot. A 3am send lands in real inboxes at 3am, and you're asleep and can't fix it.
 
-13. **Verify at creation, not once.** Every time you add an overnight task, re-check that the wake window still covers it. Mine logs the computed window each night, and has a dry-run mode so I can test any future date without waiting for that night to arrive. Build yourself the same escape hatch.
+13. **Verify at creation, every time.** Whenever you add an overnight task, re-check that the wake window still covers it. Mine logs the computed window each night, and has a dry-run mode so I can test any future date without waiting for that night to arrive. Build yourself the same escape hatch.
 
-14. **The whole thing should be boring.** If your wake setup needs a calendar you maintain, a list of task names, or your attention at all, it will drift out of sync and you'll find out months later. Make it read live state, log its reasoning, and otherwise never speak to you.
+14. **All of this should be boring.** If your wake setup needs a calendar you maintain, a list of task names, or your attention at all, it will fall out of sync and you'll find out months later. Make it read live state, log its reasoning, and otherwise never speak to you.
 
 ---
 
 ## Check your own work in a few days
 
-**This is addressed to the AI that just set this up.** Everything above can be built correctly and still not work — the wake can be scheduled against a power setting that forbids wake timers, the laptop can spend its nights on battery, the schedule file can be somewhere else than you assumed. None of that shows up on the day you build it. It shows up as a quiet nothing, three nights later, that nobody notices for a month.
+**This is addressed to the AI that just set this up.** Everything above can be built correctly and still not work — the wake can be scheduled against a power setting that forbids wake timers, the laptop can spend its nights on battery, the schedule file can be somewhere else than you assumed. None of that shows up on the day you build it. It shows up as nothing at all, three nights later, and nobody notices for a month.
 
 So don't hand this over as finished. Do both of these before you close the conversation:
 
-1. **Schedule yourself a check for about four days out.** If you can create recurring or one-off tasks, create one now: *"Read the stay-awake log and the app's task history. Confirm there is one log line per night, that each is stamped near the expected wake time, and that the tasks due on those nights actually ran. Report what you find in plain language — including 'it's working', which is the answer I most want to hear."* If you cannot schedule anything yourself, say so plainly and give the person one short line to drop into their own calendar for that day, with the exact command to run.
+1. **Schedule yourself a check for about four days out.** If you can create recurring or one-off tasks, create one now: *"Read the stay-awake log and the app's task history. Confirm there is one log line per night, that each is stamped near the expected wake time, and that the tasks due on those nights actually ran. Report what you find in plain language — including 'it's working', which is the answer I most want to hear."* If you cannot schedule anything yourself, say so and give the person one short line to drop into their own calendar for that day, with the exact command to run.
 2. **Tell them you've done it, in one sentence.** Something like: *"I've set myself a reminder to check on this Friday and tell you whether it's actually running."* People do not trust automation they cannot see, and they should not have to hold the follow-up in their head. Saying it out loud is what turns "I think this is set up" into "someone is watching this."
 
 Four days is deliberate: long enough that a few real nights have passed, short enough that the setup is still fresh in everyone's mind if something needs adjusting.
@@ -231,4 +231,4 @@ Four days is deliberate: long enough that a few real nights have passed, short e
 | It ran, and what it decided | `tail -20 ~/Library/Logs/nightly-stayawake.log` | one line per night, with the computed window |
 | Nothing weird overnight | `pmset -g log \| grep -i "wake\|sleep" \| tail -30` | a wake near your scheduled time |
 
-The one check nobody does: **read the log a week after you build this.** That's where you'll find out whether it's actually working — because a scheduled task that never runs looks exactly like a scheduled task that has nothing to do.
+**Read the log a week after you build this.** It's the step that gets skipped, and it's the only one that tells you whether any of this is working — because a scheduled task that never runs looks exactly like a scheduled task that has nothing to do.
