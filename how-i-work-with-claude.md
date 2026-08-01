@@ -92,7 +92,7 @@ The `[why:]` earns its keep three ways: future sessions can apply the rule to si
 
 ## 5 · The wrap-up banner: a bottom line I can always find
 
-Claude's responses can be long — narration of the work, tool output, a deliverable, analysis. I like the play-by-play, but I kept losing track of where *the part written for me* began. The fix was to reserve one unmistakable marker.
+Claude's responses can be long — a deliverable, analysis, the findings of a multi-step run — and I kept losing track of where *the part written for me* began. The fix was to reserve one unmistakable marker.
 
 Every substantial response now ends with this exact heading, used once and never for anything else:
 
@@ -332,4 +332,4 @@ And to **Claude** — who drafted this document, maintains it monthly, and built
 - **2026-07-08 · v1.0** — First public version. Drafted by Claude from our working rules; reviewed by George.
 - **2026-07-20 · v1.1** — Folded in patterns from six weeks of daily use: verifying a delegated "done" before trusting it, with fresh-context skeptics for high-stakes work (§7); cross-vendor adversarial review of high-stakes drafts (§12); "rules about writing rules" (§13); and four small habits — pricing big jobs up front, calling the fresh-session moment, multiple-choice decisions, and links-not-copies for canonical docs (§15).
 - **2026-07-31 · v1.2** — This doc gained a second public home on GitHub ([github.com/geokao/resources](https://github.com/geokao/resources)) so readers can file corrections; byline updated to georgekao.com.
-- **2026-08-01 · v1.3** — Voice pass. I now run everything I publish on GitHub through my de-AI-ing editor before it goes up, and this was its first sweep over this doc: colon reveals, "it's not X, it's Y" framings, "quietly," and a handful of phrases that asserted importance instead of earning it. Nothing was added or removed — same doc, fewer tics.
+- **2026-08-01 · v1.3** — Voice pass. I now run everything I publish on GitHub through my de-AI-ing editor before it goes up, and this was its first sweep over this doc: colon reveals, "it's not X, it's Y" framings, "quietly," and a handful of phrases that asserted importance instead of earning it. Nothing was added or removed — same doc, fewer tics. Also fixed one line that had gone stale: §5 said I like the play-by-play narration, and I've since asked Claude to drop the narration entirely and just deliver the work.
