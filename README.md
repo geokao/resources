@@ -60,4 +60,3 @@ Everything here is released under [CC0](LICENSE) — effectively public domain. 
 ## About
 
 I'm George Kao. I help soulpreneurs — people running small, meaningful businesses — grow in a way that's sustainable and authentic. Most of my writing lives at [georgekao.com](https://www.georgekao.com).
-
