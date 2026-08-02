@@ -2,7 +2,7 @@
 
 Free, practical resources I've made while running my own business — mostly about getting real work done with AI. Everything here is free to read, use, change, and pass along.
 
-**Last updated August 1, 2026**
+**Last updated August 2, 2026**
 
 ---
 
@@ -34,6 +34,10 @@ A field guide to running a whole solo business — and a good chunk of a life �
 **[Remove AI-isms](remove-ai-isms.md)**
 
 Readers have learned to recognize AI writing, and they scroll right past it. This is the editing workflow I run on every AI-assisted draft before it ships: three passes over a catalog of specific tells — overused words, the "It's not X, it's Y" cadence, endings that sound profound and say nothing — collected one caught pattern at a time from editing my own drafts. Paste it into whatever AI writes with you, and it edits alongside you while keeping your facts and your voice. About 12 minutes to read, or one minute to hand over.
+
+**[Give Your AI a Way to Improve Itself](self-improving-ai-setup.md)**
+
+Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add a line to the instructions file, and three weeks later the same thing goes wrong again. This is what I run instead — scheduled agents that read my own past sessions, find where my AI and I wasted each other's time, and either fix it or leave me one question in the morning. Includes the four constraints that keep an AI editing its own instructions from becoming a bad idea, the two failure modes I only found by hitting them, and what to build first if you're starting from nothing. About 8 minutes to read, or one minute to hand over.
 
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
