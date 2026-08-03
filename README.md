@@ -2,7 +2,7 @@
 
 Free, practical resources I've made while running my own business — mostly about getting real work done with AI. Everything here is free to read, use, change, and pass along.
 
-**Last updated August 2, 2026**
+**Last updated August 3, 2026**
 
 ---
 
@@ -29,7 +29,7 @@ You've spent months teaching your AI how you think and what you're working on. T
 
 **[How I Work with Claude](how-i-work-with-claude.md)**
 
-A field guide to running a whole solo business — and a good chunk of a life — through Claude, written from a non-coder's studio. The leverage turned out to sit in the system around the conversation: folders as the operating system, rules that carry their own *why*, self-improvement loops with a human gate, and the money math that makes heavy daily use affordable. About 22 minutes to read — or one minute to hand to your AI.
+A field guide to running a whole solo business — and a good chunk of a life — through Claude, written from a non-coder's studio. The leverage turned out to sit in the system around the conversation: folders as the operating system, rules that carry their own *why*, self-improvement loops with a human gate, guardrails for the tasks that run while you're asleep, and the money math that makes heavy daily use affordable. About 25 minutes to read — or one minute to hand to your AI.
 
 **[Remove AI-isms](remove-ai-isms.md)**
 
