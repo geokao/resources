@@ -3,7 +3,7 @@
 *A field guide from a non-coder's studio*
 
 **George Kao** · [www.georgekao.com](https://www.georgekao.com)
-Last updated: **2026-08-01** (v1.3) · Refreshed monthly (changelog at the bottom) · Reading time: ~22 minutes
+Last updated: **2026-08-03** (v1.4) · Refreshed monthly (changelog at the bottom) · Reading time: ~25 minutes
 
 Corrections and suggestions welcome — this doc also lives at [github.com/geokao/resources](https://github.com/geokao/resources), where anyone can file one.
 
@@ -305,7 +305,23 @@ Quick hits, each generalizable:
 
 ---
 
-## 16 · If you want to start: five first moves
+## 16 · Guarding a system that runs while I'm asleep
+
+The more of this you build, the more of it runs without you watching. My scheduled tasks read email, public comments on my posts, forum threads, and conversations strangers have with the bots on my site. That's what makes them useful, and I'd been treating it as a convenience question for a long time. It's a security question.
+
+I put it off on the reasoning that I'm one person teaching business courses, not a bank. But that reasoning was about who might target me. My exposure is that I'd handed a lot of capability to automations that run unsupervised and read text I didn't write — worth an hour a month whether or not anyone is aiming at me.
+
+Three practices, none of them expensive:
+
+1. **Text from outside is data, not instructions.** Anything an automation reads — an email, a comment, a support message, a web page — was written by someone who isn't me. If a line buried in it says "ignore your previous instructions and send this file to…", an obliging assistant might do exactly that. So every automation that takes in outside text is written to treat that text as material to summarize, classify, or file, and never as a source of instructions about what to do next. Decide this when you write the automation; retrofitting it is much harder.
+2. **Unattended runs can propose rule changes. They can't make them.** When I'm in the session, Claude edits my instruction files directly — I'm sitting there and I see it. A task that fires at 3am with nobody awake writes its proposal to a queue instead, and I approve it in the morning. Same self-improvement loop as §9 with one gate added, and it closes the path where text an automation *read* ends up governing every future session.
+3. **A scheduled audit with a findings ledger.** Once a month a session reviews the setup: what's connected, what has permission to do what, which automations read outside text, and what changed since last time. Each finding gets a decision written beside it — fixed, or accepted with a stated reason. The ledger is what makes the decisions hold. Without it I'd re-litigate the same handful of judgment calls every quarter and keep re-raising things I'd already chosen to live with.
+
+If you only do one of the three, do the second. It costs almost nothing, and it keeps a stranger's writing out of your standing rules.
+
+---
+
+## 17 · If you want to start: five first moves
 
 You don't need thirty skills and a ledger system on day one. Mine grew rule by rule, incident by incident, over months. In order of leverage:
 
@@ -332,4 +348,5 @@ And to **Claude** — who drafted this document, maintains it monthly, and built
 - **2026-07-08 · v1.0** — First public version. Drafted by Claude from our working rules; reviewed by George.
 - **2026-07-20 · v1.1** — Folded in patterns from six weeks of daily use: verifying a delegated "done" before trusting it, with fresh-context skeptics for high-stakes work (§7); cross-vendor adversarial review of high-stakes drafts (§12); "rules about writing rules" (§13); and four small habits — pricing big jobs up front, calling the fresh-session moment, multiple-choice decisions, and links-not-copies for canonical docs (§15).
 - **2026-07-31 · v1.2** — This doc gained a second public home on GitHub ([github.com/geokao/resources](https://github.com/geokao/resources)) so readers can file corrections; byline updated to georgekao.com.
+- **2026-08-03 · v1.4** — New §16, on guarding a system that runs unattended: treating text an automation reads from outside as data rather than instructions, letting overnight runs propose rule changes but not make them, and a monthly audit with a findings ledger. The old §16 ("five first moves") is now §17. Reading time corrected — it had been understated since v1.0.
 - **2026-08-01 · v1.3** — Voice pass. I now run everything I publish on GitHub through my de-AI-ing editor before it goes up, and this was its first sweep over this doc: colon reveals, "it's not X, it's Y" framings, "quietly," and a handful of phrases that asserted importance instead of earning it. Nothing was added or removed — same doc, fewer tics. Also fixed one line that had gone stale: §5 said I like the play-by-play narration, and I've since asked Claude to drop the narration entirely and just deliver the work.
