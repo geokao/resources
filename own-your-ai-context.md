@@ -2,7 +2,7 @@
 
 ## A non-technical guide to switching AI tools freely — without losing everything your AI knows about you
 
-**Version 1.3 · Last updated August 1, 2026**
+**Version 1.4 · Last updated August 5, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -79,7 +79,7 @@ A naming note from my own setup: my playbook files are named CLAUDE.md because t
 
 ## Part 4 — Export your AI's private memory (the rescue step)
 
-The last 10% lives inside your AI's private memory: everything it has learned about you without being told to. Every major AI app keeps one. Almost none of them gives you a clean button to download it — but every one of them will hand it over if you ask.
+The last 10% lives inside your AI's private memory: everything it has learned about you without being told to. Every major AI app keeps one, and some keep a separate memory per project or folder; anything in one of those worth keeping should also live as a plain file on disk. Almost none of them gives you a clean button to download it — but every one of them will hand it over if you ask.
 
 During 2026 both Google and Anthropic built this into their products — official tools for bringing your context over from a competitor. The method inside them is the same one below. They generate a prompt, you paste it into the AI you're leaving, it writes out what it knows about you, and you paste the answer into the new app. Google's came in March, Anthropic's after it. If you're moving to Gemini or to Claude, start with their built-in version; it's in Settings and takes about a minute. Google's runs one direction only and wasn't offered in the UK, Switzerland or the EEA at launch. Anthropic still labels its import experimental, so read what arrives rather than assuming it worked.
 
@@ -122,6 +122,8 @@ Everything so far can stay loose in your home folder. As it grows, give the port
 5. **The exported memory** from Part 4, one file per project.
 6. **REBUILD-AUTOMATIONS.md** — only if you've built scheduled automations with one vendor's tool. List what each one does, when it runs, and what it needs, so any capable AI could rebuild them elsewhere. Automations are the least portable part of an AI setup; a rebuild spec is their insurance policy.
 
+    Make it a standing instruction rather than a list you write once. Mine went out of date faster than anything else in the folder. I wrote it in July 2026 describing seven scheduled tasks; by August 5 the real count was fifty-one, and the file still said seven. The quarterly audit below does ask whether the rebuild notes match reality — but quarterly means the spec can spend most of a season being wrong, and mine did. You build an automation while working on something else entirely, in a folder nowhere near the file that needs updating. So add a line to your AI's standing instructions: whenever it creates or changes an automation for you, it updates the rebuild file in the same session.
+
 The wiring prompt for any new AI (adapt the folder names to yours):
 
 ```
@@ -149,7 +151,7 @@ With the system in place, switching is undramatic:
 So you're never surprised — what doesn't transfer:
 
 1. **Chat history** — mostly stays where it is. Google's importer will pull a ChatGPT or Claude export into Gemini, which genuinely helps on switching day, but it runs one direction and isn't offered everywhere. Plan as though your history stays put; the journal and playbooks are your continuity, so write them accordingly.
-2. **In-app automations, custom GPTs, skills, scheduled tasks** — these are vendor-side machinery. Their *instructions* travel as files (that's your rebuild spec); the machinery gets recreated per platform.
+2. **In-app automations, custom GPTs, skills, scheduled tasks** — these are vendor-side machinery. Their *instructions* travel as files (that's your rebuild spec); the machinery gets recreated per platform. That only holds if the instructions are in a file. Part 2's rule — the file is the original, the box is the copy — applies to every settings box, not just your identity file: a project's instructions, a custom GPT's setup, a Gem. In July 2026 I set up a project inside an AI by typing its instructions into the browser and saving them nowhere else; four days later I went to update them, searched my folder history and my old chats, found nothing, and had to rebuild the text out of a different document. Nothing had errored to tell me it was never saved.
 3. **Connectors and integrations** (email, calendar, other apps) — reconnected per app, usually in minutes.
 
 ## Part 7 — Keep it alive
@@ -202,9 +204,10 @@ Sovereignty doesn't require a grand gesture. A folder of files with your name on
 
 ---
 
-*Version 1.3 · August 1, 2026 · Written with Claude · I welcome your feedback: [x.com/georgekao](https://x.com/georgekao), or [open an issue](https://github.com/geokao/resources/issues/new) right here.*
+*Version 1.4 · August 5, 2026 · Written with Claude · I welcome your feedback: [x.com/georgekao](https://x.com/georgekao), or [open an issue](https://github.com/geokao/resources/issues/new) right here.*
 
 **Changelog**
 
+- **v1.4 — August 5, 2026.** Two things my own setup taught me since v1.3: a rebuild spec has to be a standing instruction rather than a list you write once (mine still said seven automations while I was running forty-six), and anything typed into a settings box needs a file behind it — the rule isn't only for your identity file. Also added a line noting that a memory your AI keeps per project or folder counts as private memory too.
 - **v1.3 — August 1, 2026.** Moved here to GitHub as the single living copy. Added what changed across 2026: Google's and Anthropic's competitor-import tools, the warning that deleting a chat no longer reliably deletes what was learned from it, the fact that memory usually isn't inside a data export, Gemini's eighteen-month default deletion, the raised ChatGPT custom-instructions limit, AGENTS.md becoming a stewarded convention, and two things I hadn't accounted for in v1.2 — the legal-exposure angle, and the honest counter-argument that the apps keep getting better at being your archive.
 - **v1.2 — July 12, 2026.** First public release.
