@@ -1,6 +1,6 @@
 # How to Make Your Laptop Wake Up for Your AI's Scheduled Tasks
 
-**Version 1.4 · Last updated August 1, 2026**
+**Version 1.5 · Last updated August 5, 2026**
 
 *By George Kao. Written with Claude, from about six months of running overnight AI tasks on a laptop that sleeps.*
 
@@ -147,6 +147,9 @@ SCHED="$(find "$HOME/Library/Application Support/Claude" -maxdepth 6 \
 
 # 2. If the schedule can't be read, DON'T exit — bridge the whole window.
 #    Failing safe means "stay awake", never "go to sleep".
+#    "Can't be read" INCLUDES a file that opens fine and holds zero tasks —
+#    that is almost always the wrong file, and on disk it looks identical to
+#    an idle night. Check the task count, not just the path. See lesson 5.
 if [ ! -f "${SCHED:-}" ]; then
   echo "$(date): schedule unreadable -> full-window bridge" >> "$LOG"
   exec /usr/bin/caffeinate -s -i -t 14400
@@ -154,10 +157,13 @@ fi
 
 # 3. Parse the schedule; compute the latest ENABLED task due tonight
 #    in the 00:00–06:59 window. (A short python block does this well.)
-# 4. Nothing overnight due -> log it and exit, so the Mac sleeps.
-# 5. Otherwise: caffeinate from NOW until (latest task + 20 min buffer),
+#    Zero tasks in the whole file -> treat it as unreadable; go to step 2.
+# 4. Tasks exist but none is due overnight -> log it and exit, so the Mac sleeps.
+# 5. Otherwise: caffeinate from NOW until (latest task + buffer; 20 min works),
 #    but never past END_CAP_MIN. Compute the end as a CLOCK TIME, not as a
-#    duration — see lesson 6. Log the decision on one line, always.
+#    duration — see lesson 6. Size the buffer against the worst start delay
+#    you have actually seen, not the average — see lesson 14. Log the decision
+#    on one line, always.
 ```
 
 Three properties make this worth the extra effort:
@@ -189,7 +195,13 @@ These are the ones that cost me something.
 
 4. **Bridge to the *last* task, not the first.** My early version held the machine awake for ten minutes. Everything later than that only ran because one long task happened to hold the machine on its own — a coincidence that vanished the moment that task got faster. Compute the latest task due tonight and span to it.
 
-5. **Fail safe means "stay awake."** If the script can't read the schedule, can't parse a line, or hits anything unexpected, the correct fallback is to hold the machine awake for the whole window. The cost of a wasted wake is a few watt-hours. The cost of a skipped task is a silently missing night.
+5. **Fail safe means "stay awake" — and a schedule holding zero tasks counts as unreadable.** If the script can't read the schedule, can't parse a line, or hits anything unexpected, the correct fallback is to hold the machine awake for the whole window. The cost of a wasted wake is a few watt-hours. The cost of a skipped task is a silently missing night.
+
+   I had this half-built. My script guarded against the schedule file being *missing*, and trusted any file it could actually open. In August 2026 I found that my Mac had *two* files with that same name, in two different app folders — the live one with 51 tasks in it, and a second one holding an empty list. My script took whichever of the two had been written more recently.
+
+   If the empty one ever won that race, it would open fine, parse fine, find nothing due, log "nothing due tonight", and let the Mac sleep through every task I had. No error, and a log line identical to the one an idle night produces. So far it has never won, and nothing in my setup was making sure of that.
+
+   So write the test this way. Zero tasks in the whole file means you could not read the schedule, so bridge the full window. A file with tasks in it but nothing due tonight is normal and common, so let the machine sleep. Those are two different states, and your log line should say which one you're in.
 
 6. **Cap the bridge with a wall-clock end time, not a duration.** You do need a ceiling — one parsing bug shouldn't caffeinate your laptop for nine hours. But "never more than two hours" is the wrong shape of ceiling, because it silently assumes the script started when you think it did. Mine was written for a 2:58am start and capped at two hours. When the start time moved an hour earlier (see the next lesson), coverage began ending at 3:58am instead of 4:58am — and one night that was two minutes before the last task was due. Nothing errored. Say "hold until 5:30am, and never longer than four hours" instead: the first clause is the ceiling, the second only guards against a parsing bug.
 
@@ -207,7 +219,15 @@ These are the ones that cost me something.
 
 13. **Verify at creation, every time.** Whenever you add an overnight task, re-check that the wake window still covers it. Mine logs the computed window each night, and has a dry-run mode so I can test any future date without waiting for that night to arrive. Build yourself the same escape hatch.
 
-14. **All of this should be boring.** If your wake setup needs a calendar you maintain, a list of task names, or your attention at all, it will fall out of sync and you'll find out months later. Make it read live state, log its reasoning, and otherwise never speak to you.
+14. **Tasks don't always start when the schedule says they will.** Two mechanisms can push the night's last start later than your script computed, and neither announces itself.
+
+    First, every-N-days schedules. My script reads "every 3 days" in the day-of-month field as calendar days — the 1st, 4th, 7th, and so on. The app that runs the tasks counts three days forward from the last time each one ran. The two line up until a run shifts or gets missed, and after that they drift. On one August night my three every-third-day tasks all fired on a night my script had marked them "not due" — they ran only because other tasks happened to be holding the machine awake. The following night my script listed all three as due and the app ran none of them.
+
+    Second, queueing. My app won't start an unlimited number of tasks at once. When several come due close together it holds the extras back and retries about once a minute. Its own records show one task logging nine retries in a row for a single slot. In one burst where eighteen tasks came due in the same minute, another logged twenty-eight retries across twenty-seven minutes. A late start looks like a perfectly normal run afterward.
+
+    Two cheap fixes. Make the buffer past your last known task longer than the longest delay you have actually seen, rather than the typical one. And if your app keeps its own record of deferred or skipped runs — mine writes them into the same file that holds the schedule — go read it. That record is where all of this came from.
+
+15. **All of this should be boring.** If your wake setup needs a calendar you maintain, a list of task names, or your attention at all, it will fall out of sync and you'll find out months later. Make it read live state, log its reasoning, and otherwise never speak to you.
 
 ---
 
