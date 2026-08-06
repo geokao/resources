@@ -2,7 +2,7 @@
 
 ## What I learned handing Claude the keys to my real, logged-in Chrome
 
-**Version 1.0 · Last updated August 5, 2026**
+**Version 1.0 · Last updated August 6, 2026**
 
 *By George Kao. Written with Claude.*
 
