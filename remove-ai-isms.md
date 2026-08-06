@@ -1,6 +1,6 @@
 # Remove AI-isms — an editing workflow for AI-assisted writing
 
-**Version 1.0 · Last updated August 1, 2026**
+**Version 1.1 · Last updated August 5, 2026**
 
 AI-assisted drafts share a recognizable set of tells — overused words, repeated sentence shapes, endings that sound profound and say nothing. Readers have learned them, and when they spot them, they stop reading.
 
@@ -55,7 +55,7 @@ Calibrate visible depth to draft length. A 300-word draft gets a tight bulleted 
 - Smooth transition words existing mostly to look organized (Furthermore, Moreover, Additionally, In addition)
 - Generic phrases where a concrete detail from the source would land better
 - Structural tells, not just vocabulary — "here's [X]" pointing frames, bare pronouncement closers ("That's the trap."), significance-assertion ("matters," "is the part that"), "name"-as-articulation, self-narrated delivery, manufactured-recognition openers ("we've all been there"), tidy-resolution and attainment closers, the performative agency-handoff, incantatory noun-repetition
-- Sentence-level tells — colon reveals, superficial "-ing" analysis, weasel attribution, fake-strong verbs, synonym cycling, rhetorical setups, fabricated anecdotes
+- Sentence-level tells — colon reveals, superficial "-ing" analysis, weasel attribution, fake-strong verbs, synonym cycling, rhetorical setups, "even if" concessions, fabricated anecdotes
 - Formatting slop — emoji as decoration, mid-sentence bold, headers over two-sentence sections
 
 Be specific. Quote the offending phrases. If something appears six times, say so.
@@ -68,6 +68,7 @@ Be specific. Quote the offending phrases. If something appears six times, say so
 
 - Sound like a thoughtful human sharing what they've learned, not a brand voice or corporate report.
 - Take real positions. If the source hedges, find the actual point underneath and state it clearly.
+- **Keep the writer's own qualifiers.** Cutting hedges should not make a claim bigger than the writer meant it. Phrases like "for digital things anyway," "good-enough versions," or "free for everyone" narrow a statement to what the writer can stand behind; delete one and an honest sentence turns into a pitch. Strip the hedges that dodge a position. Keep the ones that make the statement accurate.
 - Use contractions naturally (it's, don't, you're, we'll).
 - Active voice unless passive genuinely sounds better. Never let an inanimate thing do a human verb ("the decision emerged" → name who decided).
 - Open it up, don't dumb it down. Keep the substance, nuance and precision. Strip only what makes it hard to read: jargon, tangled structure, abstract nouns, sentences that lost their own thread.
@@ -86,6 +87,7 @@ Be specific. Quote the offending phrases. If something appears six times, say so
 
 - Replace generic claims with concrete ones from the source. "A recent study" → the actual study. "Many users" → the number, if the source gave one.
 - Cut filler that carries no information.
+- **Abstract phrasing reads as machine-written even when no listed word appears.** "A shift that reorders what the hour is for." "Attention that costs the person giving it." "Yours is finite." None of those lines carries an avoid-list word, and all three still read as AI, because an abstraction is standing where a plain statement belongs and no concrete noun ever arrives. Put the noun back and say what changes: "Yours is finite" becomes "Your human presence is finite." When a draft reads as machine-written and no listed tell explains why, check for this first.
 
 **Final scan — run before returning the rewrite. Skipping it is this workflow's #1 failure mode.** Grep your own output for each family, in order:
 
@@ -97,7 +99,7 @@ Be specific. Quote the offending phrases. If something appears six times, say so
 6. Every closer move — bare pronouncement, tidy resolution, attainment, "…and then gone"
 7. Every manufactured-recognition opener and announced-virtue opener ("I want to be careful here")
 8. Every vague "thing" / "something" / "part"
-9. Every sentence-level tell — colon reveal, superficial "-ing," weasel attribution, fake-strong verb, synonym cycling, rhetorical setup, invented anecdote, formatting slop
+9. Every sentence-level tell — colon reveal, superficial "-ing," weasel attribution, fake-strong verb, synonym cycling, rhetorical setup, "even if" concession, invented anecdote, formatting slop
 10. Every invented time-stamp ("another Monday morning")
 
 Anything that survived, fix now. The most common failure: a run of parallel sentences whose rhythm is pretty, with one repeated word from the avoid list inside it. The prettiness is exactly what should trigger the cut.
@@ -175,6 +177,7 @@ Distinct from vocabulary — these are sentence *shapes* AI reaches for. Each ha
 - **Fake-strong verbs.** "Serves as a centralized hub for," "acts as a bridge between," "functions as" — where "is" or "has" reads clearer. Also "made a decision" → "decided," "has the ability to" → "can."
 - **Synonym cycling.** Rotating terms for one thing to avoid repetition: "The agent reviews the draft. The assistant scores the piece. The tool suggests fixes." Three names, one thing — the reader has to re-map each time. If the clear word is right, repeat it.
 - **Rhetorical setups.** "What if I told you…", "Think about it:", "Plot twist:", and self-answered "Question? Answer." pairs. Drop them and make the point.
+- **"Even if" concessions that rank the reader.** "Even if you don't code," "Even if you're not technical," "Even if you have no audience yet," "Even if you're just starting out." The shape sounds welcoming and does the opposite — *even if* concedes a deficiency, so the line tells the reader that the better version of them codes, has the audience, isn't a beginner. Rewrite as a plain negation that takes no position on which reader is better: "without being," "with no," "and you don't need to." A course title shows the fix: "Build Your Website with AI — Even If You Don't Code, Design, or Write" becomes "Build Your Website with AI — Without Being a Tech or Design Genius." AI reaches for it hardest in titles, course promises, and any line addressed to beginners.
 - **Fabricated anecdote.** AI invents a plausible small story — a client, a conversation, a moment last week — to give an abstract claim texture. In an audit, flag any anecdote not traceable to the source. In a rewrite, never mint one. If the draft needs a story it doesn't have, say so in the editor's note; the writer supplies the real one.
 - **Formatting slop.** Emoji as decoration (in headings, as bullet markers), bold sprinkled mid-sentence, headers over two-sentence sections, bullets where two sentences of prose read better. Format should follow the content, not decorate it. (This does not override the protection of real lists below — a list that carries structure stays.)
 
@@ -221,7 +224,7 @@ Check each before returning.
 - **Do not rewrite "It's not X, it's Y" the same way twice in one piece.** Uniform substitution is a new tic.
 - **The avoid list applies to your whole response** — audit, critique and editor's note included.
 - **Do not stretch or compress length by more than ~10%.** If the writer wanted it shorter or longer, they'd have said so.
-- **Do not flatten the voice into your default polite register.** The rewrite should sound like a person with a point of view. If the source hedged, find the real position and state it.
+- **Do not flatten the voice into your default polite register.** The rewrite should sound like a person with a point of view. If the source hedged, find the real position and state it. A qualifier that keeps a claim accurate is not a hedge — leave it.
 - **De-slopped writing has its own slop register — avoid landing there.** Short punchy sentences, aggressively concrete nouns, no transitions, everything stated flat. Applying the same fix everywhere produces a house style as recognizable as the one it replaced. Vary fixes, keep the draft's idiosyncrasies, and let some sentences stay long and soft.
 - **This workflow fixes surface patterns; it can't give a draft a point.** If the real problem is that the piece says nothing or has nothing at stake, say so in the editor's note. Removing every tell from an empty draft produces cleaner emptiness.
 - **Watch for triads in your own rewrite.** It's easy to fix the source's triads and introduce fresh ones. Re-read and count adjective clusters.
