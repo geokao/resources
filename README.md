@@ -2,7 +2,7 @@
 
 Free, practical resources I've made while running my own business — mostly about getting real work done with AI. Everything here is free to read, use, change, and pass along.
 
-**Last updated August 5, 2026**
+**Last updated August 6, 2026**
 
 ---
 
