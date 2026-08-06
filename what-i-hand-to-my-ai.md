@@ -63,6 +63,9 @@ Not work — *load*. The tax you pay for having remembered something.
 7. **Missing days on purpose.** If I skip the morning check-in for three days, it widens its window, says the gap out loud, and covers all of it. Nothing expires because I wasn't there — which is the thing that kills every daily ritual.
 8. **A front desk for when I don't know where something belongs.** I describe the task; it works out which project owns it and does the work there. I never have to remember my own filing system before I can start.
 9. **A question I'd already settled, written down as settled**, with an explicit instruction not to re-research it. The same debate stops restarting every time a new headline shows up.
+10. **The standing worry, answered on a schedule.** A weekly check reads my own investments against rules I wrote myself and tells me whether anything is due, then stops. It can't place a trade. I stopped checking on my own, because the check now comes to me and says nothing most weeks.
+11. **The fear that kept coming back in a new costume.** One money worry of mine kept returning disguised as a different question, and each time it cost a whole conversation to re-derive the same arithmetic. We gave it a name and wrote down what's true. Now it gets recognized on arrival and answered in two minutes — including the one part of it that is a genuine risk.
+12. **A weekly look for your family's details on the public web.** Data brokers, people-search sites. Detection only — it never submits anything, because those forms end in a CAPTCHA and a confirmation email that have to be mine. Most weeks it's silent, and it refuses to report all-clear if its own search is broken.
 
 ---
 
@@ -94,6 +97,8 @@ Not faster. *Possible.* Each of these would have needed a skill I don't have, a 
 7. **Your own thinking, published for other people's AIs to read** — with a search box, a permalink per idea, and a button that copies the whole thing into someone else's AI conversation. Before this, that format wasn't available to someone like me.
 8. **Your own setup, as a product.** My personal system became five installable kits plus a field guide that clients hand to their own AI. A service line that exists only because the personal version existed first.
 9. **A framework you've been circling for decades.** Mine is twelve virtues, rooted in a question I've carried since playing a computer game as a kid. Months of research I'd never have funded alone, with my own edits held as the authority.
+10. **The decision you've circled for years without deciding.** Where my wife and I should live became a weighted, scored workbook — fifteen factors — rebuilt whenever my priorities change rather than whenever the options do. It also keeps a permanent ruled-out list, so places we already rejected stop coming back around every few months.
+11. **The receipts for what you stand for.** I drafted my positioning, and for each stand it named the price I'd already paid for holding it, pulled from my own history. That's the part you can't see from inside your own life, and it turned an agonizing blank page into a review task.
 
 ---
 
@@ -111,7 +116,9 @@ The handoff here is: *have it check something I already believe.* This turned ou
 8. **The apology that didn't need sending to everyone.** A related mistake could have gone to 232 members. The work of figuring out exactly who was affected brought it to 15 — and left the apology as a draft for me to send. The difference between 15 and 232 is the difference between careful and merely capable.
 9. **A guess checked against the record.** Rather than trust its own clever inference about which members to re-invite, it verified against the platform's own data and found the guess wrong for more than a third of them, in both directions.
 10. **A confident recommendation, retracted.** A supplement it had advised for our senior dog was cross-examined by four other AI models and turned out to rest on a diagnosis the dog doesn't have. A later nutrition audit also caught that four of five apparent deficiencies were an artifact of using human calorie math on an animal.
-11. **A false alarm, caught by me.** A 3am job told me my survey form had been disconnected since 2023. Next morning I glanced at the sheet, saw a row from the previous afternoon, and the whole emergency dissolved — its reading tool had silently stopped at row 498 of 849. Worth including because it runs the other way: sometimes the one-second human sanity check is what saves the day.
+11. **An assumption that reversed under the data.** I was confident a region's bad-air days were wildfire smoke. The measurements say they're overwhelmingly ozone — which changes the answer for the exact thing I was trying to get away from, and I'd have moved on the wrong reasoning.
+12. **A big decision, handed to the competition.** For one of the largest choices my wife and I face, I had AI models from other companies review the analysis adversarially. Their objections corrected blind spots before I acted on anything. On a decision that size, the most expensive failure available is your own AI agreeing with you.
+13. **A false alarm, caught by me.** A 3am job told me my survey form had been disconnected since 2023. Next morning I glanced at the sheet, saw a row from the previous afternoon, and the whole emergency dissolved — its reading tool had silently stopped at row 498 of 849. Worth including because it runs the other way: sometimes the one-second human sanity check is what saves the day.
 
 ---
 
@@ -159,12 +166,14 @@ A list of handoffs without this section would be dishonest, and it would also be
 3. **Interface calibration.** Translating one person's felt confusion into their one next step. That's the coaching move.
 4. **State management.** Holding a member's arc across years — and holding my own, because my calm and pace are the product, not the packaging.
 
-**And four rules I enforce.**
+**And six rules I enforce.**
 
 5. **AI drafts; I send.** Anything arriving under my name claiming someone's attention must have had it. An earlier version of my setup auto-replied to students as me. A client noticed, and it was killed the same day.
-6. **The refusal has to cost something.** An AI can hold any value perfectly, never tired, never tempted by a big check. Nobody is moved that a machine doesn't run manipulative funnels. They're moved that a person with a mortgage doesn't.
-7. **Deciding what the numbers mean stays mine.** My AI can lay them out beautifully. Reading them as guidance is the practice itself — give that away and there's no job left.
-8. **What to teach next, and when to stop.** Including a decision to wind something down on integrity grounds, which no metric would ever have recommended.
+6. **It's allowed to argue with me, and it does.** I asked for an automation to watch my investments. It pushed back on the version I'd asked for — by quoting my own written philosophy at me — and proposed a narrower design that couldn't grow into the habit I was trying to avoid. I'd braced for a machine that says yes to everything. That it might talk me down is the part nobody warns you about, and it's the reason I trust the rest of this list.
+7. **Every automation ships with the conditions that would kill it.** Written before it runs: what would prove it isn't working, when to grade it, and an early stop if it starts changing my behavior for the worse. The investment one is on a trial with a set number of runs and a date. An automation nobody ever re-examines isn't a system — it's a habit you can no longer see.
+8. **The refusal has to cost something.** An AI can hold any value perfectly, never tired, never tempted by a big check. Nobody is moved that a machine doesn't run manipulative funnels. They're moved that a person with a mortgage doesn't.
+9. **Deciding what the numbers mean stays mine.** My AI can lay them out beautifully. Reading them as guidance is the practice itself — give that away and there's no job left.
+10. **What to teach next, and when to stop.** Including a decision to wind something down on integrity grounds, which no metric would ever have recommended.
 
 **Things you'd reasonably expect on this list that aren't, because I genuinely haven't done them.** Money coming in — pricing, refunds, failed payments — is all still manual. Taxes and bookkeeping, nothing. Contractors and hiring, nothing, which will surprise anyone with a VA. Insurance, nothing. My own body — sleep, exercise, my own medical care — nothing, which is a little funny given how much of section 6 is about everyone else's. And reaching out to people I care about is deliberately excluded: for me that's the practice itself.
 
