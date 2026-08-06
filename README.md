@@ -23,6 +23,10 @@ These files are meant to be handed to an AI. Reading them yourself is optional. 
 
 ## What's here
 
+**[What I Hand to My AI](what-i-hand-to-my-ai.md)** — *the easiest one to start with*
+
+Most of us underuse our AI not because we lack technique, but because it never occurred to us to hand it that particular job. So this is a menu rather than a method: three months of the actual work I gave mine, business and personal, sorted by what kind of attention each job used to eat — the chores that come back forever, the things I was carrying in my head, the things nobody could read all of, and the ones I'd never have attempted. It includes the boring handoffs nobody demos, which turned out to be where the return was, and a closing section on what I deliberately don't hand over. About 15 minutes to read, or one minute to hand over so it can pick the four or five that fit your life.
+
 **[Own Your AI Context](own-your-ai-context.md)**
 
 You've spent months teaching your AI how you think and what you're working on. Then a better model arrives, and switching means leaving all of it behind. The way out is to keep your context in plain files in a folder you own, so changing AI tools costs you nothing — and so does coming back. Non-technical throughout, and written to be handed to your AI, which does most of the setup while you answer a few questions. About 15 minutes to read, or one minute to hand over.
