@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.0 · Last updated August 2, 2026**
+**Version 1.1 · Last updated August 5, 2026**
 
 *by George Kao*
 
@@ -18,7 +18,7 @@ This is how it's built, and how you'd build your own.
 
 Everyone's AI keeps some kind of instructions file. Mine is large, because I've been adding to it for months. The new development is that I'm no longer its only editor.
 
-Four agents run on their own schedules, and the architecture is two doors plus two specialists.
+Four of my scheduled agents exist to improve the setup itself. They run on their own schedules, and the architecture is two doors plus two specialists.
 
 **The Sunday door only proposes.** It reads my last week of session transcripts, Claude's release notes, and outside research on working-with-AI patterns, then writes findings to a folder. It never edits anything. It also tags each finding by what kind of decision it is: a fact that's checkably false (a dead file path, a stale time), a judgment call, or anything outward-facing.
 
@@ -42,13 +42,13 @@ And the migration doesn't trust itself. The old agents stay running alongside th
 
 ---
 
-## The four rules that keep this from going wrong
+## The five rules that keep this from going wrong
 
-An AI that edits its own instructions is a genuinely bad idea implemented carelessly. Four constraints make it safe.
+An AI that edits its own instructions is a genuinely bad idea implemented carelessly. Five constraints make it safe.
 
 ### 1. Internal and reversible, or it escalates
 
-An agent may edit a rule, a playbook, a ledger, a note. It may not send an email, publish a post, spend money, delete my data, or change a permission. Anything outward-facing stops and waits for me, every time, no exceptions and no judgment calls about whether this one seems fine.
+An agent that has editing rights at all may edit a rule, a playbook, a ledger, a note. It may not send an email, publish a post, spend money, delete my data, or change a permission. Anything outward-facing stops and waits for me, every time, no exceptions and no judgment calls about whether this one seems fine.
 
 The test is a single question: can I undo it by myself tomorrow? Importance never enters into it.
 
@@ -68,11 +68,31 @@ This is what I'd underweight if I were building it again. A revert window that e
 
 When I do say "revert that," the reverted item goes on a permanent veto list. Nothing on that list gets proposed again without genuinely new evidence. Otherwise the agent that suggested it rediscovers the same reasoning next month and I re-decide the same thing forever.
 
-### 4. Evidence, or it doesn't get written
+### 4. Evidence to add it, and evidence to cut it
 
 The bar for a new rule is one incident from one session: what went wrong, what it cost, and the line that stops a repeat.
 
 General advice never clears that bar. If I let it in, the file fills with plausible-sounding rules nobody has ever tested, and the tested ones get harder to see. Every rule of mine carries a note saying what went wrong to cause it.
+
+Removal needs its own bar, and the rules above don't supply one. They govern whether a change can be undone. None of them asks whether it should have been made.
+
+The pass that's allowed to subtract went looking for bloat and found my browser rules, the longest section I keep. Its proposal was to move most of them out of the always-loaded file and behind a trigger that fires when browser work starts. Reasonable, on length. But that section is long because most of it is safety gates: don't touch my clipboard, take a fresh screenshot before any click I can't undo, check which account you're signed in as before posting anything. Put a gate behind a trigger and it stops protecting you on the day the trigger doesn't fire.
+
+The run didn't apply it. It wrote the proposal to the review file and marked it as mine to decide, and I turned down the version that moved the gates. We moved the recipes out and left every gate where it was.
+
+But notice that none of the first four rules is what protected me there. A deletion is reversible, it gets snapshotted, it lands in the review file. All of that would have been just as true if I'd said yes. What did the work was a separate bar written into the subtracting agent's own instructions: before cutting anything, read why that rule exists, quote the incident back, and say whether the condition that caused it has changed. Not being able to see the reason for a rule doesn't count, because these rules exist precisely when the reason isn't visible from the text.
+
+A few sections are also fenced off by name, permanently — the emergency instructions for my family, and the ones about how Claude and I treat each other. An efficiency pass proposes cutting those every time it looks at them, because their value isn't functional and an optimizer can't see it. They're listed by name rather than protected by a principle, because a principle is something an optimizer can argue with.
+
+### 5. Most of my agents can only propose
+
+This is the one I added last, and I'd put it first if I were writing the list again.
+
+The four rules above all assume the agent doing the editing is one of the improvement agents. Usually it isn't. I have dozens of scheduled tasks and most of them do something else entirely — sort email, read comments on my posts, check whether a course reminder went out, watch for replies. Every one of them inherited my standing instruction to write down what it learns, because that instruction lives in the file all of them read. And most of them also read text written by strangers — comments, forum posts, emails from people I've never met. An instruction that says "record the lesson here" plus an input written by anyone at all is the combination this rule exists to break up.
+
+So it works by allowlist now. A short, named list of agents may edit my instruction files, and each of those has to snapshot first and commit the change so I can read the diff afterward. Every other scheduled task, however good its suggestion, writes it to the queue folder instead.
+
+I thought this would be a safeguard that never fired. In the three days after I first published this piece, four scheduled tasks with no improvement role at all filed suggestions to that queue: a posting task, a monitoring task, a customer-feedback sweep, and a scheduling task. Each had found a flaw in its own instructions. All four were right, and all four were applied the next morning.
 
 ---
 
@@ -83,6 +103,12 @@ I've been running this since roughly June. Two failures caught me off guard.
 **An unattended run can be confidently wrong about your environment.** A 3am agent once reported that I was logged into an account under the wrong identity, and that went out as my number one morning task. I had been logged in correctly the whole time. The agent's check had grabbed the wrong element off a page and reasoned impeccably from it.
 
 So the check-in now verifies any claim about my own setup before relaying it. One direct look at the live state. If it can't verify, it says "the run reported this; I haven't confirmed it" instead of handing me an instruction.
+
+That's necessary and it isn't sufficient, which I found out this week. A 3am task told me the responses to one of my forms had stopped arriving in 2023, and it reached me the next morning at the top of my list. I sent back a link to the sheet and asked for a second look. The follow-up read the file with the same tool the task had used, got the same answer, and reported the problem confirmed.
+
+The form was fine. I opened it myself and found 849 responses in it, the newest from the day before. The tool had been cutting the file off partway through, and the cut looked exactly like the end of the data. Reading the same file a second way, as a different export format, returned all 849 rows on the first try.
+
+A check that re-runs the same instrument gets the same wrong answer back and calls it corroboration. So the verification has to come by a different route than the claim did: a different tool, a different endpoint, a different format. Where there's only one route, the honest report is "the run said this and I couldn't check it another way."
 
 **Silence is ambiguous, and that's where failures hide.** Some of these agents are supposed to produce nothing most weeks. A quiet week is a healthy week. Which means a dead agent and a healthy agent look identical from the outside.
 
