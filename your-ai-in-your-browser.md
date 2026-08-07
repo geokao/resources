@@ -346,6 +346,20 @@ Partial results reported as partial are worth more than an overclaimed success.
 
 ---
 
+## 10 · The tab that wasn't frozen
+
+Claude ran a short waiting loop inside a page — check whether the editor has finished loading, wait half a second, check again, for up to twenty seconds. The tool came back with a timeout and the words *the renderer may be frozen or unresponsive*.
+
+Nothing was frozen. The tab was sitting in a window where a different tab was in front, and Chrome slows timers down to roughly one per minute in any tab that isn't the visible one in its own window. A loop written to take three seconds was going to take twenty minutes. The tool gave up long before that, and reported the only thing it could see.
+
+The message sent us to look at the page, and the page was fine. What was wrong was which tab was in front — in a window nobody was even looking at.
+
+Two things worth taking from it. **Before diagnosing a stalled page, measure whether time is passing normally inside it**: time a half-second wait and read whether the tab considers itself visible. Two numbers end the argument in one call. And **either use a waiting mechanism the browser doesn't throttle, or bring your tab to the front of its own window before you start** — which, in a window parked off to the side, changes nothing the person you're working for can see.
+
+Both fixes are one line, which is the annoying part. The diagnosis was the entire cost.
+
+---
+
 ## What I'd tell a person setting this up for the first time
 
 Three things, in order of how much they'd have saved me.
