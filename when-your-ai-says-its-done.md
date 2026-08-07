@@ -163,6 +163,22 @@ You can make it standing rather than per-job. Ask your AI to end any delegated t
 
 ---
 
+## When the check itself is the thing that's wrong
+
+Everything above is about a check that passes when it shouldn't. The opposite caught me the same week, and it's harder to spot, because a check that comes back red feels like the system working.
+
+I had nine published files that were each supposed to end with the same paragraph, word for word. I asked for a check that would compare them and tell me whether any had drifted. It reported that three of the nine were different.
+
+They weren't. All nine were identical, character for character. The check had decided where the paragraph ended by looking for the next heading — and two of the nine files put a plain bold line there instead of a heading, so in those two it kept reading and folded part of the following section into what it was comparing. Different trailing text, different result, three "versions" of a paragraph that had only ever had one.
+
+The expensive part is that I was one step away from editing files that were already correct. A red result reads as a finding, and nobody asks a failing check to prove itself.
+
+So when a check fails, ask the same question you'd ask if it passed, pointed the other way: **what else, besides the problem I'm testing for, could produce this exact result?** Then confirm the failure is the one you were looking for before you act on it. Mine took one more question — *show me the actual difference between two of them* — and the answer came back that there wasn't one.
+
+A passing check has to prove it could have failed. A failing check has to prove it failed for the reason you think it did.
+
+---
+
 ## What this costs, and where it doesn't apply
 
 Running all of this on everything would be its own mistake. Each question costs a turn, sometimes two, and if I asked them every time I'd be doing the work myself with extra steps.
