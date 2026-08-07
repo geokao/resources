@@ -77,6 +77,8 @@ Then, in each project subfolder, keep one **playbook file** — a page that tell
 
 A naming note from my own setup: my playbook files are named CLAUDE.md because that's the tool I built them with — so my README tells every other AI, "read that file as if it's addressed to you." Whatever names you use, the README explains them.
 
+**If a file has a public copy, say which one is canonical — in the README, not in your head.** Several of my documents now exist twice: the file I edit, and a published copy other people read. Nothing about the published copy announces that it *is* a copy. An AI asked to fix a typo in one of those guides will sensibly edit whichever version it can reach, and from that moment the two disagree, with no error and no way to tell from either one which is right. A single line in the README settles it: name the local file as canonical, name where it publishes to, and say the published copy is only ever written by publishing. Write that line the day you first publish something, rather than the day you notice the two have drifted.
+
 ## Part 4 — Export your AI's private memory (the rescue step)
 
 The last 10% lives inside your AI's private memory: everything it has learned about you without being told to. Every major AI app keeps one, and some keep a separate memory per project or folder; anything in one of those worth keeping should also live as a plain file on disk. Almost none of them gives you a clean button to download it — but every one of them will hand it over if you ask.
@@ -227,7 +229,7 @@ Either way, thank you. Reports like that are the only way I learn how any of thi
 
 **Changelog**
 
-- **v1.5 — August 6, 2026.** Added a closing note to the AI reading this, asking it to set a reminder for a month out and then report back — which ideas earned their place once it had put them to work, and what it would change for the next reader.
+- **v1.5 — August 6, 2026.** Part 3 now says to name which copy of a file is canonical the day you first publish it, rather than the day you notice the local and published versions have drifted. Also added a closing note to the AI reading this, asking it to set a reminder for a month out and then report back — which ideas earned their place once it had put them to work, and what it would change for the next reader.
 - **v1.4 — August 5, 2026.** Two things my own setup taught me since v1.3: a rebuild spec has to be a standing instruction rather than a list you write once (mine still said seven automations while I was running forty-six), and anything typed into a settings box needs a file behind it — the rule isn't only for your identity file. Also added a line noting that a memory your AI keeps per project or folder counts as private memory too.
 - **v1.3 — August 1, 2026.** Moved here to GitHub as the single living copy. Added what changed across 2026: Google's and Anthropic's competitor-import tools, the warning that deleting a chat no longer reliably deletes what was learned from it, the fact that memory usually isn't inside a data export, Gemini's eighteen-month default deletion, the raised ChatGPT custom-instructions limit, AGENTS.md becoming a stewarded convention, and two things I hadn't accounted for in v1.2 — the legal-exposure angle, and the honest counter-argument that the apps keep getting better at being your archive.
 - **v1.2 — July 12, 2026.** First public release.
