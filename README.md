@@ -89,6 +89,8 @@ Please tell me. That's the main reason these live here instead of only on my web
 
 Either is genuinely welcome. I'd rather these be right than be mine.
 
+**To know when these change:** click **Watch** at the top of this page and pick *Releases* or *All activity*. GitHub emails you; I don't run a list for this.
+
 ---
 
 ## Use this however you like
