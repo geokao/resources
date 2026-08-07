@@ -47,6 +47,7 @@ The test for this section — if I don't do it this week, it's still there next 
 8. **Sweep the trash and spam folder** for the real message that got filed wrong. Mine reads about a hundred a run and flags almost nothing. In three months it found exactly one thing worth rescuing: a reader's honest, critical reply to my newsletter, thirty days from silent deletion.
 9. **Keep the household ledger honest.** Ours tracks propane. The audit found the burn-rate column had been computing the wrong thing and the refill reminder ran on two different formulas, one of which fired a month early.
 10. **Rebuild the "what am I actually subscribed to" list** from the bank transactions each quarter, flagging what's new, what ended, and what raised its price without telling me.
+11. **Check that what's published still matches what I wrote.** Several of my documents live in two places — the file I edit, and the public copy people actually read — and nothing announces it when those two drift apart. A check now compares them character for character after every publish. The first real thing it caught was a bug in itself, which is the normal way these begin.
 
 ---
 
