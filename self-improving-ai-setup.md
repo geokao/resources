@@ -96,9 +96,9 @@ I thought this would be a safeguard that never fired. In the three days after I 
 
 ---
 
-## The two failure modes worth knowing about in advance
+## The three failure modes worth knowing about in advance
 
-I've been running this since roughly June. Two failures caught me off guard.
+I've been running this since roughly June. Three failures caught me off guard.
 
 **An unattended run can be confidently wrong about your environment.** A 3am agent once reported that I was logged into an account under the wrong identity, and that went out as my number one morning task. I had been logged in correctly the whole time. The agent's check had grabbed the wrong element off a page and reasoned impeccably from it.
 
@@ -115,6 +115,14 @@ A check that re-runs the same instrument gets the same wrong answer back and cal
 The fix is that each agent whose normal output is nothing has to leave a heartbeat — one line, written last, so its presence proves the run reached the end. The morning check-in reads heartbeats, not outputs. An agent that ran and found nothing writes a line saying so. An agent that died writes nothing, and the missing line is the alarm.
 
 I found this the hard way. Two agents failed invisibly on the same night, and the only reason anything was caught is that a completely separate check happened to notice the same problem from another angle. That was luck, not design.
+
+**A rule you wrote in one place is not a rule your agents follow.** Rule 5 above says my scheduled tasks inherit my standing instructions because those instructions live in the one file all of them read. That holds for the shared file. It stops holding the moment a rule gets copied into the tasks themselves.
+
+I had a rule I was certain every unattended task obeyed: if two identical attempts change nothing, stop and report instead of retrying. I'd written it down, recorded why it existed, and described my setup to other people as having it. When I finally went looking, it was present in one task's instructions out of fifty-two. It had been written into the canonical document and then hand-copied into exactly one brief — and nothing in my setup could tell the difference between a rule that had spread and a rule that hadn't.
+
+Writing a rule into the canonical file cannot reach copies somebody made by hand. So for any rule that has to hold across many agents, the rule isn't finished until something checks for it — a small script that reads every brief and names the ones missing it. Mine runs weekly now, and refuses to report a pass unless its own test cases fail when they're supposed to.
+
+The phrase to be suspicious of, in your own setup, is "all of my agents do X." If nothing measures it, that's a description of your intentions.
 
 ---
 
