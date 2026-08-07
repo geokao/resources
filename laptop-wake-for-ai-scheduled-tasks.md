@@ -229,6 +229,8 @@ These are the ones that cost me something.
 
 15. **All of this should be boring.** If your wake setup needs a calendar you maintain, a list of task names, or your attention at all, it will fall out of sync and you'll find out months later. Make it read live state, log its reasoning, and otherwise never speak to you.
 
+16. **At 3am your machine doesn't look like your machine, and code that asks it questions gets strange answers.** My overnight tasks tidy up after themselves — one of them hands the focus back to whatever app was in front before it started. On a locked Mac that has just woken itself, there is no such app. The system names a placeholder process that runs the lock screen, and a script that trusts the answer will politely hand the focus to *that*. Mine did, on two separate runs in one night, before I read the log closely enough to see it. Anything an overnight task asks about the state of the machine — which app is in front, what size the screen is, which windows are open — is being answered for a machine with nobody at it. Test for the locked-screen case by name rather than assuming you'll get an empty answer back, because the answer isn't empty. It's confident, and it's wrong.
+
 ---
 
 ## Check your own work in a few days
