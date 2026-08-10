@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.3 · Last updated August 7, 2026**
+**Version 1.4 · Last updated August 10, 2026**
 
 *by George Kao*
 
@@ -84,6 +84,28 @@ The pass that's allowed to subtract went looking for bloat and found my browser 
 
 The run didn't apply it. It wrote the proposal to the review file and marked it as mine to decide, and I turned down the version that moved the gates. We moved the recipes out and left every gate where it was.
 
+I was right to keep the gates and wrong about why the question was hard. I'd been sorting by importance, and importance is the wrong axis. What decides it is whether the AI needs a rule in context *before* it knows what situation it's in. A gate has to be loaded early, because the moment you find out you needed it is already too late. A recipe can wait until the work starts, because by then you know you're doing it. Sort on that and the argument disappears — gates stay, mechanics move, and nothing has to be ranked.
+
+With one limit, and it's the one I'd have gotten wrong on my own: **a trigger is never what moves.** It has to be read in order to fire. Put "when you're doing X, go read the X file" inside the X file and you've built a rule that works perfectly until the moment it's needed.
+
+### The bar was fine. The arithmetic beat it.
+
+For two months I thought I had a discipline problem. Then I did the arithmetic.
+
+I have one pass that's allowed to subtract. It runs on a rotation, so it reaches my main instructions file about once a month, and it's capped at three significant changes per run — a cap I put there deliberately, so an agent could never restructure my whole setup in one night while I slept.
+
+Everything else adds. The retro after a session adds. The standing instruction to write down what you learn adds. Five improvement agents add. All of them run daily or near it, and not one of them has a cap.
+
+I finally measured it. Over 26 days my main instructions file went from 99,000 characters to 220,000. In that same window, the pass responsible for cutting had removed about 5,000 characters — total, across its whole existence. Roughly 24 to 1 against.
+
+No amount of care was going to fix that. It was guaranteed from the day I capped the subtractor and left the adders unlimited. My cap had been written to bound *redesign*, which is reasonable. It was also bounding *subtraction*, which is not the same thing and shouldn't have been covered by the same number.
+
+The fix took about ten minutes. A small script checks the file against a ceiling. When the file is over, two things change automatically: the subtracting pass runs that week no matter what else its rotation had scheduled, and cuts made purely to get back under the ceiling don't count toward its three.
+
+It works because a script holds the number and I don't. At 3am there's nobody there to be disciplined.
+
+Go count the characters in your instructions file. Then count how many of your habits add to it and how many take away from it. If the second number is zero — and for most people it is — nothing about your setup is going to stop it growing until you're the one reading 80,000 tokens of your own old decisions before every conversation.
+
 But notice that none of the first four rules is what protected me there. A deletion is reversible, it gets snapshotted, it lands in the review file. All of that would have been just as true if I'd said yes. What did the work was a separate bar written into the subtracting agent's own instructions: before cutting anything, read why that rule exists, quote the incident back, and say whether the condition that caused it has changed. Not being able to see the reason for a rule doesn't count, because these rules exist precisely when the reason isn't visible from the text.
 
 A few sections are also fenced off by name, permanently — the emergency instructions for my family, and the ones about how Claude and I treat each other. An efficiency pass proposes cutting those every time it looks at them, because their value isn't functional and an optimizer can't see it. They're listed by name rather than protected by a principle, because a principle is something an optimizer can argue with.
@@ -100,9 +122,9 @@ I thought this would be a safeguard that never fired. In the three days after I 
 
 ---
 
-## The three failure modes worth knowing about in advance
+## The four failure modes worth knowing about in advance
 
-I've been running this since roughly June. Three failures caught me off guard.
+I've been running this since roughly June. Four failures caught me off guard, and the fourth is the one I'd most want you to have in advance.
 
 **An unattended run can be confidently wrong about your environment.** A 3am agent once reported that I was logged into an account under the wrong identity, and that went out as my number one morning task. I had been logged in correctly the whole time. The agent's check had grabbed the wrong element off a page and reasoned impeccably from it.
 
@@ -127,6 +149,28 @@ I had a rule I was certain every unattended task obeyed: if two identical attemp
 Writing a rule into the canonical file cannot reach copies somebody made by hand. So for any rule that has to hold across many agents, the rule isn't finished until something checks for it — a small script that reads every brief and names the ones missing it. Mine runs weekly now, and refuses to report a pass unless its own test cases fail when they're supposed to.
 
 The phrase to be suspicious of, in your own setup, is "all of my agents do X." If nothing measures it, that's a description of your intentions.
+
+**And a rule your AI did read still doesn't fire.** This one sits underneath the other three, and I only saw it after I went looking for what my mistakes had in common.
+
+Almost none of them were a missing rule. The rule was there, it was in context, Claude had read it — and it didn't fire, because the situation in front of it wasn't the situation the rule described.
+
+Two of mine. I have a rule about keeping paragraphs short, and I'd scoped it to replies that diagnose a problem, because that's where I'd noticed the problem. It didn't fire on a reply that was relaying what several overnight agents had found — different kind of turn, same underlying shape, long paragraphs came back. And I had a gate scoped to one folder that didn't cover the same kind of edit made somewhere else, because I'd written down where I'd seen the problem instead of what the problem was.
+
+Both times the obvious repair was to widen the trigger: *and also when you're relaying findings. And also in this other folder.* I made that repair, more than once. It works for the exact case you just hit and does nothing for the next one, and every patch makes the file longer, which makes everything in it a little less likely to be followed. My file didn't double in a month because I was careless. It doubled because I kept repairing misses in the way that causes them.
+
+What helps is writing the rule as a property of what the AI produces rather than a category of situation it has to recognize first. Not "in diagnosis replies, keep paragraphs short" but "one claim per item — if it needs more, it becomes another item." There's no situation to sort into a bucket, so there's no bucket to get wrong.
+
+I asked four different AI models about this, expecting a spread, and they gave the same answer with the same reason behind it: a conditional rule makes the model sort the live situation into a bucket before it can act, and sorting is exactly what breaks on a shape it hasn't seen before. A property makes it check its own output instead, and its own output is right there.
+
+So my instructions file now opens with nine of these, before any of the specific rules. Nine sentences about what has to be true of my work, no matter what I'm doing. The rules below them still carry detail no principle can hold — a phone number, a trap in some API, the order to click things in — and I didn't delete a single one. The nine are for when none of the rules fire, which turned out to be most of the times I got it wrong.
+
+Two caveats, because I went and checked instead of assuming.
+
+The first is that "give your AI a constitution" is a more popular idea than it is a proven one. Anthropic's Constitutional AI is a way of *training* a model, not a format for prompting one, and when I looked for evidence that a principles preamble improves adherence at the prompt, there is very little. What *is* measured is the other half: adherence drops as the number of instructions climbs, and instructions placed earlier get followed more reliably than instructions placed later. That's enough to justify nine short lines at the top. It isn't enough to justify deleting the rules underneath them.
+
+The second is that generalizing is how coverage gets lost. A broader rule that covers four old ones might not cover the fifth, and the failure looks like nothing at all. So before anything of mine is allowed to merge rules together, it has to open the record of *why* each original exists, read the incidents, and check the proposed new wording against every one of them. If the new version wouldn't have caught a case the old version caught, it doesn't ship. Every rule I keep has a note attached saying what went wrong to cause it, which I'd been treating as sentiment. It turns out to be the test suite.
+
+The cheap version is one habit. Once in a while, hand your AI one of your own rules and ask it to invent five situations that break the spirit of the rule while slipping past the words. Anything it finds, you'd otherwise have found by being burned.
 
 ---
 
