@@ -51,7 +51,7 @@ You hand an AI a job you can't easily re-do yourself — sweep these files, find
 
 **[Give Your AI a Way to Improve Itself](self-improving-ai-setup.md)**
 
-Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add a line to the instructions file, and three weeks later the same thing goes wrong again. This is what I run instead — scheduled agents that read my own past sessions, find where my AI and I wasted each other's time, and either fix it or leave me one question in the morning. Includes the five constraints that keep an AI editing its own instructions from becoming a bad idea — the last of them, about which agents are allowed to write at all, is the one I'd now put first — plus the three failure modes I only found by hitting them, and what to build first if you're starting from nothing. About 12 minutes to read, or one minute to hand over.
+Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add a line to the instructions file, and three weeks later the same thing goes wrong again. This is what I run instead — scheduled agents that read my own past sessions, find where my AI and I wasted each other's time, and either fix it or leave me one question in the morning. Includes the five constraints that keep an AI editing its own instructions from becoming a bad idea — the last of them, about which agents are allowed to write at all, is the one I'd now put first — plus the four failure modes I only found by hitting them — including the one underneath the rest, where the rule was read and still didn't fire — and what to build first if you're starting from nothing. About 16 minutes to read, or one minute to hand over.
 
 **[Your AI in Your Browser](your-ai-in-your-browser.md)**
 
