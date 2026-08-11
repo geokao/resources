@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.4 · Last updated August 10, 2026**
+**Version 1.5 · Last updated August 10, 2026**
 
 *by George Kao*
 
@@ -94,7 +94,7 @@ For two months I thought I had a discipline problem. Then I did the arithmetic.
 
 I have one pass that's allowed to subtract. It runs on a rotation, so it reaches my main instructions file about once a month, and it's capped at three significant changes per run — a cap I put there deliberately, so an agent could never restructure my whole setup in one night while I slept.
 
-Everything else adds. The retro after a session adds. The standing instruction to write down what you learn adds. Five improvement agents add. All of them run daily or near it, and not one of them has a cap.
+Everything else adds — the after-session retro, the standing instruction to write down what you learn, five improvement agents — all of it running daily or near it, and none of it capped.
 
 I finally measured it. Over 26 days my main instructions file went from 99,000 characters to 220,000. In that same window, the pass responsible for cutting had removed about 5,000 characters — total, across its whole existence. Roughly 24 to 1 against.
 
@@ -156,15 +156,15 @@ Almost none of them were a missing rule. The rule was there, it was in context, 
 
 Two of mine. I have a rule about keeping paragraphs short, and I'd scoped it to replies that diagnose a problem, because that's where I'd noticed the problem. It didn't fire on a reply that was relaying what several overnight agents had found — different kind of turn, same underlying shape, long paragraphs came back. And I had a gate scoped to one folder that didn't cover the same kind of edit made somewhere else, because I'd written down where I'd seen the problem instead of what the problem was.
 
-Both times the obvious repair was to widen the trigger: *and also when you're relaying findings. And also in this other folder.* I made that repair, more than once. It works for the exact case you just hit and does nothing for the next one, and every patch makes the file longer, which makes everything in it a little less likely to be followed. My file didn't double in a month because I was careless. It doubled because I kept repairing misses in the way that causes them.
+Both times the obvious repair was to widen the trigger: *and also when you're relaying findings. And also in this other folder.* I made that repair, more than once. It works for the exact case you just hit and does nothing for the next one, and every patch makes the file longer, which makes everything in it a little less likely to be followed. That repair loop is where most of my file's growth came from.
 
-What helps is writing the rule as a property of what the AI produces rather than a category of situation it has to recognize first. Not "in diagnosis replies, keep paragraphs short" but "one claim per item — if it needs more, it becomes another item." There's no situation to sort into a bucket, so there's no bucket to get wrong.
+What helps is writing the rule as a property of what the AI produces. "In diagnosis replies, keep paragraphs short" asks it to first recognize a diagnosis reply. "One claim per item — if it needs more, it becomes another item" asks nothing of the kind. There's no situation to sort into a bucket, so there's no bucket to get wrong.
 
 I asked four different AI models about this, expecting a spread, and they gave the same answer with the same reason behind it: a conditional rule makes the model sort the live situation into a bucket before it can act, and sorting is exactly what breaks on a shape it hasn't seen before. A property makes it check its own output instead, and its own output is right there.
 
 So my instructions file now opens with nine of these, before any of the specific rules. Nine sentences about what has to be true of my work, no matter what I'm doing. The rules below them still carry detail no principle can hold — a phone number, a trap in some API, the order to click things in — and I didn't delete a single one. The nine are for when none of the rules fire, which turned out to be most of the times I got it wrong.
 
-Two caveats, because I went and checked instead of assuming.
+Two caveats, both from checking.
 
 The first is that "give your AI a constitution" is a more popular idea than it is a proven one. Anthropic's Constitutional AI is a way of *training* a model, not a format for prompting one, and when I looked for evidence that a principles preamble improves adherence at the prompt, there is very little. What *is* measured is the other half: adherence drops as the number of instructions climbs, and instructions placed earlier get followed more reliably than instructions placed later. That's enough to justify nine short lines at the top. It isn't enough to justify deleting the rules underneath them.
 
