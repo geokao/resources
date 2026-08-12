@@ -2,7 +2,7 @@
 
 ## A non-technical guide to checking AI work that looks finished
 
-**Version 1.2 · Last updated August 7, 2026**
+**Version 1.3 · Last updated August 12, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -17,7 +17,7 @@ Corrections and suggestions welcome — [open an issue](https://github.com/geoka
 
 3. Keep the last section for yourself. Those are the phrases to use in the moment an answer arrives.
 
-Everything below is one person's record. Every incident is real, dated, and mine, and all ten happened between July 27 and August 5, 2026 — a single ten-day stretch, which says more about how closely I was watching those days than about how often this happens. Every date below is 2026.
+Everything below is one person's record. Every incident is real, dated, and mine, and they all fall between July 27 and August 11, 2026 — about two weeks, which says more about how closely I was watching those weeks than about how often this happens. Every date below is 2026.
 
 ---
 
@@ -189,10 +189,15 @@ Every safeguard in this document would have passed here. Point those same checks
 
 The wrong report was cheap. The repair would not have been — the next move was restoring the backup copy over the live one, writing a stale version over a current file to fix a problem that did not exist.
 
-So agreement between checks is worth only as much as the difference between the questions they asked. Two things to ask when a file comes back missing:
+August 11. The same trap, with AIs in place of tools. I had four different AI models research one question for me, separately, and all four reported that the data I wanted has never been collected. It's published quarterly by two public companies, in reports anyone can download. The four hadn't looked at the world four times — they had all read the same handful of blog posts about it.
+
+In the same run, all four cited a real academic paper by name, and accurately, and told me it found the reverse of what it found. Its title says so plainly.
+
+So agreement between checks is worth only as much as the difference between the questions they asked — and asking several AIs is not several checks unless they read different things. Three things to ask:
 
 - *"Did all of those checks ask the same question? What's a different one?"*
 - *"What does that address refer to?"* A name that looks like a place on your computer can be a record inside some system, a label, or an identifier that only means anything to the tool that wrote it.
+- *"What did each of you actually read?"* A citation being real does not make the claim attached to it real.
 
 ---
 
