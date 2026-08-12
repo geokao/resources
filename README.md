@@ -55,11 +55,11 @@ Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add 
 
 **[Your AI in Your Browser](your-ai-in-your-browser.md)**
 
-Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what a month of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 30 minutes to read, or one minute to hand over.
+Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what a month of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 35 minutes to read, or one minute to hand over.
 
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
-If you've told your AI assistant to do something every night at 3am and nothing ever happens, this explains why and how to fix it. Most AI desktop apps can't wake a sleeping laptop — that turns out to be a job you have to hand the operating system yourself. Includes the setup, the commands, and seventeen failure modes I only found by hitting them — the ones that look like success. macOS in detail, with pointers for Windows and Linux. About 14 minutes to read, or one minute to hand over.
+If you've told your AI assistant to do something every night at 3am and nothing ever happens, this explains why and how to fix it. Most AI desktop apps can't wake a sleeping laptop — that turns out to be a job you have to hand the operating system yourself. Includes the setup, the commands, and seventeen failure modes I only found by hitting them — the ones that look like success. macOS in detail, with pointers for Windows and Linux. About 16 minutes to read, or one minute to hand over.
 
 ---
 
