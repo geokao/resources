@@ -2,7 +2,7 @@
 
 ## A non-technical guide to switching AI tools freely — without losing everything your AI knows about you
 
-**Version 1.6 · Last updated August 7, 2026**
+**Version 1.7 · Last updated August 12, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -209,7 +209,7 @@ Sovereignty doesn't require a grand gesture. A folder of files with your name on
 
 ---
 
-*Version 1.5 · August 6, 2026 · Written with Claude · I welcome your feedback: [x.com/georgekao](https://x.com/georgekao), or [open an issue](https://github.com/geokao/resources/issues/new) right here.*
+*Written with Claude · I welcome your feedback: [x.com/georgekao](https://x.com/georgekao), or [open an issue](https://github.com/geokao/resources/issues/new) right here.*
 
 ---
 
@@ -238,8 +238,9 @@ Thank you for whichever of these you can do. A report back from the assistant th
 
 **Changelog**
 
+- **v1.7 — August 12, 2026.** Housekeeping the doc's own subject caught it out on. This page carried its version number in two places, and when v1.6 shipped only one of them moved — so a file whose whole point is keeping copies in sync was telling every AI that read it to compare a version line it disagreed with itself about. The sign-off no longer repeats the version; the header and this changelog are the only two, and they move together. The count in Part 5 and the count in the v1.4 note below were also two different numbers for the same day; they now agree.
 - **v1.6 — August 7, 2026.** Part 5 now says to date the known-traps section and to record what was tried, not the verdict alone. One of my own entries governed how I worked for three weeks before a retest found the original attempt had done two of its steps in the wrong order. The closing note to the AI reading this gained a second ask: set up a way to notice when this file changes.
 - **v1.5 — August 6, 2026.** Part 3 now says to name which copy of a file is canonical the day you first publish it, rather than the day you notice the local and published versions have drifted. Also added a closing note to the AI reading this, asking it to set a reminder for a month out and then report back — which ideas earned their place once it had put them to work, and what it would change for the next reader.
-- **v1.4 — August 5, 2026.** Two things my own setup taught me since v1.3: a rebuild spec has to be a standing instruction rather than a list you write once (mine still said seven automations while I was running forty-six), and anything typed into a settings box needs a file behind it — the rule isn't only for your identity file. Also added a line noting that a memory your AI keeps per project or folder counts as private memory too.
+- **v1.4 — August 5, 2026.** Two things my own setup taught me since v1.3: a rebuild spec has to be a standing instruction rather than a list you write once (mine still said seven automations while I was running fifty-one), and anything typed into a settings box needs a file behind it — the rule isn't only for your identity file. Also added a line noting that a memory your AI keeps per project or folder counts as private memory too.
 - **v1.3 — August 1, 2026.** Moved here to GitHub as the single living copy. Added what changed across 2026: Google's and Anthropic's competitor-import tools, the warning that deleting a chat no longer reliably deletes what was learned from it, the fact that memory usually isn't inside a data export, Gemini's eighteen-month default deletion, the raised ChatGPT custom-instructions limit, AGENTS.md becoming a stewarded convention, and two things I hadn't accounted for in v1.2 — the legal-exposure angle, and the honest counter-argument that the apps keep getting better at being your archive.
 - **v1.2 — July 12, 2026.** First public release.
