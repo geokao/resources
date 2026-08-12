@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Last updated August 7, 2026**
+**Version 1.3 · Last updated August 12, 2026**
 
 ---
 
@@ -29,7 +29,7 @@ If your AI has trouble opening the link, click the file's **Raw** button and sha
 
 ## The guides
 
-**[What I Hand to My AI](what-i-hand-to-my-ai.md)** — *the easiest one to start with*
+**[What I Hand to My AI](what-i-hand-to-my-ai.md)** — *the gentlest way in*
 
 Most of us underuse our AI not because we lack technique, but because it never occurred to us to hand it that particular job. So this is a menu rather than a method: three months of the actual work I gave mine, business and personal, sorted by what kind of attention each job used to eat — the chores that come back forever, the things I was carrying in my head, the things nobody could read all of, and the ones I'd never have attempted. It includes the boring handoffs nobody demos, which turned out to be where the return was, and a closing section on what I deliberately don't hand over. About 20 minutes to read, or one minute to hand over so it can pick the four or five that fit your life.
 
@@ -37,7 +37,7 @@ Most of us underuse our AI not because we lack technique, but because it never o
 
 You've spent months teaching your AI how you think and what you're working on. Then a better model arrives, and switching means leaving all of it behind. The way out is to keep your context in plain files in a folder you own, so changing AI tools costs you nothing — and so does coming back. Non-technical throughout, and written to be handed to your AI, which does most of the setup while you answer a few questions. About 15 minutes to read, or one minute to hand over.
 
-**[How I Work with Claude](how-i-work-with-claude.md)**
+**[How I Work with Claude](how-i-work-with-claude.md)** — *the fullest one; hand this over if you only hand over one*
 
 A field guide to running a whole solo business — and a good chunk of a life — through Claude, written from a non-coder's studio. The leverage turned out to sit in the system around the conversation: folders as the operating system, rules that carry their own *why*, self-improvement loops with a human gate, guardrails for the tasks that run while you're asleep, and the money math that makes heavy daily use affordable. About 28 minutes to read — or one minute to hand to your AI.
 
@@ -67,10 +67,11 @@ If you've told your AI assistant to do something every night at 3am and nothing 
 
 These are written for you to read yourself — the thinking behind the guides above. They live on my newsletter, and the current set is always at [georgekao.com/ai](https://www.georgekao.com/ai).
 
+- **[To My Friends Who Are Feeling Uneasy About AI…](https://georgekao.substack.com/p/to-my-friends-who-are-feeling-uneasy)** — Where I think the unease about AI is right, where I read it differently, and what using it has cost me.
 - **[Your AI Is Designed to Flatter You](https://georgekao.substack.com/p/your-ai-is-designed-to-flatter-you)** — Your AI agrees with you by default. The custom instructions that make it honest instead.
 - **[Can We Use AI and Still Love the Planet?](https://georgekao.substack.com/p/can-we-use-ai-and-still-love-the)** — Holding the environmental cost of AI honestly — without paralysis, and without denial.
 - **[How to Use AI Without Losing Your Soul](https://georgekao.substack.com/p/idea-how-to-use-ai-without-losing)** — The IDEA framework: letting AI help your work without flattening your voice.
-- **[AI Took the Surface Work! Now, Soulpreneurs Can Go Deeper…](https://georgekao.substack.com/p/ai-took-the-surface-work)** — What's left for us once AI handles the surface — and why it's the good stuff.
+- **[AI Took the Surface Work! Now, Soulpreneurs Can Go Deeper…](https://georgekao.substack.com/p/ai-took-the-surface-work)** — What’s left for us once AI handles the surface — and why it’s the good stuff.
 - **[Thriving as a Soulpreneur in the Age of AI](https://georgekao.substack.com/p/thriving-as-a-soulpreneur-in-the)** — Human-centered work, AI partnership, and what stays genuinely valuable.
 - **[How to Write Without Sounding Like AI](https://georgekao.substack.com/p/how-to-write-without-sounding-like)** — Why AI prose reads flat — and how to keep your own cadence and warmth.
 - **[Productive Ways for Soulpreneurs to Use AI](https://georgekao.substack.com/p/productive-ways-for-soulpreneurs)** — Practical ways AI can carry the parts of your work that quietly drain you.
