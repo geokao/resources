@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.5 · Last updated August 10, 2026**
+**Version 1.6 · Last updated August 12, 2026**
 
 *by George Kao*
 
@@ -24,7 +24,7 @@ Four of my scheduled agents exist to improve the setup itself. They run on their
 
 **The Thursday door applies, with a way back.** It rereads a rotating slice of my rules and applies changes it's confident about, including deletions — it's the only pass allowed to subtract. It also picks up Sunday's "checkably false" tags, re-runs each check itself rather than trusting the tag, and repairs the ones that verify. Judgment calls stay in the folder for me. Outward-facing anything waits for me, always.
 
-**The two specialists stay separate on purpose.** One tunes my custom skills weekly, measured by which ones I actually invoke, and queues the result for my one manual upload. One monthly pass re-tests one capability my setup previously recorded as impossible, in case the vendor has since shipped it — and it drives a browser, which is why it doesn't share a run with anything else.
+**The two specialists stay separate on purpose.** One tunes my custom skills weekly, measured by which ones I actually invoke, and leaves the finished version in a queue it isn't allowed to install from — a 3am swap has nobody there to catch it replacing the wrong skill. The daily check-in below installs it instead. Until a few days ago that upload was the last step here that still needed my hands. Deleting a skill is still mine: re-installing the old version undoes a bad replacement, and nothing undoes a delete. One monthly pass re-tests one capability my setup previously recorded as impossible, in case the vendor has since shipped it — and it drives a browser, which is why it doesn't share a run with anything else.
 
 A daily check-in makes the other four safe: it reads what everything did overnight and puts anything needing me in one short list.
 
@@ -147,6 +147,8 @@ I found this the hard way. Two agents failed invisibly on the same night, and th
 I had a rule I was certain every unattended task obeyed: if two identical attempts change nothing, stop and report instead of retrying. I'd written it down, recorded why it existed, and described my setup to other people as having it. When I finally went looking, it was present in one task's instructions out of fifty-two. It had been written into the canonical document and then hand-copied into exactly one brief — and nothing in my setup could tell the difference between a rule that had spread and a rule that hadn't.
 
 Writing a rule into the canonical file cannot reach copies somebody made by hand. So for any rule that has to hold across many agents, the rule isn't finished until something checks for it — a small script that reads every brief and names the ones missing it. Mine runs weekly now, and refuses to report a pass unless its own test cases fail when they're supposed to.
+
+The same blind spot shows up in the list of the agents themselves. I keep one file naming every automation I run, stamped with the date it was last checked — and the first time anything compared that file against what was actually scheduled, eleven agents turned up that had never been added to it. Nobody skipped a step. The session that builds an agent is working in some other folder at the time, so "come back and add it to the list" is a note left for a person who won't be there. That comparison runs weekly too now.
 
 The phrase to be suspicious of, in your own setup, is "all of my agents do X." If nothing measures it, that's a description of your intentions.
 
