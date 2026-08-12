@@ -2,7 +2,7 @@
 
 ## A non-technical menu of what there is to hand over
 
-**Version 1.2 · Last updated August 7, 2026**
+**Version 1.3 · Last updated August 12, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -50,6 +50,7 @@ The test for this section — if I don't do it this week, it's still there next 
 11. **Check that what's published still matches what I wrote.** Several of my documents live in two places — the file I edit, and the public copy people actually read — and nothing announces it when those two drift apart. A check now compares them character for character after every publish. The first real thing it caught was a bug in itself, which is the normal way these begin.
 
 12. **Clear the desktop without guessing.** A nightly job files what's worth keeping, sends the rest to the trash where I can still get it back, and leaves anything it can't account for exactly where it was. Nothing moves on a hunch — either it found and re-checked an identical copy already filed somewhere else, or it can quote the earlier conversation where that file had already served its purpose. On its first morning it asked me about one folder. I said clear it, and that single answer became a standing rule covering every folder of that shape, so the question doesn't come back.
+13. **Check that what I teach is still true.** My courses make concrete claims about how AI tools behave, and the tools change under me between recordings. A weekly check re-tests the claims in one course against the pages they came from and stays silent unless one has stopped being true. It exists because a feature I teach was renamed and the vendor's own release notes never mentioned it — so the check reads the help pages for what things are called and the pricing page for what they cost, which is the only way to catch it when those two disagree with each other for a month.
 
 ---
 
@@ -66,9 +67,11 @@ Not work — *load*. The tax you pay for having remembered something.
 7. **Missing days on purpose.** If I skip the morning check-in for three days, it widens its window, says the gap out loud, and covers all of it. Nothing expires because I wasn't there — which is the thing that kills every daily ritual.
 8. **A front desk for when I don't know where something belongs.** I describe the task; it works out which project owns it and does the work there. I never have to remember my own filing system before I can start.
 9. **A question I'd already settled, written down as settled**, with an explicit instruction not to re-research it. The same debate stops restarting every time a new headline shows up.
-10. **The standing worry, answered on a schedule.** A weekly check reads my own investments against rules I wrote myself and tells me whether anything is due, then stops. It can't place a trade. I stopped checking on my own, because the check now comes to me and says nothing most weeks.
+10. **The standing worry, answered on a schedule — then switched off.** A weekly check read my investments against rules I'd written myself and told me whether anything was due. It couldn't place a trade. It ran about a month, handed me a few recommendations, and what that month showed me was that I already trusted the plan I'd written — so I retired it, and I ask on demand now when I actually want to know. What needed handling was the worry, not the money.
 11. **The fear that kept coming back in a new costume.** One money worry of mine kept returning disguised as a different question, and each time it cost a whole conversation to re-derive the same arithmetic. We gave it a name and wrote down what's true. Now it gets recognized on arrival and answered in two minutes — including the one part of it that is a genuine risk.
 12. **A weekly look for your family's details on the public web.** Data brokers, people-search sites. Detection only — it never submits anything, because those forms end in a CAPTCHA and a confirmation email that have to be mine. Most weeks it's silent, and it refuses to report all-clear if its own search is broken.
+13. **The empty week, defended.** I block out weeks with no calls in them on purpose, and then something gets scheduled into one and I don't find out until it's too close to move. A weekly check looks about three weeks ahead at the weeks I've protected and tells me if anything has landed in one. Most Mondays it says nothing.
+14. **The saved-for-later pile.** Years of bookmarks and a watch-later list I was never actually going back to. A nightly pass takes a few at a time, keeps only the ones with something in them, files each into the project that would use it with the original link, and clears the rest out of the queue. It reads back through my own old posts the same way, and those it never deletes. The pile shrinks whether or not I open it.
 
 ---
 
@@ -173,7 +176,7 @@ A list of handoffs without this section would be dishonest, and it would also be
 
 5. **AI drafts; I send.** Anything arriving under my name claiming someone's attention must have had it. An earlier version of my setup auto-replied to students as me. A client noticed, and it was killed the same day.
 6. **It's allowed to argue with me, and it does.** I asked for an automation to watch my investments. It pushed back on the version I'd asked for — by quoting my own written philosophy at me — and proposed a narrower design that couldn't grow into the habit I was trying to avoid. I'd braced for a machine that says yes to everything. That it might talk me down is the part nobody warns you about, and it's the reason I trust the rest of this list.
-7. **Every automation ships with the conditions that would kill it.** Written before it runs: what would prove it isn't working, when to grade it, and an early stop if it starts changing my behavior for the worse. The investment one is on a trial with a set number of runs and a date. An automation nobody ever re-examines isn't a system — it's a habit you can no longer see.
+7. **Every automation ships with the conditions that would kill it.** Written before it runs: what would prove it isn't working, when to grade it, and an early stop if it starts changing my behavior for the worse. The investment one had a set number of runs and a grading date, and I ended it well before either — a month of watching it was enough to tell me I trusted my own plan. Having written the exit first is what made stopping a decision rather than an argument. An automation nobody ever re-examines isn't a system — it's a habit you can no longer see.
 8. **The refusal has to cost something.** An AI can hold any value perfectly, never tired, never tempted by a big check. Nobody is moved that a machine doesn't run manipulative funnels. They're moved that a person with a mortgage doesn't.
 9. **Deciding what the numbers mean stays mine.** My AI can lay them out beautifully. Reading them as guidance is the practice itself — give that away and there's no job left.
 10. **What to teach next, and when to stop.** Including a decision to wind something down on integrity grounds, which no metric would ever have recommended.
