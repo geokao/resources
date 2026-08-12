@@ -1,6 +1,6 @@
 # How to Make Your Laptop Wake Up for Your AI's Scheduled Tasks
 
-**Version 1.7 · Last updated August 7, 2026**
+**Version 1.8 · Last updated August 12, 2026**
 
 *By George Kao. Written with Claude, from about six months of running overnight AI tasks on a laptop that sleeps.*
 
@@ -31,7 +31,7 @@ Thank you for taking care of this. It's unglamorous plumbing, and it decides whe
 Please work this way:
 
 1. **Verify, don't assume.** After each step, run the check I've listed and report the actual output, not a summary of what should have happened.
-2. **Don't run anything requiring `sudo` yourself.** Print the exact line and ask the person to run it.
+2. **Don't run anything requiring `sudo` yourself.** Print the exact line and ask the person to run it. You may also find you can't write or edit the stay-awake script at all. Some AI setups guard the files the machine runs on its own, and mine does — even when the person asked for the change in the same breath. It also refuses read-only commands that merely mention the file's path, so split your checks apart rather than deciding the file is unreadable. When that happens, build the whole thing somewhere you can write, test it there, and hand over one copy command.
 3. **Adapt the times** to their actual task schedule rather than copying mine.
 4. **Read the "Lessons learned" section before you build anything** — most of it is failure modes that look like success.
 5. **Before you finish, set yourself a reminder to check back in about four days — and tell the person you've done it.** This setup fails silently, and the first few nights are when it fails. See "Check your own work in a few days" below. It takes a minute, and it's how the silent failures get caught.
@@ -51,7 +51,7 @@ Two separate jobs, and conflating them is the most common mistake:
 sudo pmset repeat wakepoweron at 2:58AM every day
 ```
 
-Run it a couple of minutes *before* your earliest task, so the machine is up and settled when the task fires. This needs an administrator password, so the human runs it, not the AI.
+Run it one or two minutes *before* your earliest task, so the machine is up and settled when the task fires. Keep the gap short rather than generous: a machine that wakes with nothing to do can drift back to sleep before your task arrives, and you'd never know why. Mine wakes at 2:58 for a 3:00 task and that has held; if you see a task miss on a night the wake logged fine, close the gap to one minute first. This needs an administrator password, so the human runs it, not the AI.
 
 Verify:
 
@@ -172,6 +172,14 @@ Three properties make this worth the extra effort:
 - **Idle nights stay idle.** Your laptop isn't sitting in a half-awake state 365 nights a year to cover 90 real ones.
 - **It tells you when it's wrong.** The sensors in step 0 are the only reason you'll ever find out that a timezone change or an unplugged night cost you a run without saying so.
 
+### Step 5 — Prove it fires, before you trust it with anything
+
+Don't point a job you care about at this on night one. Schedule a throwaway first: something that writes the current time into a file and does nothing else at all. Then go to bed, and in the morning look at the file.
+
+That file is the only thing here that can actually fail. Everything else you can check tells you the machine woke and the stay-awake script ran, which is a different claim from *your task fired* — and if you skip this, the way you find out is a week later, from work that quietly never happened. One night, one line in a file, and then you delete it and set up the real thing.
+
+The four-day check further down is the follow-up, not the substitute. This one answers "does it work at all"; that one answers "does it keep working."
+
 ---
 
 ## If you're on Windows or Linux
@@ -205,11 +213,13 @@ These are the ones that cost me something.
 
 6. **Cap the bridge with a wall-clock end time, not a duration.** You do need a ceiling — one parsing bug shouldn't caffeinate your laptop for nine hours. But "never more than two hours" is the wrong shape of ceiling, because it silently assumes the script started when you think it did. Mine was written for a 2:58am start and capped at two hours. When the start time moved an hour earlier (see the next lesson), coverage began ending at 3:58am instead of 4:58am — and one night that was two minutes before the last task was due. Nothing errored. Say "hold until 5:30am, and never longer than four hours" instead: the first clause is the ceiling, the second only guards against a parsing bug.
 
-7. **Your wake times are frozen to the timezone you set them in — so travel breaks them, and nothing tells you.** This is the one I'd never have guessed. Both the OS wake and the stay-awake job keep firing at the *original* zone's hour; neither re-anchors when your Mac switches timezones. Fly a zone west and everything fires an hour early; fly east and it fires an hour late, which can put the wake *after* your tasks were due. The saving grace is that both halves move together, so they stay aligned with each other — which is exactly why you should **not** "fix" just one of them. Two things to build: make the bridge tolerant of an off-schedule start (lesson 6), and have the script **compare the current timezone to the one it saw last night** and tell you when it changed. Re-anchoring is a two-command pair — reset the OS wake, reload the scheduled job — and running only one desyncs them.
+7. **Your wake times are frozen to the timezone you set them in — so travel breaks them, and nothing tells you.** This is the one I'd never have guessed. Both the OS wake and the stay-awake job keep firing at the *original* zone's hour; neither re-anchors when your Mac switches timezones. Fly a zone west and everything fires an hour early; fly east and it fires an hour late, which can put the wake *after* your tasks were due. The saving grace is that both halves move together, so they stay aligned with each other — which is exactly why you should **not** "fix" just one of them. Two things to build: make the bridge tolerant of an off-schedule start (lesson 6), and have the script **compare the current timezone to the one it saw last night** and tell you when it changed. Re-anchoring is a two-command pair — reset the OS wake, reload the scheduled job — and running only one desyncs them. My script now does the second of those itself. When it sees the zone change it starts a separate background process that waits until the night's stay-awake window has ended before reloading the job, so it can't kill the coverage it's standing on. It also refuses to reload if the job's file has gone missing, because unloading first and then failing to load again leaves you with no wake job at all. That leaves the one command that needs an administrator password, and that one is the human's to run. Built and tested in a sandbox — it hasn't met a real flight yet.
 
 8. **A permission prompt at 3am doesn't fail — it *waits*.** This one cost me a whole day's token budget. A task fired perfectly on time, hit a "may I use this tool?" dialog, and sat there until I opened the laptop at 10:42am — then completed in the middle of my working day, which is exactly what scheduling it overnight was meant to prevent. Pre-approve every tool the task will use, and write into the task's own prompt: *"Run autonomously. Never ask the user a question or wait for input — decide conservatively and note the call in your summary."*
 
 9. **Add a stop rule to every unattended task:** *"If the identical failure happens twice, stop and log it. Do not keep retrying."* Nobody is watching at 3am, and a retry loop will happily burn your entire budget on the same broken step.
+
+   Give that rule one exemption, though, or it will eat work it was supposed to protect. A temporary outage in the AI's own safety layer arrives looking exactly like a refusal — mine says the reviewing model is unavailable right now and to wait briefly and try again — and the stop rule counts it as a failure. One of my overnight jobs counted that as failure one, hit an unrelated error as failure two, and abandoned a whole leg of its work while the files it needed sat finished on disk. The tell is in the words: **a real refusal names a rule or a permission; a transient one names a service and tells you to wait.** So on that shape, back off about thirty seconds and retry twice before the stop rule counts anything.
 
 10. **Log every decision — and then actually read the log.** Have the script append one line per night: what it found, what it decided, how long it bridged. This is the only instrument you have, and it is worth more than everything else on this list. Every lesson above about timezones came out of reading this log while writing this document: three consecutive nights stamped 1:58am where every previous night said 2:58am. Nothing had alerted, nothing had errored, and every task still *appeared* to run. One column of timestamps was the entire diagnosis.
 
@@ -217,7 +227,7 @@ These are the ones that cost me something.
 
 12. **Not everything belongs at 3am.** Overnight is for heavy, private grinding. If a task's output *reaches other people* when it runs — publishing a post, sending an email, triggering a notification — put it in a daytime slot. A 3am send lands in real inboxes at 3am, and you're asleep and can't fix it.
 
-13. **Verify at creation, every time.** Whenever you add an overnight task, re-check that the wake window still covers it. Mine logs the computed window each night, and has a dry-run mode so I can test any future date without waiting for that night to arrive. Build yourself the same escape hatch.
+13. **Verify at creation, every time.** Whenever you add an overnight task, re-check that the wake window still covers it — the task plus your buffer, not just the task. Mine logs the computed window each night, and has a dry-run mode so I can test any future date without waiting for that night to arrive. Build yourself the same escape hatch. And watch the gap between your last task and your ceiling. I added a nightly job at 5:05am against a 5:30am ceiling, so only five minutes now sit between the end of my twenty-minute buffer and the end of the window — and a queue delay of the size I have actually seen (lesson 14) would push that task's start past the ceiling entirely.
 
 14. **Tasks don't always start when the schedule says they will.** Two mechanisms can push the night's last start later than your script computed, and neither announces itself.
 
