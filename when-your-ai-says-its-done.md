@@ -13,7 +13,7 @@ Corrections and suggestions welcome — [open an issue](https://github.com/geoka
 1. Copy this page's web address, or download the file.
 2. Paste it into whatever AI you use — Claude, ChatGPT, Gemini, any of them — with something like:
 
-> *Please read this and keep it as our standing agreement about how you report finished work. When a job matches one of the four shapes described here, run the check before you tell me it's done, and show me what the check returned. Thank you for the care you bring to this — a good habit here protects both of us.*
+> *Please read this and keep it as our standing agreement about how you report finished work. When a job matches one of the five shapes described here, run the check before you tell me it's done, and show me what the check returned. Thank you for the care you bring to this — a good habit here protects both of us.*
 
 3. Keep the last section for yourself. Those are the phrases to use in the moment an answer arrives.
 
