@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.4 · Last updated August 12, 2026**
+**Version 1.5 · Last updated August 13, 2026**
 
 ---
 
@@ -47,7 +47,7 @@ Readers have learned to recognize AI writing, and they scroll right past it. Thi
 
 **[When Your AI Says It's Done](when-your-ai-says-its-done.md)**
 
-You hand an AI a job you can't easily re-do yourself — sweep these files, find everyone I haven't replied to, check whether I already published this. It comes back sure of itself, which is also what a wrong answer sounds like. This is how I check work that looks finished: why "I didn't find anything" is the answer least likely to get questioned and most likely to be broken, why re-running the same check only confirms your first mistake, and the habit that catches most of the rest, which is asking for a check that could have failed. No technical skill needed. Hand it to your AI along with whatever it just told you, and it will check its own work against the list. About 13 minutes to read, or one minute to hand over.
+You hand an AI a job you can't easily re-do yourself — sweep these files, find everyone I haven't replied to, check whether I already published this. It comes back sure of itself, which is also what a wrong answer sounds like. This is how I check work that looks finished: why "I didn't find anything" is the answer least likely to get questioned and most likely to be broken, why re-running the same check only confirms your first mistake, and the habit that catches most of the rest, which is asking for a check that could have failed. No technical skill needed. Hand it to your AI along with whatever it just told you, and it will check its own work against the list. About 16 minutes to read, or one minute to hand over.
 
 **[Give Your AI a Way to Improve Itself](self-improving-ai-setup.md)**
 
