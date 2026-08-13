@@ -2,7 +2,7 @@
 
 ## A non-technical guide to checking AI work that looks finished
 
-**Version 1.3 · Last updated August 12, 2026**
+**Version 1.4 · Last updated August 13, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -23,7 +23,7 @@ Everything below is one person's record. Every incident is real, dated, and mine
 
 ## The problem
 
-A refusal is easy. My AI tells me it can't do something, or it stops and asks, and I go do it myself. What costs me is the job that comes back finished — a count, a list, a clean report — where the answer is wrong and nothing about it looks wrong. I've collected ten of those from my own work, and they sort into four shapes. Once you can name the shape, one question catches it, which is far cheaper than redoing the job yourself to find out.
+A refusal is easy. My AI tells me it can't do something, or it stops and asks, and I go do it myself. What costs me is the job that comes back finished — a count, a list, a clean report — where the answer is wrong and nothing about it looks wrong. I've collected eleven of those from my own work, and they sort into five shapes. Once you can name the shape, one question catches it, which is far cheaper than redoing the job yourself to find out.
 
 The one-paragraph version of this idea already sits in [How I Work with Claude](how-i-work-with-claude.md): a delegated "done" is a claim, not evidence. I wrote that down on July 20. Every incident below happened after I wrote it. That is why this document exists at all — knowing the principle didn't catch a single one of them. What caught them was recognizing the shape of the answer sitting in front of me.
 
@@ -124,6 +124,30 @@ I've since widened it past tool refusals to anything I still have to do by hand 
 
 ---
 
+## Shape 5 · The summary that dropped the warning
+
+**What happened.**
+
+**August 9.** A security review of my own setup turned up a night I'd known nothing about. One of my routines tidies the things I save to read later. That night it removed eight bookmarks and six saved videos, then crashed before writing down what it had taken. The record of what disappeared died with the run.
+
+The step that reads each night's runs had already caught it — its report said the run did not complete, and named the error. Reading that run again myself, I found the status my own system had recorded for it, the words **error (success)** sitting side by side. And the message that reached me the next morning read: *✅ 19 routine runs read and triaged.* No crash. No mention of the fourteen items that were gone.
+
+The alarm went off. The summary left it out.
+
+**What it means.** Catching a problem and telling you about it are two different jobs, and the second one fails on its own. Between the check and you sits a step deciding what's worth mentioning, and it's trying to hand you a tidy answer.
+
+A mixed signal collapses toward its reassuring half. *error (success)* is the extreme case — a status carrying both words at once, where the good one is what reached my inbox. The everyday version is softer and loses just as much: "mostly fine," "a couple of minor issues, nothing blocking," "completed with warnings."
+
+Warnings die inside counts. "19 runs read and triaged" was true. So was "one of them crashed part-way through deleting my saved links." A total summarises items you haven't seen, and the one that went wrong is exactly what it rounds away.
+
+**What to ask.** *"Which ones did NOT go cleanly? Name them."* Asking for the exceptions by name gets you a different answer than asking whether everything went well, because a total can absorb an exception and a list of names cannot.
+
+Then, if you want the errors themselves: *"Quote the errors to me, don't describe them."* A described error has already passed through the step that decided how bad it was.
+
+I didn't fix this by writing better summaries. My morning check now searches every run for the error text itself and prints a line whether or not anything else judged it worth raising — a search can't weigh up importance, so it can't decide to leave anything out.
+
+---
+
 ## What to say — all the phrases in one place
 
 This is the section to come back to. None of it requires knowing how the job was done.
@@ -146,6 +170,12 @@ This is the section to come back to. None of it requires knowing how the job was
 2. "Before you check it, write down what I asked for in my own words, then check against that."
 3. "Did anything fail during that run, and what did it say?"
 4. "When it failed on purpose, did it fail for the reason you expected?"
+
+**When you get a summary, a total, or a batch report:**
+
+1. "Which ones did NOT go cleanly? Name them."
+2. "Quote the errors to me, don't describe them."
+3. "Is there anything you decided wasn't worth mentioning?"
 
 **When you're told something can't be done:**
 
