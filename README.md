@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.5 · Last updated August 13, 2026**
+**Version 1.6 · Last updated August 14, 2026**
 
 ---
 
@@ -52,6 +52,10 @@ You hand an AI a job you can't easily re-do yourself — sweep these files, find
 **[Give Your AI a Way to Improve Itself](self-improving-ai-setup.md)**
 
 Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add a line to the instructions file, and three weeks later the same thing goes wrong again. This is what I run instead — scheduled agents that read my own past sessions, find where my AI and I wasted each other's time, and either fix it or leave me one question in the morning. Includes the five constraints that keep an AI editing its own instructions from becoming a bad idea — the last of them, about which agents are allowed to write at all, is the one I'd now put first — plus the four failure modes I only found by hitting them — including the one underneath the rest, where the rule was read and still didn't fire — and what to build first if you're starting from nothing. About 16 minutes to read, or one minute to hand over.
+
+**[How My AI Debriefs Itself](how-my-ai-debriefs-itself.md)**
+
+The companion to the one above: where the lessons come from before anything gets applied. I used to ask for a retrospective when a session had gone badly enough that I remembered to ask, which samples the disasters and misses the ordinary friction — fifteen seconds lost the same way forty times, which turned out to be most of the waste. So the debrief runs on its own now, at four speeds: a one-line check at the end of every reply, a floor that won't let three turns pass without one, a full structured retro after real work, and one weekly pass that's allowed to delete things. Includes the guardrails that keep that last one from removing your most valuable rules first, and the arithmetic that explains why an instructions file grows until someone measures it. The first three need nothing but a chat window. About 14 minutes to read, or one minute to hand over.
 
 **[Your AI in Your Browser](your-ai-in-your-browser.md)**
 
