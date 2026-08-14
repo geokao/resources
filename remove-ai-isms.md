@@ -1,6 +1,6 @@
 # Remove AI-isms — an editing workflow for AI-assisted writing
 
-**Version 1.4 · Last updated August 12, 2026**
+**Version 1.5 · Last updated August 14, 2026**
 
 AI-assisted drafts share a recognizable set of tells — overused words, repeated sentence shapes, endings that sound profound and say nothing. Readers have learned them, and when they spot them, they stop reading.
 
@@ -94,7 +94,7 @@ Be specific. Quote the offending phrases. If something appears six times, say so
 
 1. Every word on the avoid list (including corporate-inflation vocabulary and empty filler phrases)
 2. Every softer cousin of "It's not X, it's Y," plus negative listing
-3. Every "here's [X]" pointing frame and announce-then-reveal ("for a reason")
+3. Every "here's [X]" pointing frame and announce-then-reveal ("for a reason") — including the negated simplicity-announcement: grep "mysterious," "complicated," "plain," "simple," and "rocket science," and read every hit (a scan for "plainly" alone won't catch "two plain things")
 4. Every "name"-as-articulation verb
 5. Every significance-assertion ("matters," "is the part that") and importance puffery ("marks a pivotal moment")
 6. Every closer move — bare pronouncement, tidy resolution, attainment, "…and then gone"
@@ -129,6 +129,7 @@ Never use these words, phrases, or patterns in a rewrite:
 - unlock, unleash, harness
 - "not just X but Y"
 - **The "here's [X]" pointing frame.** "Here's the thing," "here's what that means," "here's what I found." The frame announces something important is coming instead of delivering it. Cut the frame; state the point. The same announce-then-reveal move also hides in "the answer is simpler than you'd think:" and in "for a reason" / "there's a reason for that" — a clause promising an explanation one sentence before the explanation arrives on its own. Cut it; the next sentence was already doing the job. Literal "here" is fine ("sign here," "here are the three options" introducing an actual list).
+- **The negated form of the same move — announcing that what follows is simple.** "Two plain things, and neither is mysterious." "And it's not complicated." "There's nothing mysterious about it." "This isn't rocket science." Same move as "the answer is simpler than you'd think," dressed in a negation, which is exactly why a scan for the positive phrasing alone misses it. The claim undercuts itself too: a genuinely simple point demonstrates its simplicity by being stated, and announcing the simplicity is usually what makes a reader brace for something hard. Delete the announcement and open on the first plain thing. Banning the adverb "plainly" above isn't enough here — the adjective ("two plain things") walks straight past that rule, so check for the pattern itself, not just the one word.
 - **"name" as an articulation verb.** "Let me name what's happening," "the pattern nobody names." Using "name" to dramatize putting words to something, as if articulation were itself the insight. Just articulate the point. Same move with other verbs: "say the quiet part out loud," "let me spell it out." Literal use is fine ("a dog named Buddy").
 - **"thing" / vague "something" as a placeholder.** "Here's the thing," "the thing is," "one thing I've noticed" — and "something" as a mid-sentence dodge: "you've built something," "took something out of you." Both stand in for a noun the sentence won't commit to; name the noun or cut. Literal use is fine ("the thing weighs five pounds," "say something nice").
 - **"part" as a vague chunk-of-argument placeholder.** "Now the good part," "the delicate part is this:", "the part that surprised me." Reached for to gesture at a section of the argument instead of naming the idea. Cut it and name the idea, or start with the claim itself. Literal use is fine ("part of the proceeds," "three parts water").
