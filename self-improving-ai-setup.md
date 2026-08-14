@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.7 · Last updated August 14, 2026**
+**Version 1.8 · Last updated August 14, 2026**
 
 *by George Kao*
 
@@ -143,6 +143,16 @@ A check that re-runs the same instrument gets the same wrong answer back and cal
 The fix is that each agent whose normal output is nothing has to leave a heartbeat — one line, written last, so its presence proves the run reached the end. The morning check-in reads heartbeats, not outputs. An agent that ran and found nothing writes a line saying so. An agent that died writes nothing, and the missing line is the alarm.
 
 I found this the hard way. Two agents failed invisibly on the same night, and the only reason anything was caught is that a completely separate check happened to notice the same problem from another angle. That was luck, not design.
+
+That fix was right, and it stopped covering most of my agents without anyone noticing. A heartbeat has to be set up per agent — you decide what counts as its proof of life, and you write that down where the morning check-in will look. So the check is only ever as wide as the list somebody remembered to update. I measured it this week: of fifty-four agents running, twenty-nine had nothing recorded. For those, all anyone could say each morning was whether they had started.
+
+That's the same shape as the eleven missing agents below, with the same cause. A safeguard that needs a per-item entry decays as you add items, and it decays invisibly, because the missing entries are the ones nobody thought about.
+
+What closed it is a weekly pass that needs no setup per agent, because the two questions it asks are already answered for all of them. Did it run — my scheduler publishes its own next-run time, so anything past that by more than a grace period didn't fire. Did the run finish — every run leaves a log, and a run that died has the error as the last line in it.
+
+The first time it ran, it found two agents that had died. One had crashed that morning having produced nothing, and wouldn't have tried again for a month.
+
+What I didn't expect is how little of it needed fixing. Most of these agents pick up where they left off, so a crashed run repairs itself on the next one, and redoing that work by hand would only buy me tonight. Two cases are worth acting on. One is an agent that runs monthly, where the next attempt is weeks away. The other is an agent that removed saved items and died before recording which ones — one of mine cleared fourteen overnight and left no list behind.
 
 **A rule you wrote in one place is not a rule your agents follow.** Rule 5 above says my scheduled tasks inherit my standing instructions because those instructions live in the one file all of them read. That holds for the shared file. It stops holding the moment a rule gets copied into the tasks themselves.
 
