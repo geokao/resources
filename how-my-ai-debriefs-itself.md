@@ -1,6 +1,6 @@
 # How My AI Debriefs Itself
 
-**Version 1.0 · Last updated August 14, 2026**
+**Version 1.1 · Last updated August 14, 2026**
 
 *by George Kao*
 
@@ -154,6 +154,10 @@ That order isn't a preference. Each tier depends on the one before it, and the l
 I expected reflection to be the valuable half. It's cheap, it's useful, and it's roughly accurate.
 
 What changed the most was **measurement**, and the two are not the same. When my AI assessed whether a run had been clean, it was right most of the time. On the one rule I cared about most, it was wrong 65% of the time — and it took a script reading the transcripts to find that out, because self-assessment can't catch a rule that's being outvoted rather than misunderstood.
+
+You don't have to write the script. In Claude Code, `/insights` reads back over your recent sessions and returns the same shape of answer — where the time went, what kept erroring, which friction repeated. It's a built-in, so you type it yourself; it can't be handed to the assistant or put on a schedule.
+
+**It reads across sessions, which is the one direction the four tiers don't.** It also can't see your rules file, so check its proposals against your own — mine came back with four rules I'd already written.
 
 The other surprise is about frequency. The retro that catches the most is the cheapest one. The weekly deep audit finds the interesting problems, and the per-turn check finds more total waste, because ordinary friction beats disasters on volume by an enormous margin.
 
