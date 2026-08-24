@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.6 · Last updated August 14, 2026**
+**Version 1.7 · Last updated August 24, 2026**
 
 ---
 
@@ -64,6 +64,10 @@ Your AI can work in the browser you're already signed into, which is where the p
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
 If you've told your AI assistant to do something every night at 3am and nothing ever happens, this explains why and how to fix it. Most AI desktop apps can't wake a sleeping laptop — that turns out to be a job you have to hand the operating system yourself. Includes the setup, the commands, and seventeen failure modes I only found by hitting them — the ones that look like success. macOS in detail, with pointers for Windows and Linux. About 16 minutes to read, or one minute to hand over.
+
+**[Is your Claude 5-hour limit maxing out quickly?](claude-limit-maxing-out.md)**
+
+Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two things your local numbers can't see — I got one of those wrong first — and what support can and can't do. Claude Code only, desktop app or CLI. About 12 minutes to read, or one minute to hand over.
 
 ---
 
