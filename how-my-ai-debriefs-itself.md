@@ -1,6 +1,6 @@
 # How My AI Debriefs Itself
 
-**Version 1.1 · Last updated August 14, 2026**
+**Version 1.2 · Last updated September 3, 2026**
 
 *by George Kao*
 
@@ -41,6 +41,8 @@ Most days I don't read that line, and it isn't there for my benefit. A check nob
 The `📏 148w` counts the words above the summary. My most-emphasized instruction is that replies should be short — under 200 words. I'd corrected it more times than I can count.
 
 Then I measured it. Across 475 substantial replies over two weeks: 65% were over the limit. A third had paragraphs past the ceiling. A quarter gave me more next-steps than I'd asked for.
+
+Three weeks after the word count started appearing at the end of every reply, I ran the same script over the same fourteen-day window. The corpus was almost four times bigger by then — activity had grown, not the standard — and 53% were over the limit. Still bad. But a rule that had been losing two times out of three was now losing one time out of two, and the only thing that had changed was that the number was showing up where it could be argued with.
 
 The rule wasn't unclear. It was **outnumbered.** Roughly two dozen instructions in my file ask for more — more thoroughness, more checking, more context — and exactly one asks for less. Emphasis was never going to close that gap, and I'd already spent two months proving it.
 
@@ -121,7 +123,9 @@ It was also capping the *cutting*, which is a different authority and should nev
 
 The arithmetic: over 26 days my instructions file went from 99,000 characters to 220,000. In that same window, the pass responsible for cutting had removed about 5,000 characters — total, across its entire existence. Roughly 24 to 1 against. No amount of care fixes that ratio. It was guaranteed from the day I capped the subtractor and left every adder unlimited.
 
-The fix took ten minutes. A script checks the file against a ceiling before anything else runs. Over the ceiling, two things change with no judgment involved: the cutting pass runs that week regardless of what the rotation had scheduled, and cuts made to get back under don't count toward the three.
+The fix took ten minutes. A script checks the file against a ceiling before anything else runs, and over the ceiling, cuts made to get back under don't count toward the three. The cap still bounds redesign. It no longer bounds subtraction.
+
+I gave that script a second power at first and took it back the next day. Over the ceiling, it could also seize the week's schedule and force the cutting pass to run ahead of whatever else was queued. That sounded rigorous and wasn't: the ceiling was a number I had picked before measuring what holding it actually bought me, and letting an unvalidated number displace three other real checks was the worse trade. The instrument stayed — it still reports every week, and the number still goes in the log. What it lost was the authority to reorganize the calendar around itself. **A measurement you haven't validated yet should inform a schedule, not command one.**
 
 It works because a script holds the number and I don't. At 3am there's nobody there to be disciplined.
 
