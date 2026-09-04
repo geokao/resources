@@ -1,8 +1,8 @@
 # Is your Claude 5-hour limit maxing out quickly?
 
-**Version 1.0 · Last updated August 24, 2026**
+**Version 1.1 · Last updated September 3, 2026**
 
-Some days the meter hits 100% and you genuinely can't account for it. You weren't running anything unusual. You didn't switch to a more expensive model. And there's no way to argue with a number you can't check.
+Some days the meter hits 100% and you genuinely can't account for the spike. You weren't running anything unusual. You may even have switched to a cheaper model. And there's no way to argue with a number you can't check.
 
 You can check the number yourself. Claude Code keeps a complete record of every request it made on your own disk, and a handful of measurements will tell you whether a heavy day was actually heavy — or whether something else is going on. I ran these on myself on August 24, 2026, after my 5-hour window hit 100% during an ordinary morning, and the answer surprised me: it was the lightest day I'd had in two weeks.
 
@@ -19,9 +19,13 @@ Every request Claude Code makes sends your whole conversation again. Your instru
 Most of that is **cached**. Claude stores the unchanged front portion of your conversation and re-reads it cheaply instead of reprocessing it. So your tokens split into two very different kinds:
 
 - **Fresh tokens** — what's genuinely new this turn: your message, Claude's reply, and whatever got written into the cache for the first time.
-- **Cache reads** — the same context, read back again, at roughly a tenth of the cost.
+- **Cache reads** — the same context, read back again, at a fraction of the cost. A tenth, for almost every model.
 
 On a normal day of mine, cache reads are **96–97%** of the total volume. That ratio is worth writing down, because it means the raw token number tells you almost nothing on its own. A 400-million-token day and a 40-million-token day can be the same amount of actual work.
+
+**That tenth is not universal.** Claude Fable 5.1 and Claude Mythos 5.1 price a cache read at 0.025x their base input price. Anthropic's [pricing page](https://platform.claude.com/docs/en/about-claude/pricing) says so: "Cache hits and refreshes on Claude Fable 5.1 and Claude Mythos 5.1 are priced at 0.025x the base input price. All other models use the standard 0.1x multiplier."
+
+In money, Fable 5.1 reads cached context at $0.25 per million tokens against a $10 base, while Opus 5 reads it at $0.50 per million against a $5 base. So on a long conversation that's already in cache — which is most of a working session — the model with double the headline price is the cheaper one per request, until output passes roughly 2,500 tokens. Fable 5 charged $1 per million for that same read, and 5.1 cut it fourfold, so this is recent. If you're carrying the old number in your head, it will point you the wrong way.
 
 Anthropic's [rate-limit documentation](https://platform.claude.com/docs/en/api/rate-limits) says that for the API, "only uncached input tokens count towards your ITPM rate limits" — cache reads are excluded. Whether the same rule governs the **subscription** limits you see in Settings → Usage is, as far as I can tell, undocumented. When I asked support directly, they told me they had no documentation confirming it either way. That gap is why this guide exists: if you can't get the rule, measure the inputs and let the numbers speak.
 
@@ -153,7 +157,22 @@ It had been 121,000 characters a month earlier. Nobody decided to double it. It 
 | Peak window's **fresh** tokens are large | The day genuinely was heavy; the meter is probably right |
 | Peak window is fresh-light *and* ranks low against your other days | Something is being counted that you can't see — worth a ticket |
 | Session-start context above ~100k | Your own setup is the biggest lever you have |
+| A jump right after a long break, or after a model switch | Your whole conversation was re-processed — expected, and explained in the next section |
 | Numbers all normal, meter still high | Check the status page below before assuming anything |
+
+---
+
+## Where an unaccountable spike comes from
+
+Two causes turned up when I went back over my own transcripts on September 3, and neither leaves a mark you'd notice while it happens.
+
+**You went to lunch.** The cache holds your conversation for a limited time. Your first message after a break longer than that re-processes the whole conversation from scratch — your instructions, your project files, every previous turn. Anthropic's [Claude Code costs documentation](https://code.claude.com/docs/en/costs) lists an idle gap as a cause of usage climbing over a long session. In one of the sessions I measured, the gap before the next message was 150 minutes, and that one message wrote about 206,000 tokens of context. I typed a sentence.
+
+**You switched models to save money.** Caches are per-model, so moving a conversation to a different model rewrites the whole conversation onto the new one. In both sessions I measured, that rewrite was about 206,000 tokens.
+
+The two switches came out differently, and not in the direction I expected. In the session whose cache was still warm — a 22-minute gap — switching to the nominally cheaper model *lost* money and never made it back, for the reason set out at the top of this guide: the lower headline price came with the more expensive cache read. The session that looked like it saved about $2 had been sitting idle for 150 minutes, so the rewrite was going to happen on the next message regardless. All the switch did was get it billed at the cheaper rate.
+
+So the rule is: **switch models for capability, not for cost.** The one moment a switch is genuinely cheap is right after a long break, when the rewrite is already on its way.
 
 ---
 
@@ -209,13 +228,15 @@ Three things that helped, in order of how much they returned for me:
 2. **Move the detail out and leave the trigger in.** Most of what lives in an instructions file is reference material needed during one kind of task. That can live in a separate file the AI reads when the task comes up, with a one-line pointer where the detail used to be. The behavior survives; the per-session cost doesn't.
 3. **Make every addition pay for itself.** Adding a rule should mean merging or removing another one. Otherwise the file only moves in one direction, which is what mine did.
 
+On a subscription, Claude Code writes a one-hour cache. The costs documentation says that lifetime "is an hour on a subscription and drops to five minutes once you're drawing on usage credits." Five minutes is shorter than most pauses in an ordinary working day, so once you're on credits, the full re-processing described above stops being an occasional event and starts happening after nearly every break you take.
+
 I'd rather have the setup than a smaller number, so I'm not arguing for a spare instructions file. I'm arguing for knowing what yours costs, which I didn't, for about a month.
 
 ---
 
 ## Credits and license
 
-Written with Claude, from one day's measurements on my own account and the dated incident records behind them. The mistake in the middle — proving a narrower thing than I claimed — is in here because catching it is the reason the rest of the numbers are trustworthy.
+Written with Claude, from measurements on my own account across two days — August 24 and September 3, 2026 — and the dated incident records behind them. The mistake in the middle — proving a narrower thing than I claimed — is in here because catching it is the reason the rest of the numbers are trustworthy.
 
 Released under [CC0](LICENSE) — effectively public domain. Copy it, change it, republish it, teach from it, build it into your own tools. No permission needed and no credit required.
 
