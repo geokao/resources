@@ -2,7 +2,7 @@
 
 ## A non-technical guide to checking AI work that looks finished
 
-**Version 1.4 · Last updated August 13, 2026**
+**Version 1.5 · Last updated September 3, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -17,7 +17,7 @@ Corrections and suggestions welcome — [open an issue](https://github.com/geoka
 
 3. Keep the last section for yourself. Those are the phrases to use in the moment an answer arrives.
 
-Everything below is one person's record. Every incident is real, dated, and mine, and they all fall between July 27 and August 11, 2026 — about two weeks, which says more about how closely I was watching those weeks than about how often this happens. Every date below is 2026.
+Everything below is one person's record. Every incident is real, dated, and mine, and most of them fall between July 27 and August 11, 2026 — about two weeks, which says more about how closely I was watching those weeks than about how often this happens. Every date below is 2026.
 
 ---
 
@@ -228,6 +228,16 @@ So agreement between checks is worth only as much as the difference between the 
 - *"Did all of those checks ask the same question? What's a different one?"*
 - *"What does that address refer to?"* A name that looks like a place on your computer can be a record inside some system, a label, or an identifier that only means anything to the tool that wrote it.
 - *"What did each of you actually read?"* A citation being real does not make the claim attached to it real.
+
+---
+
+## When the number came from its own notes
+
+September 3. I asked my AI to settle a question about my own costs: does switching models partway through a conversation actually save money? It came back with a clean analysis, a rule to work by, and an edit to my instructions file so it would follow that rule from then on. Two of the prices the arithmetic rested on had come from its own earlier notes instead of the vendor's pricing page. Both were wrong — one of them had changed fourfold since the note was written — and the conclusion came out backwards, recommending the more expensive option.
+
+What caught the error was handing the finished analysis to a different AI, along with my original question, and telling it that it was not to read the first one's reasoning. It worked the answer out from the source and got the opposite result.
+
+A number your AI carries in its own notes is a claim, not a measurement. Notes don't expire and nothing marks one stale, so a figure that was right when it was written goes on being used with full confidence long after it stops being true. The cheapest check I've found is asking a second AI to derive the answer again without showing it the first one's working — a separate route to the answer, rather than a second opinion on the route already taken.
 
 ---
 
