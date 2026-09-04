@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.7 · Last updated August 24, 2026**
+**Version 1.8 · Last updated September 3, 2026**
 
 ---
 
@@ -67,7 +67,7 @@ If you've told your AI assistant to do something every night at 3am and nothing 
 
 **[Is your Claude 5-hour limit maxing out quickly?](claude-limit-maxing-out.md)**
 
-Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two things your local numbers can't see — I got one of those wrong first — and what support can and can't do. Claude Code only, desktop app or CLI. About 12 minutes to read, or one minute to hand over.
+Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two causes of a spike you can't account for — an idle gap, and a model switch made to save money that doesn't — the two things your local numbers can't see, and what support can and can't do. Claude Code only, desktop app or CLI. About 12 minutes to read, or one minute to hand over.
 
 ---
 
