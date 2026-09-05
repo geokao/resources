@@ -1,10 +1,10 @@
 # Your AI in Your Browser
 
-## What I learned handing Claude the keys to my real, logged-in Chrome
+## What I learned handing Claude, and then GPT-6, the keys to my real, logged-in Chrome
 
-**Version 1.5 · Last updated September 5, 2026**
+**Version 1.6 · Last updated September 5, 2026**
 
-*By George Kao. Written with Claude.*
+*By George Kao. Written with Claude; section 11 and this introduction reviewed by GPT-6.*
 
 Corrections and suggestions welcome — [open an issue](https://github.com/geokao/resources/issues/new) and I'll read it. You don't need to be technical to file one; it's just a comment box.
 
@@ -21,9 +21,9 @@ Corrections and suggestions welcome — [open an issue](https://github.com/geoka
 
 ## What this buys me
 
-My browser is where the rest of my business lives — the parts with no API, no export button, and no way in except a login and a session cookie. For about a month now I've had Claude working in that browser: no robot browser in a data center — the Chrome window on my desk, signed into my own accounts.
+My browser is where the rest of my business lives — the parts with no API, no export button, and no way in except a login and a session cookie. For about a month now I've had Claude working in that browser, and since September GPT-6 as well: no robot browser in a data center — the Chrome window on my desk, signed into my own accounts.
 
-Here is a real week.
+Here is a real week with Claude; the GPT-6 comparison is in section 11.
 
 **While I'm asleep:**
 
@@ -48,13 +48,15 @@ Here is a real week.
 
 None of that required a developer, an integration, or a vendor to build me anything. It required a browser that was already logged in, and a set of rules learned mostly by getting things wrong.
 
+**If your AI is ChatGPT rather than Claude, this file is for you too.** Most of the rules below were learned with Claude first. Then I ran GPT-6 (OpenAI's Codex agent, inside the ChatGPT app) through the same five tasks in the same Chrome: after two fixes, both agents finished fully correct, and the Codex app run was the faster one in this single comparison (section 11). Where a rule names a Claude tool, ask your agent whether its own tools have the same mechanism, and keep what applies. Hand the file over exactly as step 2 above says.
+
 ## The tradeoff
 
 Handing an AI your real browser is not the same as handing it a fresh one. It is signed in as you, so it can act as you, and everything on the screen becomes something it has read.
 
 So two decisions come first, before any of the technical lessons below.
 
-**What it never does.** In my setup Claude doesn't enter passwords or card numbers, doesn't create accounts, doesn't accept terms or grant permissions, doesn't delete anything permanently, and doesn't fire the final publish on anything money-related. Those are mine. Everything else it can do while I'm asleep.
+**What it never does.** In my setup the AI, whichever one is driving, doesn't enter passwords or card numbers, doesn't create accounts, doesn't accept terms or grant permissions, doesn't delete anything permanently, and doesn't fire the final publish on anything money-related. Those are mine. Everything else it can do while I'm asleep.
 
 **What it can see.** Whatever is visible in a tab is captured when it takes a screenshot, and it can't filter sensitive things out of what it has already seen. Anthropic says so in their own guidance, and it changed how I work: my AI works in its own tabs, sometimes in its own window, and reads pages as text rather than as pictures wherever it can.
 
@@ -306,7 +308,7 @@ A short set of actions stays human regardless of mode — for us: **downloading 
 
 **7.6 — Some read calls stop being free the moment you set one flag.** In our tools, read-only calls don't prompt — but a create-if-empty flag on the tab-context call does, and so does saving a screenshot to disk. A batch of actions runs prompt-free only if *every* action in it is read-only. So keep reconnaissance batches separate from action batches.
 
-**7.7 — An "allow once" grant is bound to a single tool call and revokes itself after use.** A retry of an approved step prompts again. Unattended, treat allow-once as no grant at all.
+**7.7 — In Claude's extension, an "allow once" grant is bound to a single tool call and revokes itself after use.** A retry of an approved step prompts again. Unattended, treat allow-once as no grant at all.
 
 **7.8 — A login page while signed in means throttled, not logged out — and the instruction is stop, not auto-resolve.** On a real account the symptoms are: expander links stop responding, a login interstitial appears although the session is valid, or the URL redirects to a device-login path.
 
@@ -450,6 +452,7 @@ This document exists because other people published what their mistakes cost the
 
 Named here in full, with what I took:
 
+- **OpenAI** — [ChatGPT browser documentation](https://learn.chatgpt.com/docs/browser) and the [ChatGPT Chrome extension documentation](https://learn.chatgpt.com/docs/chrome-extension). The *Allow once* / *Allow for this site* distinction relevant to 11.1 and the note that browser content becomes chat context (both on the extension page); and a GPT-6 review that caught two arithmetic errors and six overstatements in section 11 before it was published, then six more in this introduction.
 - **Anthropic** — [Claude Code Chrome documentation](https://code.claude.com/docs/en/chrome) and the [Claude in Chrome help collection](https://support.claude.com/en/collections/18031491-claude-in-chrome). The permission taxonomy and its contaminating edges, the failure-mode error table, screenshots as an unfilterable data surface, the profile-by-sensitivity recommendation, the always-human action classes, the protected actions that survive a blanket site grant, the force-prompt domain classes, and the three-signal drift tripwire. Also [their research on prompt injection defenses](https://www.anthropic.com/research/prompt-injection-defenses), [the engineering write-up of how the action screener works](https://www.anthropic.com/engineering/claude-code-auto-mode) — which is where the unflattering false-negative number is published — and the model system cards, which carry the current browser-attack measurements and are the only place they appear in full.
 
   A note on method, since it changed how I check this now: the most reliable source for what this extension does turned out to be **the extension's own shipped code**, sitting unpacked on my disk. It is the vendor's actual behaviour rather than their description of it, it needs no browser and no network, and it settled several questions in this document that the documentation left ambiguous — including one where the docs and the product flatly disagree. If you're running an extension you depend on, you can read it.
