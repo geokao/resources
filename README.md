@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.8 · Last updated September 3, 2026**
+**Version 1.9 · Last updated September 5, 2026**
 
 ---
 
@@ -59,7 +59,7 @@ The companion to the one above: where the lessons come from before anything gets
 
 **[Your AI in Your Browser](your-ai-in-your-browser.md)**
 
-Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what a month of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. Updated August 2026 for a browser extension that changed under us — including one restriction I'd written down as permanent that had already been fixed without my noticing, which is its own lesson about how these documents go stale. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 38 minutes to read, or one minute to hand over.
+Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what a month of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. Updated September 2026 with a head-to-head: Claude and GPT-6 running the same five tasks in my Chrome, all four combinations scored, and eight rules from what went wrong along the way. Also updated in August for a browser extension that changed under us — including one restriction I'd written down as permanent that had already been fixed without my noticing, which is its own lesson about how these documents go stale. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 38 minutes to read, or one minute to hand over.
 
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
