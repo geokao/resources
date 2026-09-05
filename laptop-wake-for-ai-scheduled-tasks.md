@@ -1,6 +1,6 @@
 # How to Make Your Laptop Wake Up for Your AI's Scheduled Tasks
 
-**Version 1.8 · Last updated August 12, 2026**
+**Version 1.9 · Last updated September 5, 2026**
 
 *By George Kao. Written with Claude, from about six months of running overnight AI tasks on a laptop that sleeps.*
 
@@ -48,8 +48,10 @@ Two separate jobs, and conflating them is the most common mistake:
 ### Step 1 — Schedule the wake
 
 ```
-sudo pmset repeat wakepoweron at 2:58AM every day
+sudo pmset repeat wakeorpoweron MTWRFSU 02:58:00
 ```
+
+(That is the form `pmset` accepts: the event type, the days as letters — `MTWRFSU` is every day — and a 24-hour time. An earlier version of this guide printed the command the way `pmset` *displays* it back, which it rejects as input.)
 
 Run it one or two minutes *before* your earliest task, so the machine is up and settled when the task fires. Keep the gap short rather than generous: a machine that wakes with nothing to do can drift back to sleep before your task arrives, and you'd never know why. Mine wakes at 2:58 for a 3:00 task and that has held; if you see a task miss on a night the wake logged fine, close the gap to one minute first. This needs an administrator password, so the human runs it, not the AI.
 
@@ -59,7 +61,7 @@ Verify:
 pmset -g sched
 ```
 
-You should see `wakepoweron at 2:58AM every day` under "Repeating power events."
+You should see `wakepoweron at 2:58AM every day` under "Repeating power events" — that display wording differs from the command you typed, and that is normal.
 
 ### Step 2 — Hold it awake
 
