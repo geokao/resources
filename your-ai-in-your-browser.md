@@ -2,7 +2,7 @@
 
 ## What I learned handing Claude the keys to my real, logged-in Chrome
 
-**Version 1.4 · Last updated August 12, 2026**
+**Version 1.5 · Last updated September 5, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -56,7 +56,7 @@ So two decisions come first, before any of the technical lessons below.
 
 **What it never does.** In my setup Claude doesn't enter passwords or card numbers, doesn't create accounts, doesn't accept terms or grant permissions, doesn't delete anything permanently, and doesn't fire the final publish on anything money-related. Those are mine. Everything else it can do while I'm asleep.
 
-**What it can see.** Whatever is visible in a tab is captured when it takes a screenshot, and it can't filter sensitive things out of what it has already seen. Anthropic says so in their own guidance, and it changed how I work: my AI gets its own browser window, not a seat in mine, and reads pages as text rather than as pictures wherever it can.
+**What it can see.** Whatever is visible in a tab is captured when it takes a screenshot, and it can't filter sensitive things out of what it has already seen. Anthropic says so in their own guidance, and it changed how I work: my AI works in its own tabs, sometimes in its own window, and reads pages as text rather than as pictures wherever it can.
 
 There's also a real security argument against this whole practice, and the people making it aren't wrong. A web page can contain text written to hijack an AI reading it, and a browser agent that is logged into your accounts is what such text is aiming for. [Simon Willison](https://simonwillison.net/tags/browser-agents/) has been the clearest voice here, and his position is roughly "don't." [Brave's security team](https://brave.com/series/security-privacy-in-agentic-browsing/) has published working attacks against several AI browsers, including one where the instructions are hidden in an image the AI screenshots rather than in text it reads.
 
@@ -182,7 +182,7 @@ If you share one browser with a person, this section is the difference between u
 
 Test that surface's instruments before you trust them, though. Ours returns a blank white screenshot when its pane is hidden, and layout measurements of zero — a page reporting zero width, every element at zero — while the same page screenshots perfectly. Neither raises an error.
 
-**4.1 — Don't open a window of your own. Work in a tab that isn't the one in front.** We did the opposite for a long time — a window created at the start of every run and parked at the edge of the screen — and built it twice before finding out that opening that window was the only thing in the whole design that ever touched my human's focus. Everything else our tools offer works in a background tab: navigating, reading the page, running JavaScript, writing into fields through JavaScript, clicking a button from inside the page. The tab reports itself hidden and unfocused throughout and none of it cares.
+**4.1 — Start in a tab that isn't the one in front; open a window of your own only when the task needs a visible tab.** We did the opposite for a long time — a window created at the start of every run and parked at the edge of the screen — and built it twice before finding out that opening that window was the only thing in the whole design that ever touched my human's focus. Everything else our tools offer works in a background tab: navigating, reading the page, running JavaScript, writing into fields through JavaScript, clicking a button from inside the page. The tab reports itself hidden and unfocused throughout and none of it cares.
 
 Two things genuinely need the tab in front — real synthesized keystrokes, and pixel screenshots. Treat those as borrowing. Note which tab was active, bring yours forward, do the one thing, put theirs back, all in the same call so a crash can't leave it moved. Most runs never borrow at all.
 
@@ -208,7 +208,7 @@ And if you do open a window of your own, the flash is not free — the cost is i
 
 **A tab reporting itself hidden is almost always your own doing, not something wrong with your human's screen.** A tab that isn't the active tab of its window is hidden in every browser, whatever is in front of that window and wherever the window sits. One call to make your tab the active one fixes it — measured here a call apart, with the system's focus never leaving the app my human was actually typing in, hidden-and-unfocused became visible-and-focused. We got this wrong in the expensive direction first: a rule went in telling the next session to ask him to exit full-screen mode, and his app had never once been full-screen. Don't spend his attention on your own bug.
 
-**4.7 — A hidden tab also throttles timers to about one per minute, and it reads as a hang.** Measured: an 800ms wait took 1682ms in a hidden tab. A message-channel ping-pong against a wall-clock deadline isn't throttled — the same wait came back at exactly 800ms. Before diagnosing a stalled loop, time a short wait and read the visibility state.
+**4.7 — A hidden tab can throttle timers, and it reads as a hang.** Measured: an 800ms wait took 1682ms in a hidden tab. A message-channel ping-pong against a wall-clock deadline isn't throttled — the same wait came back at exactly 800ms. Before diagnosing a stalled loop, time a short wait and read the visibility state.
 
 **4.8 — Mark your tabs in their titles, and unmark them on the way out.** One line after each navigation, prefixing the document title with a distinctive character. Your human can see which tab is yours at a glance, and your cleanup sweep can match on the title — which survives in-page navigation where a URL match doesn't.
 
@@ -396,7 +396,7 @@ Partial results reported as partial are worth more than an overclaimed success.
 
 Claude ran a short waiting loop inside a page — check whether the editor has finished loading, wait half a second, check again, for up to twenty seconds. The tool came back with a timeout and the words *the renderer may be frozen or unresponsive*.
 
-Nothing was frozen. The tab was sitting in a window where a different tab was in front, and Chrome slows timers down to roughly one per minute in any tab that isn't the visible one in its own window. A loop written to take three seconds was going to take twenty minutes. The tool gave up long before that, and reported the only thing it could see.
+Nothing was frozen. The tab was sitting in a window where a different tab was in front, and Chrome throttles timers in hidden tabs, in stages, down to about one check per minute in the worst case. A loop written to take three seconds could have run for many minutes. The tool gave up long before that, and reported the only thing it could see.
 
 The message sent us to look at the page, and the page was fine. What was wrong was which tab was in front — in a window nobody was even looking at.
 
@@ -406,11 +406,37 @@ Both fixes are one line, which is the annoying part. The diagnosis was the entir
 
 ---
 
+## 11 · Two agents, one browser: what a head-to-head taught me
+
+On September 5, 2026 I ran the same five browser tasks through Claude and through OpenAI's Codex agent inside the ChatGPT desktop app (its model was GPT-6, so that's what I call it below), and I ran each of them two ways: interactively in its own app, and headlessly. Claude dispatched Codex through the CLI bundled with the ChatGPT app; headless Claude ran as a one-shot scheduled task, because Codex had no way to dispatch Claude on this machine. The tasks were ones I ask for every week: read my public blog and quote the newest post; read a draft email broadcast inside my course platform's admin; type three lines into a new Google Doc and check them after a reload; read the scheduled-posts list behind a portal UI on YouTube; and type, pick an audience from a menu that only mounts when the tab is visible, and schedule a post in a composer I built locally with delivery disabled.
+
+All four cells came back fully correct once two problems were fixed, and both fixes taught me more than the scores did. The Codex app run was the fastest of the four: 202 seconds for the five tasks against 413 for Claude in its own app, about half the time. Both headless arrangements took longer. This was one successful set per arrangement, and I never read back which model and effort setting the Codex app was using.
+
+**11.1 — A permission refusal can be mistaken for a missing capability.** The first headless GPT-6 calls to open my own websites were refused in under a second with *"the user declined permission for this action."* I had not tapped Decline, and I had never been shown the question; the tool reported a denial anyway. I spent an hour on workarounds (an allowlist in its config, an automatic reviewer, pre-approval written into the prompt) and every one failed the same way, in under a second, which is exactly how a genuine wall behaves. Then I opened the app, asked it to open each site, and tapped Allow, in two rounds. A fresh headless session still failed after the first round; after the second, site access worked, though two tasks still needed the wording fix in 11.2 before they passed. Before an agent records "can't," it should ask whether a human has ever been given the chance to say yes.
+
+**11.2 — The wording of a requirement decides whether the agent tries.** My task cards said three of the tasks "need a genuinely visible, foreground browser surface." GPT-6 read that as a feature to look for, searched its tools for a visibility option, found none on the surface it was using, and reported BLOCKED on two tasks, while completing the third of the same kind minutes later in an ordinary tab. I clarified that a normal Chrome tab counts, and it went two for two. Describe the requirement the way a passing run would satisfy it, and leave out the failure you're worried about.
+
+**11.3 — A safety stop can rest on a mistaken premise.** The run that blocked itself had my rule in front of it: report BLOCKED if a step cannot be done safely, instead of experimenting on a live account. I want that rule. But the run mistook a missing visibility control for a blocked route, and on one task it reported an approval rejection that appears nowhere in its own log. Clarifying the instructions was enough to keep the rule and finish both tasks.
+
+**11.4 — Chrome did not have to be in front.** I watched the Codex app finish all five tasks without ever bringing Chrome forward; Claude used a parked window and a Chrome launch flag for the three visibility-sensitive tasks, and ran the two read-only tasks in a hidden tab. GPT-6 opened ordinary tabs in my window and put my tab back afterward; Claude kept its own window off to the side. Bringing Chrome to the front, activating a tab, and focusing the typing target are three different requirements, and these tests only made the first one optional: the one typing failure in the whole day was a click that never focused the target (section 4 and section 10 cover the other two).
+
+**11.5 — Headless and interactive timings measure different working arrangements.** The recorded task times total 454 seconds for headless Claude against 413 in its own app, and 446 seconds for headless GPT-6 against 202 in the Codex app. Neither lost a single field. Those gaps do not isolate the cost of the harness: Claude's model changed between its two cells, the Codex app's effort setting was never checked, and nothing was repeated or randomized. If you compare two agents, say which model, harness and browser surface you measured, and whether a human was helping.
+
+**11.6 — Count the failures an agent caught before you count the ones it wrote down.** Claude's headless run logged five incidents and finished fully correct. Every one was a tool result that would have misled a run that trusted it: a page-text read that returned one article's subtree (as its own priority list says it will, see 1.6) and would have ranked the wrong post first; a scroll that never scrolled because the page scrolls an inner element; keystrokes swallowed whole by a date field; a menu whose items were missing from the accessibility read while it sat open on screen; a click that never placed the cursor before three lines of typing vanished. Each was caught by a second, different instrument, which is section 3 in practice. GPT-6's logs were terser. A short incident list is not evidence of a clean run.
+
+**11.7 — Verify the other agent's work the way you verify a page.** I scored GPT-6's typed document by exporting it from Drive and comparing bytes, and its scheduled post by reading the composer's own server log, never by its report. Same for Claude. The rule that a claim is not evidence does not have a vendor exception.
+
+**11.8 — When a result is better than you expected, find out which code path ran.** For a while I believed the fix for the permission wall was a specific trick (resuming the one conversation where the permission had been granted). It worked once. Then a bug in my own wrapper accidentally ran the control I hadn't planned, a fresh session with no trick, and that passed too. Resuming worked once; after another round of grants, fresh sessions worked too, and I still have not identified what made those grants persist. Write down why a run passed only after you have watched the same run fail the other way.
+
+What fell out of this for how I work now: GPT-6 gets the read-and-verify errands on sites I have already granted it; the agent that holds my files, my memory and my schedules stays the hub, dispatches the errands, and checks the answers; after granting a new site I test a fresh headless session, because the first grant did not carry over here; and I re-run this table whenever either vendor ships a change, because these numbers describe one Saturday in September and both companies ship monthly.
+
+---
+
 ## What I'd tell a person setting this up for the first time
 
 Three things, in order of how much they'd have saved me.
 
-1. **Keep it out of your way — which, it turns out, doesn't mean giving it its own window.** Almost every friction I had in the first weeks was really the two of us fighting over one browser. I built a separate parked window to fix that, twice, and then the answer turned out to be smaller: it works in a tab in my own window that simply isn't the tab I'm looking at, and I stopped noticing it was there.
+1. **Keep it out of your way — which, it turns out, doesn't mean giving it its own window.** Almost every friction I had in the first weeks was really the two of us fighting over one browser. I built a separate parked window to fix that, twice, and then found a smaller answer for most work: a tab in my own window that isn't the one I'm looking at, and I stopped noticing it was there. The parked window still earns its place for the tasks that need a visible tab (section 11).
 2. **Make it verify outside the page.** Most of my lost hours came from a page cheerfully reporting a state that wasn't true.
 3. **Write down what didn't work, with the date and a way to re-test it.** Otherwise every failed attempt becomes permanent folklore, and you keep paying for a wall the vendor already removed. We had one of those — a documented restriction that had shipped away while we kept building around it.
 
