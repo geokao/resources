@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.9 · Last updated September 5, 2026**
+**Version 1.10 · Last updated September 5, 2026**
 
 ---
 
@@ -32,6 +32,10 @@ If your AI has trouble opening the link, click the file's **Raw** button and sha
 **[What I Hand to My AI](what-i-hand-to-my-ai.md)** — *the gentlest way in*
 
 Most of us underuse our AI not because we lack technique, but because it never occurred to us to hand it that particular job. So this is a menu rather than a method: three months of the actual work I gave mine, business and personal, sorted by what kind of attention each job used to eat — the chores that come back forever, the things I was carrying in my head, the things nobody could read all of, and the ones I'd never have attempted. It includes the boring handoffs nobody demos, which turned out to be where the return was, and a closing section on what I deliberately don't hand over. About 20 minutes to read, or one minute to hand over so it can pick the four or five that fit your life.
+
+**[Your AI Is Designed to Flatter You](your-ai-is-designed-to-flatter-you.md)** — *the fifteen-minute fix*
+
+Out of the box, every AI agrees with you. It calls the shaky plan brilliant and smooths over the doubt you should have sat with, and over months that makes your decisions worse. The fix is the settings box most people never open: a standing set of custom instructions, read before every conversation, that tells the AI who you are and asks for the truth. This page hands the job to your AI — it interviews you for the five parts, drafts your instructions in your words, gives you a short version for the apps with small boxes, and tells you where to paste them. My own instructions are included in full as a worked example. About 8 minutes to read, or one minute to hand over.
 
 **[Own Your AI Context](own-your-ai-context.md)**
 
