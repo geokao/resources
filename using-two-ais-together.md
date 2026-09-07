@@ -27,7 +27,7 @@ I asked Claude to have GPT verify a list of videos before Claude trashed them. G
 
 Asking Claude whether it was sure might have produced another reassuring answer. Giving a different AI the deletion list and the job of checking the search exposed the omission before the files were trashed.
 
-That's the arrangement I want to explain. You can use it for a course lesson before publishing, a spreadsheet before relying on its totals, or a recommendation whose sources you haven't checked.
+You can use it for a course lesson before publishing, a spreadsheet before relying on its totals, or a recommendation whose sources you haven't checked.
 
 ## One hub, one fresh reader
 
@@ -35,7 +35,7 @@ Claude is my hub. It holds the files, memory, schedules and standing instruction
 
 The second AI is a stranger to the conversation that produced the first answer. It didn't help build the argument it's reviewing. Give it the original request and the evidence, without the long account of why the first AI thinks it did well.
 
-“One hub, one stranger” describes their roles. The evidence doesn't isolate why each finding happened. The reviewer still needs the relevant facts and decisions I've already made.
+“One hub, one stranger” describes their roles. The evidence doesn't establish why the reviewer made each finding. The reviewer still needs the relevant facts and decisions I've already made.
 
 Either AI can be your hub. Start with whichever already knows your work, and save the current document somewhere you own. [Own Your AI Context](own-your-ai-context.md) covers those files.
 
@@ -122,7 +122,7 @@ A matched quote still needs interpretation. Read the surrounding text and confir
 
 Treat “nothing found” as limited to the material searched. Before accepting an all-clear, check coverage against the requested folders or documents. A reviewer who received only the hub's incomplete list may miss the same omission. For a fuller checking procedure, use [When Your AI Says It's Done](when-your-ai-says-its-done.md).
 
-If you can't independently verify a result, say which result and why. Arrange a re-check when access becomes available. Don't promote the other AI's report into a verified fact because you have no better view.
+If you can't independently verify a result, say which result and why. Arrange a re-check when access becomes available. Don't call the other AI's report verified just because you can't check the result yourself.
 
 ## 4 · Distinguish a blocked run from missing ability
 
@@ -142,11 +142,11 @@ For a copy-paste handoff, the person can work elsewhere while the receiving app 
 
 ## 6 · Apply the useful findings and translate for the human
 
-George's response to a long report was: “that doc you gave me is so long, it's great for you and necessary, but not for me to read.” The second AI writes for the first one. The hub owes the human a short account of what changed and what still needs their decision.
+George's response to a long report was: “that doc you gave me is so long, it's great for you and necessary, but not for me to read.” The second AI writes for the first one. The hub should give the person a short account of what changed and what still needs their decision.
 
 Apply confirmed corrections within the permission already given. Record why you rejected findings, and preserve unresolved disagreements. Don't average conflicting answers or accept whichever AI sounds more certain.
 
-Don't let a second opinion become a second author. A reviewer may propose a correction without taking over the voice, audience or purpose. The person can explicitly delegate drafting or building too, as George did with this guide. The hub still checks the result and maintains the current version.
+A reviewer may propose a correction without taking over the voice, audience or purpose. The person can explicitly delegate drafting or building too, as George did with this guide. The hub still checks the result and maintains the current version.
 
 Save the useful result in the project the person already uses. Repeat the review when the stakes or remaining uncertainty justify the extra work; a successful audit needn't become a recurring appointment.
 
