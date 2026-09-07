@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.10 · Last updated September 5, 2026**
+**Version 1.11 · Last updated September 6, 2026**
 
 ---
 
@@ -64,6 +64,10 @@ The companion to the one above: where the lessons come from before anything gets
 **[Your AI in Your Browser](your-ai-in-your-browser.md)**
 
 Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what a month of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. Updated September 2026 with a head-to-head: Claude and GPT-6 running the same five tasks in my Chrome, all four combinations scored, and eight rules from what went wrong along the way. Also updated in August for a browser extension that changed under us — including one restriction I'd written down as permanent that had already been fixed without my noticing, which is its own lesson about how these documents go stale. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 38 minutes to read, or one minute to hand over.
+
+**[Using Two AIs Together](using-two-ais-together.md)**
+
+I asked Claude to have GPT check a list of videos before deleting them, and GPT found that Claude's search had skipped two folders — Claude was one step from reporting "all clear" on a search it hadn't finished. That's the arrangement this describes: one AI stays in charge of the project and holds your files, the other gets a specific job and a brief it can finish without knowing your history, and the first one checks the answer before anything changes. Includes the four jobs that turned out to be worth handing over — among them asking the second AI about the first one's product, where it found ten errors — the six parts of a brief a stranger can actually finish, how to check a quotation without mistaking a curly apostrophe for a fabrication, and the case that keeps the whole idea honest: a confident recommendation from a frontier model that put unreadable text on its own button, which no second model caught and a ten-second contrast checker did. Needs two browser tabs and no setup; the copy-paste version is written out in full. About 11 minutes to read, or one minute to hand over.
 
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
