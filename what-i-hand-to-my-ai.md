@@ -2,7 +2,7 @@
 
 ## A non-technical menu of what there is to hand over
 
-**Version 1.4 · Last updated August 15, 2026**
+**Version 1.5 · Last updated September 11, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -17,7 +17,7 @@ Corrections and suggestions welcome — [open an issue](https://github.com/geoka
 
 3. Then push back on what it picks. It knows your situation better than this document does, and the point is to find your four or five, not to work through mine.
 
-Everything below is real. It's three months of my own work — May through early August 2026 — sorted by what kind of attention each job used to eat. I run a small coaching business by myself, so about half of this is business and about half is just a life: parents, a house in another country, a dog, a will I'd been avoiding.
+Everything below is real. It's three months of my own work — May through early August 2026 — sorted by what kind of attention each job used to eat. I run a small coaching business by myself, so about half of this is business and about half is just a life: parents, a dog, a will I'd been avoiding.
 
 ---
 
