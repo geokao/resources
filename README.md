@@ -2,7 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.11 · Last updated September 6, 2026**
+**Version 1.12 · Last updated 2026-09-12 09:19 CST**
+
+<!-- v1.12: Refreshed the library date for the custom-instructions guide update. -->
 
 ---
 
