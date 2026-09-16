@@ -1,6 +1,6 @@
 # Is your Claude 5-hour limit maxing out quickly?
 
-**Version 1.2 · Last updated September 16, 2026**
+**Version 1.3 · Last updated September 16, 2026**
 
 Some days the meter hits 100% and you genuinely can't account for the spike. You weren't running anything unusual. You may even have switched to a cheaper model. And there's no way to argue with a number you can't check.
 
@@ -205,6 +205,8 @@ How I use the table now:
 4. **Coming back to a long session after a break longer than the cache lifetime, open a new session instead of typing into the old one.** Your first message would rewrite the whole old conversation anyway, so the smaller new session is cheaper from its first request. The paragraph on switching models above found the same cheap moment.
 5. **Treat the payback as a minimum.** A new session usually re-reads some files to get back up to speed, and none of that is counted here.
 
+**If your AI keeps an eye on this for you, have it give you a yes or a no.** Mine first reported the payback as a count, "pays back in ~1 message," which left me wondering whether to switch now or later. Now it runs the check itself, and when a fresh session is cheaper, it offers a one-click button to start one (the Claude Code desktop app supports this kind of button). When staying is cheaper, it says nothing at all.
+
 Like everything else here, these numbers are priced at API rates. Whether the subscription meter weighs cache reads the same way is still the open question from the top of this guide.
 
 To get your own numbers, have your AI run this from inside the session you're wondering about:
@@ -212,6 +214,7 @@ To get your own numbers, have your AI run this from inside the session you're wo
 ```python
 import glob, json, os, statistics
 
+PAYBACK = 20  # requests; about two of my messages. Start fresh only if it pays back sooner.
 READ = 0.1    # cache-read multiplier: 0.025 on Claude Fable 5.1 and Mythos 5.1
 WRITE = 2.0   # one-hour cache write (subscription); 1.25 once you're on usage credits
 
@@ -246,12 +249,10 @@ assert current and firsts, "Nothing to compare: need this session plus at least 
 C = size(current[-1])
 F = statistics.median(size(u) for u in firsts)
 fresh_first = statistics.median(priced(u) for u in firsts)
-if C <= F:
-    print(f"Stay. This session ({C:,}) is no bigger than a fresh one ({F:,.0f}).")
-else:
-    n = 1 + (fresh_first - C * READ) / (READ * (C - F))
-    print(f"This session: {C:,} tokens. A fresh one starts near {F:,.0f}.")
-    print(f"Starting fresh pays back after about {max(n, 1):.0f} requests (every tool call is one).")
+n = 1 + (fresh_first - C * READ) / (READ * (C - F)) if C > F else float("inf")
+print("Start a fresh session." if n <= PAYBACK else "Stay in this session.")
+print(f"(this session {C:,} tokens, a fresh one about {F:,.0f}"
+      + (f"; payback ~{n:.0f} requests)" if n < float("inf") else ")"))
 ```
 
 ---
