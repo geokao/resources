@@ -1,6 +1,6 @@
 # Is your Claude 5-hour limit maxing out quickly?
 
-**Version 1.1 · Last updated September 3, 2026**
+**Version 1.2 · Last updated September 16, 2026**
 
 Some days the meter hits 100% and you genuinely can't account for the spike. You weren't running anything unusual. You may even have switched to a cheaper model. And there's no way to argue with a number you can't check.
 
@@ -158,6 +158,7 @@ It had been 121,000 characters a month earlier. Nobody decided to double it. It 
 | Peak window is fresh-light *and* ranks low against your other days | Something is being counted that you can't see — worth a ticket |
 | Session-start context above ~100k | Your own setup is the biggest lever you have |
 | A jump right after a long break, or after a model switch | Your whole conversation was re-processed — expected, and explained in the next section |
+| Tempted to start a fresh session to save tokens | Price it first — near your starting size, staying is cheaper (see the fresh-session section below) |
 | Numbers all normal, meter still high | Check the status page below before assuming anything |
 
 ---
@@ -173,6 +174,85 @@ Two causes turned up when I went back over my own transcripts on September 3, an
 The two switches came out differently, and not in the direction I expected. In the session whose cache was still warm — a 22-minute gap — switching to the nominally cheaper model *lost* money and never made it back, for the reason set out at the top of this guide: the lower headline price came with the more expensive cache read. The session that looked like it saved about $2 had been sitting idle for 150 minutes, so the rewrite was going to happen on the next message regardless. All the switch did was get it billed at the cheaper rate.
 
 So the rule is: **switch models for capability, not for cost.** The one moment a switch is genuinely cheap is right after a long break, when the rewrite is already on its way.
+
+---
+
+## Should you start a fresh session to save tokens?
+
+A long session feels expensive, so starting over looks like the obvious fix. My own AI kept recommending a fresh start, with math that sounded reasonable: this session sends 300,000 tokens with every request, a new one would start at 150,000, so switch and cut the cost in half.
+
+That math compares raw token counts, which is exactly what the top of this guide warns against. Staying put re-reads a warm cache at a tenth of the input price (a fortieth on Fable 5.1). A new session has to write its starting context into the cache before it can read anything back, and on a subscription that one-hour cache write costs twice the input price.
+
+I measured both sides across 119 of my own sessions on September 16, 2026. A new session's first request read about 44,000 tokens that my other sessions had already cached, and wrote about 87,000 new ones. Priced out, that one request cost as much as 177,000 tokens of plain input. A request in a warm 300,000-token session costs the equivalent of 30,000.
+
+After its first request, the new session is the cheaper one, because it carries less. Whether starting over pays depends on how many requests you have left, and every tool call is one. My sessions average about ten per message I send.
+
+| Current session | Fresh start pays back after — Opus 5 | Fable 5.1 |
+|---|---|---|
+| 150,000 tokens | ~84 requests | ~350 requests |
+| 200,000 tokens | ~24 | ~98 |
+| 300,000 tokens | ~10 | ~40 |
+| 500,000 tokens | ~4 | ~19 |
+| 800,000 tokens | ~3 | ~10 |
+
+Those numbers rest on my own starting context of about 130,000 tokens. Yours will be different, so the script below uses yours.
+
+How I use the table now:
+
+1. **Close to your starting size, stay.** At 150,000 tokens, a new session takes about eight of my messages to pay back on Opus 5.
+2. **On Opus 5, past about 200,000 tokens, a fresh start pays back within a couple of messages** — within one, past 300,000.
+3. **On Fable 5.1, stay about four times longer.** Re-reading a cached conversation costs so little there that a new session needs far more requests to earn back its start.
+4. **Coming back to a long session after a break longer than the cache lifetime, open a new session instead of typing into the old one.** Your first message would rewrite the whole old conversation anyway, so the smaller new session is cheaper from its first request. The paragraph on switching models above found the same cheap moment.
+5. **Treat the payback as a minimum.** A new session usually re-reads some files to get back up to speed, and none of that is counted here.
+
+Like everything else here, these numbers are priced at API rates. Whether the subscription meter weighs cache reads the same way is still the open question from the top of this guide.
+
+To get your own numbers, have your AI run this from inside the session you're wondering about:
+
+```python
+import glob, json, os, statistics
+
+READ = 0.1    # cache-read multiplier: 0.025 on Claude Fable 5.1 and Mythos 5.1
+WRITE = 2.0   # one-hour cache write (subscription); 1.25 once you're on usage credits
+
+newest = max(glob.glob(os.path.expanduser("~/.claude/projects/*/*.jsonl")), key=os.path.getmtime)
+sessions = sorted(glob.glob(os.path.join(os.path.dirname(newest), "*.jsonl")),
+                  key=os.path.getmtime, reverse=True)
+
+def requests(path):
+    seen, out = set(), []
+    for line in open(path, errors="replace"):
+        try:
+            m = json.loads(line).get("message") or {}
+        except Exception:
+            continue
+        u = m.get("usage")
+        if u and m.get("id") not in seen:   # usage repeats once per content block
+            seen.add(m.get("id"))
+            out.append(u)
+    return out
+
+def size(u):
+    return (u.get("input_tokens", 0) + u.get("cache_read_input_tokens", 0)
+            + u.get("cache_creation_input_tokens", 0))
+
+def priced(u):
+    return (u.get("input_tokens", 0) + u.get("cache_read_input_tokens", 0) * READ
+            + u.get("cache_creation_input_tokens", 0) * WRITE)
+
+current = requests(sessions[0])
+firsts = [r[0] for r in map(requests, sessions[1:9]) if len(r) > 1]
+assert current and firsts, "Nothing to compare: need this session plus at least one earlier one here."
+C = size(current[-1])
+F = statistics.median(size(u) for u in firsts)
+fresh_first = statistics.median(priced(u) for u in firsts)
+if C <= F:
+    print(f"Stay. This session ({C:,}) is no bigger than a fresh one ({F:,.0f}).")
+else:
+    n = 1 + (fresh_first - C * READ) / (READ * (C - F))
+    print(f"This session: {C:,} tokens. A fresh one starts near {F:,.0f}.")
+    print(f"Starting fresh pays back after about {max(n, 1):.0f} requests (every tool call is one).")
+```
 
 ---
 
@@ -236,7 +316,7 @@ I'd rather have the setup than a smaller number, so I'm not arguing for a spare 
 
 ## Credits and license
 
-Written with Claude, from measurements on my own account across two days — August 24 and September 3, 2026 — and the dated incident records behind them. The mistake in the middle — proving a narrower thing than I claimed — is in here because catching it is the reason the rest of the numbers are trustworthy.
+Written with Claude, from measurements on my own account across three days — August 24, September 3 and September 16, 2026 — and the dated incident records behind them. The mistake in the middle — proving a narrower thing than I claimed — is in here because catching it is the reason the rest of the numbers are trustworthy.
 
 Released under [CC0](LICENSE) — effectively public domain. Copy it, change it, republish it, teach from it, build it into your own tools. No permission needed and no credit required.
 
