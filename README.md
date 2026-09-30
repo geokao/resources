@@ -2,9 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.13 · Last updated 2026-09-16 14:38 CST**
+**Version 1.14 · Last updated 2026-09-30 13:21 CST**
 
-<!-- v1.12: Refreshed the library date for the custom-instructions guide update. -->
+<!-- v1.14: Added Your Weekly AI Scout; Give Your AI a Way to Improve Itself updated to v1.9 (new section, reading time 16 → 22). -->
 
 ---
 
@@ -57,7 +57,7 @@ You hand an AI a job you can't easily re-do yourself — sweep these files, find
 
 **[Give Your AI a Way to Improve Itself](self-improving-ai-setup.md)**
 
-Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add a line to the instructions file, and three weeks later the same thing goes wrong again. This is what I run instead — scheduled agents that read my own past sessions, find where my AI and I wasted each other's time, and either fix it or leave me one question in the morning. Includes the five constraints that keep an AI editing its own instructions from becoming a bad idea — the last of them, about which agents are allowed to write at all, is the one I'd now put first — plus the four failure modes I only found by hitting them — including the one underneath the rest, where the rule was read and still didn't fire — and what to build first if you're starting from nothing. About 16 minutes to read, or one minute to hand over.
+Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add a line to the instructions file, and three weeks later the same thing goes wrong again. This is what I run instead — scheduled agents that read my own past sessions, find where my AI and I wasted each other's time, and either fix it or leave me one question in the morning. Includes the five constraints that keep an AI editing its own instructions from becoming a bad idea — the last of them, about which agents are allowed to write at all, is the one I'd now put first — plus the four failure modes I only found by hitting them — including the one underneath the rest, where the rule was read and still didn't fire — and what to build first if you're starting from nothing. Updated September 2026 with a section for when your AI reads a rule and skips it anyway: why rewording the rule more strongly doesn't help, and three ways to make it impossible to skip quietly. About 22 minutes to read, or one minute to hand over.
 
 **[How My AI Debriefs Itself](how-my-ai-debriefs-itself.md)**
 
@@ -70,6 +70,10 @@ Your AI can work in the browser you're already signed into, which is where the p
 **[Using Two AIs Together](using-two-ais-together.md)**
 
 I asked Claude to have GPT check a list of videos before deleting them, and GPT found that Claude's search had skipped two folders — Claude was one step from reporting "all clear" on a search it hadn't finished. That's the arrangement this describes: one AI stays in charge of the project and holds your files, the other gets a specific job and a brief it can finish without knowing your history, and the first one checks the answer before anything changes. Includes the four jobs that turned out to be worth handing over — among them asking the second AI about the first one's product, where it found ten errors — the six parts of a brief a stranger can actually finish, how to check a quotation without mistaking a curly apostrophe for a fabrication, and the case that keeps the whole idea honest: a confident recommendation from a frontier model that put unreadable text on its own button, which no second model caught and a ten-second contrast checker did. Needs two browser tabs and no setup; the copy-paste version is written out in full. About 11 minutes to read, or one minute to hand over.
+
+**[Your Weekly AI Scout](your-weekly-ai-scout.md)**
+
+New AI tools ship nearly every week, and a few of them could save you hours, but finding those few means reading about all the rest. This sets up a scheduled task that does the reading for you. Once a week it checks X and Reddit first, where practical tricks circulate for weeks before anyone writes an article, holds what it finds up against your business and your website, and leaves you a short report: a few ideas, each with why it fits you, a first step and a dated source. You answer yes, not yet or no, by voice memo if you like, and your reasons teach it what to stop suggesting. Includes what to do when your AI can't read X or Reddit (mine couldn't, at different points), the guardrails for a task that reads strangers' posts while you sleep, and a paste-ready setup prompt that works with any AI. About 11 minutes to read, or one minute to hand over.
 
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
