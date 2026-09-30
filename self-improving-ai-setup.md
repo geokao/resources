@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.8 · Last updated August 14, 2026**
+**Version 1.9 · Last updated September 30, 2026**
 
 *by George Kao*
 
@@ -22,15 +22,17 @@ Everyone's AI keeps some kind of instructions file. Mine is large, because I've 
 
 Four of my scheduled agents exist to improve the setup itself. They run on their own schedules, and the architecture is two doors plus two specialists.
 
-**The Sunday door only proposes.** It reads my last week of session transcripts, Claude's release notes, and outside research on working-with-AI patterns, then writes findings to a folder. It never edits anything. It also tags each finding by what kind of decision it is: a fact that's checkably false (a dead file path, a stale time), a judgment call, or anything outward-facing.
+**The Monday door mostly proposes.** Overnight into Monday it reads my last week of session transcripts, Claude's release notes, and outside research on working-with-AI patterns, then writes findings to a folder. It tags each finding by what kind of decision it is: a fact that's checkably false (a dead file path, a stale time), a judgment call, or anything outward-facing.
 
-**The Thursday door applies, with a way back.** It rereads a rotating slice of my rules and applies changes it's confident about, including deletions — it's the only pass allowed to subtract. It also picks up Sunday's "checkably false" tags, re-runs each check itself rather than trusting the tag, and repairs the ones that verify. Judgment calls stay in the folder for me. Outward-facing anything waits for me, always.
+Its last step may apply up to three small, mechanical fixes on its own, each written up with the exact command that undoes the change. I added that in late August, when I realized I'd rather it make as many improvements as it could without asking me. It can't add a new rule that way. And it can't act on anything it learned from a web page unless the vendor's own documentation says the same thing, because a web page is the easiest place for a stranger to plant an instruction.
 
-**The two specialists stay separate on purpose.** One tunes my custom skills weekly, measured by which ones I actually invoke, and leaves the finished version in a queue it isn't allowed to install from — a 3am swap has nobody there to catch it replacing the wrong skill. The daily check-in below installs it instead. Until a few days ago that upload was the last step here that still needed my hands. Deleting a skill is still mine: re-installing the old version undoes a bad replacement, and nothing undoes a delete. One monthly pass re-tests one capability my setup previously recorded as impossible, in case the vendor has since shipped it — and it drives a browser, which is why it doesn't share a run with anything else.
+**The Sunday-night door cuts.** Its one job is to make my setup smaller. It starts by measuring where my tokens went that week, and the biggest cost becomes that night's target. It also picks up the Monday door's "checkably false" tags, re-runs each check itself rather than trusting the tag, and repairs the ones that verify. Judgment calls stay in the folder for me. Outward-facing anything waits for me, always.
 
-A daily check-in makes the other four safe: it reads what everything did overnight and puts anything needing me in one short list.
+**The two specialists stay separate on purpose.** One tunes my custom skills weekly, measured by which ones I actually invoke, and leaves the finished version in a queue it isn't allowed to install from — a 3am swap has nobody there to catch it replacing the wrong skill. The daily check-in below installs it instead. Until early August that upload was the last step here that still needed my hands. Deleting a skill is still mine: re-installing the old version undoes a bad replacement, and nothing undoes a delete. One monthly pass re-tests the capabilities my setup previously recorded as impossible, starting with the one that costs me most, in case the vendor has since shipped it — and it drives a browser, which is why it doesn't share a run with anything else.
 
-To answer the question I get most: no, none of the improvement agents are daily. Weekly is enough for improvement. Daily is only for *surfacing*.
+A daily check-in makes the other four safe: it reads what everything did overnight and puts anything needing me in one short list. It now runs on its own before I'm up, and it also applies queued suggestions that pass the same tests as the Monday door's fixes, up to three a day, so small ones don't wait a week for me.
+
+To answer the question I get most: no, none of the improvement agents are daily. Weekly is enough for finding improvements. Daily is for *surfacing*, and for applying the small ones already found.
 
 ## It used to be six agents, and my AI redesigned it to four
 
@@ -40,7 +42,7 @@ So I asked my AI to review its own improvement system and build a better one. It
 
 The unified mega-agent lost, which surprised me. The judge's merge test is the design lesson I'd carry anywhere: **merge two agents only when they share both failure modes and state.** The two proposal agents merged because they read the same transcripts and feed the same folder. The two rule-editing agents merged because they hold the same authority and need the same revert machinery. But the browser-driving agent stayed on its own: a browser run dies differently than a file-editing run, and you don't want one death taking out both.
 
-And the migration doesn't trust itself. The old agents stay running alongside the new merged ones until each new lane has been verified on a real overnight fire — and one specific failure (the same change applied twice by old and new) was designated in advance as the halt signal.
+And the migration didn't trust itself. The old agents stayed running alongside the new merged ones until each new lane had been verified on a real overnight fire — and one specific failure (the same change applied twice by old and new) was designated in advance as the halt signal.
 
 What I designated was how the overlap ends badly. Ending it well was nobody's job. The week ran, the new lane fired cleanly on the Thursday, its old twin fired again on the Friday, and what stood between me and paying for that duplicate run every week from then on was that the old agent opened its final report by asking to be switched off, with the exact steps, above everything else it had found. It said it had put the request first because one of its reviewers predicted the item would get skimmed past and the agent would keep running for months. The reviewer was describing me accurately.
 
@@ -94,17 +96,23 @@ With one limit, and it's the one I'd have gotten wrong on my own: **a trigger is
 
 For two months I thought I had a discipline problem. Then I did the arithmetic.
 
-I have one pass that's allowed to subtract. It runs on a rotation, so it reaches my main instructions file about once a month, and it's capped at three significant changes per run — a cap I put there deliberately, so an agent could never restructure my whole setup in one night while I slept.
+I had one pass that was allowed to subtract. It ran on a rotation, so it reached my main instructions file about once a month, and it was capped at three significant changes per run — a cap I put there deliberately, so an agent could never restructure my whole setup in one night while I slept.
 
-Everything else adds — the after-session retro, the standing instruction to write down what you learn, five improvement agents — all of it running daily or near it, and none of it capped.
+Everything else added — the after-session retro, the standing instruction to write down what you learn, five improvement agents — all of it running daily or near it, and none of it capped.
 
 I finally measured it. Over 26 days my main instructions file went from 99,000 characters to 220,000. In that same window, the pass responsible for cutting had removed about 5,000 characters — total, across its whole existence. Roughly 24 to 1 against.
 
 No amount of care was going to fix that. It was guaranteed from the day I capped the subtractor and left the adders unlimited. My cap had been written to bound *redesign*, which is reasonable. It was also bounding *subtraction*, which is not the same thing and shouldn't have been covered by the same number.
 
-The fix took about ten minutes. A small script checks the file against a ceiling. When the file is over, two things change automatically: the subtracting pass runs that week no matter what else its rotation had scheduled, and cuts made purely to get back under the ceiling don't count toward its three.
+My first fix took about ten minutes. A small script checked the file against a ceiling, and when the file was over, the subtracting pass went there that week, with cuts made to get back under not counting toward its three.
 
-It works because a script holds the number and I don't. At 3am there's nobody there to be disciplined.
+The ceiling didn't hold. A script that only reports a number is asking nicely. With the exact overage shown to the AI on every edit, the file still grew about 1,300 characters a day.
+
+What finally held was a check that refuses. At 3am there's nobody there to be disciplined, so the check has to be able to say no on its own. An edit that would leave the file bigger than its ceiling is now blocked before it lands, and the ceiling only ever moves down, so every cut that sticks is banked. The first version watched one way of editing the file and missed another, and the file got 3,000-some characters past its ceiling through that gap. A check covers only the routes you remembered to include.
+
+With growth stopped, the cut itself became possible. In mid-September, the step-by-step recipes moved out of the always-loaded file into reference files my AI opens only when a task needs one. Each left a short pointer behind, and every safety gate stayed where it was. The file went from about 251,000 characters to about 131,000 in less than a day, and it hasn't grown back. That size is still well past the length Anthropic recommends, so the Sunday-night pass now has a quota: every run makes its target at least 3% smaller, or writes down why it couldn't.
+
+Cutting that much is only safe because nothing is destroyed. Every cut goes on a list: what stopped loading, the one command that restores it, and the failure that would tell me it was needed. Nobody complaining doesn't count as proof a cut was right. Most of what gets cut protects against a rare failure, which is exactly why it looked unnecessary.
 
 Go count the characters in your instructions file. Then count how many of your habits add to it and how many take away from it. If the second number is zero — and for most people it is — nothing about your setup is going to stop it growing until you're the one reading 80,000 tokens of your own old decisions before every conversation.
 
@@ -180,11 +188,37 @@ So my instructions file now opens with nine of these, before any of the specific
 
 Two caveats, both from checking.
 
-The first is that "give your AI a constitution" is a more popular idea than it is a proven one. Anthropic's Constitutional AI is a way of *training* a model, not a format for prompting one, and when I looked for evidence that a principles preamble improves adherence at the prompt, there is very little. What *is* measured is the other half: adherence drops as the number of instructions climbs, and instructions placed earlier get followed more reliably than instructions placed later. That's enough to justify nine short lines at the top. It isn't enough to justify deleting the rules underneath them.
+The first is that "give your AI a constitution" is a more popular idea than it is a proven one. Anthropic's Constitutional AI is a way of *training* a model, not a format for prompting one, and when I looked for evidence that a principles preamble improves adherence at the prompt, there is very little. What *is* measured is the other half. One study gave twenty models up to 500 instructions at once; even the best followed only 68% of them at that density, and the models leaned toward instructions that came earlier. That's enough to justify nine short lines at the top. It isn't enough to justify deleting the rules underneath them.
 
 The second is that generalizing is how coverage gets lost. A broader rule that covers four old ones might not cover the fifth, and the failure looks like nothing at all. So before anything of mine is allowed to merge rules together, it has to open the record of *why* each original exists, read the incidents, and check the proposed new wording against every one of them. If the new version wouldn't have caught a case the old version caught, it doesn't ship. Every rule I keep has a note attached saying what went wrong to cause it, which I'd been treating as sentiment. It turns out to be the test suite.
 
 The cheap version is one habit. Once in a while, hand your AI one of your own rules and ask it to invent five situations that break the spirit of the rule while slipping past the words. Anything it finds, you'd otherwise have found by being burned.
+
+---
+
+## When your AI reads the rule and skips it anyway
+
+Someone on a coaching call this week described a setup I recognized. Their AI agrees to every rule and helps design good processes, then doesn't follow them consistently. It suggests a way to check its own work and doesn't run the check. When they catch a skip, it apologizes, and the next week the same skip happens again.
+
+An apology from an AI is a promise the next conversation won't remember. Unless the setup itself changed, the next session is the same AI reading the same instructions, and it will skip that rule at about the same rate.
+
+My own worst case was reply length. My rule about short replies was the most emphasized rule in my file, starred twice and labeled the first priority. When I measured two weeks of my sessions in August, 65% of replies ran over the limit.
+
+Stronger wording didn't help. Anthropic's own documentation says Claude treats an instructions file "as context, not enforced configuration," so it tries to follow the file and sometimes doesn't. And every line you add to make one rule stronger is another line competing with all the others.
+
+So my setup now has a standing rule about rules: **once a rule has been corrected three times, it isn't allowed to be reworded more strongly. It gets mechanized or cut.** By then more emphasis won't help, because the rule is already outnumbered by everything else in the file. And when a mistake shows up for the first time, I start by asking which rule I already have should have caught the mistake, and why that rule missed.
+
+Mechanizing means turning a rule the AI has to remember into a step it can't skip silently. Three forms have worked for me:
+
+1. **A check that refuses.** A small script that runs outside the AI and blocks the action. My AI kept giving me links to files that wouldn't open with a click. After enough corrections, a check now reads each reply before it reaches me and sends it back if a link is the wrong kind. In Claude Code these are called hooks, and Anthropic's documentation recommends them for anything that has to happen every time.
+2. **A line the AI has to write every time.** For reply length, the last line of every reply now carries the actual word count, counted rather than estimated. The same measuring script, run again at the end of September on the latest two weeks, found 47% of replies over the limit, down from 65%. That's an improvement and still far from fixed, and newer models arrived in between, so I can't credit the counter with the whole drop. What changed for certain is that I see the number on every reply instead of once a month. You can do this one in an ordinary chat window.
+3. **A checklist where ✅ means done.** For a process with several steps, the AI marks each one ✅ or ⬜, and ✅ means done and checked, never just attempted. A false ✅ is worse than no list.
+
+A forced line only helps if it could come out wrong. "Style guide: applied ✅" is a line the AI can write without applying anything, and it looks exactly like compliance. Ask for something you could check instead: quote the two style rules that mattered most in this draft and point to where each one shows up. When my agents verify something, they have to paste the check they ran and what it printed. "Verified" with nothing after it counts as not checked.
+
+The other option is cutting. If a rule isn't worth mechanizing, ask whether it's worth the attention it takes from every other rule.
+
+And before you blame the instructions, check the settings. Most AI apps let you choose the model and how much effort it puts in before answering, sometimes called reasoning or thinking. At lower effort it spends less time going back over its own work before handing it to you. When a rule keeps getting skipped, the first thing I'd confirm is that the task runs on the model and effort you think it uses, including any scheduled tasks, which may not share your chat's setting. I keep my own sessions on the strongest model at high effort.
 
 ---
 
