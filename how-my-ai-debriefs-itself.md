@@ -1,6 +1,6 @@
 # How My AI Debriefs Itself
 
-**Version 1.2 · Last updated September 3, 2026**
+**Version 1.3 · Last updated October 2, 2026**
 
 *by George Kao*
 
@@ -85,6 +85,21 @@ This one is a written procedure with eight steps. These are the ones carrying th
 **Say when you decided *not* to update, and why.** A retro that always finds something has started performing. "Instructions are fine, one small note" is a legitimate and common outcome.
 
 Three failure modes it's explicitly told to avoid: congratulatory retros with a garnish of minor tweaks; rewriting most of a doc when most of it worked, which means the thread got lost; and answering some adjacent question instead of the one I asked.
+
+### When one project spans several sessions
+
+Long projects outgrow a single conversation. Mine turn into a chain: the AI notices its context getting heavy, writes down where things stand, and offers me a button that starts a fresh session from those notes. I click it, and the old session stays in my sidebar.
+
+A retro inside any one link of that chain misses the best evidence, because each session only saw its own slice. A check that passed in session one and failed on me in session three is invisible to both. So is a fact the handoff notes stated from memory that the next session had to correct. Meanwhile the sidebar filled with sessions that looked unfinished and weren't, and I felt behind on work that was already finished.
+
+So the retro now waits for the end of the project and covers the whole chain:
+
+- **Each fresh session names the one it came from.** The chain is a list of exact IDs, not a guess from titles.
+- **The new session archives the old one** once it has confirmed the handoff. Archiving keeps the transcript on disk, so the final retro can still read every session.
+- **When I say "done"** (or "we're complete, thank you!"), the AI runs one retro across every session in the chain. It reads each one through a script-made digest instead of the raw transcript; a 7 MB transcript comes out at about a page. Then it saves anything worth keeping into the project's folder and archives every session, its own last.
+- **A half-typed message doesn't hold anything up.** If I left an unsent draft in an old session, it goes into that project's inbox as my first thoughts, and the AI asks what I meant when I next pick the work up.
+
+A project that fits in one session ends with the same word. There's no chain to read, so the retro (if the run earned one), the filing and the archiving all happen right there.
 
 ---
 
