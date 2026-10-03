@@ -2,7 +2,7 @@
 
 ## A non-technical guide to switching AI tools freely — without losing everything your AI knows about you
 
-**Version 1.7 · Last updated August 12, 2026**
+**Version 1.8 · Last updated October 3, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -122,7 +122,7 @@ Everything so far can stay loose in your home folder. As it grows, give the port
 
     Date the traps, and write down what was tried. Most of what accumulates there is your AI's verdict that some approach doesn't work, and that verdict is usually only true of the attempt behind it. One of mine sat there from mid-July 2026 — a way of working my AI had ruled out after testing it — until a retest on August 5 found the original test had done two of its steps in the wrong order. It had worked all along. Three weeks of a worse setup, because the note recorded the verdict without the method.
 
-3. **HANDOFF-JOURNAL.md** — a running log, newest first. Every AI that does substantive work appends three lines: what it did, what it learned, what's open. Chat history mostly doesn't travel between apps; this journal is the bridge. When you return to an AI after time away, it reads the journal and catches up in one pass.
+3. **HANDOFF-JOURNAL.md** — a running log, newest first. Every AI that does substantive work adds three lines at the top, just below the template: what it did, what it learned, what's open. Chat history mostly doesn't travel between apps; this journal is the bridge. When you return to an AI after time away, it reads the journal and catches up in one pass.
 4. **A paste kit, named for you** — e.g. "📋 FOR ME — paste this into a new AI" — holding the short wiring prompt below, so future-you never hunts for it.
 5. **The exported memory** from Part 4, one file per project.
 6. **REBUILD-AUTOMATIONS.md** — only if you've built scheduled automations with one vendor's tool. List what each one does, when it runs, and what it needs, so any capable AI could rebuild them elsewhere. Automations are the least portable part of an AI setup; a rebuild spec is their insurance policy.
@@ -136,9 +136,11 @@ My working files live in a cloud folder called "<your folder name>". Before
 working with anything there, read "AI Handoff/START-HERE.md" at its top
 level and follow it — it routes you to my working agreements, project
 playbooks, and exported memory; read lazily, only what the task needs.
-When you finish substantive work, append a short entry to
-"AI Handoff/HANDOFF-JOURNAL.md" and fold durable learnings into the
-project folder's own files, not only your internal memory. Thank you for
+When you finish substantive work, add a short entry at the top (newest
+first, just below the template) of "AI Handoff/HANDOFF-JOURNAL.md" and
+fold durable learnings into the project folder's own files, not only
+your internal memory. If you can't open files in my Drive, say so and
+ask me to paste START-HERE.md in; don't guess at it. Thank you for
 the intelligence and care you bring to this work — genuinely appreciated. 🙏
 ```
 
@@ -238,6 +240,7 @@ Thank you for whichever of these you can do. A report back from the assistant th
 
 **Changelog**
 
+- **v1.8 — October 3, 2026.** My own journal caught a bug in this page's wiring prompt. The journal is newest-first, but the prompt told the AI to *append* an entry, and an AI that takes "append" literally writes at the bottom, which is exactly what mine kept doing until I changed my own instruction to say "at the top, just below the template." The prompt now says the same. It also tells an AI with no access to your files to say so and ask you to paste the starting file in, instead of guessing what it says.
 - **v1.7 — August 12, 2026.** Housekeeping the doc's own subject caught it out on. This page carried its version number in two places, and when v1.6 shipped only one of them moved — so a file whose whole point is keeping copies in sync was telling every AI that read it to compare a version line it disagreed with itself about. The sign-off no longer repeats the version; the header and this changelog are the only two, and they move together. The count in Part 5 and the count in the v1.4 note below were also two different numbers for the same day; they now agree.
 - **v1.6 — August 7, 2026.** Part 5 now says to date the known-traps section and to record what was tried, not the verdict alone. One of my own entries governed how I worked for three weeks before a retest found the original attempt had done two of its steps in the wrong order. The closing note to the AI reading this gained a second ask: set up a way to notice when this file changes.
 - **v1.5 — August 6, 2026.** Part 3 now says to name which copy of a file is canonical the day you first publish it, rather than the day you notice the local and published versions have drifted. Also added a closing note to the AI reading this, asking it to set a reminder for a month out and then report back — which ideas earned their place once it had put them to work, and what it would change for the next reader.
