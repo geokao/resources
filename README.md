@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.15 · Last updated 2026-10-03 01:47 CST**
+**Version 1.16 · Last updated 2026-10-07 11:15 CST**
 
+<!-- v1.16: Added An Inbox in Every Folder. -->
 <!-- v1.14: Added Your Weekly AI Scout; Give Your AI a Way to Improve Itself updated to v1.9 (new section, reading time 16 → 22). -->
 
 ---
@@ -74,6 +75,10 @@ I asked Claude to have GPT check a list of videos before deleting them, and GPT 
 **[Your Weekly AI Scout](your-weekly-ai-scout.md)**
 
 New AI tools ship nearly every week, and a few of them could save you hours, but finding those few means reading about all the rest. This sets up a scheduled task that does the reading for you. Once a week it checks X and Reddit first, where practical tricks circulate for weeks before anyone writes an article, holds what it finds up against your business and your website, and leaves you a short report: a few ideas, each with why it fits you, a first step and a dated source. You answer yes, not yet or no, by voice memo if you like, and your reasons teach it what to stop suggesting. Includes what to do when your AI can't read X or Reddit (mine couldn't, at different points), the guardrails for a task that reads strangers' posts while you sleep, and a paste-ready setup prompt that works with any AI. About 11 minutes to read, or one minute to hand over.
+
+**[An Inbox in Every Folder](an-inbox-in-every-folder.md)**
+
+I start more things than I finish, and the ideas I had mid-task used to vanish into chats I never reopened. Now my AI files each one in a small `inbox.md` note inside the project it belongs to, and builds one combined list of everything open whenever I ask. Every couple of days I ask it for the five most urgent and important items and the five most fun, answer each with "done," "yes, next," "skip" or "not now," and it learns what I care about from those answers. Includes how to set this up whether your AI works in folders, in an app's Projects, or in one long document, an optional third list a member's AI suggested (what deepens your inner life versus what only serves outreach), and a paste-ready setup prompt for any AI. About 7 minutes to read, or one minute to hand over.
 
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
