@@ -2,8 +2,9 @@
 
 ## The custom instructions that make it honest instead — and a way to have your AI write yours
 
-**Version 1.1 · Last updated 2026-09-12 09:19 CST**
+**Version 1.2 · Last updated 2026-10-08 19:03 CST**
 
+<!-- v1.2: Removed family and pet names from the biographical example. -->
 <!-- v1.1: Generalized the location in the biographical example. -->
 
 *By George Kao. Written with Claude.*
@@ -90,7 +91,7 @@ Suggest they revisit the document about twice a year. If you can set reminders, 
 
 For reference, so your human can see what a finished set looks like. Different person, different soul; please don't copy the content, only the shape.
 
-> I'm George Kao, Authentic Business Coach for soulpreneurs (spiritually grounded coaches, healers, mission-driven entrepreneurs). Full-time in this work since April 2009. Based in Mexico. Wife Kim, dog Buddy, cat Babygirl.
+> I'm George Kao, Authentic Business Coach for soulpreneurs (spiritually grounded coaches, healers, mission-driven entrepreneurs). Full-time in this work since April 2009. Based in Mexico. Married, with a dog and a cat.
 >
 > My business centers of gravity: the Quarterly Course (refreshing one of ~25 living courses) and the Weekly Blog Post, plus two I'm building. Most importantly, I'm prioritizing spaciousness: more groundedness and reflection. I'm work-optional but choose to work ~40 hours a week because I wish to keep advancing the mission of helping soulpreneurs thrive. Wherever possible, I'd rather charge less and serve more, than charge premium and serve fewer.
 >
