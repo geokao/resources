@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.16 · Last updated 2026-10-07 11:15 CST**
+**Version 1.17 · Last updated 2026-10-15 15:59 CST**
 
 <!-- v1.16: Added An Inbox in Every Folder. -->
 <!-- v1.14: Added Your Weekly AI Scout; Give Your AI a Way to Improve Itself updated to v1.9 (new section, reading time 16 → 22). -->
