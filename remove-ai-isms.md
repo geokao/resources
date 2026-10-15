@@ -1,6 +1,6 @@
 # Remove AI-isms — an editing workflow for AI-assisted writing
 
-**Version 1.9 · Last updated September 11, 2026**
+**Version 1.10 · Last updated October 15, 2026**
 
 AI-assisted drafts share a recognizable set of tells — overused words, repeated sentence shapes, endings that sound profound and say nothing. Readers have learned them, and when they spot them, they stop reading.
 
@@ -97,7 +97,7 @@ Be specific. Quote the offending phrases. If something appears six times, say so
 3. Every "here's [X]" pointing frame and announce-then-reveal ("for a reason") — including the negated simplicity-announcement: grep "mysterious," "complicated," "plain," "simple," and "rocket science," and read every hit (a scan for "plainly" alone won't catch "two plain things")
 4. Every "name"-as-articulation verb
 5. Every significance-assertion ("matters," "is the part that") and importance puffery ("marks a pivotal moment")
-6. Every closer move — bare pronouncement, tidy resolution, attainment, "…and then gone"
+6. Every closer move — bare pronouncement, tidy resolution, attainment, "…and then gone", spelled-out inference ("So of course", "No wonder", "Which means"), musing sign-off after the ask
 7. Every manufactured-recognition opener and announced-virtue opener ("I want to be careful here")
 8. Every vague "thing" / "something" / "part" — and, separately, every atmospheric metonym standing in for a name the draft already has ("the room," "the page," "the table")
 8b. Every unanchored pronoun — a sentence starting `It is/was/felt/turned/has/also/means`, and a sentence ending on a bare `them` / `that` / `this`. Then grep `\bit["'”’)\]]*[.!?…]` separately and rewrite **every** hit outside a quotation — a sentence ending on "it" is never acceptable
@@ -204,6 +204,8 @@ AI reaches for a small set of flourishes to make sentences and paragraphs feel w
 - **"something" as the final word,** used as a vague weight-carrier ("there's something there," "the piece is saying something"). An unspecified "something" at the end of a sentence is almost always the sentence admitting it didn't finish its own thought.
 - **Tidy mechanical-resolution closers.** "And it loosens." "And something clicks." "And it all falls into place." A neat release claim tacked onto a reframe, asserting the shift instead of showing it.
 - **Attainment closers.** "Until one day it's simply yours," "and then it's yours." A tidy possessive claim of arrival that overstates a clean finish. Prefer a concrete, humbler marker of the change ("until one day it has become second nature").
+- **The spelled-out inference.** "So of course…" / "No wonder…" / "Which means…" tacked onto a fact that already implies it, drawing the conclusion the reader drew a sentence ago. Cut the line; the fact carries it. ("They're my most engaged students, people who still come to live calls. ~~So of course they lean toward live connection!~~") A writer's own "Of course," that opens a limit offered as common sense is a bridge into a new point, and it stays.
+- **The musing sign-off after the ask.** A wistful wondering line placed after the closing question or call to comment: "I'm curious whether a bigger group tells the same story." "I wonder what you'll find." It re-opens a piece that just ended on the reader's turn. Cut it and end on the ask.
 
 **Delete the flourish — do not upgrade it.** The failure mode is rewriting a fake-profound kicker into a *better* fake-profound kicker: swapping the metaphor, preserving the rhythm, keeping the mic-drop shape. Don't. Cut the line entirely and end on the clearest concrete sentence already in the draft. If the ending genuinely needs closure, add a plain takeaway or next step. If a sentence can't survive without its closer move, the content wasn't carrying enough weight — tighten the content instead of decorating the ending.
 
