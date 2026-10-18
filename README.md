@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.18 · Last updated 2026-10-18 10:15 CST**
+**Version 1.19 · Last updated 2026-10-18 11:52 CST**
 
+<!-- v1.19: Council guide v1.1 adds the ChatGPT Dot route. -->
 <!-- v1.18: Added Take Your AI Council to Your Phone. -->
 <!-- v1.16: Added An Inbox in Every Folder. -->
 <!-- v1.14: Added Your Weekly AI Scout; Give Your AI a Way to Improve Itself updated to v1.9 (new section, reading time 16 → 22). -->
@@ -83,7 +84,7 @@ I start more things than I finish, and the ideas I had mid-task used to vanish i
 
 **[Take Your AI Council to Your Phone](take-your-ai-council-to-your-phone.md)**
 
-I keep councils of AI advisors in files that Claude looks after on my laptop, and I wanted to use them from the ChatGPT app on my phone without the two apps losing track of each other. This is the bridge Claude built for me: one file per council that ChatGPT reads, a `save` command that writes a one-line record of each session to a shared Google Doc, and Claude folding those records back into the permanent notes. Includes what four weeks of use taught me (getting started was the friction, and I typed far more than I talked), two traps that fail without telling you, three setup checks that can each fail visibly, and the builder script for your AI to adapt. About 12 minutes to read, or one minute to hand over.
+I keep councils of AI advisors in files that Claude looks after on my laptop, and I wanted to use them from the ChatGPT app on my phone without the two apps losing track of each other. This is the bridge Claude built for me: one file per council that ChatGPT reads, a `save` command that writes a one-line record of each session to a shared Google Doc, and Claude folding those records back into the permanent notes. Includes what four weeks of use taught me (getting started was the friction, and I typed far more than I talked), the simpler route I moved to the same day (a ChatGPT Dot that reads the council files and writes the records itself, with the rules inside each file), two traps that fail without telling you, three setup checks that can each fail visibly, and the builder script for your AI to adapt. About 12 minutes to read, or one minute to hand over.
 
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
