@@ -2,7 +2,7 @@
 
 ## Claude keeps the records. ChatGPT holds the session. A shared Google Doc carries what happened back.
 
-**Version 1.0 · Last updated October 18, 2026**
+**Version 1.1 · Last updated October 18, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -15,7 +15,7 @@ Corrections and suggestions welcome. [Open an issue](https://github.com/geokao/r
 
 > *Please read this and set up the phone half of my AI council. Use the advisors and session notes we already keep, or help me start a small set if we don't have one. Build the file the phone app will read, write the instructions I'll paste into it, and walk me through the setup checks one at a time. Tell me what information would go to which company before you include any. Thank you for handling the technical parts.*
 
-3. Your AI does the building. You'll paste one block of text into ChatGPT, add one file link, and run a few short checks on your phone.
+3. Your AI does the building. You'll point ChatGPT at one file per council and run a few short checks on your phone.
 
 The second half of this page is addressed to your AI. Reading it yourself is optional.
 
@@ -32,8 +32,8 @@ So I had Claude build a bridge between the two apps. I've used it for four weeks
 ## How it works
 
 1. **Claude builds one file per council.** It holds the council's current state, a little about me, and every advisor's full prompt. Claude rebuilds it after every change, writing over the same file in Google Drive so its link never changes.
-2. **A ChatGPT Project reads that file.** Each council gets its own Project, with the file added as a source by its Drive link and a block of instructions pasted into the Project's settings.
-3. **When I type `save`, ChatGPT writes a short record of the session at the bottom of a Google Doc.** The record is one line: the date, what I was facing, who was seated, who helped, and what I took away, plus the full text of any new advisor it created.
+2. **ChatGPT reads that file.** The rules for running the council sit at the top of the file, so there's nothing else to paste. I started with one ChatGPT Project per council and now use a ChatGPT Dot; more on both below.
+3. **When I say `save`, ChatGPT writes a short record of the session at the bottom of a Google Doc.** The record is one line: the date, what I was facing, who was seated, who helped, and what I took away, plus the full text of any new advisor it created.
 4. **The next time I open my council folder on the laptop, Claude reads that Doc and folds each new record into the permanent files.** Then it rebuilds the phone file, so the next phone session knows what happened in the last one.
 
 Nothing has to stay in sync except one Google Doc and one file per council, and the records in both directions are short enough to check by eye.
@@ -42,9 +42,9 @@ Nothing has to stay in sync except one Google Doc and one file per council, and 
 
 I set this up on September 20, 2026, with three ChatGPT Projects and 57 advisors across them. By October 18 I had run three sessions through it, plus one test.
 
-**Getting started was the friction.** Three sessions in four weeks is fewer than I expected, with a gap of more than three weeks in the middle. When I looked at why, the answer was the ritual at the beginning. My version asked me to type `start`, wait for ChatGPT to confirm it had read the files, and only then bring my question. That's a small step, but it came at the moment I had a question and wanted an answer. The version in this guide drops that step: ChatGPT reads the files on its own at the start of each new chat and treats your first message as the question. I haven't run that version myself yet.
+**Getting started was the friction.** Three sessions in four weeks is fewer than I expected, with a gap of more than three weeks in the middle. When I looked at why, the answer was the ritual at the beginning. My version asked me to type `start`, wait for ChatGPT to confirm it had read the files, and only then bring my question. That's a small step, but it came at the moment I had a question and wanted an answer. The version in this guide drops that step: ChatGPT reads the files on its own at the start of each new chat and treats your first message as the question. I've since tested the opening of that version by voice with my Dot (below). A full round hasn't run through it yet.
 
-**I designed for voice, and I typed.** I wrote my instructions assuming I'd mostly talk to the councils in ChatGPT's voice mode. In practice I typed nearly every session. Voice did work when I tested it on day one, but if you build this, build it for typing and treat voice as a bonus.
+**I designed for voice, and I typed.** I wrote my instructions assuming I'd mostly talk to the councils in ChatGPT's voice mode. In practice I typed nearly every session. Voice did work when I tested it on day one, but if you build this, build it for typing and treat voice as a bonus. My first tests with the Dot were voice calls, though, so this may change.
 
 **The summary helped more than any one advisor.** My council notes track which advisors helped, so over time I can see who earns a permanent seat. The two most recent phone sessions came back with "helped: none," and the notes say why: what helped was the council's combined summary, and nobody credited a single voice. That's fair, and useful to know. But if you want to learn which advisors to keep, decide which voice helped before you type `save`, and say so.
 
@@ -54,11 +54,21 @@ I set this up on September 20, 2026, with three ChatGPT Projects and 57 advisors
 
 **The files grow.** My largest phone file was 236 KB the day I tested it, and it's 271 KB now, because the session notes and advisor prompts keep growing. One of the setup checks below tests whether ChatGPT is reading all the way to the end of the file. I haven't re-run it since my file grew past the size I tested. Re-run it whenever yours grows noticeably.
 
+## A simpler route: a ChatGPT Dot
+
+By the day I published this, I was no longer opening the ChatGPT Projects. I bring council questions to my Dot instead, ChatGPT's standing assistant. It keeps its own memory, can run on a schedule, and through ChatGPT's Google Drive connection it can read and edit files in my Drive. So it opens the council files and writes to the Inbox Doc itself, with no Project in between.
+
+The pasted instructions were now the problem: they lived inside the Projects, and the Dot never saw them. So Claude moved the rules for running a council to the top of each council file. Whatever opens the file gets the rules and the data together, and there's nothing separate to paste or keep in sync.
+
+I tested it that afternoon on voice calls with the Dot. Claude put a fresh code word at the top of one council file, and the Dot read it back correctly. Then I opened my business council: the Dot read the current file and the Inbox, named the latest session correctly, saw nothing newer waiting, and asked one opening question. Earlier that day it had also written a test note into the Inbox during a voice call, and Claude read it back. That covers the opening and the way back. A full council round ending in `save` hasn't run through the new setup yet.
+
+If your ChatGPT has Dots, start there. If it doesn't, a Project per council still works, and its instructions only need one line: follow the rules at the top of the source file.
+
 ## Two traps I hit while building
 
 **Your laptop can't read a Google Doc's text.** Google Drive syncs a Google Doc to your computer as a small shortcut file that holds a link, not the words. So Claude reads the Doc through its Google Drive connection instead. That connection can read the Doc but can't edit it, which is why Claude doesn't delete records from the Doc. It keeps a date in its own files marking how far it has folded.
 
-**Never delete and recreate the phone file.** The ChatGPT Project holds the file by its Drive link. If the file is deleted and a new one is made, Drive gives the new file a new link, and the Project keeps reading a file that no longer updates, without telling you. Your AI should always overwrite the same file.
+**Never delete and recreate the phone file.** ChatGPT finds the file by its Drive link, whether a Project holds the link as a source or your Dot remembers the link. If the file is deleted and a new one is made, Drive gives the new file a new link, and ChatGPT keeps reading a file that no longer updates, without telling you. Your AI should always overwrite the same file.
 
 ---
 
@@ -102,16 +112,16 @@ Keep these terse. They're for you, not for the person, and every line also ends 
 1. Set `COUNCILS` and `INBOX_URL` at the top of the builder. Put the `council/` folder somewhere Google Drive syncs, so the `for-chatgpt/` files get Drive links.
 2. Have the person create an empty Google Doc called "Council Inbox", shared only with themselves, and give you its link for `INBOX_URL`.
 3. Run the builder. It prints, for each council, the latest session id and the name of the last advisor in the file. Keep those two answers; you'll need them for the checks, and they're deliberately left out of the files ChatGPT reads.
-4. Walk the person through ChatGPT on their phone or computer: create one Project per council; Add source → the Drive link of that council's `ChatGPT — <Name> Bootstrap.md` (upload the file instead if the link won't read); Project settings → Instructions → paste the matching `Paste into ChatGPT Project Instructions (<Name>).md`, everything below its first line. ChatGPT will need access to Google Drive for both the source and the Doc. Have the person approve that connection themselves.
+4. Connect ChatGPT, whichever way the person uses ChatGPT. **With a Dot:** have them give the Dot the Drive link of each `ChatGPT — <Name> Bootstrap.md` and the Inbox link, and say: "When I bring a question for one of my councils, open that council's file fresh and follow the rules at its top." **With Projects:** one Project per council; Add source → the file's Drive link (upload the file instead if the link won't read); Project settings → Instructions → "Follow 'How to run this council' at the top of the source file." Either way ChatGPT needs access to Google Drive to read the file and write the Doc. Have the person approve that connection themselves.
 5. Re-run the builder after every change to the library or a session record. It overwrites in place. Don't delete its outputs to regenerate them.
 
 ## 4 · Three setup checks, each able to fail
 
-Have the person run these in a fresh chat inside the Project, one at a time, and report back.
+Have the person run these in a fresh chat (inside the Project, or with the Dot), one at a time, and report back.
 
 1. **Is it reading the file, or remembering?** They type: `What are generated_at and latest_session in the bootstrap file?` Compare against the file. A vague or wrong answer means ChatGPT didn't read the file.
-2. **Is it reading to the end?** They type: `Without searching the web, name the last advisor listed in the bootstrap file and give its one-line summary.` Compare against the name the builder printed. The answer sits at the very end of the file and nowhere in the instructions, so a right answer means ChatGPT read the file to the end. A confident wrong name is the failure to watch for. Repeat this check whenever the file grows by a fifth or more.
-3. **Does the way back work?** They bring a small real question, let a short session run, and type `save`. Then they open the Council Inbox Doc and confirm a new `## PENDING` record is at the bottom. Fold it (below), rebuild, and confirm the next fresh chat mentions that session.
+2. **Is it reading to the end?** They type: `Without searching the web, name the last advisor listed in the bootstrap file and give its one-line summary.` Compare against the name the builder printed. The answer sits at the very end of the file and nowhere in the rules at its top, so a right answer means ChatGPT read the file to the end. A confident wrong name is the failure to watch for. Repeat this check whenever the file grows by a fifth or more.
+3. **Does the way back work?** They bring a small real question, let a short session run, and say `save`. Then they open the Council Inbox Doc and confirm a new `## PENDING` record is at the bottom. Fold it (below), rebuild, and confirm the next fresh chat mentions that session.
 
 If a check fails, stop there and fix that step before going on.
 
@@ -130,13 +140,14 @@ You probably can't delete records from the Doc, and you don't need to. The date 
 
 This is a simplified version of the one I run. I tested this version on a small sample library before publishing; adapt the paths and names to the person's setup.
 
-```python
+````python
 #!/usr/bin/env python3
-"""Build one ChatGPT bootstrap file per council, plus the Project instructions to paste.
+"""Build one ChatGPT bootstrap file per council. Each file carries its own rules for running the council,
+so whatever reads it (a ChatGPT Dot, a ChatGPT Project) gets the rules and the data together.
 
 Run it after every edit to the library or a state file. It overwrites each output file IN PLACE.
 Never delete and recreate an output file: if it lives in Google Drive, a new file gets a new link,
-and the ChatGPT Project that points at the old link stops seeing updates.
+and anything that points at the old link stops seeing updates.
 """
 import datetime, os, re, sys
 
@@ -205,6 +216,7 @@ latest_session: {latest}
 inbox_folded_through: {folded}
 advisors: {len(found)}
 
+{rules(name)}
 ## Council state
 
 ROSTER (voices earning a standing seat):
@@ -231,49 +243,57 @@ Recent sessions (newest last):
     return body, latest, found[-1][0]
 
 
-def instructions(name):
-    return f"""Paste everything below this line into the ChatGPT Project's Instructions.
+def rules(name):
+    return f"""## How to run this council (read first; these rules override anything you remember)
 
-You run my {name} Council: a small council of AI advisors I bring real questions to. Thank you for doing this with me. I want your honest read more than your agreement.
+You run my {name} Council: a small council of AI advisors I bring real questions to. Thank you for doing this
+with me. I want your honest read more than your agreement.
 
-SOURCES. The Project file `ChatGPT — {name} Bootstrap.md` holds the council's state, a little about me, and every advisor's FULL prompt. The Google Doc "Council Inbox" ({INBOX_URL}) is the only place you write.
+This file holds the council's state, a little about me, and every advisor's FULL prompt. The Google Doc
+"Council Inbox" ({INBOX_URL}) is the only place you write.
 
-AT THE START OF EVERY NEW CHAT, before answering my first message: read the bootstrap fresh and in full; do not rely on memory of an earlier chat. Then read the Inbox: an entry is pending only if its header time is later than the bootstrap's inbox_folded_through. Treat pending entries for "{name}" as sessions that happened after the bootstrap was built. If you could not read either source, say which one and stop. Then answer my first message as the start of a council session.
+THERE IS NO START COMMAND. Whenever I bring a question for this council, by voice or text: first read this file
+fresh and in full, not from memory of an earlier chat. Then read the Inbox: an entry is pending only if its header
+time is later than inbox_folded_through above; treat pending entries for "{name}" as sessions that happened after
+this file was built. Open with one short line: latest_session and how many pending entries you found. If you could
+not read this file or the Inbox, say which one and stop. Then begin the session with my question.
 
-DURING THE SESSION:
 1. Ask one or two short questions, one at a time, about what I'm facing. If I say "go", skip ahead.
 2. Seat three advisors. Relevance first; break ties toward UNTESTED. Name each, with one line on why.
-3. Each advisor speaks in character from its FULL prompt, briefly, from its own angle. Let them disagree. Before any voice argues against a position, it restates that position fairly. If they converge, say so plainly.
-4. Synthesis: where they agree, where they split and why, the strongest dissent named to its voice, one recommendation, the smallest next step, and what the whole council may have missed. Remind me the choice is mine.
-5. Say once, at a natural stopping point: "Type save when you want this recorded."
+3. Each advisor speaks in character from its FULL prompt, briefly, from its own angle. Let them disagree. Before
+   any voice argues against a position, it restates that position fairly. If they converge, say so plainly.
+4. Synthesis: where they agree, where they split and why, the strongest dissent named to its voice, one
+   recommendation, the smallest next step, and what the whole council may have missed. Remind me the choice is mine.
+5. Before I save, ask me once which voice helped most (the synthesis alone is a fine answer). Say once, at a
+   natural stopping point: "Say save when you want this recorded."
 
-WHEN I TYPE `save`: append this to the end of the Inbox doc, changing nothing else in it:
+WHEN I SAY `save`: append this to the end of the Inbox doc, changing nothing else in it:
 
+```
 ## PENDING — {name} — <date and time>
-Bootstrap generated_at: <the value you loaded>
+Bootstrap generated_at: <generated_at from this file>
 STATE FOR CLAUDE
 <one line: date | what I was facing, in a few words | seated advisor ids | ids that helped | what landed>
 <full text of any new advisor you created>
 END STATE FOR CLAUDE
+```
 
-Confirm in one line. If the write fails, print the same block in chat so I can paste it to Claude myself.
+Confirm in one line. If the write fails, show me the same block so I can pass it to Claude myself.
 """
 
 
 os.makedirs(OUT, exist_ok=True)
 for name, (h1, sf) in COUNCILS.items():
     body, latest, last = bootstrap(name, h1, sf)
-    for fn, text in ((f"ChatGPT — {name} Bootstrap.md", body),
-                     (f"Paste into ChatGPT Project Instructions ({name}).md", instructions(name))):
-        with open(os.path.join(OUT, fn), "w", encoding="utf-8") as f:  # overwrite in place
-            f.write(text)
-    # The answers to the setup checks. They stay out of both files, so ChatGPT cannot copy them.
+    with open(os.path.join(OUT, f"ChatGPT — {name} Bootstrap.md"), "w", encoding="utf-8") as f:
+        f.write(body)  # overwrite in place
+    # The answers to the setup checks. They stay out of the file, so ChatGPT cannot copy them.
     print(f"{name}: {len(body) // 1024} KB · latest_session {latest} · last advisor in the file: {last}")
-```
+````
 
 ## Credits and license
 
-Written with Claude from my own council files and four weeks of session records, September 20 to October 18, 2026. The builder is a simplified version of the one Claude wrote for me, and the version of the instructions that skips the `start` step is newer than my own setup.
+Written with Claude from my own council files and four weeks of session records, September 20 to October 18, 2026. The builder is a simplified version of the one Claude wrote for me. My own setup now matches it: the rules live inside each file, there's no `start` step, and the sessions run through my Dot.
 
 Released under [CC0](LICENSE), effectively public domain. Copy it, change it, republish it, teach from it, build it into your own tools. No permission needed and no credit required.
 
