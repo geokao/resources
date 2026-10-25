@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.19 · Last updated 2026-10-18 11:52 CST**
+**Version 1.20 · Last updated 2026-10-24 21:38 CST**
 
+<!-- v1.20: Added Is Your Google Drive Filling Up with Copies of Your Claude Projects?; How I Work with Claude → v1.11. -->
 <!-- v1.19: Council guide v1.1 adds the ChatGPT Dot route. -->
 <!-- v1.18: Added Take Your AI Council to Your Phone. -->
 <!-- v1.16: Added An Inbox in Every Folder. -->
@@ -93,6 +94,10 @@ If you've told your AI assistant to do something every night at 3am and nothing 
 **[Is your Claude 5-hour limit maxing out quickly?](claude-limit-maxing-out.md)**
 
 Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two causes of a spike you can't account for — an idle gap, and a model switch made to save money that doesn't — how to tell whether starting a fresh session saves anything (on a warm cache it usually doesn't), the two things your local numbers can't see, and what support can and can't do. Claude Code only, desktop app or CLI. About 14 minutes to read, or one minute to hand over.
+
+**[Is your Google Drive filling up with copies of your Claude projects?](claude-copies-in-your-drive.md)**
+
+I searched Drive for one planning document and found four files with the same name. Claude's Code tab gives each work session its own copy of the project folder, and by default those copies live inside the folder, so Drive syncs every one of them. Mine had piled up past 60 copies and 8 GB. This covers the one setting that sends new copies somewhere else, and a cleanup your AI runs to clear the old ones without losing a copy that still holds unsaved work. For the Claude desktop app with projects in Google Drive, Dropbox, iCloud or OneDrive. About 5 minutes to read, or one minute to hand over.
 
 ---
 
