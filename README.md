@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.20 · Last updated 2026-10-24 21:38 CST**
+**Version 1.21 · Last updated 2026-10-28 14:48 CST**
 
+<!-- v1.21: Added Running Several AI Sessions at Once Without Them Overwriting Each Other. -->
 <!-- v1.20: Added Is Your Google Drive Filling Up with Copies of Your Claude Projects?; How I Work with Claude → v1.11. -->
 <!-- v1.19: Council guide v1.1 adds the ChatGPT Dot route. -->
 <!-- v1.18: Added Take Your AI Council to Your Phone. -->
@@ -98,6 +99,10 @@ Some days the usage meter hits 100% and you can't account for it — you weren't
 **[Is your Google Drive filling up with copies of your Claude projects?](claude-copies-in-your-drive.md)**
 
 I searched Drive for one planning document and found four files with the same name. Claude's Code tab gives each work session its own copy of the project folder, and by default those copies live inside the folder, so Drive syncs every one of them. Mine had piled up past 60 copies and 8 GB. This covers the one setting that sends new copies somewhere else, and a cleanup your AI runs to clear the old ones without losing a copy that still holds unsaved work. For the Claude desktop app with projects in Google Drive, Dropbox, iCloud or OneDrive. About 5 minutes to read, or one minute to hand over.
+
+**[Running several AI sessions at once without them overwriting each other](several-ai-sessions-at-once.md)**
+
+I usually have several AI sessions open, and I kept typing the same reminder into each one: another session may be working on this, so don't overwrite its work. Then we counted. In one week, 81 of my files were edited by more than one session. This gives you a standing rule any AI can follow, plus a small guard for Claude Code that stops an edit once when another session recently changed the same file, and tells your AI which session it was and whether it's still working. It also covers what the guard can't see, and four habits for the times two sessions need one file on purpose. About 6 minutes to read, or one minute to hand over.
 
 ---
 
