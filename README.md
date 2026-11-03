@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.21 · Last updated 2026-10-28 14:48 CST**
+**Version 1.22 · Last updated 2026-11-03 14:39 PST**
 
 <!-- v1.21: Added Running Several AI Sessions at Once Without Them Overwriting Each Other. -->
 <!-- v1.20: Added Is Your Google Drive Filling Up with Copies of Your Claude Projects?; How I Work with Claude → v1.11. -->
