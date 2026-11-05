@@ -1,6 +1,6 @@
 # How My AI Debriefs Itself
 
-**Version 1.3 · Last updated October 2, 2026**
+**Version 1.4 · Last updated November 5, 2026**
 
 *by George Kao*
 
@@ -100,6 +100,20 @@ So the retro now waits for the end of the project and covers the whole chain:
 - **A half-typed message doesn't hold anything up.** If I left an unsent draft in an old session, it goes into that project's inbox as my first thoughts, and the AI asks what I meant when I next pick the work up.
 
 A project that fits in one session ends with the same word. There's no chain to read, so the retro (if the run earned one), the filing and the archiving all happen right there.
+
+### Three buttons instead of a sentence
+
+I typed my closing line by hand about forty-five times before I asked for a button. Now, whenever a session is idle, three buttons sit above the message box:
+
+- **Archive** closes the session right away. Claude doesn't reply, so it costs nothing. I use it when nothing in the session needs saving.
+- **Retro & archive** sends "thank you! if you're complete here, please retro and then archive." That's my usual one.
+- **Also send info** sends the same line with one addition: pass along anything another open session needs from this one, and skip that step when no session does. That one's for days when two sessions were working on related things.
+
+Before keeping the third button I asked what that extra check costs. My AI priced sixty of my past closes from its own logs, and the check came to about a hundredth of a percent of a week's usage each time. Then I asked about sessions I'd left idle for over an hour, since the AI has to reload the whole conversation when it picks back up. The reload does cost more, but the first step of the close usually pays for it, and the check that follows reads the already-reloaded copy at the cheap rate.
+
+My version of Claude Code lets Claude add buttons and panels to its own interface, which is how these got built. If yours can't, a saved command you type works almost as well. Either way, you can hand this to your AI:
+
+> Please give me one-click ways to end a session. I want three: (1) archive this session without a reply, (2) send "thank you! if you're complete here, please retro and then archive." as if I typed it, and (3) the same message plus "send anything another open session needs from this one, only if that session needs the information." If your app lets you add buttons above the message box, do that, and show them only while you're idle. If it can't, make the three into saved commands I can type instead, and tell me which you did. Test each one before you tell me it works. Thank you, these will save me a little typing at the end of every session, and those seconds add up.
 
 ---
 
