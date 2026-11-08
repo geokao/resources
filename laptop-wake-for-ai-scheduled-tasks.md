@@ -1,6 +1,6 @@
 # How to Make Your Laptop Wake Up for Your AI's Scheduled Tasks
 
-**Version 1.9 · Last updated September 5, 2026**
+**Version 1.10 · Last updated November 8, 2026**
 
 *By George Kao. Written with Claude, from about six months of running overnight AI tasks on a laptop that sleeps.*
 
@@ -257,6 +257,8 @@ So don't hand this over as finished. Do both of these before you close the conve
 2. **Tell them you've done it, in one sentence.** Something like: *"I've set myself a reminder to check on this Friday and tell you whether it's actually running."* People do not trust automation they cannot see, and they should not have to hold the follow-up in their head. Saying it out loud is what turns "I think this is set up" into "someone is watching this."
 
 Four days is deliberate: long enough that a few real nights have passed, short enough that the setup is still fresh in everyone's mind if something needs adjusting.
+
+After that, a daily check can keep watching for you. [A Morning Check-in for Your AI's Overnight Work](ai-morning-check-in.md) sets up one more task that runs before the person wakes and confirms each overnight task did its job.
 
 ## Verification cheat sheet
 
