@@ -1,6 +1,6 @@
 # Is your Claude 5-hour limit maxing out quickly?
 
-**Version 1.3 · Last updated September 16, 2026**
+**Version 1.4 · Last updated November 8, 2026**
 
 Some days the meter hits 100% and you genuinely can't account for the spike. You weren't running anything unusual. You may even have switched to a cheaper model. And there's no way to argue with a number you can't check.
 
@@ -312,6 +312,8 @@ Three things that helped, in order of how much they returned for me:
 On a subscription, Claude Code writes a one-hour cache. The costs documentation says that lifetime "is an hour on a subscription and drops to five minutes once you're drawing on usage credits." Five minutes is shorter than most pauses in an ordinary working day, so once you're on credits, the full re-processing described above stops being an occasional event and starts happening after nearly every break you take.
 
 I'd rather have the setup than a smaller number, so I'm not arguing for a spare instructions file. I'm arguing for knowing what yours costs, which I didn't, for about a month.
+
+If you pay for a second AI as well, [Using Two AIs Together](using-two-ais-together.md) has a one-minute morning check for pacing both weekly allowances.
 
 ---
 
