@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.23 · Last updated 2026-11-08 15:35 PST**
+**Version 1.24 · Last updated 2026-11-08 15:57 PST**
 
 <!-- v1.23: Added A Morning Check-in for Your AI's Overnight Work; laptop-wake and self-improving guides → v1.10 (cross-links). -->
 <!-- v1.21: Added Running Several AI Sessions at Once Without Them Overwriting Each Other. -->
