@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.22 · Last updated 2026-11-03 14:39 PST**
+**Version 1.23 · Last updated 2026-11-08 15:35 PST**
 
+<!-- v1.23: Added A Morning Check-in for Your AI's Overnight Work; laptop-wake and self-improving guides → v1.10 (cross-links). -->
 <!-- v1.21: Added Running Several AI Sessions at Once Without Them Overwriting Each Other. -->
 <!-- v1.20: Added Is Your Google Drive Filling Up with Copies of Your Claude Projects?; How I Work with Claude → v1.11. -->
 <!-- v1.19: Council guide v1.1 adds the ChatGPT Dot route. -->
@@ -103,6 +104,10 @@ I searched Drive for one planning document and found four files with the same na
 **[Running several AI sessions at once without them overwriting each other](several-ai-sessions-at-once.md)**
 
 I usually have several AI sessions open, and I kept typing the same reminder into each one: another session may be working on this, so don't overwrite its work. Then we counted. In one week, 81 of my files were edited by more than one session. This gives you a standing rule any AI can follow, plus a small guard for Claude Code that stops an edit once when another session recently changed the same file, and tells your AI which session it was and whether it's still working. It also covers what the guard can't see, and four habits for the times two sessions need one file on purpose. About 6 minutes to read, or one minute to hand over.
+
+**[A morning check-in for your AI's overnight work](ai-morning-check-in.md)**
+
+If your AI runs tasks while you sleep, some of them will fail without telling you. A task that found nothing and a task that never started can look exactly alike. This sets up one more scheduled task that runs before you wake, checks that each overnight task left behind what it should have, and leaves you a short note with only what needs you. Includes the one-file ledger that makes a silent failure visible, the rules that keep the note short, and, for the Claude desktop app, a link that hands your reply to a fresh session so the follow-up happens where you normally work. About 11 minutes to read, or one minute to hand over.
 
 ---
 
