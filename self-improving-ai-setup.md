@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.9 · Last updated September 30, 2026**
+**Version 1.10 · Last updated November 8, 2026**
 
 *by George Kao*
 
@@ -12,7 +12,7 @@ What I have now instead is a set of scheduled agents that run at 3am, read my ow
 
 This is how it's built, and how you'd build your own.
 
-The debriefs that feed it — the check at the end of every reply, the structured retro after a real piece of work, and the weekly pass allowed to delete things — are their own guide: [How My AI Debriefs Itself](how-my-ai-debriefs-itself.md). Start there if you don't run scheduled agents yet, because most of it works in a plain chat window.
+The debriefs that feed it — the check at the end of every reply, the structured retro after a real piece of work, and the weekly pass allowed to delete things — are their own guide: [How My AI Debriefs Itself](how-my-ai-debriefs-itself.md). Start there if you don't run scheduled agents yet, because most of it works in a plain chat window. The morning check-in that reads the heartbeats and passes along that one question has its own guide as well: [A Morning Check-in for Your AI's Overnight Work](ai-morning-check-in.md).
 
 ---
 
