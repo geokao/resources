@@ -2,7 +2,7 @@
 
 ## Keep one in charge of the project. Give the other a job worth checking.
 
-**Version 1.0 · Last updated September 6, 2026**
+**Version 1.1 · Last updated November 8, 2026**
 
 *By George Kao. Directed by Claude, with GPT-6's deep guidance and writing.*
 
@@ -149,6 +149,22 @@ Apply confirmed corrections within the permission already given. Record why you 
 A reviewer may propose a correction without taking over the voice, audience or purpose. The person can explicitly delegate drafting or building too, as George did with this guide. The hub still checks the result and maintains the current version.
 
 Save the useful result in the project the person already uses. Repeat the review when the stakes or remaining uncertainty justify the extra work; a successful audit needn't become a recurring appointment.
+
+## 7 · Pace the two allowances by the day
+
+Most AI plans come with a weekly allowance. If you only look at the meter when it runs low, the warning comes too late to change course. Since October 8, my AI has done one small sum every morning, separately for each tool: the percentage left, divided by the days until it resets. That's today's share. Optional work goes to whichever AI has more of today's share unused.
+
+Two adjustments made the sum fit a working week. I keep 10% of Claude's allowance in reserve for the last day before it resets, so a late request always finds something left. And on a day when either AI has used up its share, it does what I ask for and nothing optional.
+
+The readings from October 8 to November 8, 2026 (32 days):
+
+1. Claude never ran out. Its four complete weeks ended between 79% and 87% used.
+2. The daily share was overspent on only 2 of the 32 days.
+3. The other AI was the one going to waste. It never used more than 15% of a week's allowance, and most weeks it used between 3% and 10%.
+
+So the check didn't do what I built it for. It rarely caught me overspending. Instead it turned up capacity I was paying for and leaving idle, and it gave my AI a standing reason to send research and reviews to the AI with room to spare.
+
+You don't need any tooling for this. Ask your AI to open both usage pages once each morning and work out the two numbers before it plans the day. Meters can lag, though. One of mine only refreshes when that AI does agent work, so anything done in its chat window never shows up. Treat each reading as a floor on what you've used.
 
 ---
 
