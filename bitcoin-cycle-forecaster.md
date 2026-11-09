@@ -37,10 +37,10 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 
 ## The work behind the forecaster
 
-1. **Bitbo's charts.** Claude catalogued 203 of Bitbo's chart pages and read the 105 descriptions it could reach. It rebuilt five of the most popular indicators (MVRV, Mayer Multiple, Pi Cycle, Puell Multiple and Hash Ribbons) from raw data to test them as forecast inputs.
+1. **Bitbo's charts.** Claude catalogued 203 of them and read the 105 descriptions it could reach. Then it rebuilt five of the most popular indicators (MVRV, Mayer Multiple, Pi Cycle, Puell Multiple and Hash Ribbons) from raw data to test them as forecast inputs.
 2. **Cycle Repeat itself.** Claude replayed the chart's method from every day since August 2014, 4,468 projections in all, and scored Bitbo's own past forecasts from 8 archived copies of the chart.
 3. **Over 20 models compared,** including simple baselines and later challengers built on ideas from GPT and Gemini. Each was rebuilt weekly since 2016 from only the data available that week, then checked against what happened 3 months to 3 years later — more than 40,000 test forecasts in all.
-4. **Leak checks.** To confirm no forecast peeked at the future, Claude cut the data off at past dates, rebuilt the forecasts, and got identical results in all 1,070 comparisons. It also planted a leak on purpose to prove the check could catch one.
+4. **Leak checks.** To confirm no forecast peeked at the future, Claude cut the data off at past dates, rebuilt the forecasts, and got identical results in all 1,070 comparisons. Claude also planted a leak on purpose to prove the check could catch one.
 5. **Rules before results.** For the turning-point method, Claude wrote down how it would be judged before computing a single result, so the results couldn't steer the rules.
 6. **Two independent checks.** A separate Claude session audited the code and reproduced every number in its test tables. A fresh one, with no access to that code, rebuilt the tool from this page's prompt alone and matched every reference figure within 2%.
 
