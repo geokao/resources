@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.10 · Last updated November 8, 2026**
+**Version 1.11 · Last updated November 8, 2026**
 
 *by George Kao*
 
@@ -26,7 +26,7 @@ Four of my scheduled agents exist to improve the setup itself. They run on their
 
 Its last step may apply up to three small, mechanical fixes on its own, each written up with the exact command that undoes the change. I added that in late August, when I realized I'd rather it make as many improvements as it could without asking me. It can't add a new rule that way. And it can't act on anything it learned from a web page unless the vendor's own documentation says the same thing, because a web page is the easiest place for a stranger to plant an instruction.
 
-**The Sunday-night door cuts.** Its one job is to make my setup smaller. It starts by measuring where my tokens went that week, and the biggest cost becomes that night's target. It also picks up the Monday door's "checkably false" tags, re-runs each check itself rather than trusting the tag, and repairs the ones that verify. Judgment calls stay in the folder for me. Outward-facing anything waits for me, always.
+**The Sunday-night door cuts.** Its one job is to make my setup smaller. It starts by measuring where my tokens went that week, and the biggest cost becomes that night's target. That rule alone starved the rest. The pass rotates through four kinds of surface, and picking the biggest cost kept choosing the same one, so two of the four went unaudited for about two months. Now any surface that has gone too long unaudited takes the night, whatever the measurement says. It also picks up the Monday door's "checkably false" tags, re-runs each check itself rather than trusting the tag, and repairs the ones that verify. Judgment calls stay in the folder for me. Outward-facing anything waits for me, always.
 
 **The two specialists stay separate on purpose.** One tunes my custom skills weekly, measured by which ones I actually invoke, and leaves the finished version in a queue it isn't allowed to install from — a 3am swap has nobody there to catch it replacing the wrong skill. The daily check-in below installs it instead. Until early August that upload was the last step here that still needed my hands. Deleting a skill is still mine: re-installing the old version undoes a bad replacement, and nothing undoes a delete. One monthly pass re-tests the capabilities my setup previously recorded as impossible, starting with the one that costs me most, in case the vendor has since shipped it — and it drives a browser, which is why it doesn't share a run with anything else.
 
@@ -108,9 +108,9 @@ My first fix took about ten minutes. A small script checked the file against a c
 
 The ceiling didn't hold. A script that only reports a number is asking nicely. With the exact overage shown to the AI on every edit, the file still grew about 1,300 characters a day.
 
-What finally held was a check that refuses. At 3am there's nobody there to be disciplined, so the check has to be able to say no on its own. An edit that would leave the file bigger than its ceiling is now blocked before it lands, and the ceiling only ever moves down, so every cut that sticks is banked. The first version watched one way of editing the file and missed another, and the file got 3,000-some characters past its ceiling through that gap. A check covers only the routes you remembered to include.
+What finally held was a check that refuses. At 3am there's nobody there to be disciplined, so the check has to be able to say no on its own. An edit that would leave the file bigger than its ceiling is now blocked before it lands, and the ceiling only ever moves down, so every cut that sticks is banked. The first version watched one way of editing the file and missed another, and the file got 3,000-some characters past its ceiling through that gap. A check covers only the routes you remembered to include. It happened again in November: a write that used a relative path after a change of directory slipped past the second version.
 
-With growth stopped, the cut itself became possible. In mid-September, the step-by-step recipes moved out of the always-loaded file into reference files my AI opens only when a task needs one. Each left a short pointer behind, and every safety gate stayed where it was. The file went from about 251,000 characters to about 131,000 in less than a day, and it hasn't grown back. That size is still well past the length Anthropic recommends, so the Sunday-night pass now has a quota: every run makes its target at least 3% smaller, or writes down why it couldn't.
+With growth stopped, the cut itself became possible. In mid-September, the step-by-step recipes moved out of the always-loaded file into reference files my AI opens only when a task needs one. Each left a short pointer behind, and every safety gate stayed where it was. The file went from about 251,000 characters to about 131,000 in less than a day, and it hasn't grown back. The weekly cuts have since taken it to about 117,000. That size is still well past the length Anthropic recommends, so the Sunday-night pass now has a quota: every run makes its target at least 3% smaller, or writes down why it couldn't.
 
 Cutting that much is only safe because nothing is destroyed. Every cut goes on a list: what stopped loading, the one command that restores it, and the failure that would tell me it was needed. Nobody complaining doesn't count as proof a cut was right. Most of what gets cut protects against a rare failure, which is exactly why it looked unnecessary.
 
