@@ -1,6 +1,6 @@
 # Is your Claude 5-hour limit maxing out quickly?
 
-**Version 1.4 · Last updated November 8, 2026**
+**Version 1.5 · Last updated November 8, 2026**
 
 Some days the meter hits 100% and you genuinely can't account for the spike. You weren't running anything unusual. You may even have switched to a cheaper model. And there's no way to argue with a number you can't check.
 
@@ -19,15 +19,15 @@ Every request Claude Code makes sends your whole conversation again. Your instru
 Most of that is **cached**. Claude stores the unchanged front portion of your conversation and re-reads it cheaply instead of reprocessing it. So your tokens split into two very different kinds:
 
 - **Fresh tokens** — what's genuinely new this turn: your message, Claude's reply, and whatever got written into the cache for the first time.
-- **Cache reads** — the same context, read back again, at a fraction of the cost. A tenth, for almost every model.
+- **Cache reads** — the same context, read back again, at a fraction of the cost. A tenth on most models, and less on the newest ones.
 
 On a normal day of mine, cache reads are **96–97%** of the total volume. That ratio is worth writing down, because it means the raw token number tells you almost nothing on its own. A 400-million-token day and a 40-million-token day can be the same amount of actual work.
 
-**That tenth is not universal.** Claude Fable 5.1 and Claude Mythos 5.1 price a cache read at 0.025x their base input price. Anthropic's [pricing page](https://platform.claude.com/docs/en/about-claude/pricing) says so: "Cache hits and refreshes on Claude Fable 5.1 and Claude Mythos 5.1 are priced at 0.025x the base input price. All other models use the standard 0.1x multiplier."
+**That tenth is not universal, and it keeps moving.** Anthropic's [pricing page](https://platform.claude.com/docs/en/about-claude/pricing) now lists three multipliers on the base input price: 0.1x for most models, 0.05x for Claude Opus 5.5 and Claude Sonnet 5.5, and 0.025x for Claude Fable 5.1 and Claude Mythos 5.1.
 
-In money, Fable 5.1 reads cached context at $0.25 per million tokens against a $10 base, while Opus 5 reads it at $0.50 per million against a $5 base. So on a long conversation that's already in cache — which is most of a working session — the model with double the headline price is the cheaper one per request, until output passes roughly 2,500 tokens. Fable 5 charged $1 per million for that same read, and 5.1 cut it fourfold, so this is recent. If you're carrying the old number in your head, it will point you the wrong way.
+In money, Fable 5.1 reads cached context at $0.25 per million tokens against a $10 base. Opus 5.5 reads it at $0.20 against a $4 base, and Opus 5 at $0.50 against a $5 base. So on a long conversation that's already in cache — which is most of a working session — a model with a higher headline price can be the cheaper one per request. When I first measured this, Fable 5.1 beat Opus 5 until output passed roughly 2,500 tokens. Opus 5.5 has since undercut Fable 5.1 on the cache read and on output ($20 per million against $50), so that comparison no longer favors Fable. Fable 5 charged $1 per million for the same read and 5.1 cut it fourfold, so these numbers have changed twice in a few months. If you're carrying an old number in your head, it will point you the wrong way.
 
-Anthropic's [rate-limit documentation](https://platform.claude.com/docs/en/api/rate-limits) says that for the API, "only uncached input tokens count towards your ITPM rate limits" — cache reads are excluded. Whether the same rule governs the **subscription** limits you see in Settings → Usage is, as far as I can tell, undocumented. When I asked support directly, they told me they had no documentation confirming it either way. That gap is why this guide exists: if you can't get the rule, measure the inputs and let the numbers speak.
+Anthropic's [rate-limit documentation](https://platform.claude.com/docs/en/api/rate-limits) says that for the API, the default input-tokens-per-minute limits count only uncached input tokens — cache reads are excluded, cache writes are not. Whether the same rule governs the **subscription** limits you see in Settings → Usage is, as far as I can tell, undocumented. When I asked support directly, they told me they had no documentation confirming it either way. That gap is why this guide exists: if you can't get the rule, measure the inputs and let the numbers speak.
 
 ---
 
@@ -97,7 +97,7 @@ Mine came out at **410M total and 11.3M fresh**. If cache reads are excluded fro
 
 There's a well-documented failure where prompt caching silently stops working and the cache gets rebuilt every turn, inflating cost 10–20× with no change in what you're doing. It has a signature you can check in seconds: **cache reads collapse toward zero while cache writes grow.**
 
-Divide cache reads by cache writes for each of the last two weeks. Mine sits between **10 and 44**, and was 34.7 on the day in question. A ratio that has fallen to low single digits means your cache is thrashing, and that *is* a known bug — see [issue #41930](https://github.com/anthropics/claude-code/issues/41930). A ratio in your normal band means caching is fine and you need to look somewhere else.
+Divide cache reads by cache writes for each of the last two weeks. Mine sits between **10 and 44**, and was 34.7 on the day in question. A ratio that has fallen to low single digits means your cache is thrashing, and that *is* a known bug — see [issue #41930](https://github.com/anthropics/claude-code/issues/41930), closed as completed in April. A ratio in your normal band means caching is fine and you need to look somewhere else.
 
 This is the measurement that saved me from filing the wrong bug report.
 
@@ -167,11 +167,11 @@ It had been 121,000 characters a month earlier. Nobody decided to double it. It 
 
 Two causes turned up when I went back over my own transcripts on September 3, and neither leaves a mark you'd notice while it happens.
 
-**You went to lunch.** The cache holds your conversation for a limited time. Your first message after a break longer than that re-processes the whole conversation from scratch — your instructions, your project files, every previous turn. Anthropic's [Claude Code costs documentation](https://code.claude.com/docs/en/costs) lists an idle gap as a cause of usage climbing over a long session. In one of the sessions I measured, the gap before the next message was 150 minutes, and that one message wrote about 206,000 tokens of context. I typed a sentence.
+**You went to lunch.** The cache holds your conversation for a limited time. Your first message after a break longer than that re-processes the whole conversation from scratch — your instructions, your project files, every previous turn. Anthropic's [prompt caching documentation](https://code.claude.com/docs/en/prompt-caching) says cached prefixes expire after a period of inactivity, and that the next request after a long enough gap recomputes the full input. In one of the sessions I measured, the gap before the next message was 150 minutes, and that one message wrote about 206,000 tokens of context. I typed a sentence.
 
 **You switched models to save money.** Caches are per-model, so moving a conversation to a different model rewrites the whole conversation onto the new one. In both sessions I measured, that rewrite was about 206,000 tokens.
 
-The two switches came out differently, and not in the direction I expected. In the session whose cache was still warm — a 22-minute gap — switching to the nominally cheaper model *lost* money and never made it back, for the reason set out at the top of this guide: the lower headline price came with the more expensive cache read. The session that looked like it saved about $2 had been sitting idle for 150 minutes, so the rewrite was going to happen on the next message regardless. All the switch did was get it billed at the cheaper rate.
+The two switches came out differently, and not in the direction I expected. In the session whose cache was still warm — a 22-minute gap — switching to the nominally cheaper model *lost* money and never made it back, for the reason set out at the top of this guide: the lower headline price came with the more expensive cache read. That held for the pair I measured. Pricing has moved since — Opus 5.5 reads cached context for less than Fable 5.1 does — so price your own pair before you switch. The session that looked like it saved about $2 had been sitting idle for 150 minutes, so the rewrite was going to happen on the next message regardless. All the switch did was get it billed at the cheaper rate.
 
 So the rule is: **switch models for capability, not for cost.** The one moment a switch is genuinely cheap is right after a long break, when the rewrite is already on its way.
 
@@ -181,27 +181,27 @@ So the rule is: **switch models for capability, not for cost.** The one moment a
 
 A long session feels expensive, so starting over looks like the obvious fix. My own AI kept recommending a fresh start, with math that sounded reasonable: this session sends 300,000 tokens with every request, a new one would start at 150,000, so switch and cut the cost in half.
 
-That math compares raw token counts, which is exactly what the top of this guide warns against. Staying put re-reads a warm cache at a tenth of the input price (a fortieth on Fable 5.1). A new session has to write its starting context into the cache before it can read anything back, and on a subscription that one-hour cache write costs twice the input price.
+That math compares raw token counts, which is exactly what the top of this guide warns against. Staying put re-reads a warm cache at a tenth of the input price (a twentieth on Opus 5.5, a fortieth on Fable 5.1). A new session has to write its starting context into the cache before it can read anything back, and on a subscription that one-hour cache write costs twice the input price.
 
 I measured both sides across 119 of my own sessions on September 16, 2026. A new session's first request read about 44,000 tokens that my other sessions had already cached, and wrote about 87,000 new ones. Priced out, that one request cost as much as 177,000 tokens of plain input. A request in a warm 300,000-token session costs the equivalent of 30,000.
 
 After its first request, the new session is the cheaper one, because it carries less. Whether starting over pays depends on how many requests you have left, and every tool call is one. My sessions average about ten per message I send.
 
-| Current session | Fresh start pays back after — Opus 5 | Fable 5.1 |
-|---|---|---|
-| 150,000 tokens | ~84 requests | ~350 requests |
-| 200,000 tokens | ~24 | ~98 |
-| 300,000 tokens | ~10 | ~40 |
-| 500,000 tokens | ~4 | ~19 |
-| 800,000 tokens | ~3 | ~10 |
+| Current session | Fresh start pays back after — Opus 5 (reads at 0.1x) | Opus 5.5 (0.05x) | Fable 5.1 (0.025x) |
+|---|---|---|---|
+| 150,000 tokens | ~84 requests | ~170 requests | ~350 requests |
+| 200,000 tokens | ~24 | ~49 | ~98 |
+| 300,000 tokens | ~10 | ~20 | ~40 |
+| 500,000 tokens | ~4 | ~9 | ~19 |
+| 800,000 tokens | ~3 | ~5 | ~10 |
 
-Those numbers rest on my own starting context of about 130,000 tokens. Yours will be different, so the script below uses yours.
+Those numbers rest on my own starting context of about 130,000 tokens. The Opus 5.5 column uses the same formula and inputs as the other two, with the cheaper read. Yours will be different, so the script below uses yours.
 
 How I use the table now:
 
-1. **Close to your starting size, stay.** At 150,000 tokens, a new session takes about eight of my messages to pay back on Opus 5.
-2. **On Opus 5, past about 200,000 tokens, a fresh start pays back within a couple of messages** — within one, past 300,000.
-3. **On Fable 5.1, stay about four times longer.** Re-reading a cached conversation costs so little there that a new session needs far more requests to earn back its start.
+1. **Close to your starting size, stay.** At 150,000 tokens, a new session takes about eight of my messages to pay back on Opus 5, and about seventeen on Opus 5.5.
+2. **On Opus 5.5, past about 200,000 tokens, a fresh start pays back within five of my messages** — within two, past 300,000. On Opus 5 it is half that.
+3. **The cheaper the cache read, the longer to stay.** Fable 5.1 asks for about four times the Opus 5 wait, and Opus 5.5 about twice. Re-reading a cached conversation costs so little there that a new session needs far more requests to earn back its start.
 4. **Coming back to a long session after a break longer than the cache lifetime, open a new session instead of typing into the old one.** Your first message would rewrite the whole old conversation anyway, so the smaller new session is cheaper from its first request. The paragraph on switching models above found the same cheap moment.
 5. **Treat the payback as a minimum.** A new session usually re-reads some files to get back up to speed, and none of that is counted here.
 
@@ -215,7 +215,7 @@ To get your own numbers, have your AI run this from inside the session you're wo
 import glob, json, os, statistics
 
 PAYBACK = 20  # requests; about two of my messages. Start fresh only if it pays back sooner.
-READ = 0.1    # cache-read multiplier: 0.025 on Claude Fable 5.1 and Mythos 5.1
+READ = 0.1    # cache-read multiplier: 0.05 on Opus 5.5 and Sonnet 5.5; 0.025 on Fable 5.1 and Mythos 5.1
 WRITE = 2.0   # one-hour cache write (subscription); 1.25 once you're on usage credits
 
 newest = max(glob.glob(os.path.expanduser("~/.claude/projects/*/*.jsonl")), key=os.path.getmtime)
@@ -263,7 +263,7 @@ I got this wrong myself, in the middle of the same investigation.
 
 **Cloud-side sessions leave no local trace.** If your setup uses Remote Control, or sessions created from the web or a phone, those may exist only in Anthropic's session index. I confirmed a set of sessions on my own account that appeared in the app's sidebar and existed nowhere on my machine — not in `~/.claude`, not in the app's own session store. Every instrument in this guide was blind to them. I said they cost nothing; what I had actually proven was that nothing was running *locally*, which is a narrower claim.
 
-**"No messages yet" is not evidence of an empty session.** There's an [open issue](https://github.com/anthropics/claude-code/issues/84929) describing Remote Control sessions whose messages cannot load while the connection is down. An empty-looking session may be a session you can't currently read.
+**"No messages yet" is not evidence of an empty session.** There was an [issue](https://github.com/anthropics/claude-code/issues/84929) describing Remote Control sessions whose messages cannot load while the connection is down. A bot closed it for inactivity in October without a fix, so the symptom may still be out there. An empty-looking session may be a session you can't currently read.
 
 So treat the measurements as a floor, not a ceiling. They tell you what your local sessions consumed. They cannot tell you what your account was billed.
 
@@ -283,7 +283,7 @@ Two instances isn't a pattern. It's enough to be worth writing down.
 
 **If the numbers say the day was genuinely heavy**, you've saved yourself a support ticket and learned where your usage actually goes. Skip to the last section.
 
-**If the numbers say it wasn't**, there's an open issue that already describes it: [#54750, "Claude Code current session limit reaches 100% despite low visible local session usage"](https://github.com/anthropics/claude-code/issues/54750) — open since April 2026, no response yet. Related reports: [#41930](https://github.com/anthropics/claude-code/issues/41930), [#69608](https://github.com/anthropics/claude-code/issues/69608), [#48987](https://github.com/anthropics/claude-code/issues/48987). Adding your measurements to an existing thread is worth more than a new issue, and far more than a comment without numbers.
+**If the numbers say it wasn't**, there's an open issue that already describes it: [#54750, "Claude Code current session limit reaches 100% despite low visible local session usage"](https://github.com/anthropics/claude-code/issues/54750) — open since April 2026, no response yet. Related reports, all now closed: [#41930](https://github.com/anthropics/claude-code/issues/41930) (completed), [#69608](https://github.com/anthropics/claude-code/issues/69608) (duplicate), [#48987](https://github.com/anthropics/claude-code/issues/48987) (not planned). Adding your measurements to an existing thread is worth more than a new issue, and far more than a comment without numbers.
 
 **On support, so you don't spend your afternoon the way I spent mine:** they were helpful on the technical questions and clear that they had no documentation on subscription-level cache metering. Then they told me that support cannot manually reset or work around usage limits, and closed the conversation. Ask your questions — the metering one is worth asking, and if enough people ask it the documentation may follow — but don't plan your week around a reset.
 
@@ -309,7 +309,7 @@ Three things that helped, in order of how much they returned for me:
 2. **Move the detail out and leave the trigger in.** Most of what lives in an instructions file is reference material needed during one kind of task. That can live in a separate file the AI reads when the task comes up, with a one-line pointer where the detail used to be. The behavior survives; the per-session cost doesn't.
 3. **Make every addition pay for itself.** Adding a rule should mean merging or removing another one. Otherwise the file only moves in one direction, which is what mine did.
 
-On a subscription, Claude Code writes a one-hour cache. The costs documentation says that lifetime "is an hour on a subscription and drops to five minutes once you're drawing on usage credits." Five minutes is shorter than most pauses in an ordinary working day, so once you're on credits, the full re-processing described above stops being an occasional event and starts happening after nearly every break you take.
+On a subscription, Claude Code writes a one-hour cache for your main conversation. Once you go over your plan's usage and start drawing on usage credits, it drops that to five minutes, according to the [prompt caching documentation](https://code.claude.com/docs/en/prompt-caching). Five minutes is shorter than most pauses in an ordinary working day, so once you're on credits, the full re-processing described above stops being an occasional event and starts happening after nearly every break you take. The same page says you can keep the one-hour cache on credits by setting it yourself (the `promptCacheTtl` setting); the longer cache costs more per write, so it pays only if you take breaks.
 
 I'd rather have the setup than a smaller number, so I'm not arguing for a spare instructions file. I'm arguing for knowing what yours costs, which I didn't, for about a month.
 
