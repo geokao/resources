@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.25 · Last updated 2026-11-08 17:11 PST**
+**Version 1.26 · Last updated 2026-11-08 17:30 PST**
 
+<!-- v1.26: Refreshed 11 guides from two months of my own work (browser, laptop wake, usage limit, two AIs, done-claims, several sessions, self-improving, scout, council, inbox, own your context); browser blurb updated; five reading times re-measured. -->
 <!-- v1.25: Added A Bitcoin Cycle Forecaster Your AI Can Build and Check (first resource with a cover image, images/). -->
 <!-- v1.23: Added A Morning Check-in for Your AI's Overnight Work; laptop-wake and self-improving guides → v1.10 (cross-links). -->
 <!-- v1.21: Added Running Several AI Sessions at Once Without Them Overwriting Each Other. -->
@@ -40,7 +41,7 @@ If your AI has trouble opening the link, click the file's **Raw** button and sha
 
 **[What I Hand to My AI](what-i-hand-to-my-ai.md)** — *the gentlest way in*
 
-Most of us underuse our AI not because we lack technique, but because it never occurred to us to hand it that particular job. So this is a menu rather than a method: three months of the actual work I gave mine, business and personal, sorted by what kind of attention each job used to eat — the chores that come back forever, the things I was carrying in my head, the things nobody could read all of, and the ones I'd never have attempted. It includes the boring handoffs nobody demos, which turned out to be where the return was, and a closing section on what I deliberately don't hand over. About 20 minutes to read, or one minute to hand over so it can pick the four or five that fit your life.
+Most of us underuse our AI not because we lack technique, but because it never occurred to us to hand it that particular job. So this is a menu rather than a method: three months of the actual work I gave mine, business and personal, sorted by what kind of attention each job used to eat — the chores that come back forever, the things I was carrying in my head, the things nobody could read all of, and the ones I'd never have attempted. It includes the boring handoffs nobody demos, which turned out to be where the return was, and a closing section on what I deliberately don't hand over. About 24 minutes to read, or one minute to hand over so it can pick the four or five that fit your life.
 
 **[Your AI Is Designed to Flatter You](your-ai-is-designed-to-flatter-you.md)** — *the fifteen-minute fix*
 
@@ -56,7 +57,7 @@ A field guide to running a whole solo business — and a good chunk of a life �
 
 **[Remove AI-isms](remove-ai-isms.md)**
 
-Readers have learned to recognize AI writing, and they scroll right past it. This is the editing workflow I run on every AI-assisted draft before it ships: three passes over a catalog of specific tells — overused words, the "It's not X, it's Y" cadence, endings that sound profound and say nothing — collected one caught pattern at a time from editing my own drafts. Paste it into whatever AI writes with you, and it edits alongside you while keeping your facts and your voice. About 19 minutes to read, or one minute to hand over.
+Readers have learned to recognize AI writing, and they scroll right past it. This is the editing workflow I run on every AI-assisted draft before it ships: three passes over a catalog of specific tells — overused words, the "It's not X, it's Y" cadence, endings that sound profound and say nothing — collected one caught pattern at a time from editing my own drafts. Paste it into whatever AI writes with you, and it edits alongside you while keeping your facts and your voice. About 26 minutes to read, or one minute to hand over.
 
 **[When Your AI Says It's Done](when-your-ai-says-its-done.md)**
 
@@ -72,7 +73,7 @@ The companion to the one above: where the lessons come from before anything gets
 
 **[Your AI in Your Browser](your-ai-in-your-browser.md)**
 
-Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what a month of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. Updated September 2026 with a head-to-head: Claude and GPT-6 running the same five tasks in my Chrome, all four combinations scored, and eight rules from what went wrong along the way. Also updated in August for a browser extension that changed under us — including one restriction I'd written down as permanent that had already been fixed without my noticing, which is its own lesson about how these documents go stale. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 38 minutes to read, or one minute to hand over.
+Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what three months of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. Updated September 2026 with a head-to-head: Claude and GPT-6 running the same five tasks in my Chrome, all four combinations scored, and eight rules from what went wrong along the way. Also updated in August for a browser extension that changed under us — including one restriction I'd written down as permanent that had already been fixed without my noticing, which is its own lesson about how these documents go stale. Updated November 2026: the jobs I've since retired are gone, and so is the advice to borrow a tab while your person is at the keyboard. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 53 minutes to read, or one minute to hand over.
 
 **[Using Two AIs Together](using-two-ais-together.md)**
 
@@ -88,11 +89,11 @@ I start more things than I finish, and the ideas I had mid-task used to vanish i
 
 **[Take Your AI Council to Your Phone](take-your-ai-council-to-your-phone.md)**
 
-I keep councils of AI advisors in files that Claude looks after on my laptop, and I wanted to use them from the ChatGPT app on my phone without the two apps losing track of each other. This is the bridge Claude built for me: one file per council that ChatGPT reads, a `save` command that writes a one-line record of each session to a shared Google Doc, and Claude folding those records back into the permanent notes. Includes what four weeks of use taught me (getting started was the friction, and I typed far more than I talked), the simpler route I moved to the same day (a ChatGPT Dot that reads the council files and writes the records itself, with the rules inside each file), two traps that fail without telling you, three setup checks that can each fail visibly, and the builder script for your AI to adapt. About 12 minutes to read, or one minute to hand over.
+I keep councils of AI advisors in files that Claude looks after on my laptop, and I wanted to use them from the ChatGPT app on my phone without the two apps losing track of each other. This is the bridge Claude built for me: one file per council that ChatGPT reads, a `save` command that writes a one-line record of each session to a shared Google Doc, and Claude folding those records back into the permanent notes. Includes what four weeks of use taught me (getting started was the friction, and I typed far more than I talked), the simpler route I moved to the same day (a ChatGPT Dot that reads the council files and writes the records itself, with the rules inside each file), two traps that fail without telling you, three setup checks that can each fail visibly, and the builder script for your AI to adapt. About 14 minutes to read, or one minute to hand over.
 
 **[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
 
-If you've told your AI assistant to do something every night at 3am and nothing ever happens, this explains why and how to fix it. Most AI desktop apps can't wake a sleeping laptop — that turns out to be a job you have to hand the operating system yourself. Includes the setup, the commands, and seventeen failure modes I only found by hitting them — the ones that look like success. macOS in detail, with pointers for Windows and Linux. About 16 minutes to read, or one minute to hand over.
+If you've told your AI assistant to do something every night at 3am and nothing ever happens, this explains why and how to fix it. Most AI desktop apps can't wake a sleeping laptop — that turns out to be a job you have to hand the operating system yourself. Includes the setup, the commands, and seventeen failure modes I only found by hitting them — the ones that look like success. macOS in detail, with pointers for Windows and Linux. About 18 minutes to read, or one minute to hand over.
 
 **[Is your Claude 5-hour limit maxing out quickly?](claude-limit-maxing-out.md)**
 
