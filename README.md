@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.24 · Last updated 2026-11-08 15:57 PST**
+**Version 1.25 · Last updated 2026-11-08 17:11 PST**
 
+<!-- v1.25: Added A Bitcoin Cycle Forecaster Your AI Can Build and Check (first resource with a cover image, images/). -->
 <!-- v1.23: Added A Morning Check-in for Your AI's Overnight Work; laptop-wake and self-improving guides → v1.10 (cross-links). -->
 <!-- v1.21: Added Running Several AI Sessions at Once Without Them Overwriting Each Other. -->
 <!-- v1.20: Added Is Your Google Drive Filling Up with Copies of Your Claude Projects?; How I Work with Claude → v1.11. -->
@@ -108,6 +109,10 @@ I usually have several AI sessions open, and I kept typing the same reminder int
 **[A morning check-in for your AI's overnight work](ai-morning-check-in.md)**
 
 If your AI runs tasks while you sleep, some of them will fail without telling you. A task that found nothing and a task that never started can look exactly alike. This sets up one more scheduled task that runs before you wake, checks that each overnight task left behind what it should have, and leaves you a short note with only what needs you. Includes the one-file ledger that makes a silent failure visible, the rules that keep the note short, and, for the Claude desktop app, a link that hands your reply to a fresh session so the follow-up happens where you normally work. About 11 minutes to read, or one minute to hand over.
+
+**[A Bitcoin Cycle Forecaster Your AI Can Build and Check](bitcoin-cycle-forecaster.md)**
+
+Bitbo's Cycle Repeat chart has been good at timing bitcoin's tops and far off on their prices. Set to the day of the 2021 top, it pointed to the right day for the 2025 top, and said $269K for a top that came in at $125K. This forecaster keeps the timing and allows for each cycle being smaller than the last. It blends the power-law trend with a shrunk replay of the last cycle, and in weekly tests since 2016 its typical miss at 6–12 months was about half of Cycle Repeat's. The prompt has your AI rebuild it from free data, rerun the same tests, show where bitcoin sits in its cycle, and set up a cautious path for planning that I call Bear Power. A forecasting experiment, not investment advice. About 16 minutes to read (the prompt for your AI is over half of that), or one minute to hand over.
 
 ---
 
