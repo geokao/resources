@@ -1,6 +1,6 @@
 # How to Make Your Laptop Wake Up for Your AI's Scheduled Tasks
 
-**Version 1.10 · Last updated November 8, 2026**
+**Version 1.11 · Last updated November 8, 2026**
 
 *By George Kao. Written with Claude, from about six months of running overnight AI tasks on a laptop that sleeps.*
 
@@ -53,7 +53,7 @@ sudo pmset repeat wakeorpoweron MTWRFSU 02:58:00
 
 (That is the form `pmset` accepts: the event type, the days as letters — `MTWRFSU` is every day — and a 24-hour time. An earlier version of this guide printed the command the way `pmset` *displays* it back, which it rejects as input.)
 
-Run it one or two minutes *before* your earliest task, so the machine is up and settled when the task fires. Keep the gap short rather than generous: a machine that wakes with nothing to do can drift back to sleep before your task arrives, and you'd never know why. Mine wakes at 2:58 for a 3:00 task and that has held; if you see a task miss on a night the wake logged fine, close the gap to one minute first. This needs an administrator password, so the human runs it, not the AI.
+Run it one or two minutes *before* your earliest task, so the machine is up and settled when the task fires. Keep the gap short rather than generous: a machine that wakes with nothing to do can drift back to sleep before your task arrives, and you'd never know why. I started at 2:58 for a 3:00 task and that held. I have since moved the whole overnight run earlier, to a 1:11 wake for a 1:13 first task, so the work finishes before the weekday morning peak hours; the times below are the original example, so use your own. If you see a task miss on a night the wake logged fine, close the gap to one minute first. This needs an administrator password, so the human runs it, not the AI.
 
 Verify:
 
@@ -72,6 +72,10 @@ caffeinate -s -t 3600
 ```
 
 `-s` prevents system sleep; `-t` is how many seconds to hold. **Important: `-s` only holds while on wall power.** On battery the machine will still sleep. Plug in at night.
+
+The lid can be closed. On a plugged-in MacBook the scheduled wake still fires, the hold still works, and my overnight tasks ran on every lid-closed night I checked. Closing the lid does not need its own fix.
+
+Live work is the exception. If you want a session you're actively running to keep going after you shut the lid, that is a different setting: `sudo pmset -a disablesleep 1`. It also applies on battery, so undo it with `0` before you put the laptop in a bag.
 
 ### Step 3 — Run the hold automatically, every night
 
@@ -132,7 +136,8 @@ Shape of it:
 set -u
 LOG="$HOME/Library/Logs/nightly-stayawake.log"
 ALERT="$HOME/wake-alert.md"      # things a human needs to know about
-END_CAP_MIN=330                  # 05:30 — never hold past this wall-clock time
+END_CAP_MIN=480                  # 08:00 — never hold past this wall-clock time
+TAIL_MARGIN_MIN=120              # cover the last task's RUNTIME, not just its start
 
 # 0. SENSORS — run these before anything else; they explain a missing night.
 #    (a) Timezone change: compare the current zone to the one seen last run.
@@ -154,18 +159,18 @@ SCHED="$(find "$HOME/Library/Application Support/Claude" -maxdepth 6 \
 #    an idle night. Check the task count, not just the path. See lesson 5.
 if [ ! -f "${SCHED:-}" ]; then
   echo "$(date): schedule unreadable -> full-window bridge" >> "$LOG"
-  exec /usr/bin/caffeinate -s -i -t 14400
+  exec /usr/bin/caffeinate -s -i -t 21600
 fi
 
 # 3. Parse the schedule; compute the latest ENABLED task due tonight
 #    in the 00:00–06:59 window. (A short python block does this well.)
 #    Zero tasks in the whole file -> treat it as unreadable; go to step 2.
 # 4. Tasks exist but none is due overnight -> log it and exit, so the Mac sleeps.
-# 5. Otherwise: caffeinate from NOW until (latest task + buffer; 20 min works),
+# 5. Otherwise: caffeinate from NOW until (latest task + TAIL_MARGIN_MIN),
 #    but never past END_CAP_MIN. Compute the end as a CLOCK TIME, not as a
-#    duration — see lesson 6. Size the buffer against the worst start delay
-#    you have actually seen, not the average — see lesson 14. Log the decision
-#    on one line, always.
+#    duration — see lesson 6. Size the margin against how long your longest
+#    task actually RUNS plus the worst start delay you have seen — see
+#    lessons 6 and 14. Log the decision on one line, always.
 ```
 
 Three properties make this worth the extra effort:
@@ -213,9 +218,15 @@ These are the ones that cost me something.
 
    So write the test this way. Zero tasks in the whole file means you could not read the schedule, so bridge the full window. A file with tasks in it but nothing due tonight is normal and common, so let the machine sleep. Those are two different states, and your log line should say which one you're in.
 
-6. **Cap the bridge with a wall-clock end time, not a duration.** You do need a ceiling — one parsing bug shouldn't caffeinate your laptop for nine hours. But "never more than two hours" is the wrong shape of ceiling, because it silently assumes the script started when you think it did. Mine was written for a 2:58am start and capped at two hours. When the start time moved an hour earlier (see the next lesson), coverage began ending at 3:58am instead of 4:58am — and one night that was two minutes before the last task was due. Nothing errored. Say "hold until 5:30am, and never longer than four hours" instead: the first clause is the ceiling, the second only guards against a parsing bug.
+6. **Cap the bridge with a wall-clock end time, not a duration.** You do need a ceiling — one parsing bug shouldn't caffeinate your laptop for nine hours. But "never more than two hours" is the wrong shape of ceiling, because it silently assumes the script started when you think it did. Mine was written for a 2:58am start and capped at two hours. When the start time moved an hour earlier (see the next lesson), coverage began ending at 3:58am instead of 4:58am — and one night that was two minutes before the last task was due. Nothing errored. Say "hold until 8:00am, and never longer than six hours" instead: the first clause is the ceiling, the second only guards against a parsing bug.
 
-7. **Your wake times are frozen to the timezone you set them in — so travel breaks them, and nothing tells you.** This is the one I'd never have guessed. Both the OS wake and the stay-awake job keep firing at the *original* zone's hour; neither re-anchors when your Mac switches timezones. Fly a zone west and everything fires an hour early; fly east and it fires an hour late, which can put the wake *after* your tasks were due. The saving grace is that both halves move together, so they stay aligned with each other — which is exactly why you should **not** "fix" just one of them. Two things to build: make the bridge tolerant of an off-schedule start (lesson 6), and have the script **compare the current timezone to the one it saw last night** and tell you when it changed. Re-anchoring is a two-command pair — reset the OS wake, reload the scheduled job — and running only one desyncs them. My script now does the second of those itself. When it sees the zone change it starts a separate background process that waits until the night's stay-awake window has ended before reloading the job, so it can't kill the coverage it's standing on. It also refuses to reload if the job's file has gone missing, because unloading first and then failing to load again leaves you with no wake job at all. That leaves the one command that needs an administrator password, and that one is the human's to run. Built and tested in a sandbox — it hasn't met a real flight yet.
+   Size the margin past the *end* of the last task, not its start. Mine was twenty minutes. A task that fires at 5:12 and takes about ninety-five minutes sat under a 5:30 ceiling, so the machine fell asleep at 5:25, the second the hold expired, and the task died with the note that it had gone to sleep mid-response. The margin is now two hours, and the ceiling moved so it could not quietly clamp that back.
+
+7. **Your wake times are frozen to the timezone you set them in — so travel breaks them, and nothing tells you.** This is the one I'd never have guessed. Both the OS wake and the stay-awake job keep firing at the *original* zone's hour; neither re-anchors when your Mac switches timezones. Fly a zone west and everything fires an hour early; fly east and it fires an hour late, which can put the wake *after* your tasks were due. The saving grace is that both halves move together, so they stay aligned with each other — which is exactly why you should **not** "fix" just one of them. Two things to build: make the bridge tolerant of an off-schedule start (lesson 6), and have the script **compare the current timezone to the one it saw last night** and tell you when it changed. Re-anchoring is a two-command pair — reset the OS wake, reload the scheduled job — and running only one desyncs them. My script now does the second of those itself. When it sees the zone change it starts a separate background process that waits until the night's stay-awake window has ended before reloading the job, so it can't kill the coverage it's standing on. It also refuses to reload if the job's file has gone missing, because unloading first and then failing to load again leaves you with no wake job at all. That leaves the one command that needs an administrator password. You can keep running that one yourself. I went further and gave the script a password-free permission for that single command and nothing else.
+
+   Before I trusted that permission I read it against the exact arguments the script runs, and the two didn't match. A permission rule is matched as literal text, so the first version could never have fired. After the fix it has re-anchored both halves on its own after each real zone change since, with no one at the keyboard.
+
+   There is a second trap, on the app's side. When my Mac's clock moved west, the app's scheduler recomputed each task's last slot in the new zone, decided they had all been missed, and started replaying them: twelve the first time, twenty-one the second, with two dozen more queued behind. The ones that could have reached other people were stopped only by their own "already done today" checks (see lessons 11 and 12). The fix is to switch every recurring task off and back on right after the move, which resets its missed-run marker. Moving east did not replay. For a few days afterward the machine's clock and the app's clock sat two hours apart, so a task that ran just after midnight by the app's clock was told by the machine that it was still yesterday.
 
 8. **A permission prompt at 3am doesn't fail — it *waits*.** This one cost me a whole day's token budget. A task fired perfectly on time, hit a "may I use this tool?" dialog, and sat there until I opened the laptop at 10:42am — then completed in the middle of my working day, which is exactly what scheduling it overnight was meant to prevent. Pre-approve every tool the task will use, and write into the task's own prompt: *"Run autonomously. Never ask the user a question or wait for input — decide conservatively and note the call in your summary."*
 
@@ -229,7 +240,7 @@ These are the ones that cost me something.
 
 12. **Not everything belongs at 3am.** Overnight is for heavy, private grinding. If a task's output *reaches other people* when it runs — publishing a post, sending an email, triggering a notification — put it in a daytime slot. A 3am send lands in real inboxes at 3am, and you're asleep and can't fix it.
 
-13. **Verify at creation, every time.** Whenever you add an overnight task, re-check that the wake window still covers it — the task plus your buffer, not just the task. Mine logs the computed window each night, and has a dry-run mode so I can test any future date without waiting for that night to arrive. Build yourself the same escape hatch. And watch the gap between your last task and your ceiling. I added a nightly job at 5:05am against a 5:30am ceiling, so only five minutes now sit between the end of my twenty-minute buffer and the end of the window — and a queue delay of the size I have actually seen (lesson 14) would push that task's start past the ceiling entirely.
+13. **Verify at creation, every time.** Whenever you add an overnight task, re-check that the wake window still covers it — the task plus your buffer, not just the task. Mine logs the computed window each night, and has a dry-run mode so I can test any future date without waiting for that night to arrive. Build yourself the same escape hatch. And watch the gap between your last task and your ceiling. I added a nightly job at 5:12am against a 5:30am ceiling, which left almost no room for it to finish, and it died to exactly that (lesson 6). Whenever the latest task changes, re-derive the ceiling and the margin from it, and remember that a queue delay of the size I have actually seen (lesson 14) pushes a start later still.
 
 14. **Tasks don't always start when the schedule says they will.** Two mechanisms can push the night's last start later than your script computed, and neither announces itself.
 
