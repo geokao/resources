@@ -2,7 +2,9 @@
 
 ## How your AI can hold your half-finished ideas, and tell you what to work on next
 
-**Version 1.0.1 · Last updated October 24, 2026**
+**Version 1.1 · Last updated November 8, 2026**
+
+<!-- v1.1: Added guardrail 6 and a matching line in the setup prompt: check the project's own files before ranking an item urgent. -->
 
 *By George Kao. Written with Claude.*
 
@@ -81,6 +83,7 @@ Ideas that don't belong to any project go into one catch-all inbox. Mine is in a
 3. **Delete freely.** Letting an idea go is a decision too, and a crowded inbox gets ignored.
 4. **The pending list is generated, never edited by hand.** Change things in the inboxes. The list is a view of them.
 5. **Your AI files and suggests, and you decide.** Nothing on the list starts without your yes.
+6. **Check before calling anything urgent.** An entry can be overtaken by later work without anyone updating the inbox. Mine once flagged a figure as critical that the project's own notes had already corrected. Before an item goes on the urgent list, your AI looks in that project's files for whether it still stands.
 
 ---
 
@@ -100,7 +103,7 @@ Copy everything in the box below and paste it into your AI.
 >    - When I mention an idea for later, or say "backlog this," "for future work" or "not now," don't start on the idea yet. File it in the inbox of the project it belongs to, as a dated entry of one to three lines: what it is, why it mattered to me, and the first step if one is obvious. Tell me in one line where it went.
 >    - When we finish a piece of work and I say "done," write anything worth keeping into the right inbox first. If you can close or archive this conversation yourself, do that next. If you can't, tell me so, and I'll do it with a couple of clicks.
 >    - Whenever you start work in a project, read its inbox first.
->    - Whenever I ask *"What are the 5 most urgent and important? What are the 5 most fun?"*, read every inbox, rebuild PENDING.md, and give me two short numbered lists, each item one line with the project it belongs to. Then let me answer each item with "done," "yes, next," "skip" or "not now." Delete what I mark done or skip. Mark "not now" items so you don't raise them again until I do. Learn from my answers which kinds of items I care about.
+>    - Whenever I ask *"What are the 5 most urgent and important? What are the 5 most fun?"*, read every inbox, rebuild PENDING.md, and give me two short numbered lists, each item one line with the project it belongs to. Before an item goes on the urgent list, check that project's own files to see whether it has already been resolved or corrected. Then let me answer each item with "done," "yes, next," "skip" or "not now." Delete what I mark done or skip. Mark "not now" items so you don't raise them again until I do. Learn from my answers which kinds of items I care about.
 >    - If I also ask *"Which deepen my inner life, and which only serve outreach?"*, give me that third list too.
 >
 > **Then show me it works:** ask me for two or three ideas I've been carrying around, file each one in the right inbox, and show me the first PENDING.md.
