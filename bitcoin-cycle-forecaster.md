@@ -2,7 +2,7 @@
 
 ## It blends the power-law trend with Bitbo's Cycle Repeat, and it shows its own test record
 
-**Version 1.0 · Last updated November 8, 2026**
+**Version 1.1 · Last updated November 8, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -10,7 +10,7 @@
 
 **This is a forecasting experiment, not investment advice.** I'm sharing the method and its test record so you can check both. Bitcoin has been through only about four cycles, and nothing here promises anything about the next one.
 
-Corrections and suggestions welcome — [open an issue](https://github.com/geokao/resources/issues/new) and I'll read every one. You don't need to be technical to file one; it's just a comment box.
+Corrections and suggestions welcome, from you or your AI — [open an issue](https://github.com/geokao/resources/issues/new) and I'll read every one. You don't need to be technical to file one; it's just a comment box.
 
 ## How to use this (one minute, no technical skill needed)
 
@@ -35,6 +35,17 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 
 ---
 
+## The work behind the forecaster
+
+1. **Bitbo's charts.** Claude catalogued 203 of Bitbo's chart pages and read the 105 descriptions it could reach. It rebuilt five of the most popular indicators (MVRV, Mayer Multiple, Pi Cycle, Puell Multiple and Hash Ribbons) from raw data to test them as forecast inputs.
+2. **Cycle Repeat itself.** Claude replayed the chart's method from every day since August 2014, 4,468 projections in all, and scored Bitbo's own past forecasts from 8 archived copies of the chart.
+3. **Over 20 models compared,** including simple baselines and later challengers built on ideas from GPT and Gemini. Each was rebuilt weekly since 2016 from only the data available that week, then checked against what happened 3 months to 3 years later — more than 40,000 test forecasts in all.
+4. **Leak checks.** To confirm no forecast peeked at the future, Claude cut the data off at past dates, rebuilt the forecasts, and got identical results in all 1,070 comparisons. It also planted a leak on purpose to prove the check could catch one.
+5. **Rules before results.** For the turning-point method, Claude wrote down how it would be judged before computing a single result, so the results couldn't steer the rules.
+6. **Two independent checks.** A separate Claude session audited the code and reproduced every number in its test tables. A fresh one, with no access to that code, rebuilt the tool from this page's prompt alone and matched every reference figure within 2%.
+
+---
+
 ## How it works
 
 1. **The trend.** Since 2010, bitcoin's price has followed a "power law": a straight line on a chart where both price and time use a log scale. The tool fits that line using only the data up to the day of the forecast.
@@ -49,7 +60,7 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 
 ## How much to trust it
 
-1. **How much better:** tested weekly since 2016 (about two and a half cycles). At 6–12 months its typical miss was about 30–40% smaller than the power-law trend line's and about half of Cycle Repeat's. At 2 years, about 20% smaller than the trend line's and 60% smaller than Cycle Repeat's. From 3 years on, the trend line alone did better, so that's what the tool uses there. A model built on Bitbo's other popular charts (MVRV, Mayer Multiple, Pi Cycle, Puell Multiple, Hash Ribbons) did worse than this tool at every horizon and added nothing beyond the trend line past a year.
+1. **How much better:** tested weekly since 2016 (about two and a half cycles). At 6–12 months its typical miss was about 30–40% smaller than the power-law trend line's and about half of Cycle Repeat's. At 2 years, about 20% smaller than the trend line's and 60% smaller than Cycle Repeat's. From 3 years on, the trend line alone did better, so that's what the tool uses there. A model built on those five popular Bitbo charts did worse than this tool at every horizon and added nothing beyond the trend line past a year.
 2. **The power law itself:** [bitcoinpower.law](https://bitcoinpower.law) publishes its formula (Santostasi's fit: 10^-16.493 × days^5.68), and on November 7, 2026 it comes within 2% of this tool's own refit ($148K vs $145K). Bitbo's Long-Term Power Law chart is live with bands but doesn't publish its formula. (btcoak.com's power-law page says it refits nightly, but on November 8, 2026 its newest data was still from July 22, 2026, so I don't recommend that page.)
 3. **Compared with other tools:** most public bitcoin forecasts show one curve or one indicator and rarely report how far off they've been. This one publishes its test record. Some popular indicators have weakened, too: Pi Cycle missed the last two tops, and the Mayer Multiple stayed under its 2.4 sell line at both (it read 1.5 in November 2021 and 1.2 in October 2025).
 4. **"The lowest point of this cycle is already in" is its shakiest call.** The method was this confident in 2014 and wrong. And every past cycle low fell below the average price holders paid for their coins (the "realized price," $54K on November 7, 2026). This cycle's low so far, $58,525, stayed above the realized price.
@@ -219,7 +230,8 @@ PART 9 — CHECKING IT OVER TIME
 1. Save every run's forecast to a dated log. Forecasts made from now on, checked when their dates arrive, are the only clean test this tool will ever get.
 2. If you can schedule tasks, rerun it once a month: fetch fresh data, refit, add a dated forecast to the log, score every logged forecast whose date has passed, and tell me in a few lines what changed and how the past forecasts did.
 3. Within six months, re-read the page this prompt came from: https://github.com/geokao/resources/blob/main/bitcoin-cycle-forecaster.md. If its version line has changed, compare it with this copy and tell me what's new.
-4. If you find a mistake, or a change that tests better, please tell George Kao in an issue at https://github.com/geokao/resources/issues, or draft a note for me to post there.
+4. If you find a mistake, or a step in this prompt you had to guess at, please tell George Kao in an issue at https://github.com/geokao/resources/issues, or draft a note for me to post there.
+5. If I ask you to improve the forecaster, test each change with PART 5 and keep it only if it lowers the typical miss in both halves of the test (origins before 2020-05-11, and from that date on). Share any change that passes in an issue too, with its numbers. Two untested ideas to start from: weaken the trend pull when today's residual is more than 2 standard deviations from zero (manias and crashes), and build the ranges past 1 year from thousands of look-alike stretches of past cycles.
 ```
 
 ---
@@ -231,6 +243,19 @@ PART 9 — CHECKING IT OVER TIME
 3. **It misses the extremes.** Before the 2017 top it expected under a third of the actual peak. From each top, it expected a shallower fall than the one that followed.
 4. **The trend line has run high.** At 1 to 3 years, its forecasts came in 17–31% above what happened, and its slope has flattened as each year's data was added. Long-range figures from the trend line lean optimistic.
 5. **It was chosen after seeing test results.** Claude tried about nine designs before settling on this one, so some of its edge may be luck. The dated log in Part 9 is the clean test.
+
+---
+
+## Help make it better
+
+I'd like this to keep getting more accurate. If you or your AI find a mistake, a step in the prompt that's unclear, or a change that tests better, please [open an issue](https://github.com/geokao/resources/issues/new). If you can, run your change through Part 5's test first and share its typical miss beside the blend's.
+
+Two ideas I haven't tested yet, if you'd like a place to start:
+
+1. Let the trend pull weaken when the price is far from the trend line, as in manias and crashes, where the tool misses most.
+2. Build the ranges past a year from thousands of look-alike stretches of past cycles, so they hold up better than the current ones do.
+
+I'll fold changes that test better into the next version.
 
 ---
 
