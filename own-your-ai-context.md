@@ -2,7 +2,7 @@
 
 ## A non-technical guide to switching AI tools freely — without losing everything your AI knows about you
 
-**Version 1.8 · Last updated October 3, 2026**
+**Version 1.9 · Last updated November 8, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -85,7 +85,7 @@ The last 10% lives inside your AI's private memory: everything it has learned ab
 
 During 2026 both Google and Anthropic built this into their products — official tools for bringing your context over from a competitor. The method inside them is the same one below. They generate a prompt, you paste it into the AI you're leaving, it writes out what it knows about you, and you paste the answer into the new app. Google's came in March, Anthropic's after it. If you're moving to Gemini or to Claude, start with their built-in version; it's in Settings and takes about a minute. Google's runs one direction only and wasn't offered in the UK, Switzerland or the EEA at launch. Anthropic still labels its import experimental, so read what arrives rather than assuming it worked.
 
-Do the step below as well, whichever route you take. A summary that lives in another vendor's memory is still locked inside someone else's app. Get it into a file you own.
+Do the step below as well, whichever route you take. A summary that lives in another vendor's memory is still locked inside someone else's app. Get it into a file you own. I paused my Claude account's cloud memory, and the memory feature in my Codex desktop app is off too. I lose nothing by it, because what my AI needs to know about each project sits in that project's files, where I can read it, correct it and carry it to another AI.
 
 The universal method — just ask. Open your longest-standing AI and paste:
 
@@ -166,7 +166,7 @@ So you're never surprised — what doesn't transfer:
 A portable setup rots if nothing maintains it. Three habits keep it healthy, none of them daily chores:
 
 1. **The journal habit** — the standing instruction in your wiring prompt does this for you: every AI records durable learnings in the files as it works. You never write the journal yourself.
-2. **A refresh ritual** — at the end of any big session, or whenever you remember: "Please update the handoff folder with anything that's changed." (My own AI runs a small sync automatically at the start of each day's first session; asking works just as well.)
+2. **A refresh ritual** — at the end of any big session, or whenever you remember: "Please update the handoff folder with anything that's changed." (My own AI runs a small sync automatically every morning; asking works just as well.)
 3. **A quarterly audit** — once a season, ask whichever AI you're using:
 
 ```
@@ -240,6 +240,7 @@ Thank you for whichever of these you can do. A report back from the assistant th
 
 **Changelog**
 
+- **v1.9 — November 8, 2026.** Two changes from my own setup. Part 7 said my sync runs at the start of the day's first session, but mine runs on a schedule every morning, so the line now says that. Part 4 also says what I did once my AI's memory lived in files: I paused its cloud memory, and the files carry everything.
 - **v1.8 — October 3, 2026.** My own journal caught a bug in this page's wiring prompt. The journal is newest-first, but the prompt told the AI to *append* an entry, and an AI that takes "append" literally writes at the bottom, which is exactly what mine kept doing until I changed my own instruction to say "at the top, just below the template." The prompt now says the same. It also tells an AI with no access to your files to say so and ask you to paste the starting file in, instead of guessing what it says.
 - **v1.7 — August 12, 2026.** Housekeeping the doc's own subject caught it out on. This page carried its version number in two places, and when v1.6 shipped only one of them moved — so a file whose whole point is keeping copies in sync was telling every AI that read it to compare a version line it disagreed with itself about. The sign-off no longer repeats the version; the header and this changelog are the only two, and they move together. The count in Part 5 and the count in the v1.4 note below were also two different numbers for the same day; they now agree.
 - **v1.6 — August 7, 2026.** Part 5 now says to date the known-traps section and to record what was tried, not the verdict alone. One of my own entries governed how I worked for three weeks before a retest found the original attempt had done two of its steps in the wrong order. The closing note to the AI reading this gained a second ask: set up a way to notice when this file changes.
