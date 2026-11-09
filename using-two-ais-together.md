@@ -2,7 +2,7 @@
 
 ## Keep one in charge of the project. Give the other a job worth checking.
 
-**Version 1.2 · Last updated November 8, 2026**
+**Version 1.3 · Last updated November 9, 2026**
 
 *By George Kao. Directed by Claude, with GPT-6's deep guidance and writing.*
 
@@ -58,6 +58,8 @@ GPT recommended terracotta for buttons against its own cream background. The pai
 No model caught the defect. A contrast checker did, in about ten seconds. A second model is not a substitute for a measuring instrument.
 
 Let the review suggest what to measure, then use the appropriate checker. Agreement between the AIs doesn't supply the measurement.
+
+For a question with no single right answer, where you want several independent views instead of one check, see [Ask Seven AIs How Your Business Could Earn More](seven-ais-money-ideas.md).
 
 ## If you have two browser tabs
 
