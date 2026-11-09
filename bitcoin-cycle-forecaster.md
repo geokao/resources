@@ -2,7 +2,7 @@
 
 ## It blends the power-law trend with Bitbo's Cycle Repeat, and it shows its own test record
 
-**Version 1.1 · Last updated November 8, 2026**
+**Version 1.2 · Last updated November 8, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -42,7 +42,7 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 3. **Over 20 models compared,** including simple baselines and later challengers built on ideas from GPT and Gemini. Each was rebuilt weekly since 2016 from only the data available that week, then checked against what happened 3 months to 3 years later — more than 40,000 test forecasts in all.
 4. **Leak checks.** To confirm no forecast peeked at the future, Claude cut the data off at past dates, rebuilt the forecasts, and got identical results in all 1,070 comparisons. Claude also planted a leak on purpose to prove the check could catch one.
 5. **Rules before results.** For the turning-point method, Claude wrote down how it would be judged before computing a single result, so the results couldn't steer the rules.
-6. **Two independent checks.** A separate Claude session audited the code and reproduced every number in its test tables. A fresh one, with no access to that code, rebuilt the tool from this page's prompt alone and matched every reference figure within 2%.
+6. **Two independent checks.** A separate Claude session audited the code and reproduced every number in its test tables. A fresh one, with no access to that code, rebuilt the tool from this page's prompt alone and matched every reference figure within 2%. (That rebuild was of version 1.1; version 1.2 only removes one step from it.)
 
 ---
 
@@ -52,7 +52,7 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 2. **Two views of what comes next.**
    - The *trend pull* looks at how far today's price is from the line, and assumes the gap closes at the speed it has closed in the past.
    - The *cycle echo* is Cycle Repeat with two changes. It replays the last cycle's swings *around the trend line* instead of its raw price moves, and it shrinks them by how much the last cycle's swing shrank compared with the one before.
-3. **The forecast** averages the two, then corrects for how far off that average has been in the past. Its 80% range comes from the same record of past misses.
+3. **The forecast** averages the two. Its 80% range comes from the record of how far off that average has been in the past.
 4. **Turning points** (the next low, the next high, the next cycle top) come from a separate method. It finds the ten past days that looked most like today and follows what happened after each one.
 5. **From 3 years out, it uses the trend line alone,** because that's where the trend line tested better.
 
@@ -64,6 +64,7 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 2. **The power law itself:** [bitcoinpower.law](https://bitcoinpower.law) publishes its formula (Santostasi's fit: 10^-16.493 × days^5.68), and on November 7, 2026 it comes within 2% of this tool's own refit ($148K vs $145K). Bitbo's Long-Term Power Law chart is live with bands but doesn't publish its formula. (btcoak.com's power-law page says it refits nightly, but on November 8, 2026 its newest data was still from July 22, 2026, so I don't recommend that page.)
 3. **Compared with other tools:** most public bitcoin forecasts show one curve or one indicator and rarely report how far off they've been. This one publishes its test record. Some popular indicators have weakened, too: Pi Cycle missed the last two tops, and the Mayer Multiple stayed under its 2.4 sell line at both (it read 1.5 in November 2021 and 1.2 in October 2025).
 4. **"The lowest point of this cycle is already in" is its shakiest call.** The method was this confident in 2014 and wrong. And every past cycle low fell below the average price holders paid for their coins (the "realized price," $54K on November 7, 2026). This cycle's low so far, $58,525, stayed above the realized price.
+5. **Version 1.2 dropped a step that failed this same test.** Version 1.1 shifted each forecast to cancel its typical past error. Tested with only the misses known at each test date, the shifted forecast beat the unshifted one on only 38% of 1-year test dates and 21% of 2-year ones. The past error it was cancelling had also reversed direction over time. The forecast is now the plain average, which is what the test results above always measured.
 
 ---
 
@@ -87,17 +88,17 @@ They show where you are in the cycle, but they don't sharpen the price forecast.
 
 Bitcoin closed at $75,724, about half of the trend line's $145,334.
 
-- **One year out (November 7, 2027):** midpoint $153,872, with an 80% range of $103,486 to $420,802.
+- **One year out (November 7, 2027):** midpoint $181,335, with an 80% range of $103,486 to $420,802.
 - **Next 3 months' low:** between $58.6K and $73.5K, sometime between November 10, 2026 and January 27, 2027.
 - **Next 3 months' high:** between $78.8K and $105.3K, sometime between November 23, 2026 and February 3, 2027.
 - **Has this cycle's low ($58,525 on June 30, 2026) already happened?** 82% likely, by this method. Read item 4 above before leaning on that 82%.
-- **Next cycle top:** $246K to $744K, between February 2029 and January 2030, most likely around August 2029. The forecast's own path peaks near $313K in July 2029. Cycle Repeat says $583K in September 2029.
+- **Next cycle top:** $246K to $744K, between February 2029 and January 2030, most likely around August 2029. The forecast's own path peaks near $356K, and Cycle Repeat says $583K, both in September 2029.
 
 This table puts the forecast beside Bear Power (next section), started September 19, 2026 with k = 0.75, as yearly growth rates from $75,724:
 
 | Horizon | Forecast | Yearly growth | Bear Power | Yearly growth |
 |---|---|---|---|---|
-| 1 year (Nov 2027) | $153,872 | +103% | $81,717 | +7.9% |
+| 1 year (Nov 2027) | $181,335 | +139% | $81,717 | +7.9% |
 | 5 years (Nov 2031) | $584,673 | 50.5% | $187,634 | 19.9% |
 | 10 years (Nov 2036) | $1,784,677 | 37.2% | $442,515 | 19.3% |
 | 20 years (Nov 2046) | $10,057,508 | 27.7% | $1,672,353 | 16.7% |
@@ -156,9 +157,9 @@ PART 2 — THE FORECAST FROM ANY DAY t (use only data up to and including day t)
    c. Echo(h) = log10 Trend(t + h) + e_t + k·(e_(s0+h) − e_s0), for 1 ≤ h ≤ L.
    d. Plain Cycle Repeat, for comparison only: CR(h) = log10 price_t + log10 price_(s0+h) − log10 price_s0.
 4. Blend: B(h) = (Pull(h) + Echo(h)) ÷ 2, in log10 price.
-5. Correction and 80% range, from the blend's own past errors (PART 5): for each tested horizon (90, 180, 365, 730 and 1,095 days), sort the errors (log10 forecast − log10 actual) of every test origin whose outcome is known, and take q10, q50 and q90 at index floor(p × (N − 1)). For other horizons, interpolate each quantile linearly in log(horizon) between the two nearest tested horizons, and use the 90-day or 1,095-day values outside that span. Then midpoint = 10^(B(h) − q50), low = 10^(B(h) − q90), high = 10^(B(h) − q10). On a chart, for h under 90 days, scale the 90-day q values by sqrt(h ÷ 90) so the range starts at today's price. (Inside a backtest, use only errors already known at that origin, and skip the correction at any horizon with fewer than 30.)
+5. Midpoint and 80% range: midpoint = 10^B(h), the blend itself, with no shift. (Version 1.1 shifted it by the median past error, q50; that made forecasts worse in the PART 5 test.) The range comes from the blend's own past errors (PART 5): for each tested horizon (90, 180, 365, 730 and 1,095 days), sort the errors (log10 forecast − log10 actual) of every test origin whose outcome is known, and take q10 and q90 at index floor(p × (N − 1)). For other horizons, interpolate each quantile linearly in log(horizon) between the two nearest tested horizons, and use the 90-day or 1,095-day values outside that span. Then low = 10^(B(h) − q90), high = 10^(B(h) − q10). On a chart, for h under 90 days, scale the 90-day q values by sqrt(h ÷ 90) so the range starts at today's price. (Inside a backtest, build each range only from errors already known at that origin, and skip it at any horizon with fewer than 30.)
 6. From 3 years out (h ≥ 1,095), report the plain trend line, Trend(t + h), instead of the blend. It tested better there. Label every figure beyond 1 year as rough: the 80% ranges held only up to 1 year.
-7. The blend's next cycle top: the highest corrected midpoint over every day h = 1 to 1,094, and its date. Also report plain Cycle Repeat's top over h = 1 to L.
+7. The blend's next cycle top: the highest midpoint over every day h = 1 to 1,094, and its date. Also report plain Cycle Repeat's top over h = 1 to L.
 
 PART 3 — TURNING POINTS (look-alike past days)
 1. Daily series, each computed from data up to that day only:
@@ -204,7 +205,7 @@ PART 6 — CHECKS TO SHOW ME BEFORE ANY FORECAST
 Run these on the data cut off at 2026-11-07, then on today's data.
 1. Cycle Repeat reproduction: plain Cycle Repeat's top should come out near $583,020 on 2029-09-15. Bitbo's chart page showed $582,907 on 2029-09-15 for that date.
 2. Power-law fit: n ≈ 5.636, a ≈ −16.332, trend ≈ $145,334 against a price of $75,724, and k ≈ 0.78 with the window starting 2022-11-28. The formula at bitcoinpower.law (10^−16.493 × days^5.68) gives about $148,180 that day.
-3. The forecast itself: the 1-year corrected midpoint ≈ $153,872 (80% range ≈ $103,486 to $420,802); the blend's own top (PART 2 item 7) ≈ $312,873 around 2029-07-23. From PART 3: the next 3-month low ≈ $67,846 (range ≈ $58,604 to $73,504); the chance the $58,525 low is already in ≈ 82%; the next cycle top ≈ $319,618 (range ≈ $246,089 to $743,565) around 2029-08-30.
+3. The forecast itself: the 1-year midpoint ≈ $181,335 (80% range ≈ $103,486 to $420,802); the blend's own top (PART 2 item 7) ≈ $356,205 around 2029-09-15. From PART 3: the next 3-month low ≈ $67,846 (range ≈ $58,604 to $73,504); the chance the $58,525 low is already in ≈ 82%; the next cycle top ≈ $319,618 (range ≈ $246,089 to $743,565) around 2029-08-30.
 4. No look-ahead: choose at least five origins, rerun every forecast from data truncated at each one, and confirm the results match the full-data run exactly. Then prove the test can fail: let one step see the future on purpose (for example, standardize the features over all days) and confirm the test catches the leak.
 5. Cycle position: on 2026-09-12, Z ≈ 0.79, price ÷ 4-year average ≈ 1.22, and ≈ 45% below the trend. On 2026-10-05: Z ≈ 1.05, ≈ 1.34, and ≈ 40% below.
 6. Bear Power (PART 7): start 2026-09-19 and k = 0.75 must give a floor of $62,516.38, $130,339.40 on 2030-01-01, and $1,050,606.72 on 2043-01-01.
