@@ -2,7 +2,8 @@
 
 ## A non-technical guide to checking AI work that looks finished
 
-**Version 1.5 · Last updated September 3, 2026**
+**Version 1.6 · Last updated November 8, 2026**
+<!-- v1.6: Shape 1 gains a third addition (a search can work and still measure the wrong thing) and one matching phrase. -->
 
 *By George Kao. Written with Claude.*
 
@@ -45,10 +46,11 @@ An absence is also the most reassuring answer available. "Nothing needs your att
 
 **What to ask.** *"Before you tell me there's nothing there, find me something I know is there."* Name a record you can see with your own eyes and have the same search return it. If the search can't find that, the empty result was never about the shelf.
 
-Two additions worth the extra sentence:
+Three additions worth the extra sentence:
 
 - **If the service publishes its own count, read the count.** The mail folder answered "2" in a single call, at the same moment the search was answering "nothing." No setup, no test record, one extra question.
 - **On a long run, re-check partway through, not only at the start.** The 386-link sweep was caught because the known-good page came back throttled too. A control that only runs at the beginning tells you the run started healthy.
+- **Say what the search literally counts, then compare it to what you're about to claim.** On August 12, my AI found zero poll links in a lesson's comments and concluded students hadn't done the poll. The search worked, but it counts commenting, and a student can do a poll without commenting. A known-good control would have passed, because the search itself was fine. The mismatch was between what it counts and what I claimed.
 
 ---
 
@@ -157,6 +159,7 @@ This is the section to come back to. None of it requires knowing how the job was
 1. "Before you tell me there's nothing there, find me something I know is there."
 2. "Is there a count you can read, instead of a list you have to build?"
 3. "Could this be a refusal rather than an absence? What did the failures actually say?"
+4. "What does that search literally count, and is it the same thing I asked about?"
 
 **When you get a list, a file, or a count:**
 
