@@ -2,7 +2,7 @@
 
 ## Claude keeps the records. ChatGPT holds the session. A shared Google Doc carries what happened back.
 
-**Version 1.1 · Last updated October 18, 2026**
+**Version 1.2 · Last updated November 8, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -42,7 +42,7 @@ Nothing has to stay in sync except one Google Doc and one file per council, and 
 
 I set this up on September 20, 2026, with three ChatGPT Projects and 57 advisors across them. By October 18 I had run three sessions through it, plus one test.
 
-**Getting started was the friction.** Three sessions in four weeks is fewer than I expected, with a gap of more than three weeks in the middle. When I looked at why, the answer was the ritual at the beginning. My version asked me to type `start`, wait for ChatGPT to confirm it had read the files, and only then bring my question. That's a small step, but it came at the moment I had a question and wanted an answer. The version in this guide drops that step: ChatGPT reads the files on its own at the start of each new chat and treats your first message as the question. I've since tested the opening of that version by voice with my Dot (below). A full round hasn't run through it yet.
+**Getting started was the friction.** Three sessions in four weeks is fewer than I expected, with a gap of more than three weeks in the middle. When I looked at why, the answer was the ritual at the beginning. My version asked me to type `start`, wait for ChatGPT to confirm it had read the files, and only then bring my question. That's a small step, but it came at the moment I had a question and wanted an answer. The version in this guide drops that step: ChatGPT reads the files on its own at the start of each new chat and treats your first message as the question. I've since tested the opening of that version by voice with my Dot (below). A full round has run through it since, but it didn't save, which the Dot section covers.
 
 **I designed for voice, and I typed.** I wrote my instructions assuming I'd mostly talk to the councils in ChatGPT's voice mode. In practice I typed nearly every session. Voice did work when I tested it on day one, but if you build this, build it for typing and treat voice as a bonus. My first tests with the Dot were voice calls, though, so this may change.
 
@@ -60,7 +60,7 @@ By the day I published this, I was no longer opening the ChatGPT Projects. I bri
 
 The pasted instructions were now the problem: they lived inside the Projects, and the Dot never saw them. So Claude moved the rules for running a council to the top of each council file. Whatever opens the file gets the rules and the data together, and there's nothing separate to paste or keep in sync.
 
-I tested it that afternoon on voice calls with the Dot. Claude put a fresh code word at the top of one council file, and the Dot read it back correctly. Then I opened my business council: the Dot read the current file and the Inbox, named the latest session correctly, saw nothing newer waiting, and asked one opening question. Earlier that day it had also written a test note into the Inbox during a voice call, and Claude read it back. That covers the opening and the way back. A full council round ending in `save` hasn't run through the new setup yet.
+I tested it that afternoon on voice calls with the Dot. Claude put a fresh code word at the top of one council file, and the Dot read it back correctly. Then I opened my business council: the Dot read the current file and the Inbox, named the latest session correctly, saw nothing newer waiting, and asked one opening question. Earlier that day it had also written a test note into the Inbox during a voice call, and Claude read it back. That covers the opening and the way back. A full round ran through the Dot later that day, with three advisors and a synthesis. It never saved to the Inbox, though. The record reached Claude through a separate note the Dot leaves for it, and Claude folded it from there. So `save` on the Dot is the one step I haven't seen work. If you build this, test it in your first week, before you count on it.
 
 If your ChatGPT has Dots, start there. If it doesn't, a Project per council still works, and its instructions only need one line: follow the rules at the top of the source file.
 
@@ -293,7 +293,7 @@ for name, (h1, sf) in COUNCILS.items():
 
 ## Credits and license
 
-Written with Claude from my own council files and four weeks of session records, September 20 to October 18, 2026. The builder is a simplified version of the one Claude wrote for me. My own setup now matches it: the rules live inside each file, there's no `start` step, and the sessions run through my Dot.
+Written with Claude from my own council files and four weeks of session records, September 20 to October 18, 2026. The builder is a simplified version of the one Claude wrote for me. My own setup now matches it: the rules live inside each file and there's no `start` step.
 
 Released under [CC0](LICENSE), effectively public domain. Copy it, change it, republish it, teach from it, build it into your own tools. No permission needed and no credit required.
 
