@@ -2,7 +2,8 @@
 
 ## A standing rule, and a small guard your AI can build, so parallel sessions stop undoing each other's work
 
-**Version 1.0 · Last updated October 28, 2026**
+**Version 1.1 · Last updated November 8, 2026**
+<!-- v1.1: guard now blocks only when the other session still looks active (idle writers get a note); a failed edit is not a write. -->
 
 *By George Kao. Written with Claude.*
 
@@ -66,7 +67,7 @@ Don't skip the last line. An AI that saves "everything that changed" will save, 
 
 Rules get skipped, even good ones. A guard runs on its own, every time, whether or not your AI remembers the rule.
 
-Claude Code keeps a record of every session on your own computer, one file per session. Before your session edits a file, the guard looks through the records of your *other* sessions from the last few hours for a change to that same file. If it finds one, it stops the edit once and tells your AI which session made the change, how long ago, and whether that session still looks active. Your AI re-reads the file, checks in with the other session if it's still working, and tries the edit again, which goes through.
+Claude Code keeps a record of every session on your own computer, one file per session. Before your session edits a file, the guard looks through the records of your *other* sessions from the last few hours for a change to that same file. If that session still looks active, the guard stops the edit once and tells your AI which session made the change and how long ago. Your AI re-reads the file, checks in with the other session, and tries the edit again, which goes through. If the other session has gone quiet, the edit goes straight through with a short note naming it. Mine blocked those too at first, and it backfired: when my AI sent an edit and a command together, the command ran while the edit was stopped, and files ended up half-changed. Every time, the other session had gone quiet and the re-read found nothing new.
 
 When nobody else touched the file, the guard stays silent. Mine adds about a third of a second to each edit.
 
@@ -80,18 +81,19 @@ Please build a PreToolUse hook for Claude Code, matched on Edit|Write|MultiEdit|
 How it should work:
 1. Read the file path from the tool input, and this session's own transcript path and session id.
 2. Look through the other top-level session transcripts (~/.claude/projects/*/*.jsonl) modified in the last 6 hours. Skip this session's own transcript.
-3. In each one, find assistant tool calls that WROTE this exact file: an Edit, Write, MultiEdit or NotebookEdit on that path, or a Bash command that redirects or tees into it, runs sed -i on it, or runs git checkout/restore/stash/reset. Count only calls from the last 6 hours. Reads don't count. A Bash command that merely mentions the file doesn't count either (for example `grep x file 2>/dev/null` is not a write).
-4. If you find any, deny the first edit of that file in this session once, with a message that names each other session (use its title from the transcript's custom-title record), how many minutes ago it wrote the file, and whether it looks live (its transcript was written in the last 15 minutes). Tell me to re-read the file and check with any live session before changing the same section, then retry. The retry must go through.
+3. In each one, find assistant tool calls that WROTE this exact file: an Edit, Write, MultiEdit or NotebookEdit on that path, or a Bash command that redirects or tees into it, runs sed -i on it, or runs git checkout/restore/stash/reset. Count only calls from the last 6 hours. Reads don't count, and neither does a call that failed or was refused (its result is marked as an error). A Bash command that merely mentions the file doesn't count either (for example `grep x file 2>/dev/null` is not a write).
+4. A session is live if its transcript was written in the last 15 minutes. If any writer is live, deny the first edit of that file in this session once, with a message that names each live session (use its title from the transcript's custom-title record) and how many minutes ago it wrote the file. Tell me to re-read the file and check with the live session before changing the same section, then retry. The retry must go through. If every writer is idle, never deny: allow the edit and add the same names as a one-time note.
 5. If nothing is found, or anything goes wrong, stay silent and allow the edit. This hook must never block my work because of its own error.
 
-Before you call it done, test it both ways:
-- A file another session really edited today must trigger it. Find one in the transcripts first, so you know the test can fail.
+Before you call it done, test it three ways:
+- A file another session is actively editing must trigger it. Find one in the transcripts first (or write to a scratch file from a second session), so you know the test can fail.
+- A file only an idle session edited must go through, with the note.
 - A file nobody else touched must stay silent, with this session's own transcript excluded. Your own testing commands mention file paths too, so a test that forgets to exclude your own session will always fire.
 
 Then tell me in plain language what it catches and what it can't see.
 ```
 
-The two tests aren't optional. A guard that's never been seen firing on a real case might be silently broken, and it looks exactly like a guard that's working with nothing to report.
+The tests aren't optional. A guard that's never been seen firing on a real case might be silently broken, and it looks exactly like a guard that's working with nothing to report.
 
 ---
 
