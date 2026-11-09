@@ -2,13 +2,15 @@
 
 ## It blends the power-law trend with Bitbo's Cycle Repeat, and it shows its own test record
 
-**Version 1.2 · Last updated November 8, 2026**
+**Version 1.3 · Last updated November 8, 2026**
 
 *By George Kao. Written with Claude.*
 
 ![Bitcoin's price since 2016 on a log scale, with the power-law trend, this forecast's midpoint and 80% range, and Bitbo's Cycle Repeat projection out to 2030](images/bitcoin-cycle-forecaster.png)
 
-**This is a forecasting experiment, not investment advice.** I'm sharing the method and its test record so you can check both. Bitcoin has been through only about four cycles, and nothing here promises anything about the next one.
+**This is a forecasting experiment, not investment advice.** I'm sharing the method and its test record so you can check both. The forecaster runs entirely on free public data, so your AI can rebuild it and check every number. Bitcoin has been through only about four cycles, and nothing here promises anything about the next one.
+
+Before publishing, Claude looked for anything better. It went through published models on GitHub, TradingView, X and the big chart sites, and scored the dated price calls of 12 well-known forecasters, banks and funds. None had a better tested record.
 
 Corrections and suggestions welcome, from you or your AI — [open an issue](https://github.com/geokao/resources/issues/new) and I'll read every one. You don't need to be technical to file one; it's just a comment box.
 
@@ -43,6 +45,8 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 4. **Leak checks.** To confirm no forecast peeked at the future, Claude cut the data off at past dates, rebuilt the forecasts, and got identical results in all 1,070 comparisons. Claude also planted a leak on purpose to prove the check could catch one.
 5. **Rules before results.** For the turning-point method, Claude wrote down how it would be judged before computing a single result, so the results couldn't steer the rules.
 6. **Two independent checks.** A separate Claude session audited the code and reproduced every number in its test tables. A fresh one, with no access to that code, rebuilt the tool from this page's prompt alone and matched every reference figure within 2%. (That rebuild was of version 1.1; version 1.2 only removes one step from it.)
+7. **A search for anything better.** Claude searched GitHub, TradingView, X, the big chart sites and research papers for published bitcoin forecasters. Claude also scored the dated price calls of 12 well-known forecasters, banks and funds against what actually happened. None showed a better tested record, and most of those calls came in well above the real price, many by 1.6 to 3.5 times.
+8. **Three more ideas tested, none kept.** The most promising ideas from that search were a floor-and-ceiling corridor, shrinking cycle peaks, and money supply (M2). Claude tested each one with its pass mark written down first. None improved the forecast. The testing did turn up one step in this tool that didn't hold up, and version 1.2 removed that step (see "How much to trust it").
 
 ---
 
@@ -62,7 +66,7 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 
 1. **How much better:** tested weekly since 2016 (about two and a half cycles). At 6–12 months its typical miss was about 30–40% smaller than the power-law trend line's and about half of Cycle Repeat's. At 2 years, about 20% smaller than the trend line's and 60% smaller than Cycle Repeat's. From 3 years on, the trend line alone did better, so that's what the tool uses there. A model built on those five popular Bitbo charts did worse than this tool at every horizon and added nothing beyond the trend line past a year.
 2. **The power law itself:** [bitcoinpower.law](https://bitcoinpower.law) publishes its formula (Santostasi's fit: 10^-16.493 × days^5.68), and on November 7, 2026 it comes within 2% of this tool's own refit ($148K vs $145K). Bitbo's Long-Term Power Law chart is live with bands but doesn't publish its formula. (btcoak.com's power-law page says it refits nightly, but on November 8, 2026 its newest data was still from July 22, 2026, so I don't recommend that page.)
-3. **Compared with other tools:** most public bitcoin forecasts show one curve or one indicator and rarely report how far off they've been. This one publishes its test record. Some popular indicators have weakened, too: Pi Cycle missed the last two tops, and the Mayer Multiple stayed under its 2.4 sell line at both (it read 1.5 in November 2021 and 1.2 in October 2025).
+3. **Compared with other tools:** none of the published bitcoin forecasters in that search showed a better tested record. Most show one curve or one indicator and rarely report how far off they've been; this one publishes its test record. Some popular indicators have weakened, too: Pi Cycle missed the last two tops, and the Mayer Multiple stayed under its 2.4 sell line at both (it read 1.5 in November 2021 and 1.2 in October 2025).
 4. **"The lowest point of this cycle is already in" is its shakiest call.** The method was this confident in 2014 and wrong. And every past cycle low fell below the average price holders paid for their coins (the "realized price," $54K on November 7, 2026). This cycle's low so far, $58,525, stayed above the realized price.
 5. **Version 1.2 dropped a step that failed this same test.** Version 1.1 shifted each forecast to cancel its typical past error. Tested with only the misses known at each test date, the shifted forecast beat the unshifted one on only 38% of 1-year test dates and 21% of 2-year ones. The past error it was cancelling had also reversed direction over time. The forecast is now the plain average, which is what the test results above always measured.
 
