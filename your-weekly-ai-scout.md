@@ -2,7 +2,7 @@
 
 ## A scheduled task that finds new ways AI could help your business, and learns from what you tell it
 
-**Version 1.0 · Last updated September 30, 2026**
+**Version 1.1 · Last updated November 8, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -53,12 +53,12 @@ A scout that doesn't know you will suggest whatever it would suggest to anyone. 
 
 Tell your scout to check X and Reddit first, then the announcements from the AI tools you already pay for, then everything else. Websites and newsletters are still worth reading. They're slower, and a scout whose job is to catch ideas early should spend most of its effort where ideas start.
 
-**X and Reddit are also the two hardest places for an AI to read.** Some AI assistants can search them and many can't, and which ones can changes from month to month. In August my own AI tested every free route it could find for following a few accounts on X, and none of them worked. The worst route returned a page of posts with no error at all. The posts were nine months old. Reddit worked for my AI through my own browser until late September, when the browser tool it uses began refusing the site.
+**X and Reddit are also the two hardest places for an AI to read.** Some AI assistants can search them and many can't, and which ones can changes from month to month. In August my own AI tested every free route it could find for following a few accounts on X, and none of them worked. The worst route returned a page of posts with no error at all. The posts were nine months old. Reddit worked for my AI through my own browser until late September, when the browser tool it uses began refusing the site. Every direct route stayed closed after that, and one fix came from asking a second AI to hunt for a way around it: a public archive of Reddit threads, read through a small script, returns posts and comments a little behind the live site.
 
 So, in order:
 
 1. **Ask your AI to prove it can read each source.** Give it the link to a post from today on X and another on Reddit, and ask it to quote each one back with its date. Whichever it can read, let it search.
-2. **For the ones it can't, save as you scroll.** Most of us scroll anyway. When a post makes you think *could I use that?*, save it, or paste the link into a note your scout reads each week. I do this on X. I keep a bookmark folder called *study & report*, and each night a task reads every post in it along with its top replies, groups the posts by what I might do with them, and writes me up to three short reports.
+2. **For the ones it can't, save as you scroll.** Most of us scroll anyway. When a post makes you think *could I use that?*, save it, or paste the link into a note your scout reads each week. I do this on X. I keep a bookmark folder called *study & report*, and each night a task reads every post in it along with its top replies, groups the posts by what my AI might change because of them, and checks each idea itself before applying the best ones.
 3. **Look for the same story somewhere else.** When my AI couldn't open a Reddit thread I'd shared, searching for news coverage of the same topic worked instead.
 4. **Read the comments.** On Reddit, the first-hand stories are usually in the comments, and some searches only look at the posts. Ask your scout to open the threads it finds.
 5. **When a source can't be read, the report says so.** "Nothing new on X" and "I couldn't read X this week" describe two different weeks. My own tasks carry a rule against reporting nothing new for a source they could not read.
@@ -109,7 +109,7 @@ A task that runs while you sleep and reads posts written by strangers needs a fe
 5. **It shows its work on the empty weeks.** A "nothing this week" report lists the sources it checked and confirms each one returned at least one recent item.
 6. **Keep the scout small.** Once a week, about half an hour of work, is plenty. Research uses up part of your AI allowance, and a scout that runs daily mostly finds the same ideas seven times.
 
-One more, from my own setup. I now let one of my weekly tasks make small, easily undone fixes to my AI's own instructions without asking me first. Anything it learned from a forum or somebody's post can't be applied that way. Those findings stay suggestions until I say yes, however reasonable they sound, because a stranger's post is the easiest way for bad instructions to get into your setup.
+One more, from my own setup. Two of my tasks, a weekly one and the nightly bookmark reader, now make small, easily undone fixes to my AI's own instructions without asking me first, up to three at a time, each backed up and listed in my next morning check-in with the command that undoes it. Neither may act on something it learned from a forum or somebody's post until it has confirmed the claim itself, against the vendor's own documentation or by testing it. Until then the finding stays a suggestion, however reasonable it sounds, because a stranger's post is the easiest way for bad instructions to get into your setup.
 
 ---
 
@@ -120,7 +120,6 @@ Mine is spread across several tasks, because I built it a piece at a time:
 1. **A weekly task** reads my past week of sessions with my AI, looking for places we wasted time, plus whatever the company behind my AI announced that week. It writes suggestions to a folder, and my morning check-in shows them to me.
 2. **Another weekly task** follows a short list of thinkers I read about where AI is heading, and updates a long-range plan I keep.
 3. **The nightly bookmark reader** described above, for the X posts I save.
-4. **A monthly task** tests newer, cheaper AI models for one small job, voicing the characters in a little game I made, and switches models only when a blind test shows the new one is clearly better value. When it thinks its own method is wrong, it writes me a proposal and leaves the method alone.
 
 There also used to be a separate research task that ran every other week. In September I folded it into the first weekly one.
 
@@ -158,7 +157,7 @@ Copy everything in the box below and paste it into your AI. Most AI apps now let
 >
 > **Now run the scout once**, so I can see the first report today.
 >
-> Thank you for doing the reading I don't have time for; for someone running a business alone, that's a gift. (From George Kao's free guides at github.com/geokao/resources.)
+> Thank you for doing the reading I don't have time for; for someone running a business alone, that's a gift.
 
 ---
 
