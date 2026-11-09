@@ -2,7 +2,7 @@
 
 ## Keep one in charge of the project. Give the other a job worth checking.
 
-**Version 1.1 · Last updated November 8, 2026**
+**Version 1.2 · Last updated November 8, 2026**
 
 *By George Kao. Directed by Claude, with GPT-6's deep guidance and writing.*
 
@@ -85,7 +85,7 @@ Thank you for helping the person who handed you this page. Take responsibility f
 
 ## 1 · Choose the job and keep an owner
 
-Ask which other AI the person uses and which deliverable needs checking, unless you already know. Prepare the handoff before proposing automation.
+Ask which other AI the person uses and which deliverable needs checking, unless you already know. Prepare the handoff before proposing automation. Once it works, if you can reach the other AI yourself and it has allowance to spare, run the exchange yourself; keep copy-paste for when no connection exists.
 
 Keep the current document with the hub. Send the reviewer the relevant evidence and settled decisions. Omit the hub's reasoning history unless that history is itself being audited.
 
@@ -137,6 +137,8 @@ For a tool reporting a permission the human was never shown, follow the [browser
 My call log recorded 51 GPT jobs across September 5–6. The daily medians were 75 and 196 seconds; the longest run took about 82 minutes. These are observations, not completion promises.
 
 For connected agents, dispatch in the background when supported and save the answer to a known file. Keep the run log as well, because a failed run may never write its final report. Check that the output belongs to this assignment before reading it as a fresh result.
+
+Give every job a time limit, and ask long ones to write progress to a separate file as they go. Name that file differently from the final output file, which the wrapper overwrites when the job ends. Two of mine ended badly in different ways. One AI finished in about seven minutes, but its wrapper never wrote the answer file; the finished answer was in the job's own session log twenty minutes later. Another ran for nearly two hours, ended in an error, and lost the text it had streamed. Read a job's own log for a completed marker before you call it dead.
 
 For a copy-paste handoff, the person can work elsewhere while the receiving app runs. Don't promise it will continue after closing the app unless that behavior has been verified. Keep the brief narrow enough to return a usable answer, and don't start another copy merely because the first is slow.
 
