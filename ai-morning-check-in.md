@@ -2,7 +2,8 @@
 
 ## One scheduled task that checks whether the others did their jobs, and leaves you only what needs you
 
-**Version 1.0 · Last updated November 8, 2026**
+**Version 1.1 · Last updated November 11, 2026**
+<!-- v1.1: the follow-up session now renames itself with the date. -->
 
 *By George Kao. Written with Claude.*
 
@@ -120,7 +121,7 @@ So when I reply now, the check-in does no work in that thread. It does three thi
    claude://code/new?folder=<the folder path>&q=<the prompt>
    ```
 
-   Both values are URL-encoded. My prompt is one sentence: *"Morning check-in follow-up: please read for-claude/handoff.md and do it. Thank you!"* The new session opens with that sentence already typed in.
+   Both values are URL-encoded. My prompt is one sentence. It asks the new session to rename itself with the date, such as "Morning Nov 11 Follow-Up", then to read for-claude/handoff.md and do what it says. The new session opens with that sentence already typed in.
 3. **Tells me in one line** to press Enter there.
 
 The new session reads the file, works through the list, acts on my reply, marks the file `consumed: yes`, and saves its work. That session runs like any I'd started myself, so its permission cards appear where I'm already working. It can also tidy away the scheduled session afterward, and from there that goes through without a card.
@@ -129,9 +130,10 @@ The details:
 
 1. **You still press Enter.** The link fills in the prompt but doesn't send the message.
 2. **The link can't choose the model or the effort level.** The new session starts on the app's defaults.
-3. **A reply that needs nothing doesn't get a session.** If I only say thanks, the check-in answers in one line and opens nothing.
-4. **The hand-off can't run twice.** The new session acts only on a file dated today and marked `consumed: no`. An old or used file gets one line and nothing more, so opening the link again by accident does no harm.
-5. **The link may change.** My AI found this link format inside the app itself, so an app update could change the format. If opening the link fails, the check-in does the follow-up in its own thread instead. After a big app update, try it once.
+3. **Nor can the link name the session, so the session names itself.** The app names a new session after its first message, so every follow-up got the same name and two mornings looked identical in my sidebar. With the date in the name, I can find each day's follow-up at a glance.
+4. **A reply that needs nothing doesn't get a session.** If I only say thanks, the check-in answers in one line and opens nothing.
+5. **The hand-off can't run twice.** The new session acts only on a file dated today and marked `consumed: no`. An old or used file gets one line and nothing more, so opening the link again by accident does no harm.
+6. **The link may change.** My AI found this link format inside the app itself, so an app update could change the format. If opening the link fails, the check-in does the follow-up in its own thread instead. After a big app update, try it once.
 
 I tested it on November 7, and the first real reply went through the next day: the 5:45 note, my short numbered answer, a fresh session, the list worked through, the file marked used.
 
@@ -161,7 +163,7 @@ Please build me a morning check-in for my scheduled tasks. Ask me before you bui
 
 4. If I use the Code tab in the Claude desktop app, add the fresh-session hand-off. When I reply in the check-in's session with a request that needs work:
    a. Write my reply, word for word, to a hand-off file in the check-in's folder, with today's date, which session wrote it, "consumed: no", and the line "work through DEFERRED in the report file, then act on the reply".
-   b. Open claude://code/new?folder=<the check-in folder>&q=<a one-sentence prompt naming the hand-off file>, with both values URL-encoded (on a Mac, with the open command).
+   b. Open claude://code/new?folder=<the check-in folder>&q=<a one-sentence prompt asking the new session to rename itself "Morning <today's date> Follow-Up", then to read the hand-off file>, with both values URL-encoded (on a Mac, with the open command).
    c. Reply in one line: "Opened a fresh session with your reply. Press Enter there."
    d. In the check-in folder's instructions file, add: when a session's first message names the hand-off file, act only if the file is dated today and says consumed: no. Then work through it, set consumed: yes, and save. Otherwise say so in one line and stop.
    e. If my reply needs nothing ("thanks"), answer in one line and don't hand off. If opening the link fails, do the follow-up in this session instead.
