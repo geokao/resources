@@ -2,7 +2,7 @@
 
 ## Keep one in charge of the project. Give the other a job worth checking.
 
-**Version 1.3 · Last updated November 9, 2026**
+**Version 1.4 · Last updated November 11, 2026**
 
 *By George Kao. Directed by Claude, with GPT-6's deep guidance and writing.*
 
@@ -169,6 +169,10 @@ The readings from October 8 to November 8, 2026 (32 days):
 So the check didn't do what I built it for. It rarely caught me overspending. Instead it turned up capacity I was paying for and leaving idle, and it gave my AI a standing reason to send research and reviews to the AI with room to spare.
 
 You don't need any tooling for this. Ask your AI to open both usage pages once each morning and work out the two numbers before it plans the day. Meters can lag, though. One of mine only refreshes when that AI does agent work, so anything done in its chat window never shows up. Treat each reading as a floor on what you've used.
+
+A reused reading misleads in a similar way. For the first month my AI reported from a reading up to half an hour old, so the number sat still across several sessions and then dropped four points at once. It now takes a fresh reading each time it reports, which costs about 0.2% of a typical week's usage.
+
+None of this needs a second AI. With one, you skip the comparison and keep the daily share.
 
 ---
 
