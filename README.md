@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.29 · Last updated 2026-11-09 09:55 PST**
+**Version 1.30 · Last updated 2026-11-11 14:57 PST**
 
+<!-- v1.30: Added Pace Your AI's Weekly Allowance by the Day; Using Two AIs Together → v1.5 (cross-link). -->
 <!-- v1.29: Added Ask Seven AIs How Your Business Could Earn More; Using Two AIs Together → v1.3 (cross-link). -->
 <!-- v1.28: Bitcoin forecaster → v1.3 (dropped midpoint shift in v1.2; adds the search for better published forecasters and three more tested ideas); blurb gains one sentence on the search. -->
 <!-- v1.27: Bitcoin forecaster → v1.1 (new sections on the work behind it and on suggesting improvements); its reading time 16 → 18 min. -->
@@ -101,6 +102,10 @@ If you've told your AI assistant to do something every night at 3am and nothing 
 **[Is your Claude 5-hour limit maxing out quickly?](claude-limit-maxing-out.md)**
 
 Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two causes of a spike you can't account for — an idle gap, and a model switch made to save money that doesn't — how to tell whether starting a fresh session saves anything (on a warm cache it usually doesn't), the two things your local numbers can't see, and what support can and can't do. Claude Code only, desktop app or CLI. About 14 minutes to read, or one minute to hand over.
+
+**[Pace your AI's weekly allowance by the day](pace-your-ai-allowance-by-the-day.md)**
+
+Most AI plans give you a weekly allowance, and the meter only gets your attention once it's nearly empty. Since October my AI has done one sum each morning: the percentage left, divided by the days until it resets. That's today's share, and it tells me on a Tuesday whether there's room for a big job. Includes the 10% I keep back for the last day, the three states that decide whether optional work runs, what a month of readings showed, why each reading has to be fresh (a reused one made my number sit still and then drop four points at once), and a paste-ready prompt that sets it up in any AI. About 4 minutes to read, or one minute to hand over.
 
 **[Is your Google Drive filling up with copies of your Claude projects?](claude-copies-in-your-drive.md)**
 
