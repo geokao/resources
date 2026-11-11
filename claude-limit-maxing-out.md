@@ -1,6 +1,6 @@
 # Is your Claude 5-hour limit maxing out quickly?
 
-**Version 1.5 · Last updated November 8, 2026**
+**Version 1.6 · Last updated November 11, 2026**
 
 Some days the meter hits 100% and you genuinely can't account for the spike. You weren't running anything unusual. You may even have switched to a cheaper model. And there's no way to argue with a number you can't check.
 
@@ -313,7 +313,7 @@ On a subscription, Claude Code writes a one-hour cache for your main conversatio
 
 I'd rather have the setup than a smaller number, so I'm not arguing for a spare instructions file. I'm arguing for knowing what yours costs, which I didn't, for about a month.
 
-If you pay for a second AI as well, [Using Two AIs Together](using-two-ais-together.md) has a one-minute morning check for pacing both weekly allowances.
+To pace your weekly allowance by the day, [Pace Your AI's Weekly Allowance by the Day](pace-your-ai-allowance-by-the-day.md) has a one-minute morning check. If you pay for a second AI as well, [Using Two AIs Together](using-two-ais-together.md) paces both.
 
 ---
 
