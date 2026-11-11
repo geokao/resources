@@ -2,7 +2,7 @@
 
 ## Keep one in charge of the project. Give the other a job worth checking.
 
-**Version 1.4 · Last updated November 11, 2026**
+**Version 1.5 · Last updated November 11, 2026**
 
 *By George Kao. Directed by Claude, with GPT-6's deep guidance and writing.*
 
@@ -172,7 +172,7 @@ You don't need any tooling for this. Ask your AI to open both usage pages once e
 
 A reused reading misleads in a similar way. For the first month my AI reported from a reading up to half an hour old, so the number sat still across several sessions and then dropped four points at once. It now takes a fresh reading each time it reports, which costs about 0.2% of a typical week's usage.
 
-None of this needs a second AI. With one, you skip the comparison and keep the daily share.
+None of this needs a second AI. With one, you skip the comparison and keep the daily share. The one-AI version, with a prompt that sets it up, is [Pace Your AI's Weekly Allowance by the Day](https://github.com/geokao/resources/blob/main/pace-your-ai-allowance-by-the-day.md).
 
 ---
 
