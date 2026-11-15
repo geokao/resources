@@ -2,7 +2,8 @@
 
 ## It blends the power-law trend with Bitbo's Cycle Repeat, and it shows its own test record
 
-**Version 1.4 · Last updated November 14, 2026**
+**Version 1.5 · Last updated November 15, 2026**
+<!-- v1.5: the chart section now rebuilds the $1 million chart (top: $1M line and the first day each line reaches it; bottom: Bitcoin ₿ear Power 🧸 growth per year at 1/5/10/20 years) in place of the price ÷ trend panel; reference values added for both. -->
 <!-- v1.4: Bear Power renamed Bitcoin ₿ear Power 🧸, with its median rule, anchor, reproduction checks and planning-path caveat spelled out; new section to rebuild the "where are we now" chart, with reference values for data through 2026-11-14; the work behind it adds the advisor round (seven ideas from GPT, Grok and Gemini, none kept). Fable audit folded in: real-time vs one-fit ratios, the 0.38x 2015 dip, price below the floor and ₿ear Power on Nov 14, the line's anchor, a paste line, a data cut-off for checks. -->
 
 *By George Kao. Written with Claude.*
@@ -144,25 +145,28 @@ Choose your own start date and k. A lower k is more cautious.
 
 ---
 
-## Rebuild the "where are we now" chart
+## Rebuild the $1 million chart
 
-The "where are we now" chart sets today's price beside past cycle lows, each measured as price ÷ the power-law trend. Your AI can rebuild the chart from the PART 1 data with these steps. If you're pasting only the prompt box, paste this section along with the box, and add something like: *"Please also rebuild the 'where are we now' chart from that section, and check it against its reference values."*
+The $1 million chart shows where bitcoin sits against its power-law trend, when each line first reaches $1 million, and how fast Bitcoin ₿ear Power 🧸 grows each year. Your AI can rebuild it from the PART 1 data with these steps. If you're pasting only the prompt box, paste this section along with the box, and add something like: *"Please also rebuild the $1 million chart from that section, and check it against its reference values."*
 
 1. **One line for all dates.** Run PART 2's power-law fit once, over every day through the newest data. Trend(date) = 10^(a + n·log10(days since genesis)), with that one fit for every date, past and future.
-2. **Top panel, log scale, January 1, 2011 to January 1, 2035.** Price through today, the trend line across the whole span, Bitcoin ₿ear Power 🧸 (start September 19, 2026, k = 0.75, drawn only from today on, so it begins slightly above today's price), and a dot at today's price. Put a dot on both lines at January 1, 2030 and January 1, 2035, and label each dot with its value.
-3. **Bottom panel, log scale, same dates.** Price ÷ trend, a dashed line at 1×, and a dot at today's ratio. Mark each past cycle low as the lowest close in its bear window: October 1 to December 31, 2011; December 1, 2014 to February 28, 2015; November 1, 2018 to January 31, 2019; and November 1 to December 31, 2022. Shade from the lowest of those ratios, today's included, × 0.97 up to the highest low × 1.03.
-4. **Labels.** Name each past low by its year and ratio and mark today's dot with its ratio. Print "History, not a promise" and the data date on the chart.
+2. **Top panel, log scale, January 1, 2011 to July 1, 2043.** Price through today, the trend line across the whole span, Bitcoin ₿ear Power 🧸 (start September 19, 2026, k = 0.75, drawn only from today on, so it begins near today's price), and a dot at today's price. Draw a dotted line at $1 million. Put a dot where each line first reaches it, labelled with the year.
+3. **Bottom panel: how fast Bitcoin ₿ear Power 🧸 grows.** Four bars, for 1, 5, 10 and 20 years ahead (the same calendar day in those years). Each bar is the yearly growth rate (CAGR) from today's ₿ear Power value: (₿ear Power on that date ÷ ₿ear Power today)^(365.25 ÷ days) − 1. Label each bar with its rate, the ₿ear Power value on that date and the year. (PART 7's table measures growth from today's price instead, so its numbers differ slightly.)
+4. **Labels.** Print "History, not a promise" and the data date on the chart.
 
-Every past day is judged against a trend fitted with prices that came later, so the chart describes the past and doesn't test a forecast. Measured against the trend line as it was drawn at the time, from the prices known then, all four past lows looked deeper. Today's 0.44× is that real-time kind of reading, because no later prices exist yet. Real-time, the four past lows were 0.14× (2011), 0.24× (2015), 0.48× (2018) and 0.36× (2022); the first two came from very short price histories. Matching 2022's would put the price near $52,500. On the one fitted line, the ratio also dipped below the shaded band between cycle lows: 0.38× in August 2015 and 0.40× in June 2012. The band shows where prices bottomed, not the lowest the ratio can go.
+The post that goes with the chart also quotes today's price ÷ trend and where past cycle lows sat. Use the same one fit. Take each past cycle low as the lowest close in its bear window: October 1 to December 31, 2011; December 1, 2014 to February 28, 2015; November 1, 2018 to January 31, 2019; and November 1 to December 31, 2022.
 
-Reference values with data through November 14, 2026 (price $63,821, trend $145,903, fit n ≈ 5.634 and a ≈ −16.326). To check your build, cut the data off at November 14, 2026, match these, then rerun on today's data:
+Every past day is judged against a trend fitted with prices that came later, so these ratios describe the past and don't test a forecast. Measured against the trend line as it was drawn at the time, from the prices known then, all four past lows looked deeper. Today's 0.44× is that real-time kind of reading, because no later prices exist yet. Real-time, the four past lows were 0.14× (2011), 0.24× (2015), 0.48× (2018) and 0.36× (2022); the first two came from very short price histories. Matching 2022's would put the price near $52,500. On the one fitted line, the ratio also dipped below the range of past lows between cycles: 0.38× in August 2015 and 0.40× in June 2012. Past lows show where prices bottomed, not the lowest the ratio can go.
+
+Reference values with data through November 14, 2026 (price $63,821, trend $145,903, fit n ≈ 5.634 and a ≈ −16.326). To check your build, cut the data off at November 14, 2026, match these, then rerun on today's data. The chart I posted adds a live November 15 price of $64,697; every rounded label on it comes out the same.
 
 | Measure | Value |
 |---|---|
 | Today's price ÷ trend | 0.44× |
 | Lows: 2011 (Nov 18) · 2015 (Jan 14) · 2018 (Dec 15) · 2022 (Nov 9) | 0.43× · 0.55× · 0.59× · 0.45× |
-| Trend line on January 1, 2030 · 2035 | $362,560 · $1,207,848 |
-| Bitcoin ₿ear Power 🧸 on January 1, 2030 · 2035 | $130,339 · $328,470 |
+| First day at $1 million: trend line · Bitcoin ₿ear Power 🧸 | February 23, 2034 · August 14, 2042 |
+| Bitcoin ₿ear Power 🧸 on November 14 of 2027 · 2031 · 2036 · 2046 | $82,076 · $188,317 · $443,836 · $1,676,026 |
+| Its growth per year to those dates (1 · 5 · 10 · 20 years) | 26.5% · 23.8% · 21.2% · 17.7% |
 | Bitcoin ₿ear Power 🧸 · the floor on November 14, 2026 | $64,887 · $65,697 |
 
 ---
