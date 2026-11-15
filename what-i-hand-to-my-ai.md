@@ -2,7 +2,7 @@
 
 ## A non-technical menu of what there is to hand over
 
-**Version 1.7 · Last updated November 14, 2026**
+**Version 1.8 · Last updated November 14, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -17,7 +17,7 @@ Corrections and suggestions welcome — [open an issue](https://github.com/geoka
 
 3. Then push back on what it picks. It knows your situation better than this document does, and the point is to find your four or five, not to work through mine.
 
-Everything below is real. It's three months of my own work — May through early August 2026 — sorted by what kind of attention each job used to eat. I run a small coaching business by myself, so about half of this is business and about half is just a life: parents, a dog, a will I'd been avoiding.
+Everything below is real. It's my own work since May 2026, sorted by what kind of attention each job used to eat. I run a small coaching business by myself, so about half of this is business and about half is just a life: parents, a dog, a will I'd been avoiding.
 
 ---
 
@@ -213,7 +213,7 @@ The thing I got wrong at the start was assuming the returns would scale with how
 
 ## Credits
 
-Written with Claude, from three months of my own dated working records — the folders, the scheduled jobs, the commit history, and a long list of things we got wrong and wrote down. Nothing here is hypothetical; where I couldn't point at a real file or a real date, I cut the item.
+Written with Claude, from my own dated working records since May 2026 — the folders, the scheduled jobs, the commit history, and a long list of things we got wrong and wrote down. Nothing here is hypothetical; where I couldn't point at a real file or a real date, I cut the item.
 
 Several ideas here started as someone else's. The advisory-council structure, the habit of keeping a *why* attached to every rule, and the practice of letting an assistant edit its own instructions all came from generous people who published their own setups first.
 
