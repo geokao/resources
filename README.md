@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.31 · Last updated 2026-11-14 17:36 PST**
+**Version 1.32 · Last updated 2026-11-15 14:30 PST**
 
 <!-- v1.30: Added Pace Your AI's Weekly Allowance by the Day; Using Two AIs Together → v1.5 (cross-link). -->
 <!-- v1.29: Added Ask Seven AIs How Your Business Could Earn More; Using Two AIs Together → v1.3 (cross-link). -->
@@ -61,7 +61,7 @@ A field guide to running a whole solo business — and a good chunk of a life �
 
 **[Remove AI-isms](remove-ai-isms.md)**
 
-Readers have learned to recognize AI writing, and they scroll right past it. This is the editing workflow I run on every AI-assisted draft before it ships: three passes over a catalog of specific tells — overused words, the "It's not X, it's Y" cadence, endings that sound profound and say nothing — collected one caught pattern at a time from editing my own drafts. Paste it into whatever AI writes with you, and it edits alongside you while keeping your facts and your voice. About 26 minutes to read, or one minute to hand over.
+Readers have learned to recognize AI writing, and they scroll right past it. This is the editing workflow I run on every AI-assisted draft before it ships: three passes over a catalog of specific tells — overused words, the "It's not X, it's Y" cadence, endings that sound profound and say nothing — collected one caught pattern at a time from editing my own drafts. Paste it into whatever AI writes with you, and it edits alongside you while keeping your facts and your voice. About 27 minutes to read, or one minute to hand over.
 
 **[When Your AI Says It's Done](when-your-ai-says-its-done.md)**
 
