@@ -2,7 +2,7 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.30 · Last updated 2026-11-11 14:57 PST**
+**Version 1.31 · Last updated 2026-11-14 17:36 PST**
 
 <!-- v1.30: Added Pace Your AI's Weekly Allowance by the Day; Using Two AIs Together → v1.5 (cross-link). -->
 <!-- v1.29: Added Ask Seven AIs How Your Business Could Earn More; Using Two AIs Together → v1.3 (cross-link). -->
@@ -45,7 +45,7 @@ If your AI has trouble opening the link, click the file's **Raw** button and sha
 
 **[What I Hand to My AI](what-i-hand-to-my-ai.md)** — *the gentlest way in*
 
-Most of us underuse our AI not because we lack technique, but because it never occurred to us to hand it that particular job. So this is a menu rather than a method: three months of the actual work I gave mine, business and personal, sorted by what kind of attention each job used to eat — the chores that come back forever, the things I was carrying in my head, the things nobody could read all of, and the ones I'd never have attempted. It includes the boring handoffs nobody demos, which turned out to be where the return was, and a closing section on what I deliberately don't hand over. About 24 minutes to read, or one minute to hand over so it can pick the four or five that fit your life.
+Most of us underuse our AI not because we lack technique, but because it never occurred to us to hand it that particular job. So this is a menu rather than a method: the actual work I've given mine since May 2026, business and personal, sorted by what kind of attention each job used to eat — the chores that come back forever, the things I was carrying in my head, the things nobody could read all of, and the ones I'd never have attempted. It includes the boring handoffs nobody demos, which turned out to be where the return was, and a closing section on what I deliberately don't hand over. About 24 minutes to read, or one minute to hand over so it can pick the four or five that fit your life.
 
 **[Your AI Is Designed to Flatter You](your-ai-is-designed-to-flatter-you.md)** — *the fifteen-minute fix*
 
