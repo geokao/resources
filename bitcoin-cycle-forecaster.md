@@ -2,7 +2,8 @@
 
 ## It blends the power-law trend with Bitbo's Cycle Repeat, and it shows its own test record
 
-**Version 1.6 · Last updated November 16, 2026**
+**Version 1.7 · Last updated November 16, 2026**
+<!-- v1.7: the $1 million chart itself (₿ear Power and the trend to $1M, with ₿ear Power's growth per year) now appears in its section, rendered on data through November 15, 2026. -->
 <!-- v1.6: rerun on data through November 15, 2026: new cover chart; "What it said" section, growth table, cycle-position values, power-law and realized-price comparisons and the ₿ear Power reading updated. Method and the PART 5–6 reference numbers unchanged (they still reproduce on the fresh download). -->
 <!-- v1.5: the chart section now rebuilds the $1 million chart (top: $1M line and the first day each line reaches it; bottom: Bitcoin ₿ear Power 🧸 growth per year at 1/5/10/20 years) in place of the price ÷ trend panel; reference values added for both. -->
 <!-- v1.4: Bear Power renamed Bitcoin ₿ear Power 🧸, with its median rule, anchor, reproduction checks and planning-path caveat spelled out; new section to rebuild the "where are we now" chart, with reference values for data through 2026-11-14; the work behind it adds the advisor round (seven ideas from GPT, Grok and Gemini, none kept). Fable audit folded in: real-time vs one-fit ratios, the 0.38x 2015 dip, price below the floor and ₿ear Power on Nov 14, the line's anchor, a paste line, a data cut-off for checks. -->
@@ -146,6 +147,10 @@ Choose your own start date and k. A lower k is more cautious.
 
 ## Rebuild the $1 million chart
 
+![Bitcoin's price since 2011 on a log scale, with the power-law trend and Bitcoin ₿ear Power 🧸 out to 2043 and the first year each reaches $1 million (the trend around 2034, ₿ear Power around 2042), above bars showing ₿ear Power's growth per year at 1, 5, 10 and 20 years](images/bitcoin-bear-power-1m.png)
+
+*Data through November 15, 2026.*
+
 The $1 million chart shows where bitcoin sits against its power-law trend, when each line first reaches $1 million, and how fast Bitcoin ₿ear Power 🧸 grows each year. Your AI can rebuild it from the PART 1 data with these steps. If you're pasting only the prompt box, paste this section along with the box, and add something like: *"Please also rebuild the $1 million chart from that section, and check it against its reference values."*
 
 1. **One line for all dates.** Run PART 2's power-law fit once, over every day through the newest data. Trend(date) = 10^(a + n·log10(days since genesis)), with that one fit for every date, past and future.
@@ -157,7 +162,7 @@ The post that goes with the chart also quotes today's price ÷ trend and where p
 
 Every past day is judged against a trend fitted with prices that came later, so these ratios describe the past and don't test a forecast. Measured against the trend line as it was drawn at the time, from the prices known then, all four past lows looked deeper. A reading for today, like November 14's 0.44×, is that real-time kind, because no later prices exist yet. Real-time, the four past lows were 0.14× (2011), 0.24× (2015), 0.48× (2018) and 0.36× (2022); the first two came from very short price histories. Matching 2022's would put the price near $52,500. On the one fitted line, the ratio also dipped below the range of past lows between cycles: 0.38× in August 2015 and 0.40× in June 2012. Past lows show where prices bottomed, not the lowest the ratio can go.
 
-Reference values with data through November 14, 2026 (price $63,821, trend $145,903, fit n ≈ 5.634 and a ≈ −16.326). To check your build, cut the data off at November 14, 2026, match these, then rerun on today's data. The chart I posted adds a live November 15 price of $64,697; every rounded label on it comes out the same.
+Reference values with data through November 14, 2026 (price $63,821, trend $145,903, fit n ≈ 5.634 and a ≈ −16.326). To check your build, cut the data off at November 14, 2026, match these, then rerun on today's data. The chart above uses the November 15 close of $65,189, and the one I posted on X added a live November 15 price of $64,697; every rounded label on both comes out the same.
 
 | Measure | Value |
 |---|---|
