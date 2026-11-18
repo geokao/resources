@@ -4,8 +4,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 2.1 · Last updated 2026-11-18 12:02 PST**
+**Version 2.2 · Last updated 2026-11-18 15:08 PST**
 
+<!-- v2.2: The how-to picture and every guide card now come in two sizes: smaller text on desktop (wide screens), the larger version on phones (<picture> with a min-width: 1012px source; images/readme-*-desk.png). -->
 <!-- v2.1: Cards show each guide's version and update date (read from the guide itself) in place of reading time; each "More about this guide" ends with the guide's link. -->
 <!-- v2.0: Redesigned for non-technical readers: Brand Kit hero and how-to-use images, each guide shown as a picture card in six themed groups with a one-line summary, full blurbs kept under "More about this guide". Images in images/readme-*.png. Newsletter link → www.georgekao.com/Email (lowercase /email 404s since Nov 2026; the capitalised path keeps working either way). -->
 <!-- v1.34: Bitcoin forecaster → v1.8 (Bitcoin ₿ear Power 🧸 backtest; rerun on November 17 data); blurb gains the backtest result; reading time 24 → 26 min (6,824 body words ÷ 264). -->
@@ -37,7 +38,7 @@ Start anywhere. Most people find one guide that fits their week and ignore the r
 
 ## The one-minute move
 
-<a href="#the-one-minute-move"><img src="images/readme-steps.png" alt="How to use these, in about one minute: 1, pick a guide below. 2, copy its web address. 3, paste it into your AI. Your AI does the reading and the setup." width="100%"></a>
+<a href="#the-one-minute-move"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-steps-desk.png"><img src="images/readme-steps.png" alt="How to use these, in about one minute: 1, pick a guide below. 2, copy its web address. 3, paste it into your AI. Your AI does the reading and the setup." width="100%"></picture></a>
 
 1. **Pick a guide below** and open it. Copy the web address from your browser's address bar.
 2. **Paste it into your AI** — Claude, ChatGPT, Gemini, any of them — along with this:
@@ -54,7 +55,7 @@ If your AI has trouble opening the link, click the file's **Raw** button and sha
 
 ### 🌱 Start here
 
-<a href="what-i-hand-to-my-ai.md"><img src="images/readme-tile-what-i-hand.png" alt="What I Hand to My AI: the gentlest way in." width="100%"></a>
+<a href="what-i-hand-to-my-ai.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-what-i-hand-desk.png"><img src="images/readme-tile-what-i-hand.png" alt="What I Hand to My AI: the gentlest way in." width="100%"></picture></a>
 
 A menu of real jobs to give your AI, sorted by what each one used to cost you.
 
@@ -66,7 +67,7 @@ Most of us underuse our AI not because we lack technique, but because it never o
 
 </details>
 
-<a href="your-ai-is-designed-to-flatter-you.md"><img src="images/readme-tile-flatter.png" alt="Your AI Is Designed to Flatter You: the fifteen-minute fix." width="100%"></a>
+<a href="your-ai-is-designed-to-flatter-you.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-flatter-desk.png"><img src="images/readme-tile-flatter.png" alt="Your AI Is Designed to Flatter You: the fifteen-minute fix." width="100%"></picture></a>
 
 Out of the box, every AI agrees with you. Fifteen minutes of setup fixes that.
 
@@ -78,7 +79,7 @@ Out of the box, every AI agrees with you. It calls the shaky plan brilliant and 
 
 </details>
 
-<a href="own-your-ai-context.md"><img src="images/readme-tile-own-context.png" alt="Own Your AI Context: for when you switch tools." width="100%"></a>
+<a href="own-your-ai-context.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-own-context-desk.png"><img src="images/readme-tile-own-context.png" alt="Own Your AI Context: for when you switch tools." width="100%"></picture></a>
 
 Keep what your AI knows about you in files you own, so switching tools costs nothing.
 
@@ -90,7 +91,7 @@ You've spent months teaching your AI how you think and what you're working on. T
 
 </details>
 
-<a href="how-i-work-with-claude.md"><img src="images/readme-tile-how-i-work.png" alt="How I Work with Claude: the fullest one." width="100%"></a>
+<a href="how-i-work-with-claude.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-how-i-work-desk.png"><img src="images/readme-tile-how-i-work.png" alt="How I Work with Claude: the fullest one." width="100%"></picture></a>
 
 How I run a one-person business through Claude. If you hand over only one guide, make it this one.
 
@@ -104,7 +105,7 @@ A field guide to running a whole solo business — and a good chunk of a life �
 
 ### ✍️ Better work from your AI
 
-<a href="remove-ai-isms.md"><img src="images/readme-tile-remove-ai-isms.png" alt="Remove AI-isms: so readers keep reading." width="100%"></a>
+<a href="remove-ai-isms.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-remove-ai-isms-desk.png"><img src="images/readme-tile-remove-ai-isms.png" alt="Remove AI-isms: so readers keep reading." width="100%"></picture></a>
 
 The three editing passes I run on every AI-assisted draft before it goes out.
 
@@ -116,7 +117,7 @@ Readers have learned to recognize AI writing, and they scroll right past it. Thi
 
 </details>
 
-<a href="when-your-ai-says-its-done.md"><img src="images/readme-tile-says-done.png" alt="When Your AI Says It's Done: check work that looks finished." width="100%"></a>
+<a href="when-your-ai-says-its-done.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-says-done-desk.png"><img src="images/readme-tile-says-done.png" alt="When Your AI Says It's Done: check work that looks finished." width="100%"></picture></a>
 
 A sure-sounding answer can still be wrong. How to check work you can't easily redo yourself.
 
@@ -128,7 +129,7 @@ You hand an AI a job you can't easily re-do yourself — sweep these files, find
 
 </details>
 
-<a href="using-two-ais-together.md"><img src="images/readme-tile-two-ais.png" alt="Using Two AIs Together: a second opinion, built in." width="100%"></a>
+<a href="using-two-ais-together.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-two-ais-desk.png"><img src="images/readme-tile-two-ais.png" alt="Using Two AIs Together: a second opinion, built in." width="100%"></picture></a>
 
 One AI runs the project, and a second AI checks its work before it reports back.
 
@@ -142,7 +143,7 @@ I asked Claude to have GPT check a list of videos before deleting them, and GPT 
 
 ### 🌿 An AI that gets better over time
 
-<a href="self-improving-ai-setup.md"><img src="images/readme-tile-self-improving.png" alt="Give Your AI a Way to Improve Itself: when the same thing keeps going wrong." width="100%"></a>
+<a href="self-improving-ai-setup.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-self-improving-desk.png"><img src="images/readme-tile-self-improving.png" alt="Give Your AI a Way to Improve Itself: when the same thing keeps going wrong." width="100%"></picture></a>
 
 Scheduled tasks that read my past sessions, find wasted time, and fix it or leave me one question.
 
@@ -154,7 +155,7 @@ Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add 
 
 </details>
 
-<a href="how-my-ai-debriefs-itself.md"><img src="images/readme-tile-debriefs.png" alt="How My AI Debriefs Itself: where the lessons come from." width="100%"></a>
+<a href="how-my-ai-debriefs-itself.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-debriefs-desk.png"><img src="images/readme-tile-debriefs.png" alt="How My AI Debriefs Itself: where the lessons come from." width="100%"></picture></a>
 
 My AI reviews each session for the small, repeated time-wasters that add up.
 
@@ -166,7 +167,7 @@ The companion to the one above: where the lessons come from before anything gets
 
 </details>
 
-<a href="your-weekly-ai-scout.md"><img src="images/readme-tile-scout.png" alt="Your Weekly AI Scout: the news that fits your setup." width="100%"></a>
+<a href="your-weekly-ai-scout.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-scout-desk.png"><img src="images/readme-tile-scout.png" alt="Your Weekly AI Scout: the news that fits your setup." width="100%"></picture></a>
 
 A scheduled task reads the week's AI news for you and brings back the few tools worth trying.
 
@@ -178,7 +179,7 @@ New AI tools ship nearly every week, and a few of them could save you hours, but
 
 </details>
 
-<a href="an-inbox-in-every-folder.md"><img src="images/readme-tile-inbox.png" alt="An Inbox in Every Folder: for ideas you have mid-task." width="100%"></a>
+<a href="an-inbox-in-every-folder.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-inbox-desk.png"><img src="images/readme-tile-inbox.png" alt="An Inbox in Every Folder: for ideas you have mid-task." width="100%"></picture></a>
 
 My AI files each stray idea in the project it belongs to, and lists everything open when I ask.
 
@@ -192,7 +193,7 @@ I start more things than I finish, and the ideas I had mid-task used to vanish i
 
 ### 🌙 Let it do more on its own
 
-<a href="your-ai-in-your-browser.md"><img src="images/readme-tile-browser.png" alt="Your AI in Your Browser: in the browser you're signed into." width="100%"></a>
+<a href="your-ai-in-your-browser.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-browser-desk.png"><img src="images/readme-tile-browser.png" alt="Your AI in Your Browser: in the browser you're signed into." width="100%"></picture></a>
 
 Let your AI work in your own browser, and catch the failures that report themselves as successes.
 
@@ -204,7 +205,7 @@ Your AI can work in the browser you're already signed into, which is where the p
 
 </details>
 
-<a href="laptop-wake-for-ai-scheduled-tasks.md"><img src="images/readme-tile-laptop-wake.png" alt="Making your laptop wake up for your AI's scheduled tasks: so overnight tasks actually run." width="100%"></a>
+<a href="laptop-wake-for-ai-scheduled-tasks.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-laptop-wake-desk.png"><img src="images/readme-tile-laptop-wake.png" alt="Making your laptop wake up for your AI's scheduled tasks: so overnight tasks actually run." width="100%"></picture></a>
 
 Why a 3am task never runs on a sleeping laptop, and how to hand the wake-up to your computer.
 
@@ -216,7 +217,7 @@ If you've told your AI assistant to do something every night at 3am and nothing 
 
 </details>
 
-<a href="ai-morning-check-in.md"><img src="images/readme-tile-morning-check-in.png" alt="A morning check-in for your AI's overnight work: see what failed overnight." width="100%"></a>
+<a href="ai-morning-check-in.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-morning-check-in-desk.png"><img src="images/readme-tile-morning-check-in.png" alt="A morning check-in for your AI's overnight work: see what failed overnight." width="100%"></picture></a>
 
 Overnight tasks can fail without telling you. A short morning check shows which ones did.
 
@@ -228,7 +229,7 @@ If your AI runs tasks while you sleep, some of them will fail without telling yo
 
 </details>
 
-<a href="several-ai-sessions-at-once.md"><img src="images/readme-tile-several-sessions.png" alt="Running several AI sessions at once without them overwriting each other: no more overwritten work." width="100%"></a>
+<a href="several-ai-sessions-at-once.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-several-sessions-desk.png"><img src="images/readme-tile-several-sessions.png" alt="Running several AI sessions at once without them overwriting each other: no more overwritten work." width="100%"></picture></a>
 
 Stop parallel sessions from overwriting each other, without typing the same reminder into each.
 
@@ -240,7 +241,7 @@ I usually have several AI sessions open, and I kept typing the same reminder int
 
 </details>
 
-<a href="take-your-ai-council-to-your-phone.md"><img src="images/readme-tile-council-phone.png" alt="Take Your AI Council to Your Phone: your advisors, on the go." width="100%"></a>
+<a href="take-your-ai-council-to-your-phone.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-council-phone-desk.png"><img src="images/readme-tile-council-phone.png" alt="Take Your AI Council to Your Phone: your advisors, on the go." width="100%"></picture></a>
 
 Use the AI advisors on your laptop from the ChatGPT app on your phone, with both kept in step.
 
@@ -254,7 +255,7 @@ I keep councils of AI advisors in files that Claude looks after on my laptop, an
 
 ### 🧰 Keep it running smoothly
 
-<a href="claude-limit-maxing-out.md"><img src="images/readme-tile-limit.png" alt="Is your Claude 5-hour limit maxing out quickly?: when the meter hits 100%." width="100%"></a>
+<a href="claude-limit-maxing-out.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-limit-desk.png"><img src="images/readme-tile-limit.png" alt="Is your Claude 5-hour limit maxing out quickly?: when the meter hits 100%." width="100%"></picture></a>
 
 Claude Code keeps a record of every request on your own disk, so you can see what used up your limit.
 
@@ -266,7 +267,7 @@ Some days the usage meter hits 100% and you can't account for it — you weren't
 
 </details>
 
-<a href="pace-your-ai-allowance-by-the-day.md"><img src="images/readme-tile-pace.png" alt="Pace your AI's weekly allowance by the day: one sum each morning." width="100%"></a>
+<a href="pace-your-ai-allowance-by-the-day.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-pace-desk.png"><img src="images/readme-tile-pace.png" alt="Pace your AI's weekly allowance by the day: one sum each morning." width="100%"></picture></a>
 
 Each morning: the percent left, divided by the days until your allowance resets.
 
@@ -278,7 +279,7 @@ Most AI plans give you a weekly allowance, and the meter only gets your attentio
 
 </details>
 
-<a href="claude-copies-in-your-drive.md"><img src="images/readme-tile-drive-copies.png" alt="Is your Google Drive filling up with copies of your Claude projects?: if you use the code tab." width="100%"></a>
+<a href="claude-copies-in-your-drive.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-drive-copies-desk.png"><img src="images/readme-tile-drive-copies.png" alt="Is your Google Drive filling up with copies of your Claude projects?: if you use the code tab." width="100%"></picture></a>
 
 Claude's Code tab makes a copy of your project for every session, and Drive syncs every copy. The fix moves them out of Drive.
 
@@ -292,7 +293,7 @@ I searched Drive for one planning document and found four files with the same na
 
 ### 🧪 Projects to try
 
-<a href="bitcoin-cycle-forecaster.md"><img src="images/readme-tile-bitcoin.png" alt="A Bitcoin Cycle Forecaster Your AI Can Build and Check: built from free data." width="100%"></a>
+<a href="bitcoin-cycle-forecaster.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-bitcoin-desk.png"><img src="images/readme-tile-bitcoin.png" alt="A Bitcoin Cycle Forecaster Your AI Can Build and Check: built from free data." width="100%"></picture></a>
 
 Your AI rebuilds a tested forecaster and shows where bitcoin sits in its cycle. Not investment advice.
 
@@ -304,7 +305,7 @@ Bitbo's Cycle Repeat chart has been good at timing bitcoin's tops and far off on
 
 </details>
 
-<a href="seven-ais-money-ideas.md"><img src="images/readme-tile-seven-ais.png" alt="Ask Seven AIs How Your Business Could Earn More: ideas for earning more." width="100%"></a>
+<a href="seven-ais-money-ideas.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-seven-ais-desk.png"><img src="images/readme-tile-seven-ais.png" alt="Ask Seven AIs How Your Business Could Earn More: ideas for earning more." width="100%"></picture></a>
 
 Put one money question to seven AIs from different companies, and see where they agree.
 
