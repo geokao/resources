@@ -6,7 +6,7 @@
 
 **Version 2.0 · Last updated 2026-11-18 11:39 PST**
 
-<!-- v2.0: Redesigned for non-technical readers: Brand Kit hero and how-to-use images, each guide shown as a picture card in six themed groups with a one-line summary, full blurbs kept under "More about this guide". Images in images/readme-*.png. -->
+<!-- v2.0: Redesigned for non-technical readers: Brand Kit hero and how-to-use images, each guide shown as a picture card in six themed groups with a one-line summary, full blurbs kept under "More about this guide". Images in images/readme-*.png. Newsletter link → www.georgekao.com/Email (lowercase /email 404s since Nov 2026; the capitalised path keeps working either way). -->
 <!-- v1.34: Bitcoin forecaster → v1.8 (Bitcoin ₿ear Power 🧸 backtest; rerun on November 17 data); blurb gains the backtest result; reading time 24 → 26 min (6,824 body words ÷ 264). -->
 <!-- v1.33: Bitcoin forecaster → v1.6 (rerun on November 15 data); its blurb uses the Bitcoin ₿ear Power 🧸 name and a re-measured reading time (18 → 24 min, 6,278 body words ÷ 264). -->
 
@@ -288,7 +288,7 @@ These are written for you to read yourself — the thinking behind the guides ab
 - **[How to Write Without Sounding Like AI](https://georgekao.substack.com/p/how-to-write-without-sounding-like)** — Why AI prose reads flat — and how to keep your own cadence and warmth.
 - **[Productive Ways for Soulpreneurs to Use AI](https://georgekao.substack.com/p/productive-ways-for-soulpreneurs)** — Practical ways AI can carry the parts of your work that quietly drain you.
 
-My free monthly newsletter is at [georgekao.com/email](https://georgekao.com/email), and I answer questions live at [georgekao.com/qa](https://www.georgekao.com/qa).
+My free monthly newsletter is at [georgekao.com/email](https://www.georgekao.com/Email), and I answer questions live at [georgekao.com/qa](https://www.georgekao.com/qa).
 
 ---
 
