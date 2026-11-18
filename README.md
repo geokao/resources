@@ -1,9 +1,12 @@
+<a href="#the-guides"><img src="images/readme-hero.png" alt="Real work, done with AI. Free plain-language guides from George Kao for people who don't think of themselves as technical. No account needed." width="100%"></a>
+
 # ⭐️ START HERE
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.34 · Last updated 2026-11-18 09:54 PST**
+**Version 2.0 · Last updated 2026-11-18 11:39 PST**
 
+<!-- v2.0: Redesigned for non-technical readers: Brand Kit hero and how-to-use images, each guide shown as a picture card in six themed groups with a one-line summary, full blurbs kept under "More about this guide". Images in images/readme-*.png. -->
 <!-- v1.34: Bitcoin forecaster → v1.8 (Bitcoin ₿ear Power 🧸 backtest; rerun on November 17 data); blurb gains the backtest result; reading time 24 → 26 min (6,824 body words ÷ 264). -->
 <!-- v1.33: Bitcoin forecaster → v1.6 (rerun on November 15 data); its blurb uses the Bitcoin ₿ear Power 🧸 name and a re-measured reading time (18 → 24 min, 6,278 body words ÷ 264). -->
 
@@ -33,6 +36,8 @@ Start anywhere. Most people find one guide that fits their week and ignore the r
 
 ## The one-minute move
 
+<a href="#the-one-minute-move"><img src="images/readme-steps.png" alt="How to use these, in about one minute: 1, pick a guide below. 2, copy its web address. 3, paste it into your AI. Your AI does the reading and the setup." width="100%"></a>
+
 1. **Pick a guide below** and open it. Copy the web address from your browser's address bar.
 2. **Paste it into your AI** — Claude, ChatGPT, Gemini, any of them — along with this:
 
@@ -46,89 +51,227 @@ If your AI has trouble opening the link, click the file's **Raw** button and sha
 
 ## The guides
 
-**[What I Hand to My AI](what-i-hand-to-my-ai.md)** — *the gentlest way in*
+### 🌱 Start here
+
+<a href="what-i-hand-to-my-ai.md"><img src="images/readme-tile-what-i-hand.png" alt="What I Hand to My AI: the gentlest way in. About 24 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+A menu of real jobs to give your AI, sorted by what each one used to cost you.
+
+<details><summary>More about this guide</summary>
 
 Most of us underuse our AI not because we lack technique, but because it never occurred to us to hand it that particular job. So this is a menu rather than a method: the actual work I've given mine since May 2026, business and personal, sorted by what kind of attention each job used to eat — the chores that come back forever, the things I was carrying in my head, the things nobody could read all of, and the ones I'd never have attempted. It includes the boring handoffs nobody demos, which turned out to be where the return was, and a closing section on what I deliberately don't hand over. About 24 minutes to read, or one minute to hand over so it can pick the four or five that fit your life.
 
-**[Your AI Is Designed to Flatter You](your-ai-is-designed-to-flatter-you.md)** — *the fifteen-minute fix*
+</details>
+
+<a href="your-ai-is-designed-to-flatter-you.md"><img src="images/readme-tile-flatter.png" alt="Your AI Is Designed to Flatter You: the fifteen-minute fix. About 8 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Out of the box, every AI agrees with you. Fifteen minutes of setup fixes that.
+
+<details><summary>More about this guide</summary>
 
 Out of the box, every AI agrees with you. It calls the shaky plan brilliant and smooths over the doubt you should have sat with, and over months that makes your decisions worse. The fix is the settings box most people never open: a standing set of custom instructions, read before every conversation, that tells the AI who you are and asks for the truth. This page hands the job to your AI — it interviews you for the five parts, drafts your instructions in your words, gives you a short version for the apps with small boxes, and tells you where to paste them. My own instructions are included in full as a worked example. About 8 minutes to read, or one minute to hand over.
 
-**[Own Your AI Context](own-your-ai-context.md)**
+</details>
+
+<a href="own-your-ai-context.md"><img src="images/readme-tile-own-context.png" alt="Own Your AI Context: for when you switch tools. About 15 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Keep what your AI knows about you in files you own, so switching tools costs nothing.
+
+<details><summary>More about this guide</summary>
 
 You've spent months teaching your AI how you think and what you're working on. Then a better model arrives, and switching means leaving all of it behind. The way out is to keep your context in plain files in a folder you own, so changing AI tools costs you nothing — and so does coming back. Non-technical throughout, and written to be handed to your AI, which does most of the setup while you answer a few questions. About 15 minutes to read, or one minute to hand over.
 
-**[How I Work with Claude](how-i-work-with-claude.md)** — *the fullest one; hand this over if you only hand over one*
+</details>
+
+<a href="how-i-work-with-claude.md"><img src="images/readme-tile-how-i-work.png" alt="How I Work with Claude: the fullest one. About 28 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+How I run a one-person business through Claude. If you hand over only one guide, make it this one.
+
+<details><summary>More about this guide</summary>
 
 A field guide to running a whole solo business — and a good chunk of a life — through Claude, written from a non-coder's studio. The leverage turned out to sit in the system around the conversation: folders as the operating system, rules that carry their own *why*, self-improvement loops with a human gate, guardrails for the tasks that run while you're asleep, and the money math that makes heavy daily use affordable. About 28 minutes to read — or one minute to hand to your AI.
 
-**[Remove AI-isms](remove-ai-isms.md)**
+</details>
+
+### ✍️ Better work from your AI
+
+<a href="remove-ai-isms.md"><img src="images/readme-tile-remove-ai-isms.png" alt="Remove AI-isms: so readers keep reading. About 27 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+The three editing passes I run on every AI-assisted draft before it goes out.
+
+<details><summary>More about this guide</summary>
 
 Readers have learned to recognize AI writing, and they scroll right past it. This is the editing workflow I run on every AI-assisted draft before it ships: three passes over a catalog of specific tells — overused words, the "It's not X, it's Y" cadence, endings that sound profound and say nothing — collected one caught pattern at a time from editing my own drafts. Paste it into whatever AI writes with you, and it edits alongside you while keeping your facts and your voice. About 27 minutes to read, or one minute to hand over.
 
-**[When Your AI Says It's Done](when-your-ai-says-its-done.md)**
+</details>
+
+<a href="when-your-ai-says-its-done.md"><img src="images/readme-tile-says-done.png" alt="When Your AI Says It's Done: check work that looks finished. About 16 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+A sure-sounding answer can still be wrong. How to check work you can't easily redo yourself.
+
+<details><summary>More about this guide</summary>
 
 You hand an AI a job you can't easily re-do yourself — sweep these files, find everyone I haven't replied to, check whether I already published this. It comes back sure of itself, which is also what a wrong answer sounds like. This is how I check work that looks finished: why "I didn't find anything" is the answer least likely to get questioned and most likely to be broken, why re-running the same check only confirms your first mistake, and the habit that catches most of the rest, which is asking for a check that could have failed. No technical skill needed. Hand it to your AI along with whatever it just told you, and it will check its own work against the list. About 16 minutes to read, or one minute to hand over.
 
-**[Give Your AI a Way to Improve Itself](self-improving-ai-setup.md)**
+</details>
 
-Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add a line to the instructions file, and three weeks later the same thing goes wrong again. This is what I run instead — scheduled agents that read my own past sessions, find where my AI and I wasted each other's time, and either fix it or leave me one question in the morning. Includes the five constraints that keep an AI editing its own instructions from becoming a bad idea — the last of them, about which agents are allowed to write at all, is the one I'd now put first — plus the four failure modes I only found by hitting them — including the one underneath the rest, where the rule was read and still didn't fire — and what to build first if you're starting from nothing. Updated September 2026 with a section for when your AI reads a rule and skips it anyway: why rewording the rule more strongly doesn't help, and three ways to make it impossible to skip quietly. About 22 minutes to read, or one minute to hand over.
+<a href="using-two-ais-together.md"><img src="images/readme-tile-two-ais.png" alt="Using Two AIs Together: a second opinion, built in. About 11 minutes to read, or one minute to hand to your AI." width="100%"></a>
 
-**[How My AI Debriefs Itself](how-my-ai-debriefs-itself.md)**
+One AI runs the project, and a second AI checks its work before it reports back.
 
-The companion to the one above: where the lessons come from before anything gets applied. I used to ask for a retrospective when a session had gone badly enough that I remembered to ask, which samples the disasters and misses the ordinary friction — fifteen seconds lost the same way forty times, which turned out to be most of the waste. So the debrief runs on its own now, at four speeds: a one-line check at the end of every reply, a floor that won't let three turns pass without one, a full structured retro after real work, and one weekly pass that's allowed to delete things. Updated November 2026 with the three buttons I now click to end a session, and what checking on my other open sessions costs. Includes the guardrails that keep that last one from removing your most valuable rules first, and the arithmetic that explains why an instructions file grows until someone measures it. The first three need nothing but a chat window. About 14 minutes to read, or one minute to hand over.
-
-**[Your AI in Your Browser](your-ai-in-your-browser.md)**
-
-Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what three months of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. Updated September 2026 with a head-to-head: Claude and GPT-6 running the same five tasks in my Chrome, all four combinations scored, and eight rules from what went wrong along the way. Also updated in August for a browser extension that changed under us — including one restriction I'd written down as permanent that had already been fixed without my noticing, which is its own lesson about how these documents go stale. Updated November 2026: the jobs I've since retired are gone, and so is the advice to borrow a tab while your person is at the keyboard. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 53 minutes to read, or one minute to hand over.
-
-**[Using Two AIs Together](using-two-ais-together.md)**
+<details><summary>More about this guide</summary>
 
 I asked Claude to have GPT check a list of videos before deleting them, and GPT found that Claude's search had skipped two folders — Claude was one step from reporting "all clear" on a search it hadn't finished. That's the arrangement this describes: one AI stays in charge of the project and holds your files, the other gets a specific job and a brief it can finish without knowing your history, and the first one checks the answer before anything changes. Includes the four jobs that turned out to be worth handing over — among them asking the second AI about the first one's product, where it found ten errors — the six parts of a brief a stranger can actually finish, how to check a quotation without mistaking a curly apostrophe for a fabrication, and the case that keeps the whole idea honest: a confident recommendation from a frontier model that put unreadable text on its own button, which no second model caught and a ten-second contrast checker did. Needs two browser tabs and no setup; the copy-paste version is written out in full. About 11 minutes to read, or one minute to hand over.
 
-**[Your Weekly AI Scout](your-weekly-ai-scout.md)**
+</details>
+
+### 🌿 An AI that gets better over time
+
+<a href="self-improving-ai-setup.md"><img src="images/readme-tile-self-improving.png" alt="Give Your AI a Way to Improve Itself: when the same thing keeps going wrong. About 22 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Scheduled tasks that read my past sessions, find wasted time, and fix it or leave me one question.
+
+<details><summary>More about this guide</summary>
+
+Most of us maintain our AI setup by hand: something goes wrong, we sigh, we add a line to the instructions file, and three weeks later the same thing goes wrong again. This is what I run instead — scheduled agents that read my own past sessions, find where my AI and I wasted each other's time, and either fix it or leave me one question in the morning. Includes the five constraints that keep an AI editing its own instructions from becoming a bad idea — the last of them, about which agents are allowed to write at all, is the one I'd now put first — plus the four failure modes I only found by hitting them — including the one underneath the rest, where the rule was read and still didn't fire — and what to build first if you're starting from nothing. Updated September 2026 with a section for when your AI reads a rule and skips it anyway: why rewording the rule more strongly doesn't help, and three ways to make it impossible to skip quietly. About 22 minutes to read, or one minute to hand over.
+
+</details>
+
+<a href="how-my-ai-debriefs-itself.md"><img src="images/readme-tile-debriefs.png" alt="How My AI Debriefs Itself: where the lessons come from. About 14 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+My AI reviews each session for the small, repeated time-wasters that add up.
+
+<details><summary>More about this guide</summary>
+
+The companion to the one above: where the lessons come from before anything gets applied. I used to ask for a retrospective when a session had gone badly enough that I remembered to ask, which samples the disasters and misses the ordinary friction — fifteen seconds lost the same way forty times, which turned out to be most of the waste. So the debrief runs on its own now, at four speeds: a one-line check at the end of every reply, a floor that won't let three turns pass without one, a full structured retro after real work, and one weekly pass that's allowed to delete things. Updated November 2026 with the three buttons I now click to end a session, and what checking on my other open sessions costs. Includes the guardrails that keep that last one from removing your most valuable rules first, and the arithmetic that explains why an instructions file grows until someone measures it. The first three need nothing but a chat window. About 14 minutes to read, or one minute to hand over.
+
+</details>
+
+<a href="your-weekly-ai-scout.md"><img src="images/readme-tile-scout.png" alt="Your Weekly AI Scout: the news that fits your setup. About 11 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+A scheduled task reads the week's AI news for you and brings back the few tools worth trying.
+
+<details><summary>More about this guide</summary>
 
 New AI tools ship nearly every week, and a few of them could save you hours, but finding those few means reading about all the rest. This sets up a scheduled task that does the reading for you. Once a week it checks X and Reddit first, where practical tricks circulate for weeks before anyone writes an article, holds what it finds up against your business and your website, and leaves you a short report: a few ideas, each with why it fits you, a first step and a dated source. You answer yes, not yet or no, by voice memo if you like, and your reasons teach it what to stop suggesting. Includes what to do when your AI can't read X or Reddit (mine couldn't, at different points), the guardrails for a task that reads strangers' posts while you sleep, and a paste-ready setup prompt that works with any AI. About 11 minutes to read, or one minute to hand over.
 
-**[An Inbox in Every Folder](an-inbox-in-every-folder.md)**
+</details>
+
+<a href="an-inbox-in-every-folder.md"><img src="images/readme-tile-inbox.png" alt="An Inbox in Every Folder: for ideas you have mid-task. About 7 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+My AI files each stray idea in the project it belongs to, and lists everything open when I ask.
+
+<details><summary>More about this guide</summary>
 
 I start more things than I finish, and the ideas I had mid-task used to vanish into chats I never reopened. Now my AI files each one in a small `inbox.md` note inside the project it belongs to, and builds one combined list of everything open whenever I ask. Every couple of days I ask it for the five most urgent and important items and the five most fun, answer each with "done," "yes, next," "skip" or "not now," and it learns what I care about from those answers. Includes how to set this up whether your AI works in folders, in an app's Projects, or in one long document, an optional third list a member's AI suggested (what deepens your inner life versus what only serves outreach), and a paste-ready setup prompt for any AI. About 7 minutes to read, or one minute to hand over.
 
-**[Take Your AI Council to Your Phone](take-your-ai-council-to-your-phone.md)**
+</details>
 
-I keep councils of AI advisors in files that Claude looks after on my laptop, and I wanted to use them from the ChatGPT app on my phone without the two apps losing track of each other. This is the bridge Claude built for me: one file per council that ChatGPT reads, a `save` command that writes a one-line record of each session to a shared Google Doc, and Claude folding those records back into the permanent notes. Includes what four weeks of use taught me (getting started was the friction, and I typed far more than I talked), the simpler route I moved to the same day (a ChatGPT Dot that reads the council files and writes the records itself, with the rules inside each file), two traps that fail without telling you, three setup checks that can each fail visibly, and the builder script for your AI to adapt. About 14 minutes to read, or one minute to hand over.
+### 🌙 Let it do more on its own
 
-**[Making your laptop wake up for your AI's scheduled tasks](laptop-wake-for-ai-scheduled-tasks.md)**
+<a href="your-ai-in-your-browser.md"><img src="images/readme-tile-browser.png" alt="Your AI in Your Browser: in the browser you're signed into. About 53 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Let your AI work in your own browser, and catch the failures that report themselves as successes.
+
+<details><summary>More about this guide</summary>
+
+Your AI can work in the browser you're already signed into, which is where the parts of a business with no API live — the admin page with no export button, the platform that will never build you an integration. This is what three months of that taught me, and most of it is about failures that report themselves as successes: a field that displays your text and then reverts it, a tab that swallows keystrokes while confirming it typed them, a page that says an upload didn't happen after it did. Plus what I never let it do, and why the people arguing against this whole practice aren't wrong. Updated September 2026 with a head-to-head: Claude and GPT-6 running the same five tasks in my Chrome, all four combinations scored, and eight rules from what went wrong along the way. Also updated in August for a browser extension that changed under us — including one restriction I'd written down as permanent that had already been fixed without my noticing, which is its own lesson about how these documents go stale. Updated November 2026: the jobs I've since retired are gone, and so is the advice to borrow a tab while your person is at the keyboard. The second half is addressed to your AI rather than to you, so you can hand it straight over. About 53 minutes to read, or one minute to hand over.
+
+</details>
+
+<a href="laptop-wake-for-ai-scheduled-tasks.md"><img src="images/readme-tile-laptop-wake.png" alt="Making your laptop wake up for your AI's scheduled tasks: so overnight tasks actually run. About 18 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Why a 3am task never runs on a sleeping laptop, and how to hand the wake-up to your computer.
+
+<details><summary>More about this guide</summary>
 
 If you've told your AI assistant to do something every night at 3am and nothing ever happens, this explains why and how to fix it. Most AI desktop apps can't wake a sleeping laptop — that turns out to be a job you have to hand the operating system yourself. Includes the setup, the commands, and seventeen failure modes I only found by hitting them — the ones that look like success. macOS in detail, with pointers for Windows and Linux. About 18 minutes to read, or one minute to hand over.
 
-**[Is your Claude 5-hour limit maxing out quickly?](claude-limit-maxing-out.md)**
+</details>
 
-Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two causes of a spike you can't account for — an idle gap, and a model switch made to save money that doesn't — how to tell whether starting a fresh session saves anything (on a warm cache it usually doesn't), the two things your local numbers can't see, and what support can and can't do. Claude Code only, desktop app or CLI. About 14 minutes to read, or one minute to hand over.
+<a href="ai-morning-check-in.md"><img src="images/readme-tile-morning-check-in.png" alt="A morning check-in for your AI's overnight work: see what failed overnight. About 11 minutes to read, or one minute to hand to your AI." width="100%"></a>
 
-**[Pace your AI's weekly allowance by the day](pace-your-ai-allowance-by-the-day.md)**
+Overnight tasks can fail without telling you. A short morning check shows which ones did.
 
-Most AI plans give you a weekly allowance, and the meter only gets your attention once it's nearly empty. Since October my AI has done one sum each morning: the percentage left, divided by the days until it resets. That's today's share, and it tells me on a Tuesday whether there's room for a big job. Includes the 10% I keep back for the last day, the three states that decide whether optional work runs, what a month of readings showed, why each reading has to be fresh (a reused one made my number sit still and then drop four points at once), and a paste-ready prompt that sets it up in any AI. About 4 minutes to read, or one minute to hand over.
-
-**[Is your Google Drive filling up with copies of your Claude projects?](claude-copies-in-your-drive.md)**
-
-I searched Drive for one planning document and found four files with the same name. Claude's Code tab gives each work session its own copy of the project folder, and by default those copies live inside the folder, so Drive syncs every one of them. Mine had piled up past 60 copies and 8 GB. This covers the one setting that sends new copies somewhere else, and a cleanup your AI runs to clear the old ones without losing a copy that still holds unsaved work. For the Claude desktop app with projects in Google Drive, Dropbox, iCloud or OneDrive. About 5 minutes to read, or one minute to hand over.
-
-**[Running several AI sessions at once without them overwriting each other](several-ai-sessions-at-once.md)**
-
-I usually have several AI sessions open, and I kept typing the same reminder into each one: another session may be working on this, so don't overwrite its work. Then we counted. In one week, 81 of my files were edited by more than one session. This gives you a standing rule any AI can follow, plus a small guard for Claude Code that stops an edit once when another session recently changed the same file, and tells your AI which session it was and whether it's still working. It also covers what the guard can't see, and four habits for the times two sessions need one file on purpose. About 6 minutes to read, or one minute to hand over.
-
-**[A morning check-in for your AI's overnight work](ai-morning-check-in.md)**
+<details><summary>More about this guide</summary>
 
 If your AI runs tasks while you sleep, some of them will fail without telling you. A task that found nothing and a task that never started can look exactly alike. This sets up one more scheduled task that runs before you wake, checks that each overnight task left behind what it should have, and leaves you a short note with only what needs you. Includes the one-file ledger that makes a silent failure visible, the rules that keep the note short, and, for the Claude desktop app, a link that hands your reply to a fresh session so the follow-up happens where you normally work. About 11 minutes to read, or one minute to hand over.
 
-**[A Bitcoin Cycle Forecaster Your AI Can Build and Check](bitcoin-cycle-forecaster.md)**
+</details>
+
+<a href="several-ai-sessions-at-once.md"><img src="images/readme-tile-several-sessions.png" alt="Running several AI sessions at once without them overwriting each other: no more overwritten work. About 6 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Stop parallel sessions from overwriting each other, without typing the same reminder into each.
+
+<details><summary>More about this guide</summary>
+
+I usually have several AI sessions open, and I kept typing the same reminder into each one: another session may be working on this, so don't overwrite its work. Then we counted. In one week, 81 of my files were edited by more than one session. This gives you a standing rule any AI can follow, plus a small guard for Claude Code that stops an edit once when another session recently changed the same file, and tells your AI which session it was and whether it's still working. It also covers what the guard can't see, and four habits for the times two sessions need one file on purpose. About 6 minutes to read, or one minute to hand over.
+
+</details>
+
+<a href="take-your-ai-council-to-your-phone.md"><img src="images/readme-tile-council-phone.png" alt="Take Your AI Council to Your Phone: your advisors, on the go. About 14 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Use the AI advisors on your laptop from the ChatGPT app on your phone, with both kept in step.
+
+<details><summary>More about this guide</summary>
+
+I keep councils of AI advisors in files that Claude looks after on my laptop, and I wanted to use them from the ChatGPT app on my phone without the two apps losing track of each other. This is the bridge Claude built for me: one file per council that ChatGPT reads, a `save` command that writes a one-line record of each session to a shared Google Doc, and Claude folding those records back into the permanent notes. Includes what four weeks of use taught me (getting started was the friction, and I typed far more than I talked), the simpler route I moved to the same day (a ChatGPT Dot that reads the council files and writes the records itself, with the rules inside each file), two traps that fail without telling you, three setup checks that can each fail visibly, and the builder script for your AI to adapt. About 14 minutes to read, or one minute to hand over.
+
+</details>
+
+### 🧰 Keep it running smoothly
+
+<a href="claude-limit-maxing-out.md"><img src="images/readme-tile-limit.png" alt="Is your Claude 5-hour limit maxing out quickly?: when the meter hits 100%. About 14 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Claude Code keeps a record of every request on your own disk, so you can see what used up your limit.
+
+<details><summary>More about this guide</summary>
+
+Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two causes of a spike you can't account for — an idle gap, and a model switch made to save money that doesn't — how to tell whether starting a fresh session saves anything (on a warm cache it usually doesn't), the two things your local numbers can't see, and what support can and can't do. Claude Code only, desktop app or CLI. About 14 minutes to read, or one minute to hand over.
+
+</details>
+
+<a href="pace-your-ai-allowance-by-the-day.md"><img src="images/readme-tile-pace.png" alt="Pace your AI's weekly allowance by the day: one sum each morning. About 4 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Each morning: the percent left, divided by the days until your allowance resets.
+
+<details><summary>More about this guide</summary>
+
+Most AI plans give you a weekly allowance, and the meter only gets your attention once it's nearly empty. Since October my AI has done one sum each morning: the percentage left, divided by the days until it resets. That's today's share, and it tells me on a Tuesday whether there's room for a big job. Includes the 10% I keep back for the last day, the three states that decide whether optional work runs, what a month of readings showed, why each reading has to be fresh (a reused one made my number sit still and then drop four points at once), and a paste-ready prompt that sets it up in any AI. About 4 minutes to read, or one minute to hand over.
+
+</details>
+
+<a href="claude-copies-in-your-drive.md"><img src="images/readme-tile-drive-copies.png" alt="Is your Google Drive filling up with copies of your Claude projects?: if you use the code tab. About 5 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Claude's Code tab makes a copy of your project for every session, and Drive syncs every copy. The fix moves them out of Drive.
+
+<details><summary>More about this guide</summary>
+
+I searched Drive for one planning document and found four files with the same name. Claude's Code tab gives each work session its own copy of the project folder, and by default those copies live inside the folder, so Drive syncs every one of them. Mine had piled up past 60 copies and 8 GB. This covers the one setting that sends new copies somewhere else, and a cleanup your AI runs to clear the old ones without losing a copy that still holds unsaved work. For the Claude desktop app with projects in Google Drive, Dropbox, iCloud or OneDrive. About 5 minutes to read, or one minute to hand over.
+
+</details>
+
+### 🧪 Projects to try
+
+<a href="bitcoin-cycle-forecaster.md"><img src="images/readme-tile-bitcoin.png" alt="A Bitcoin Cycle Forecaster Your AI Can Build and Check: built from free data. About 26 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Your AI rebuilds a tested forecaster and shows where bitcoin sits in its cycle. Not investment advice.
+
+<details><summary>More about this guide</summary>
 
 Bitbo's Cycle Repeat chart has been good at timing bitcoin's tops and far off on their prices. Set to the day of the 2021 top, it pointed to the right day for the 2025 top, and said $269K for a top that came in at $125K. This forecaster keeps the timing and allows for each cycle being smaller than the last. It blends the power-law trend with a shrunk replay of the last cycle, and in weekly tests since 2016 its typical miss at 6–12 months was about half of Cycle Repeat's. Getting there took more than 40,000 test forecasts across over 20 models. Claude also searched GitHub, TradingView and X and scored the dated price calls of 12 well-known forecasters, and found none with a better tested record. The prompt has your AI rebuild it from free data, rerun the same tests, show where bitcoin sits in its cycle, and set up a cautious path for planning that I call Bitcoin ₿ear Power 🧸. In a backtest from every week since 2013, the price three, five and ten years later was above ₿ear Power every time. A forecasting experiment, not investment advice. About 26 minutes to read (the prompt for your AI is a little under half of that), or one minute to hand over.
 
-**[Ask Seven AIs How Your Business Could Earn More](seven-ais-money-ideas.md)**
+</details>
+
+<a href="seven-ais-money-ideas.md"><img src="images/readme-tile-seven-ais.png" alt="Ask Seven AIs How Your Business Could Earn More: ideas for earning more. About 9 minutes to read, or one minute to hand to your AI." width="100%"></a>
+
+Put one money question to seven AIs from different companies, and see where they agree.
+
+<details><summary>More about this guide</summary>
 
 I asked my AI what large amount of work it could do for me that would make money, then had it put the same question, word for word, to six other AIs from different companies. All seven listed the same idea, and four put it in their top five. Includes the brief every AI receives, how to read seven answers as one table (whose top five versus who merely listed it, and what each would bet against), the checks that caught an idea I'd already launched, and the weekly habit that now vets three ideas at a time from the list. About 9 minutes to read, or one minute to hand over.
+
+</details>
 
 ---
 
