@@ -2,8 +2,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 1.33 · Last updated 2026-11-16 07:40 PST**
+**Version 1.34 · Last updated 2026-11-18 09:54 PST**
 
+<!-- v1.34: Bitcoin forecaster → v1.8 (Bitcoin ₿ear Power 🧸 backtest; rerun on November 17 data); blurb gains the backtest result; reading time 24 → 26 min (6,824 body words ÷ 264). -->
 <!-- v1.33: Bitcoin forecaster → v1.6 (rerun on November 15 data); its blurb uses the Bitcoin ₿ear Power 🧸 name and a re-measured reading time (18 → 24 min, 6,278 body words ÷ 264). -->
 
 <!-- v1.30: Added Pace Your AI's Weekly Allowance by the Day; Using Two AIs Together → v1.5 (cross-link). -->
@@ -123,7 +124,7 @@ If your AI runs tasks while you sleep, some of them will fail without telling yo
 
 **[A Bitcoin Cycle Forecaster Your AI Can Build and Check](bitcoin-cycle-forecaster.md)**
 
-Bitbo's Cycle Repeat chart has been good at timing bitcoin's tops and far off on their prices. Set to the day of the 2021 top, it pointed to the right day for the 2025 top, and said $269K for a top that came in at $125K. This forecaster keeps the timing and allows for each cycle being smaller than the last. It blends the power-law trend with a shrunk replay of the last cycle, and in weekly tests since 2016 its typical miss at 6–12 months was about half of Cycle Repeat's. Getting there took more than 40,000 test forecasts across over 20 models. Claude also searched GitHub, TradingView and X and scored the dated price calls of 12 well-known forecasters, and found none with a better tested record. The prompt has your AI rebuild it from free data, rerun the same tests, show where bitcoin sits in its cycle, and set up a cautious path for planning that I call Bitcoin ₿ear Power 🧸. A forecasting experiment, not investment advice. About 24 minutes to read (the prompt for your AI is a little under half of that), or one minute to hand over.
+Bitbo's Cycle Repeat chart has been good at timing bitcoin's tops and far off on their prices. Set to the day of the 2021 top, it pointed to the right day for the 2025 top, and said $269K for a top that came in at $125K. This forecaster keeps the timing and allows for each cycle being smaller than the last. It blends the power-law trend with a shrunk replay of the last cycle, and in weekly tests since 2016 its typical miss at 6–12 months was about half of Cycle Repeat's. Getting there took more than 40,000 test forecasts across over 20 models. Claude also searched GitHub, TradingView and X and scored the dated price calls of 12 well-known forecasters, and found none with a better tested record. The prompt has your AI rebuild it from free data, rerun the same tests, show where bitcoin sits in its cycle, and set up a cautious path for planning that I call Bitcoin ₿ear Power 🧸. In a backtest from every week since 2013, the price three, five and ten years later was above ₿ear Power every time. A forecasting experiment, not investment advice. About 26 minutes to read (the prompt for your AI is a little under half of that), or one minute to hand over.
 
 **[Ask Seven AIs How Your Business Could Earn More](seven-ais-money-ideas.md)**
 
