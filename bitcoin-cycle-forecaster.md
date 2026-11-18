@@ -2,7 +2,8 @@
 
 ## It blends the power-law trend with Bitbo's Cycle Repeat, and it shows its own test record
 
-**Version 1.7 · Last updated November 16, 2026**
+**Version 1.8 · Last updated November 18, 2026**
+<!-- v1.8: Bitcoin ₿ear Power 🧸 now has its own walk-forward backtest (floor rebuilt from the prices known at each week since 2013; at 3, 5, 7 and 10 years the price ended above it every time), added to its section, the work list and PART 7 with reference results. The $1 million chart's bars now show growth per year from today's price at 5, 10 and 20 years. Rerun on data through November 17, 2026: both charts, "What it said", the growth table, cycle position, the power-law and realized-price comparisons and the ₿ear Power reading. -->
 <!-- v1.7: the $1 million chart itself (₿ear Power and the trend to $1M, with ₿ear Power's growth per year) now appears in its section, rendered on data through November 15, 2026. -->
 <!-- v1.6: rerun on data through November 15, 2026: new cover chart; "What it said" section, growth table, cycle-position values, power-law and realized-price comparisons and the ₿ear Power reading updated. Method and the PART 5–6 reference numbers unchanged (they still reproduce on the fresh download). -->
 <!-- v1.5: the chart section now rebuilds the $1 million chart (top: $1M line and the first day each line reaches it; bottom: Bitcoin ₿ear Power 🧸 growth per year at 1/5/10/20 years) in place of the price ÷ trend panel; reference values added for both. -->
@@ -12,7 +13,7 @@
 
 ![Bitcoin's price since 2016 on a log scale, with the power-law trend, this forecast's midpoint and 80% range, and Bitbo's Cycle Repeat projection out to 2030](images/bitcoin-cycle-forecaster.png)
 
-**This is a forecasting experiment, not investment advice.** I'm sharing the method and its test record so you can check both. The forecaster runs entirely on free public data, so your AI can rebuild it and check every number. Bitcoin has been through only about four cycles, and nothing here promises anything about the next one.
+**This is a forecasting experiment, not investment advice.** I'm sharing the method and its test record so you can check both. The forecaster runs entirely on free public data, so your AI can rebuild it and check every number.
 
 Before publishing, Claude looked for anything better. It went through published models on GitHub, TradingView, X and the big chart sites, and scored the dated price calls of 12 well-known forecasters, banks and funds. None had a better tested record.
 
@@ -48,10 +49,11 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 3. **Over 20 models compared,** including simple baselines and later challengers built on ideas from GPT and Gemini. Each was rebuilt weekly since 2016 from only the data available that week, then checked against what happened 3 months to 3 years later — more than 40,000 test forecasts in all.
 4. **Leak checks.** To confirm no forecast peeked at the future, Claude cut the data off at past dates, rebuilt the forecasts, and got identical results in all 1,070 comparisons. Claude also planted a leak on purpose to prove the check could catch one.
 5. **Rules before results.** For the turning-point method, Claude wrote down how it would be judged before computing a single result, so the results couldn't steer the rules.
-6. **Two independent checks.** A separate Claude session audited the code and reproduced every number in its test tables. A fresh one, with no access to that code, rebuilt the tool from this page's prompt alone and matched every reference figure within 2%. (That rebuild was of version 1.1; version 1.2 only removes one step from it.)
+6. **Two independent checks.** A separate Claude session audited the code and reproduced every number in its test tables. A fresh one, with no access to that code, rebuilt the tool from this page's prompt alone and matched every reference figure within 2%. (That rebuild was of version 1.1; version 1.2 only removed one step.)
 7. **A search for anything better.** Claude searched GitHub, TradingView, X, the big chart sites and research papers for published bitcoin forecasters. Claude also scored the dated price calls of 12 well-known forecasters, banks and funds against what actually happened. None showed a better tested record, and most of those calls came in well above the real price, many by 1.6 to 3.5 times.
 8. **Three more ideas tested, none kept.** The most promising ideas from that search were a floor-and-ceiling corridor, shrinking cycle peaks, and money supply (M2). Claude tested each one with its pass mark written down first. None improved the forecast. The testing did turn up one step in this tool that didn't hold up, and version 1.2 removed that step (see "How much to trust it").
 9. **Seven ideas from GPT, Grok and Gemini, none kept.** In November 2026, Claude asked the three how to improve the long-range trend, the calls for cycle lows, and the ranges past three years. Claude tested seven of their ideas, with how each would be judged written down before any test ran. Four failed their pass marks, and the other three, set down as measure-only from the start, didn't hold up well enough to adopt.
+10. **A backtest of Bitcoin ₿ear Power 🧸.** For every week since 2013, Claude rebuilt the floor from only the prices known that week, started ₿ear Power there, and checked the price 1 to 10 years later: 2,886 checks in all. At 3, 5, 7 and 10 years, the price ended above ₿ear Power every time.
 
 ---
 
@@ -70,9 +72,9 @@ So I asked Claude to build a more accurate forecaster that keeps the timing, and
 ## How much to trust it
 
 1. **How much better:** tested weekly since 2016 (about two and a half cycles). At 6–12 months its typical miss was about 30–40% smaller than the power-law trend line's and about half of Cycle Repeat's. At 2 years, about 20% smaller than the trend line's and 60% smaller than Cycle Repeat's. From 3 years on, the trend line alone did better, so that's what the tool uses there. A model built on those five popular Bitbo charts did worse than this tool at every horizon and added nothing beyond the trend line past a year.
-2. **The power law itself:** [bitcoinpower.law](https://bitcoinpower.law) publishes its formula (Santostasi's fit: 10^-16.493 × days^5.68), and on November 15, 2026 it comes within about 2% of this tool's own refit ($149K vs $146K). Bitbo's Long-Term Power Law chart is live with bands but doesn't publish its formula. (btcoak.com's power-law page says it refits nightly, but on November 16, 2026 its newest data was still from July 22, 2026, so I don't recommend that page.)
+2. **The power law itself:** [bitcoinpower.law](https://bitcoinpower.law) publishes its formula (Santostasi's fit: 10^-16.493 × days^5.68), and on November 17, 2026 it comes within about 2% of this tool's own refit ($149K vs $146K). Bitbo's Long-Term Power Law chart is live with bands but doesn't publish its formula. (btcoak.com's power-law page says it refits nightly, but on November 18, 2026 its newest data was still from July 22, 2026, so I don't recommend that page.)
 3. **Compared with other tools:** none of the published bitcoin forecasters in that search showed a better tested record. Most show one curve or one indicator and rarely report how far off they've been; this one publishes its test record. Some popular indicators have weakened, too: Pi Cycle missed the last two tops, and the Mayer Multiple stayed under its 2.4 sell line at both (it read 1.5 in November 2021 and 1.2 in October 2025).
-4. **"The lowest point of this cycle is already in" is its shakiest call.** The method was this confident in 2014 and wrong. And every past cycle low fell below the average price holders paid for their coins (the "realized price," $54K on November 15, 2026). This cycle's low so far, $58,525, stayed above the realized price.
+4. **"The lowest point of this cycle is already in" is its shakiest call.** The method was this confident in 2014 and wrong. And every past cycle low fell below the average price holders paid for their coins (the "realized price," $54K on November 17, 2026). This cycle's low so far, $58,525, stayed above the realized price.
 5. **Version 1.2 dropped a step that failed this same test.** Version 1.1 shifted each forecast to cancel its typical past error. Tested with only the misses known at each test date, the shifted forecast beat the unshifted one on only 38% of 1-year test dates and 21% of 2-year ones. The past error it was cancelling had also reversed direction over time. The forecast is now the plain average, which is what the test results above always measured.
 
 ---
@@ -87,32 +89,32 @@ In [A Simple Plan for Financial Freedom](https://www.georgekao.com/blog/financia
 | Distance from the power-law trend | today's price compared with the trend line | 40% or more below best · 20–40% below good · within 20% either side neutral · more than 20% above, wise to wait |
 | The 4-year average | today's price divided by the average of the last 1,458 daily closes | at or below best · up to 1.25× good · 1.25–1.5× a premium · above 1.5× overpaying |
 
-On November 15, 2026, the Z-Score was 0.37 (good), and the price sat 55% below the trend (best) at 0.99 times its 4-year average (best).
+On November 17, 2026, the Z-Score was 0.37 (good), and the price sat 56% below the trend (best) at 0.98 times its 4-year average (best).
 
 They show where you are in the cycle, but they don't sharpen the price forecast. Adding the 4-year average to the trend pull barely changed its accuracy, and adding the MVRV Z-Score made the forecast worse. I chose these zones as screening bands; they aren't proven rules.
 
 ---
 
-## What it said on November 15, 2026
+## What it said on November 17, 2026
 
-Bitcoin closed at $65,189, about 45% of the trend line's $145,979.
+Bitcoin closed at $64,908, about 44% of the trend line's $146,130.
 
-- **One year out (November 15, 2027):** midpoint $178,389, with an 80% range of $101,804 to $413,965.
-- **Next 3 months' low:** between $52.4K and $67.1K, sometime between November 17, 2026 and February 12, 2027.
-- **Next 3 months' high:** between $69.3K and $89.4K, sometime between November 19, 2026 and February 10, 2027.
-- **Has this cycle's low ($58,525 on June 30, 2026) already happened?** 61% likely, by this method, down from 82% a week earlier at $75,724. Read item 4 above before leaning on that 61%.
-- **Next cycle top:** $233K to $720K, between February and December 2029, most likely around July 2029. The forecast's own path peaks near $326K in July 2029, and Cycle Repeat says $480K in September 2029.
+- **One year out (November 17, 2027):** midpoint $177,387, with an 80% range of $101,233 to $411,641.
+- **Next 3 months' low:** between $53.0K and $65.6K, sometime between November 19, 2026 and February 15, 2027.
+- **Next 3 months' high:** between $68.8K and $90.2K, sometime between November 21, 2026 and February 12, 2027.
+- **Has this cycle's low ($58,525 on June 30, 2026) already happened?** 60% likely, by this method, down from 82% on November 7 at $75,724. Read item 4 above before leaning on that 60%.
+- **Next cycle top:** $232K to $714K, between February and December 2029, most likely around August 2029. The forecast's own path peaks near $327K in July 2029, and Cycle Repeat says $481K in September 2029.
 
-This table puts the forecast beside Bitcoin ₿ear Power 🧸 (next section), started September 19, 2026 with k = 0.75, as yearly growth rates from $65,189:
+This table puts the forecast beside Bitcoin ₿ear Power 🧸 (next section), started September 19, 2026 with k = 0.75, as yearly growth rates from $64,908:
 
 | Horizon | Forecast | Yearly growth | Bitcoin ₿ear Power 🧸 | Yearly growth |
 |---|---|---|---|---|
-| 1 year (Nov 2027) | $178,389 | +174% | $82,127 | +26.0% |
-| 5 years (Nov 2031) | $586,097 | 55.2% | $188,414 | 23.6% |
-| 10 years (Nov 2036) | $1,786,592 | 39.2% | $444,025 | 21.1% |
-| 20 years (Nov 2046) | $10,050,463 | 28.6% | $1,676,551 | 17.6% |
+| 1 year (Nov 2027) | $177,387 | +173% | $82,230 | +26.7% |
+| 5 years (Nov 2031) | $586,401 | 55.3% | $188,610 | 23.8% |
+| 10 years (Nov 2036) | $1,786,892 | 39.3% | $444,404 | 21.2% |
+| 20 years (Nov 2046) | $10,047,519 | 28.7% | $1,677,602 | 17.7% |
 
-The 5- to 20-year forecasts come from the trend line alone, which has run high in testing. Its slope also flattens a little each time new data is added, so treat those figures as optimistic.
+The 5- to 20-year forecasts come from the trend line alone, which has run high in testing. Its slope also flattens a little each time new data is added, so treat those figures as optimistic. Bitcoin ₿ear Power 🧸 is the cautious path, and the next section shows how it did in its own backtest.
 
 ---
 
@@ -137,9 +139,20 @@ I start on September 19, 2026, where the floor is $62,516.38, with k = 0.75. Eac
 
 Your AI should reproduce these two values to the dollar: **$130,339 on January 1, 2030** and **$1,050,607 on January 1, 2043.**
 
-Bitcoin ₿ear Power 🧸 is a planning path, not a tested forecast. The four floor curves were fitted using later price data, so a test on past dates would let the path peek at the future.
+**How it held up.** The four curves above were fitted with later prices, so a fair test on past dates needs a floor built only from what was known at the time. For every week since January 2013, Claude refit the power law on the prices up to that week, lowered that line until only 2% of the daily closes since 2011 sat below it (that is the floor), started ₿ear Power there with k = 0.75, and checked the price later:
 
-On November 14, 2026, the price closed 2.9% below the floor and 1.6% below Bitcoin ₿ear Power 🧸. The next day it closed 0.9% below the floor and 0.4% above ₿ear Power. Since 2012, only three other closes sat below the floor, all in August and September 2015. A cautious path is not a guaranteed minimum.
+| Years later | Price ended above ₿ear Power | Typical price ÷ ₿ear Power | Lowest |
+|---|---|---|---|
+| 1 | 90% of 672 starts | 2.2× | 0.57× |
+| 2 | 92% of 620 | 2.3× | 0.72× |
+| 3 | 100% of 568 | 2.7× | 1.07× |
+| 5 | 100% of 464 | 3.1× | 1.03× |
+| 7 | 100% of 359 | 4.3× | 1.91× |
+| 10 | 100% of 203 | 4.0× | 1.61× |
+
+Checked at every weekly horizon from 3 years up, the price was above ₿ear Power in 99.8% of 161,596 checks; the lowest was 0.88×, about 8 years after a September 2014 start. With the four published curves in place of the rebuilt floor, the price ended above ₿ear Power every time, at every horizon. PART 7 of the prompt has your AI rerun this test.
+
+On November 17, 2026, the price closed 1.5% below the floor and 0.2% below Bitcoin ₿ear Power 🧸. The price has closed below the floor every day since November 14. Before that, only three closes since 2012 did, all in August and September 2015.
 
 Choose your own start date and k. A lower k is more cautious.
 
@@ -147,22 +160,22 @@ Choose your own start date and k. A lower k is more cautious.
 
 ## Rebuild the $1 million chart
 
-![Bitcoin's price since 2011 on a log scale, with the power-law trend and Bitcoin ₿ear Power 🧸 out to 2043 and the first year each reaches $1 million (the trend around 2034, ₿ear Power around 2042), above bars showing ₿ear Power's growth per year at 1, 5, 10 and 20 years](images/bitcoin-bear-power-1m.png)
+![Bitcoin's price since 2011 on a log scale, with the power-law trend and Bitcoin ₿ear Power 🧸 out to 2043 and the first year each reaches $1 million (the trend around 2034, ₿ear Power around 2042), above bars showing the growth per year from today's price if bitcoin follows ₿ear Power, at 5, 10 and 20 years](images/bitcoin-bear-power-1m.png)
 
-*Data through November 15, 2026.*
+*Data through November 17, 2026.*
 
-The $1 million chart shows where bitcoin sits against its power-law trend, when each line first reaches $1 million, and how fast Bitcoin ₿ear Power 🧸 grows each year. Your AI can rebuild it from the PART 1 data with these steps. If you're pasting only the prompt box, paste this section along with the box, and add something like: *"Please also rebuild the $1 million chart from that section, and check it against its reference values."*
+The $1 million chart shows where bitcoin sits against its power-law trend, when each line first reaches $1 million, and how fast bitcoin grows each year from today's price if it follows Bitcoin ₿ear Power 🧸. Your AI can rebuild it from the PART 1 data with these steps. If you're pasting only the prompt box, paste this section along with the box, and add something like: *"Please also rebuild the $1 million chart from that section, and check it against its reference values."*
 
 1. **One line for all dates.** Run PART 2's power-law fit once, over every day through the newest data. Trend(date) = 10^(a + n·log10(days since genesis)), with that one fit for every date, past and future.
 2. **Top panel, log scale, January 1, 2011 to July 1, 2043.** Price through today, the trend line across the whole span, Bitcoin ₿ear Power 🧸 (start September 19, 2026, k = 0.75, drawn only from today on, so it begins near today's price), and a dot at today's price. Draw a dotted line at $1 million. Put a dot where each line first reaches it, labelled with the year.
-3. **Bottom panel: how fast Bitcoin ₿ear Power 🧸 grows.** Four bars, for 1, 5, 10 and 20 years ahead (the same calendar day in those years). Each bar is the yearly growth rate (CAGR) from today's ₿ear Power value: (₿ear Power on that date ÷ ₿ear Power today)^(365.25 ÷ days) − 1. Label each bar with its rate, the ₿ear Power value on that date and the year. (PART 7's table measures growth from today's price instead, so its numbers differ slightly.)
-4. **Labels.** Print "History, not a promise" and the data date on the chart.
+3. **Bottom panel: growth per year along Bitcoin ₿ear Power 🧸.** Three bars, for 5, 10 and 20 years ahead (the same calendar day in those years). Each bar is the yearly growth rate (CAGR) from today's price: (₿ear Power on that date ÷ today's price)^(365.25 ÷ days) − 1, the same basis as PART 7's table. Label each bar with its rate, the ₿ear Power value on that date and the year.
+4. **Labels.** Print the backtest result ("Backtested on every week since 2013: 3, 5 and 10 years later, price was always above ₿ear Power") and the data date on the chart.
 
 The post that goes with the chart also quotes today's price ÷ trend and where past cycle lows sat. Use the same one fit. Take each past cycle low as the lowest close in its bear window: October 1 to December 31, 2011; December 1, 2014 to February 28, 2015; November 1, 2018 to January 31, 2019; and November 1 to December 31, 2022.
 
 Every past day is judged against a trend fitted with prices that came later, so these ratios describe the past and don't test a forecast. Measured against the trend line as it was drawn at the time, from the prices known then, all four past lows looked deeper. A reading for today, like November 14's 0.44×, is that real-time kind, because no later prices exist yet. Real-time, the four past lows were 0.14× (2011), 0.24× (2015), 0.48× (2018) and 0.36× (2022); the first two came from very short price histories. Matching 2022's would put the price near $52,500. On the one fitted line, the ratio also dipped below the range of past lows between cycles: 0.38× in August 2015 and 0.40× in June 2012. Past lows show where prices bottomed, not the lowest the ratio can go.
 
-Reference values with data through November 14, 2026 (price $63,821, trend $145,903, fit n ≈ 5.634 and a ≈ −16.326). To check your build, cut the data off at November 14, 2026, match these, then rerun on today's data. The chart above uses the November 15 close of $65,189, and the one I posted on X added a live November 15 price of $64,697; every rounded label on both comes out the same.
+Reference values with data through November 14, 2026 (price $63,821, trend $145,903, fit n ≈ 5.634 and a ≈ −16.326). To check your build, cut the data off at November 14, 2026, match these, then rerun on today's data. The chart above uses the November 17 close of $64,908. The version I posted on X on November 18 used a live price of $62,332, so its 5- and 10-year bars read one point higher (25% and 22%); the 20-year bar is 18% on both.
 
 | Measure | Value |
 |---|---|
@@ -170,7 +183,7 @@ Reference values with data through November 14, 2026 (price $63,821, trend $145,
 | Lows: 2011 (Nov 18) · 2015 (Jan 14) · 2018 (Dec 15) · 2022 (Nov 9) | 0.43× · 0.55× · 0.59× · 0.45× |
 | First day at $1 million: trend line · Bitcoin ₿ear Power 🧸 | February 23, 2034 · August 14, 2042 |
 | Bitcoin ₿ear Power 🧸 on November 14 of 2027 · 2031 · 2036 · 2046 | $82,076 · $188,317 · $443,836 · $1,676,026 |
-| Its growth per year to those dates (1 · 5 · 10 · 20 years) | 26.5% · 23.8% · 21.2% · 17.7% |
+| Growth per year from the $63,821 price to the last three (5 · 10 · 20 years) | 24.2% · 21.4% · 17.8% |
 | Bitcoin ₿ear Power 🧸 · the floor on November 14, 2026 | $64,887 · $65,697 |
 
 ---
@@ -260,7 +273,7 @@ PART 7 — BITCOIN ₿EAR POWER 🧸 (a cautious path for planning)
 floor(date) = the median of four support curves (sort their four values for the date and average the middle two), each 10^a × d^n, where d = days since genesis:
 (a, n) = (−16.89094000867204, 5.688), (−17.3716989596081, 5.82), (−17.05551732784983, 5.73), (−17.8917, 5.9623).
 BP(date), Bitcoin ₿ear Power 🧸 on that date, = floor(start) × (floor(date) ÷ floor(start))^k.
-Say that this is a planning path, not a tested forecast. Its floor curves were fitted using later price data, so a backtest would leak.
+Backtest it without look-ahead (the four curves were fitted with later prices, so the test rebuilds the floor): for each origin o every 7 days from 2013-01-01, fit PART 2's power law on days 0 to o, then add the 2nd-percentile residual over 2011-01-01 to o to its intercept (it is negative, so the line drops; sort those residuals ascending and take index floor(0.02 × (N − 1))). That line is floor_o. BP_o(date) = floor_o(o) × (floor_o(date) ÷ floor_o(o))^0.75. For 1, 2, 3, 5, 7 and 10 years (round(365.25 × years) days), report the share of origins whose price that many days later is at or above BP_o, and the median price ÷ BP_o (sort the ratios; take index floor(N ÷ 2)). Reference with the data cut off at 2026-11-17 (later data adds origins): 90.2% / 92.1% / 100% / 100% / 100% / 100% of 672 / 620 / 568 / 464 / 359 / 203 origins; medians 2.15× / 2.26× / 2.71× / 3.09× / 4.33× / 3.95×.
 Ask me for the start date and k. If I have no preference, use 2026-09-19 and 0.75, and explain that a lower k is more cautious. Show a table for 1, 5, 10 and 20 years from today: the forecast (the blend at 1 year, the trend line after that), Bitcoin ₿ear Power 🧸 on the same dates, and each one's yearly growth rate from today's price, (end ÷ today)^(1 ÷ years) − 1. If I tell you my average cost, also show the yearly growth from that cost.
 
 PART 8 — WHAT TO SHOW ME
@@ -269,7 +282,7 @@ Keep it short and in plain language:
 2. 6 months and 1 year: midpoint and 80% range. 2 years: midpoint, marked rough. 3 years and beyond: the trend line, marked rough.
 3. The next 3-month low and high (price and date ranges), the chance this cycle's low is already in, and the next cycle top (price range, date range, most likely month), each with its test record from PART 5.
 4. The three cycle-position measures, with their zones.
-5. The Bitcoin ₿ear Power 🧸 table.
+5. The Bitcoin ₿ear Power 🧸 table and its backtest.
 6. A chart: price on a log scale since 2016, the trend line, the blend's midpoint and 80% range (shade the part beyond 1 year lighter), plain Cycle Repeat, a marker for today, and both tops labeled.
 7. One line saying this is a forecasting experiment, not investment advice.
 
