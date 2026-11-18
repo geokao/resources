@@ -175,7 +175,7 @@ The post that goes with the chart also quotes today's price ÷ trend and where p
 
 Every past day is judged against a trend fitted with prices that came later, so these ratios describe the past and don't test a forecast. Measured against the trend line as it was drawn at the time, from the prices known then, all four past lows looked deeper. A reading for today, like November 14's 0.44×, is that real-time kind, because no later prices exist yet. Real-time, the four past lows were 0.14× (2011), 0.24× (2015), 0.48× (2018) and 0.36× (2022); the first two came from very short price histories. Matching 2022's would put the price near $52,500. On the one fitted line, the ratio also dipped below the range of past lows between cycles: 0.38× in August 2015 and 0.40× in June 2012. Past lows show where prices bottomed, not the lowest the ratio can go.
 
-Reference values with data through November 14, 2026 (price $63,821, trend $145,903, fit n ≈ 5.634 and a ≈ −16.326). To check your build, cut the data off at November 14, 2026, match these, then rerun on today's data. The chart above uses the November 17 close of $64,908. The version I posted on X on November 18 used a live price of $62,332, so its 5- and 10-year bars read one point higher (25% and 22%); the 20-year bar is 18% on both.
+Reference values with data through November 14, 2026 (price $63,821, trend $145,903, fit n ≈ 5.634 and a ≈ −16.326). To check your build, cut the data off at November 14, 2026, match these, then rerun on today's data. The chart above uses the November 17 close of $64,908. The version I posted on X on November 18 used a live price of $63,041, so its 5- and 10-year bars read one point higher (25% and 22%); the 20-year bar is 18% on both.
 
 | Measure | Value |
 |---|---|
