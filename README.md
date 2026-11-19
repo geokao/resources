@@ -4,8 +4,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 2.2 · Last updated 2026-11-18 15:08 PST**
+**Version 2.3 · Last updated 2026-11-19 06:38 PST**
 
+<!-- v2.3: A dividing line above each group of guides, so each new group is easy to spot. -->
 <!-- v2.2: The how-to picture and every guide card now come in two sizes: smaller text on desktop (wide screens), the larger version on phones (<picture> with a min-width: 1012px source; images/readme-*-desk.png). -->
 <!-- v2.1: Cards show each guide's version and update date (read from the guide itself) in place of reading time; each "More about this guide" ends with the guide's link. -->
 <!-- v2.0: Redesigned for non-technical readers: Brand Kit hero and how-to-use images, each guide shown as a picture card in six themed groups with a one-line summary, full blurbs kept under "More about this guide". Images in images/readme-*.png. Newsletter link → www.georgekao.com/Email (lowercase /email 404s since Nov 2026; the capitalised path keeps working either way). -->
@@ -103,6 +104,8 @@ A field guide to running a whole solo business — and a good chunk of a life �
 
 </details>
 
+---
+
 ### ✍️ Better work from your AI
 
 <a href="remove-ai-isms.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-remove-ai-isms-desk.png"><img src="images/readme-tile-remove-ai-isms.png" alt="Remove AI-isms: so readers keep reading." width="100%"></picture></a>
@@ -140,6 +143,8 @@ I asked Claude to have GPT check a list of videos before deleting them, and GPT 
 🔗 Link to this guide: https://github.com/geokao/resources/blob/main/using-two-ais-together.md
 
 </details>
+
+---
 
 ### 🌿 An AI that gets better over time
 
@@ -190,6 +195,8 @@ I start more things than I finish, and the ideas I had mid-task used to vanish i
 🔗 Link to this guide: https://github.com/geokao/resources/blob/main/an-inbox-in-every-folder.md
 
 </details>
+
+---
 
 ### 🌙 Let it do more on its own
 
@@ -253,6 +260,8 @@ I keep councils of AI advisors in files that Claude looks after on my laptop, an
 
 </details>
 
+---
+
 ### 🧰 Keep it running smoothly
 
 <a href="claude-limit-maxing-out.md"><picture><source media="(min-width: 1012px)" srcset="https://github.com/geokao/resources/raw/main/images/readme-tile-limit-desk.png"><img src="images/readme-tile-limit.png" alt="Is your Claude 5-hour limit maxing out quickly?: when the meter hits 100%." width="100%"></picture></a>
@@ -290,6 +299,8 @@ I searched Drive for one planning document and found four files with the same na
 🔗 Link to this guide: https://github.com/geokao/resources/blob/main/claude-copies-in-your-drive.md
 
 </details>
+
+---
 
 ### 🧪 Projects to try
 
