@@ -3,9 +3,9 @@
 *A field guide from a non-coder's studio*
 
 **George Kao** · [www.georgekao.com](https://www.georgekao.com)
-**Version 1.13 · Last updated November 8, 2026** · Refreshed monthly (changelog at the bottom) · Reading time: ~28 minutes
+**Version 1.14 · Last updated November 19, 2026** · Refreshed monthly (changelog at the bottom) · Reading time: ~28 minutes
 
-Corrections and suggestions welcome — this doc also lives at [github.com/geokao/resources](https://github.com/geokao/resources), where anyone can file one.
+Corrections and suggestions welcome — this doc also lives at [github.com/geokao/resources](https://github.com/geokao/resources/blob/main/README.md), where anyone can file one.
 
 ---
 
@@ -197,7 +197,7 @@ I have thirty-odd skills now. A sampling, to make it concrete:
 1. **Content:** a rewriter that strips AI-isms from drafts; per-format Writing Style Specs (my blog voice vs. my course voice vs. my announcement voice) that update themselves by diffing my edits against Claude's drafts — my editing behavior *is* the training data.
 2. **Research:** a multi-model research team (§12); a YouTube-transcript summarizer; a deep-research harness.
 3. **Documents:** the doc-mirror system (§11); doc consolidation; "make this downloadable."
-4. **Housekeeping:** an inbox triage that files saved links into whichever project they'll actually resurface in; a session handoff-brief writer for moving work to a fresh chat.
+4. **Housekeeping:** an inbox triage that files saved links into whichever project they'll actually resurface in.
 5. **Meta-skills — skills that improve the system itself:** one that creates new skills, one that vets and applies proposed updates to a skill, a weekly rotation that gradually improves the whole library, and the workflow retro that powers §9's fastest loop.
 
 What's worth stealing is the reflex. The moment you think "I've explained this before," stop and say: *"Turn this into a skill / standing rule so we never have this conversation again."* Plain English is enough; your AI writes the skill itself.
@@ -384,7 +384,7 @@ Thank you for whichever of these you can do. A report back from the assistant th
 
 - **2026-07-08 · v1.0** — First public version. Drafted by Claude from our working rules; reviewed by George.
 - **2026-07-20 · v1.1** — Folded in patterns from six weeks of daily use: verifying a delegated "done" before trusting it, with fresh-context skeptics for high-stakes work (§7); cross-vendor adversarial review of high-stakes drafts (§12); "rules about writing rules" (§13); and four small habits — pricing big jobs up front, calling the fresh-session moment, multiple-choice decisions, and links-not-copies for canonical docs (§15).
-- **2026-07-31 · v1.2** — This doc gained a second public home on GitHub ([github.com/geokao/resources](https://github.com/geokao/resources)) so readers can file corrections; byline updated to georgekao.com.
+- **2026-07-31 · v1.2** — This doc gained a second public home on GitHub ([github.com/geokao/resources](https://github.com/geokao/resources/blob/main/README.md)) so readers can file corrections; byline updated to georgekao.com.
 - **2026-08-01 · v1.3** — Voice pass. I now run everything I publish on GitHub through my de-AI-ing editor before it goes up, and this was its first sweep over this doc: colon reveals, "it's not X, it's Y" framings, "quietly," and a handful of phrases that asserted importance instead of earning it. Nothing was added or removed — same doc, fewer tics. Also fixed one line that had gone stale: §5 said I like the play-by-play narration, and I've since asked Claude to drop the narration entirely and just deliver the work.
 - **2026-08-03 · v1.4** — New §16, on guarding a system that runs unattended: treating text an automation reads from outside as data rather than instructions, letting overnight runs propose rule changes but not make them, and a monthly audit with a findings ledger. The old §16 ("five first moves") is now §17. Reading time corrected — it had been understated since v1.0.
 - **2026-08-05 · v1.5** — Corrections, mostly to §10. I said two jobs stayed on a scheduler; it's forty-seven now, so that section is rewritten around the distinction that actually held up: a ledger is for remembering, a scheduled task is for doing. §6's origin story admitted the cron that eventually earned its place there. The skill tune-up runs Sundays, not nightly, and had been called nightly since v1.0. §7 no longer says the premium tier holds my main seat, because I moved down one tier in late July. New scar in §13 about a check that reported an absence that wasn't real. A note in §3 on folder sprawl (thirty when I started this doc, sixty-four now), a habit in §15 for catching new model releases, and the first link from this doc to another of my guides. Reading time up to ~28 minutes, at the same rate v1.4 used.
@@ -396,3 +396,4 @@ Thank you for whichever of these you can do. A report back from the assistant th
 - **2026-10-24 · v1.11** — §2 gained one setup step: point Claude Code's working copies outside your synced folder, with a link to the new guide on clearing the ones already there.
 - **2026-11-03 · v1.12** — Corrections where my setup had moved on. §10 no longer says Claude glances at the ledgers at the start of each session: a morning check-in does it by itself before I'm up, and reminders that only need me go on my to-do list when I ask (I stopped blocking calendar time for them). The skill tune-up and the new-model check both run weekly. §11 says Word mirrors exist only for documents I've said I read in Drive. Counts updated (nine unattended editors, sixty-eight folders, about thirty nudge rows), and two example cron jobs I'd since retired came out.
 - **2026-11-08 · v1.13** — §15's multiple-choice habit now covers yes-or-no decisions, which arrive as buttons worded as polite requests in my voice. Includes a line you can hand your AI to set this up.
+- **2026-11-19 · v1.14** — The library link now opens its README page. The housekeeping list in §8 drops the session handoff-brief writer, which I retired.
