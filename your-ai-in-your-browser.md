@@ -2,8 +2,9 @@
 
 ## What I learned handing Claude, and then GPT-6, the keys to my real, logged-in Chrome
 
-**Version 1.9 · Last updated November 8, 2026**
+**Version 1.10 · Last updated November 21, 2026**
 
+<!-- v1.10 (2026-11-21): a read-only route through the signed-in tab when a command-line tool gets bot-gated (6.2); a script-reading screener denial that came and went (7.5); a negative visibility line fails like a positive one (11.2). -->
 <!-- v1.9 (2026-11-08): retired jobs and a retired surface removed from the intro and section 4; tab groups outlive closed tabs (4.9); no borrowing while the human is at the keyboard (4.1, 4.3, 10); queue for screen-needing work (4.2); the hand-off became an evidence gate (11.12); screening still runs in the top permission mode (7.5); recipes plus a failure log (9.9). -->
 
 *By George Kao. Written with Claude; section 11 and this introduction reviewed by GPT-6 — which disagreed with four of the claims in it, and the section says so where it did.*
@@ -263,6 +264,8 @@ That's a much better bug report than "we have no recovery," and it's a better th
 
 *From [browser-use's writeup on agents that learn](https://browser-use.com/posts/web-agents-that-actually-learn). This was the missing step in our own "check the API first" rule, which said nothing about what to do when no API is published.*
 
+**When a command-line tool that worked for months gets bot-gated, ask whether the signed-in tab can do the read.** In November a video site began refusing my downloader, first for transcripts, then for the audio fallback, then for per-video numbers. What worked was a same-origin fetch from an already-open, signed-in background tab, parsing the JSON the page embeds in itself: no navigation, no audio, exact view counts on 30 of 30 videos. The same fetch with the cookies stripped got the same refusal, so this isn't a way around bot detection. It works because the site knows the account, which is also why it stays a read and nothing more.
+
 **6.3 — To put a file into a page without a human dragging it: use the drop route, not the file input.** Dispatch drag-enter, drag-over, and drop events with a fresh data-transfer object each time. The cheap proof a real handler took it is that the drop event comes back with its default prevented. If your tools do have an upload call and it refuses with something like "only files this session may read," the refusal is about which folders it may read from, and files you created upload fine from any of them. Copy the file into an allowed folder, upload from there, delete the copy.
 
 The file-input route can fail *silently* and identically to success: we set the input, read the file's size back correctly, saw no error and no network request, and the site never noticed. There is no native file dialog involved in either route, which is why "it can't open the dialog" is the wrong reason to give up.
@@ -300,6 +303,8 @@ Add: same URL for three-plus steps without meaningful progress, abort. Keep a li
 **7.4 — Add a wall-clock deadline, because a parked run and a slow one look identical.** Our automatic-approval mode does something documented and easy to miss: when it keeps hitting blocks, it reverts to asking permission for each step. At 3am the run doesn't fail — it waits, and each wait looks like a fresh legitimate prompt rather than the same one repeating.
 
 **7.5 — Check what your permission model can't grant before you schedule anything.** Ours has a layer no configuration file reaches: site-level permissions live in the extension itself, so a job whose every tool is approved can still be stopped by the site. Those permissions are also finer-grained than they look — they're granted per tool *and* per site, so a run can be refused permission to run JavaScript on one domain while every other tool works there normally. The refusal message names both the tool and the site. Read it rather than concluding your session is broken.
+
+The screener can also flip on an identical call. One of my nightly jobs runs an in-page script that reads a site's public web token out of its script bundle. It was allowed three nights running, then denied two nights in a row, and a sibling job that pasted the same public value in by hand was allowed throughout. My inference, unproven: pulling a credential-shaped string out of page code looks like harvesting, and the verdict isn't deterministic. I added a narrow written allowance for that one call, and one allowed night since proves nothing, so I'm not calling it fixed. Give a job like that a fallback that hardcodes the value.
 
 Some sites force a prompt no grant will satisfy, and a scheduled job pointed at one waits forever. **Check the current list rather than inheriting one.** Ours narrowed while this document was in circulation: a category that used to be blocked outright is now merely permission-gated, and the six-item list we'd written down had become a two-item list plus a prompt. Anything in this paragraph is the kind of fact that goes stale between your reading it and your needing it.
 
@@ -420,6 +425,8 @@ All four cells came back fully correct once two problems were fixed, and both fi
 **11.1 — A permission refusal can be mistaken for a missing capability.** The first headless GPT-6 calls to open my own websites were refused in under a second with *"the user declined permission for this action."* I had not tapped Decline, and I had never been shown the question; the tool reported a denial anyway. I spent an hour on workarounds (an allowlist in its config, an automatic reviewer, pre-approval written into the prompt) and every one failed the same way, in under a second, which is exactly how a genuine wall behaves. Then I opened the app, asked it to open each site, and tapped Allow, in two rounds. A fresh headless session still failed after the first round; after the second, site access worked, though two tasks still needed the wording fix in 11.2 before they passed. Before an agent records "can't," it should ask whether a human has ever been given the chance to say yes.
 
 **11.2 — The wording of a requirement decides whether the agent tries.** My task cards said three of the tasks "need a genuinely visible, foreground browser surface." GPT-6 read that as a feature to look for, searched its tools for a visibility option, found none on the surface it was using, and reported BLOCKED on two tasks, while completing the third of the same kind minutes later in an ordinary tab. I clarified that a normal Chrome tab counts, and it went two for two. Describe the requirement the way a passing run would satisfy it, and leave out the failure you're worried about.
+
+It came back twice in November. A brief telling it to make its tab the active one stopped a run cold. So did a brief telling it *not* to make the tab visible: it read the line as a request for a visibility option, passed one, got the same error, and gave up. A negative instruction is still a mention. What worked was saying nothing about visibility at all, and asking it to open the tab with its default options.
 
 **11.3 — A safety stop can rest on a mistaken premise.** The run that blocked itself had my rule in front of it: report BLOCKED if a step cannot be done safely, instead of experimenting on a live account. I want that rule. But the run mistook a missing visibility control for a blocked route, and on one task it reported an approval rejection that appears nowhere in its own log. Clarifying the instructions was enough to keep the rule and finish both tasks.
 
