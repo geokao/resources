@@ -2,7 +2,7 @@
 
 ## Claude keeps the records. ChatGPT holds the session. A shared Google Doc carries what happened back.
 
-**Version 1.2 · Last updated November 8, 2026**
+**Version 1.3 · Last updated November 21, 2026**
 
 *By George Kao. Written with Claude.*
 
@@ -66,7 +66,7 @@ If your ChatGPT has Dots, start there. If it doesn't, a Project per council stil
 
 ## Two traps I hit while building
 
-**Your laptop can't read a Google Doc's text.** Google Drive syncs a Google Doc to your computer as a small shortcut file that holds a link, not the words. So Claude reads the Doc through its Google Drive connection instead. That connection can read the Doc but can't edit it, which is why Claude doesn't delete records from the Doc. It keeps a date in its own files marking how far it has folded.
+**Your laptop can't read a Google Doc's text.** Google Drive syncs a Google Doc to your computer as a small shortcut file that holds a link, not the words. So Claude reads the Doc through its Google Drive connection instead. That connection can only read the Doc. A separate Google Docs connection can edit in place, but I've never needed it here, because Claude keeps a date in its own files marking how far it has folded, and the date does the job that deleting records would.
 
 **Never delete and recreate the phone file.** ChatGPT finds the file by its Drive link, whether a Project holds the link as a source or your Dot remembers the link. If the file is deleted and a new one is made, Drive gives the new file a new link, and ChatGPT keeps reading a file that no longer updates, without telling you. Your AI should always overwrite the same file.
 
