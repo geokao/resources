@@ -2,7 +2,7 @@
 
 ## Keep one in charge of the project. Give the other a job worth checking.
 
-**Version 1.5 · Last updated November 11, 2026**
+**Version 1.6 · Last updated November 21, 2026**
 
 *By George Kao. Directed by Claude, with GPT-6's deep guidance and writing.*
 
@@ -107,6 +107,12 @@ Start with the person's request in their own words, then cover these six parts. 
 6. **Report format.** Findings with evidence and proposed corrections, followed by `Not checked: <what, and why>`. An empty value is allowed; omitting the line isn't.
 
 “Review carefully” can return advice you cannot check. “Quote the formula, calculate its effect, and supply the replacement” gives you a finding you can test.
+
+When the job is to review a plan or decision, add three more lines:
+
+1. **Say what prompted the review and what outcome you want**, in one sentence. Without it, the reviewer judges the plan on its own terms, not against the problem it was meant to solve.
+2. **Cap the findings at six, and ask for reasons to abandon the plan separately from requirements if you proceed.** Otherwise everything comes back labelled must-fix. Word the cap as “read the whole file, then pick the six that matter most,” not “stop after six findings,” which invites it to stop reading early.
+3. **Keep “blocking” for a demonstrated error or a quoted rule that was broken.** A source the reviewer couldn't open goes under “Not checked.” In one of my reviews, three pages the reviewer's sandbox couldn't fetch came back as a “conditional blocker.” I fetched them myself and found the passages it had wanted.
 
 For substantial source reading, request a contiguous span of at least ten words from each source as proof of access. This proves the reader saw that passage, not that it understood the whole file. Require the first line to flag evidence contradicting the brief's expected conclusion.
 
