@@ -4,8 +4,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 2.3 · Last updated 2026-11-19 06:38 PST**
+**Version 2.4 · Last updated 2026-11-21 08:17 PST**
 
+<!-- v2.4 (2026-11-21): out-of-band refresh of 13 guides; reading times re-measured (How I Work 28→30, limit 14→16, debriefs 14→16); debriefs blurb no longer counts its buttons. -->
 <!-- v2.3: A dividing line above each group of guides, so each new group is easy to spot. -->
 <!-- v2.2: The how-to picture and every guide card now come in two sizes: smaller text on desktop (wide screens), the larger version on phones (<picture> with a min-width: 1012px source; images/readme-*-desk.png). -->
 <!-- v2.1: Cards show each guide's version and update date (read from the guide itself) in place of reading time; each "More about this guide" ends with the guide's link. -->
@@ -98,7 +99,7 @@ How I run a one-person business through Claude. If you hand over only one guide,
 
 <details><summary>More about this guide</summary>
 
-A field guide to running a whole solo business — and a good chunk of a life — through Claude, written from a non-coder's studio. The leverage turned out to sit in the system around the conversation: folders as the operating system, rules that carry their own *why*, self-improvement loops with a human gate, guardrails for the tasks that run while you're asleep, and the money math that makes heavy daily use affordable. About 28 minutes to read — or one minute to hand to your AI.
+A field guide to running a whole solo business — and a good chunk of a life — through Claude, written from a non-coder's studio. The leverage turned out to sit in the system around the conversation: folders as the operating system, rules that carry their own *why*, self-improvement loops with a human gate, guardrails for the tasks that run while you're asleep, and the money math that makes heavy daily use affordable. About 30 minutes to read — or one minute to hand to your AI.
 
 🔗 Link to this guide: https://github.com/geokao/resources/blob/main/how-i-work-with-claude.md
 
@@ -166,7 +167,7 @@ My AI reviews each session for the small, repeated time-wasters that add up.
 
 <details><summary>More about this guide</summary>
 
-The companion to the one above: where the lessons come from before anything gets applied. I used to ask for a retrospective when a session had gone badly enough that I remembered to ask, which samples the disasters and misses the ordinary friction — fifteen seconds lost the same way forty times, which turned out to be most of the waste. So the debrief runs on its own now, at four speeds: a one-line check at the end of every reply, a floor that won't let three turns pass without one, a full structured retro after real work, and one weekly pass that's allowed to delete things. Updated November 2026 with the three buttons I now click to end a session, and what checking on my other open sessions costs. Includes the guardrails that keep that last one from removing your most valuable rules first, and the arithmetic that explains why an instructions file grows until someone measures it. The first three need nothing but a chat window. About 14 minutes to read, or one minute to hand over.
+The companion to the one above: where the lessons come from before anything gets applied. I used to ask for a retrospective when a session had gone badly enough that I remembered to ask, which samples the disasters and misses the ordinary friction — fifteen seconds lost the same way forty times, which turned out to be most of the waste. So the debrief runs on its own now, at four speeds: a one-line check at the end of every reply, a floor that won't let three turns pass without one, a full structured retro after real work, and one weekly pass that's allowed to delete things. Updated November 2026 with the buttons I now click to end a session, and what checking on my other open sessions costs. Includes the guardrails that keep that last one from removing your most valuable rules first, and the arithmetic that explains why an instructions file grows until someone measures it. The first three need nothing but a chat window. About 16 minutes to read, or one minute to hand over.
 
 🔗 Link to this guide: https://github.com/geokao/resources/blob/main/how-my-ai-debriefs-itself.md
 
@@ -270,7 +271,7 @@ Claude Code keeps a record of every request on your own disk, so you can see wha
 
 <details><summary>More about this guide</summary>
 
-Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two causes of a spike you can't account for — an idle gap, and a model switch made to save money that doesn't — how to tell whether starting a fresh session saves anything (on a warm cache it usually doesn't), the two things your local numbers can't see, and what support can and can't do. Claude Code only, desktop app or CLI. About 14 minutes to read, or one minute to hand over.
+Some days the usage meter hits 100% and you can't account for it — you weren't doing anything unusual, and there's no arguing with a number you can't check. But Claude Code keeps a record of every request on your own disk, so you can check it. Five measurements: whether a heavy day was genuinely heavy, whether your prompt cache has stopped working, and how much of your allowance goes on re-reading your own instructions file before you've typed a word. Includes the control step that turns a complaint into evidence, the two causes of a spike you can't account for — an idle gap, and a model switch made to save money that doesn't — how to tell whether starting a fresh session saves anything (on a warm cache it usually doesn't), the two things your local numbers can't see, and what support can and can't do. Claude Code only, desktop app or CLI. About 16 minutes to read, or one minute to hand over.
 
 🔗 Link to this guide: https://github.com/geokao/resources/blob/main/claude-limit-maxing-out.md
 
