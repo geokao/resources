@@ -1,6 +1,6 @@
 # Is your Claude 5-hour limit maxing out quickly?
 
-**Version 1.6 · Last updated November 11, 2026**
+**Version 1.7 · Last updated November 21, 2026**
 
 Some days the meter hits 100% and you genuinely can't account for the spike. You weren't running anything unusual. You may even have switched to a cheaper model. And there's no way to argue with a number you can't check.
 
@@ -23,9 +23,9 @@ Most of that is **cached**. Claude stores the unchanged front portion of your co
 
 On a normal day of mine, cache reads are **96–97%** of the total volume. That ratio is worth writing down, because it means the raw token number tells you almost nothing on its own. A 400-million-token day and a 40-million-token day can be the same amount of actual work.
 
-**That tenth is not universal, and it keeps moving.** Anthropic's [pricing page](https://platform.claude.com/docs/en/about-claude/pricing) now lists three multipliers on the base input price: 0.1x for most models, 0.05x for Claude Opus 5.5 and Claude Sonnet 5.5, and 0.025x for Claude Fable 5.1 and Claude Mythos 5.1.
+**That tenth is not universal, and it keeps moving.** Anthropic's [pricing page](https://platform.claude.com/docs/en/about-claude/pricing) now lists three multipliers on the base input price: 0.1x for most models, 0.05x for Claude Opus 5.5 and Claude Sonnet 5.5, and 0.025x for Claude Fable 5.2, Claude Fable 5.1, and the Mythos versions of each.
 
-In money, Fable 5.1 reads cached context at $0.25 per million tokens against a $10 base. Opus 5.5 reads it at $0.20 against a $4 base, and Opus 5 at $0.50 against a $5 base. So on a long conversation that's already in cache — which is most of a working session — a model with a higher headline price can be the cheaper one per request. When I first measured this, Fable 5.1 beat Opus 5 until output passed roughly 2,500 tokens. Opus 5.5 has since undercut Fable 5.1 on the cache read and on output ($20 per million against $50), so that comparison no longer favors Fable. Fable 5 charged $1 per million for the same read and 5.1 cut it fourfold, so these numbers have changed twice in a few months. If you're carrying an old number in your head, it will point you the wrong way.
+In money, Fable 5.1 reads cached context at $0.25 per million tokens against a $10 base. Opus 5.5 reads it at $0.20 against a $4 base, and Opus 5 at $0.50 against a $5 base. So on a long conversation that's already in cache — which is most of a working session — a model with a higher headline price can be the cheaper one per request. When I first measured this, Fable 5.1 beat Opus 5 until output passed roughly 2,500 tokens. Opus 5.5 has since undercut Fable 5.1 on the cache read and on output ($20 per million against $50), so that comparison no longer favors Fable. Fable 5.2 priced its cache read at the same $0.20 as Opus 5.5, but its base input ($8 against $4) and output ($40 against $20) still cost double, so on a long cached conversation Opus 5.5 comes out equal or cheaper on every line. Fable 5 charged $1 per million for the same read, 5.1 cut it fourfold, and 5.2 cut it again, so these numbers have changed repeatedly in a few months. If you're carrying an old number in your head, it will point you the wrong way.
 
 Anthropic's [rate-limit documentation](https://platform.claude.com/docs/en/api/rate-limits) says that for the API, the default input-tokens-per-minute limits count only uncached input tokens — cache reads are excluded, cache writes are not. Whether the same rule governs the **subscription** limits you see in Settings → Usage is, as far as I can tell, undocumented. When I asked support directly, they told me they had no documentation confirming it either way. That gap is why this guide exists: if you can't get the rule, measure the inputs and let the numbers speak.
 
@@ -171,7 +171,7 @@ Two causes turned up when I went back over my own transcripts on September 3, an
 
 **You switched models to save money.** Caches are per-model, so moving a conversation to a different model rewrites the whole conversation onto the new one. In both sessions I measured, that rewrite was about 206,000 tokens.
 
-The two switches came out differently, and not in the direction I expected. In the session whose cache was still warm — a 22-minute gap — switching to the nominally cheaper model *lost* money and never made it back, for the reason set out at the top of this guide: the lower headline price came with the more expensive cache read. That held for the pair I measured. Pricing has moved since — Opus 5.5 reads cached context for less than Fable 5.1 does — so price your own pair before you switch. The session that looked like it saved about $2 had been sitting idle for 150 minutes, so the rewrite was going to happen on the next message regardless. All the switch did was get it billed at the cheaper rate.
+The two switches came out differently, and not in the direction I expected. In the session whose cache was still warm — a 22-minute gap — switching to the nominally cheaper model *lost* money and never made it back, for the reason set out at the top of this guide: the lower headline price came with the more expensive cache read. That held for the pair I measured. Pricing has moved since — Opus 5.5 reads cached context for less than Fable 5.1 does and for the same as Fable 5.2 — so price your own pair before you switch. The session that looked like it saved about $2 had been sitting idle for 150 minutes, so the rewrite was going to happen on the next message regardless. All the switch did was get it billed at the cheaper rate.
 
 So the rule is: **switch models for capability, not for cost.** The one moment a switch is genuinely cheap is right after a long break, when the rewrite is already on its way.
 
@@ -181,13 +181,13 @@ So the rule is: **switch models for capability, not for cost.** The one moment a
 
 A long session feels expensive, so starting over looks like the obvious fix. My own AI kept recommending a fresh start, with math that sounded reasonable: this session sends 300,000 tokens with every request, a new one would start at 150,000, so switch and cut the cost in half.
 
-That math compares raw token counts, which is exactly what the top of this guide warns against. Staying put re-reads a warm cache at a tenth of the input price (a twentieth on Opus 5.5, a fortieth on Fable 5.1). A new session has to write its starting context into the cache before it can read anything back, and on a subscription that one-hour cache write costs twice the input price.
+That math compares raw token counts, which is exactly what the top of this guide warns against. Staying put re-reads a warm cache at a tenth of the input price (a twentieth on Opus 5.5, a fortieth on Fable 5.1 and 5.2). A new session has to write its starting context into the cache before it can read anything back, and on a subscription that one-hour cache write costs twice the input price.
 
 I measured both sides across 119 of my own sessions on September 16, 2026. A new session's first request read about 44,000 tokens that my other sessions had already cached, and wrote about 87,000 new ones. Priced out, that one request cost as much as 177,000 tokens of plain input. A request in a warm 300,000-token session costs the equivalent of 30,000.
 
 After its first request, the new session is the cheaper one, because it carries less. Whether starting over pays depends on how many requests you have left, and every tool call is one. My sessions average about ten per message I send.
 
-| Current session | Fresh start pays back after — Opus 5 (reads at 0.1x) | Opus 5.5 (0.05x) | Fable 5.1 (0.025x) |
+| Current session | Fresh start pays back after — Opus 5 (reads at 0.1x) | Opus 5.5 (0.05x) | Fable 5.1 and 5.2 (0.025x) |
 |---|---|---|---|
 | 150,000 tokens | ~84 requests | ~170 requests | ~350 requests |
 | 200,000 tokens | ~24 | ~49 | ~98 |
@@ -201,7 +201,7 @@ How I use the table now:
 
 1. **Close to your starting size, stay.** At 150,000 tokens, a new session takes about eight of my messages to pay back on Opus 5, and about seventeen on Opus 5.5.
 2. **On Opus 5.5, past about 200,000 tokens, a fresh start pays back within five of my messages** — within two, past 300,000. On Opus 5 it is half that.
-3. **The cheaper the cache read, the longer to stay.** Fable 5.1 asks for about four times the Opus 5 wait, and Opus 5.5 about twice. Re-reading a cached conversation costs so little there that a new session needs far more requests to earn back its start.
+3. **The cheaper the cache read, the longer to stay.** Fable 5.1 and 5.2 ask for about four times the Opus 5 wait, and Opus 5.5 about twice. Re-reading a cached conversation costs so little there that a new session needs far more requests to earn back its start.
 4. **Coming back to a long session after a break longer than the cache lifetime, open a new session instead of typing into the old one.** Your first message would rewrite the whole old conversation anyway, so the smaller new session is cheaper from its first request. The paragraph on switching models above found the same cheap moment.
 5. **Treat the payback as a minimum.** A new session usually re-reads some files to get back up to speed, and none of that is counted here.
 
@@ -215,7 +215,7 @@ To get your own numbers, have your AI run this from inside the session you're wo
 import glob, json, os, statistics
 
 PAYBACK = 20  # requests; about two of my messages. Start fresh only if it pays back sooner.
-READ = 0.1    # cache-read multiplier: 0.05 on Opus 5.5 and Sonnet 5.5; 0.025 on Fable 5.1 and Mythos 5.1
+READ = 0.1    # cache-read multiplier: 0.05 on Opus 5.5 and Sonnet 5.5; 0.025 on Fable 5.2, Fable 5.1 and the Mythos versions
 WRITE = 2.0   # one-hour cache write (subscription); 1.25 once you're on usage credits
 
 newest = max(glob.glob(os.path.expanduser("~/.claude/projects/*/*.jsonl")), key=os.path.getmtime)
