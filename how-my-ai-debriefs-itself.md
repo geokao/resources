@@ -1,6 +1,6 @@
 # How My AI Debriefs Itself
 
-**Version 1.4 · Last updated November 5, 2026**
+**Version 1.5 · Last updated November 21, 2026**
 
 *by George Kao*
 
@@ -48,6 +48,8 @@ The rule wasn't unclear. It was **outnumbered.** Roughly two dozen instructions 
 
 So the number rides in the receipt. It has to be counted, not estimated, and a separate script audits the claim against the transcripts, so a flattering number gets caught.
 
+The audit caught plenty. Run again over the most recent two weeks of November, across more than ten times as many replies as the first sample, 36% were over the limit. That's down from 65%, and still over a third. The receipt flatters itself too: the figure my AI writes runs a median 16 words under the true count, and more than one in five of the replies claiming to be under 200 words weren't. A number on the page isn't the audit, so the script that checks it stays.
+
 Steal the general form: **a rule you've corrected three times is not under-stated, it's outnumbered. Mechanize it or drop it — don't word it harder.** Mechanizing means turning it into something that can't be skipped in silence: a script that holds the number, a line the output is required to contain, or a default that makes the failure impossible. A rule you have to *feel* loses to whatever it gets weighed against. A rule you have to *count* doesn't.
 
 ---
@@ -84,6 +86,8 @@ This one is a written procedure with eight steps. These are the ones carrying th
 
 **Say when you decided *not* to update, and why.** A retro that always finds something has started performing. "Instructions are fine, one small note" is a legitimate and common outcome.
 
+**A retro marked "ran" can still skip the part that matters.** When a session has used other AI models for some of the work, the full procedure asks each of them to critique its own leg, because each holds firsthand evidence the others don't. On one day I checked, 18 of 38 retros marked "ran" had been done inline from memory and never reached that step. A rule I'd have to remember was being skipped about half the time, so a hook now refuses a "ran" status in such a session until the full procedure has been loaded. It's the same move as the word count, applied to the retro itself.
+
 Three failure modes it's explicitly told to avoid: congratulatory retros with a garnish of minor tweaks; rewriting most of a doc when most of it worked, which means the thread got lost; and answering some adjacent question instead of the one I asked.
 
 ### When one project spans several sessions
@@ -101,13 +105,15 @@ So the retro now waits for the end of the project and covers the whole chain:
 
 A project that fits in one session ends with the same word. There's no chain to read, so the retro (if the run earned one), the filing and the archiving all happen right there.
 
-### Three buttons instead of a sentence
+### Buttons instead of a sentence
 
-I typed my closing line by hand about forty-five times before I asked for a button. Now, whenever a session is idle, three buttons sit above the message box:
+I typed my closing line by hand about forty-five times before I asked for a button. Now, whenever a session is idle, five buttons sit above the message box. The first three came first:
 
 - **Archive** closes the session right away. Claude doesn't reply, so it costs nothing. I use it when nothing in the session needs saving.
 - **Retro & archive** sends "thank you! if you're complete here, please retro and then archive." That's my usual one.
 - **Also send info** sends the same line with one addition: pass along anything another open session needs from this one, and skip that step when no session does. That one's for days when two sessions were working on related things.
+
+Two more arrived later, for the same reason. One does the retro and archive after first setting up tasks in my to-do app on the right dates, including one that reminds me how to pick the project back up. The other says I'm completing this session and asks for a fresh one if anything is left for me to read or do.
 
 Before keeping the third button I asked what that extra check costs. My AI priced sixty of my past closes from its own logs, and the check came to about a hundredth of a percent of a week's usage each time. Then I asked about sessions I'd left idle for over an hour, since the AI has to reload the whole conversation when it picks back up. The reload does cost more, but the first step of the close usually pays for it, and the check that follows reads the already-reloaded copy at the cheap rate.
 
@@ -117,11 +123,11 @@ My version of Claude Code lets Claude add buttons and panels to its own interfac
 
 ---
 
-## Tier 4 — Thursday, 3am: the pass that's allowed to subtract
+## Tier 4 — Sunday night: the pass that's allowed to subtract
 
 Everything above **adds**. The per-turn check appends a lesson. The full retro appends a rule. Several other agents append suggestions. Not one of them ever asks whether the shape is still right, and not one of them takes anything out.
 
-So one pass a week does only that, and it's the highest-authority thing I run unattended — the only agent permitted to change my live rules while I sleep. That authority is bought entirely by the way back, which is why the snapshot before every edit is never traded for time.
+So one pass a week does only that, and it's the highest-authority thing I run unattended — the only one allowed to delete or restructure my live rules while I sleep. That authority is bought entirely by the way back, which is why the snapshot before every edit is never traded for time.
 
 ### It asks four questions, in order
 
@@ -142,7 +148,7 @@ So one pass a week does only that, and it's the highest-authority thing I run un
 
 **A self-improving loop may not file down its own teeth.** The snapshot requirement, the caps, the verification gate, the never-touch list, the reporting requirement — and that clause itself — are outside what the loop may edit. A proposal that loosens any of them is dropped automatically, logged, and reported to me — the attempt is worth knowing about in its own right. Only I change those, awake.
 
-Two more, cheap to state and load-bearing. **Never grade your own homework:** the pass that improves the machinery may only use evidence older than tonight, and may never evaluate what this same run just did. A finding whose only support was written three hours ago in the same run is the loop congratulating itself. And **a veto is permanent:** anything I revert goes on a list and is never re-proposed without genuinely new evidence, with the run required to say what changed. Otherwise the same reasoning rediscovers the same idea next month and I re-decide it forever.
+Three more, cheap to state and load-bearing. **A cold read before any cut is applied:** a different model reads the proposed cut list and is told to attack it, asking which gate would go lazy and which recorded incident loses coverage. Its findings count as claims, so the run checks each against the file before folding one in. **Never grade your own homework:** the pass that improves the machinery may only use evidence older than tonight, and may never evaluate what this same run just did. A finding whose only support was written three hours ago in the same run is the loop congratulating itself. And **a veto is permanent:** anything I revert goes on a list and is never re-proposed without genuinely new evidence, with the run required to say what changed. Otherwise the same reasoning rediscovers the same idea next month and I re-decide it forever.
 
 ### The cap I got wrong for two months
 
