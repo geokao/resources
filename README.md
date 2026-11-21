@@ -6,7 +6,7 @@
 
 **Version 2.4 · Last updated 2026-11-21 08:17 PST**
 
-<!-- v2.4 (2026-11-21): out-of-band refresh of 13 guides; reading times re-measured (How I Work 28→30, limit 14→16, debriefs 14→16); debriefs blurb no longer counts its buttons. -->
+<!-- v2.4 (2026-11-21): out-of-band refresh, 11 guides updated; reading times re-measured (How I Work 28→30, limit 14→16, debriefs 14→16); debriefs blurb no longer counts its buttons. -->
 <!-- v2.3: A dividing line above each group of guides, so each new group is easy to spot. -->
 <!-- v2.2: The how-to picture and every guide card now come in two sizes: smaller text on desktop (wide screens), the larger version on phones (<picture> with a min-width: 1012px source; images/readme-*-desk.png). -->
 <!-- v2.1: Cards show each guide's version and update date (read from the guide itself) in place of reading time; each "More about this guide" ends with the guide's link. -->
