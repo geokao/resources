@@ -2,8 +2,8 @@
 
 ## A non-technical guide to checking AI work that looks finished
 
-**Version 1.6 · Last updated November 8, 2026**
-<!-- v1.6: Shape 1 gains a third addition (a search can work and still measure the wrong thing) and one matching phrase. -->
+**Version 1.7 · Last updated November 21, 2026**
+<!-- v1.7: Shape 5's fix gains its own blind spot (a run that ends on "I'll wait" raises no error text) and the check that now covers it. -->
 
 *By George Kao. Written with Claude.*
 
@@ -147,6 +147,8 @@ Warnings die inside counts. "19 runs read and triaged" was true. So was "one of 
 Then, if you want the errors themselves: *"Quote the errors to me, don't describe them."* A described error has already passed through the step that decided how bad it was.
 
 I didn't fix this by writing better summaries. My morning check now searches every run for the error text itself and prints a line whether or not anything else judged it worth raising — a search can't weigh up importance, so it can't decide to leave anything out.
+
+That fix had a hole of its own, which I found on November 14. A weekly backup routine ended its turn by saying the copy was still running in the background and that it would wait. It wrote no log line and raised no error, so a search for error text found nothing and scored the run clean. Nobody was left to do the waiting. A search for failure words only finds failures that announce themselves, and a run that stops without finishing announces nothing. The morning check now also reads how each run ended, and a closing promise to wait counts as incomplete. The backup routine counts a missing final line as a failure.
 
 ---
 
