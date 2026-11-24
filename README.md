@@ -4,8 +4,9 @@
 
 *Free, practical resources for getting real work done with AI — written for people who don't think of themselves as technical.*
 
-**Version 2.4 · Last updated 2026-11-21 08:17 PST**
+**Version 2.5 · Last updated 2026-11-24 12:15 PST**
 
+<!-- v2.5 (2026-11-24): How I Work with Claude v1.16 + self-improving v1.13: skills load from a synced folder, so the tune-up edits them live with a one-line undo. Blurbs and reading times unchanged. -->
 <!-- v2.4 (2026-11-21): out-of-band refresh, 11 guides updated; reading times re-measured (How I Work 28→30, limit 14→16, debriefs 14→16); debriefs blurb no longer counts its buttons. -->
 <!-- v2.3: A dividing line above each group of guides, so each new group is easy to spot. -->
 <!-- v2.2: The how-to picture and every guide card now come in two sizes: smaller text on desktop (wide screens), the larger version on phones (<picture> with a min-width: 1012px source; images/readme-*-desk.png). -->
