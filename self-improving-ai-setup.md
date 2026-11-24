@@ -1,6 +1,6 @@
 # Give Your AI a Way to Improve Itself
 
-**Version 1.12 · Last updated November 21, 2026**
+**Version 1.13 · Last updated November 24, 2026**
 
 *by George Kao*
 
@@ -28,7 +28,7 @@ Its last step may apply up to three small, mechanical fixes on its own, each wri
 
 **The Sunday-night door cuts.** Its one job is to make my setup smaller. It starts by measuring where my tokens went that week, and the biggest cost becomes that night's target. That rule alone starved the rest. The pass rotates through four kinds of surface, and picking the biggest cost kept choosing the same one, so two of the four went unaudited for about two months. Now any surface that has gone too long unaudited takes the night, whatever the measurement says. Before it applies any cut, a different model reads the cut list cold and tries to break it, and the run checks each of its findings against the file instead of trusting them. It also picks up the Monday door's "checkably false" tags, re-runs each check itself rather than trusting the tag, and repairs the ones that verify. Judgment calls stay in the folder for me. Outward-facing anything waits for me, always.
 
-**The two specialists stay separate on purpose.** One tunes my custom skills weekly, measured by which ones I actually invoke, and leaves the finished version in a queue it isn't allowed to install from — a 3am swap has nobody there to catch it replacing the wrong skill. The daily check-in below installs it instead. Until early August that upload was the last step here that still needed my hands. Deleting a skill is still mine: re-installing the old version undoes a bad replacement, and nothing undoes a delete. One monthly pass re-tests the capabilities my setup previously recorded as impossible, starting with the one that costs me most, in case the vendor has since shipped it — and it drives a browser, which is why it doesn't share a run with anything else.
+**The two specialists stay separate on purpose.** One tunes my custom skills weekly, measured by which ones I actually invoke. My skills load from a synced folder on my own computer, so the tuner's edit goes live the moment it's saved, with no upload in between. Nobody is awake at 3am to catch a bad edit, so every edit leaves a change note holding a one-line command that puts the old version back. The tuner checks that the skill still loads before it finishes, and the daily check-in below checks every skill file again and tells me what changed; if an edit broke a skill, the check-in runs that undo by itself. Deleting a skill is still mine: an edit can be undone, and nothing undoes a delete. One monthly pass re-tests the capabilities my setup previously recorded as impossible, starting with the one that costs me most, in case the vendor has since shipped it — and it drives a browser, which is why it doesn't share a run with anything else.
 
 A daily check-in makes the other four safe: it reads what everything did overnight and puts anything needing me in one short list. It now runs on its own before I'm up, and it also applies queued suggestions that pass the same tests as the Monday door's fixes, up to three a day, so small ones don't wait a week for me.
 
