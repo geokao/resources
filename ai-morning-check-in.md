@@ -2,8 +2,8 @@
 
 ## One scheduled task that checks whether the others did their jobs, and leaves you only what needs you
 
-**Version 1.2 · Last updated November 21, 2026**
-<!-- v1.2: a promise to wait counts as an unfinished task; waits get a limit and a failure note. v1.1: the follow-up session now renames itself with the date. -->
+**Version 1.3 · Last updated November 28, 2026**
+<!-- v1.3: the follow-up session waits for the check-in session to finish. v1.2: a promise to wait counts as an unfinished task; waits get a limit and a failure note. v1.1: the follow-up session now renames itself with the date. -->
 
 *By George Kao. Written with Claude.*
 
@@ -134,7 +134,8 @@ The details:
 3. **Nor can the link name the session, so the session names itself.** The app names a new session after its first message, so every follow-up got the same name and two mornings looked identical in my sidebar. With the date in the name, I can find each day's follow-up at a glance.
 4. **A reply that needs nothing doesn't get a session.** If I only say thanks, the check-in answers in one line and opens nothing.
 5. **The hand-off can't run twice.** The new session acts only on a file dated today and marked `consumed: no`. An old or used file gets one line and nothing more, so opening the link again by accident does no harm.
-6. **The link may change.** My AI found this link format inside the app itself, so an app update could change the format. If opening the link fails, the check-in does the follow-up in its own thread instead. After a big app update, try it once.
+6. **The new session waits for the check-in session to go quiet.** If I press Enter quickly, the check-in may still be finishing its turn. So the new session first checks that the check-in session has stopped, and changes nothing until then. If the check-in is still going after five minutes, the new session tells me and stops, so the two never work on the same files.
+7. **The link may change.** My AI found this link format inside the app itself, so an app update could change the format. If opening the link fails, the check-in does the follow-up in its own thread instead. After a big app update, try it once.
 
 I tested it on November 7, and the first real reply went through the next day: the 5:45 note, my short numbered answer, a fresh session, the list worked through, the file marked used.
 
@@ -166,10 +167,10 @@ Please build me a morning check-in for my scheduled tasks. Ask me before you bui
    a. Write my reply, word for word, to a hand-off file in the check-in's folder, with today's date, which session wrote it, "consumed: no", and the line "work through DEFERRED in the report file, then act on the reply".
    b. Open claude://code/new?folder=<the check-in folder>&q=<a one-sentence prompt asking the new session to rename itself "Morning <today's date> Follow-Up", then to read the hand-off file>, with both values URL-encoded (on a Mac, with the open command).
    c. Reply in one line: "Opened a fresh session with your reply. Press Enter there."
-   d. In the check-in folder's instructions file, add: when a session's first message names the hand-off file, act only if the file is dated today and says consumed: no. Then work through it, set consumed: yes, and save. Otherwise say so in one line and stop.
+   d. In the check-in folder's instructions file, add: when a session's first message names the hand-off file, read it. If it isn't dated today or doesn't say consumed: no, say so in one line and stop. Next, check that the session that wrote the file has finished its turn. If it's still running, change no file and check again every minute, for up to five minutes. If it's still running after that, tell me in one line and stop. Once it has finished, work through the file, set consumed: yes, and save.
    e. If my reply needs nothing ("thanks"), answer in one line and don't hand off. If opening the link fails, do the follow-up in this session instead.
 
-5. Before you call it done, test it both ways. Make a throwaway task that fails on purpose and confirm the check-in reports it; then confirm a clean night gives a short note. For the hand-off, open the link once with a test file, and confirm a used file does nothing the second time.
+5. Before you call it done, test it both ways. Make a throwaway task that fails on purpose and confirm the check-in reports it; then confirm a clean night gives a short note. For the hand-off, open the link once with a test file, and confirm a used file does nothing the second time. Also start the follow-up once while the check-in session is still mid-turn, and confirm it waits.
 
 Then tell me in plain language what it checks, what it fixes on its own, and what it can't see.
 ```
